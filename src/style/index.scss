@@ -1,0 +1,51 @@
+body {
+
+
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: #000000;
+  margin: 0px;
+  padding: 0px;
+  background: #fff;
+  overflow: hidden;
+
+}
+
+a {
+
+  //text-decoration: none;
+  color: #000000;
+  outline: 0;
+  cursor: Pointer;
+
+}
+
+button, .button, input[type="submit"] {
+
+
+  display: inline-block;
+  border: none;
+  padding: 0 10px;
+  margin: 2px;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #0098ff;
+  color: white;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #37beff;
+  }
+
+}
+
+
+
+
+
+@import "personal-web";
+@import "__2";
+@import "__3";
+@import "__4";

@@ -1,0 +1,141 @@
+{
+  "observer_position":{
+    "x":0,
+    "y":0
+  },
+  "observer_zoom_logarithm":0,
+  "current_todo_id":-1,
+  "todos":[
+    {
+      "name": "TodoTable.com",
+      "description": "This simple app provides you endless virtual table where you can \"stick\" your notes.\n\n\n\n\n",
+      "color": "#4A6D7C",
+      "done": false,
+      "position": {
+        "x": -388,
+        "y": -219
+      },
+      "zIndex": 47
+    },
+    {
+      "name": "Cheatsheat     ",
+      "description": "- Click anywhere and create new card...\n\n- ...or click on existing card to edit it.\n\n- You can drag every card.\n\n- You can drag whole table.\n\n- You can use browser buttons [\u2190] [\u2192]\n\n- You can copy&paste url and set it anywere eg. Facebook.",
+      "uri": "cheatsheat",
+      "color": "#797270",
+      "done": false,
+      "position": {
+        "x": -195,
+        "y": -219
+      },
+      "zIndex": 48
+    },
+    {
+      "name": "Shortcuts      ",
+      "description": "- You can hover every card or any empty place and start writing immediately.\n\n- When you are hovering a card you can delete it by pressing [Delete].",
+      "uri": "shortcuts",
+      "color": "#797270",
+      "done": false,
+      "position": {
+        "x": 7,
+        "y": -218
+      },
+      "zIndex": 49
+    },
+    {
+      "name": "",
+      "description": "## todo\n1) \n2) \n3) \n\n",
+      "uri": "",
+      "color": "#453F3C",
+      "done": false,
+      "position": {
+        "x": -187,
+        "y": 587
+      },
+      "zIndex": 14
+    },
+    {
+      "name": "Examples:",
+      "description": "",
+      "uri": "examples",
+      "color": "#54577C",
+      "done": false,
+      "position": {
+        "x": 179,
+        "y": -218
+      },
+      "zIndex": 50
+    },
+    {
+      "name": "List",
+      "description": "1) Item\n2) Item\n\n- item\n- item\n---\n\nHidden content!",
+      "uri": "list",
+      "color": "#54577C",
+      "done": false,
+      "position": {
+        "x": 170,
+        "y": -93
+      },
+      "zIndex": 63
+    },
+    {
+      "name": "Done todo",
+      "description": "",
+      "uri": "done-todo",
+      "color": "#54577C",
+      "done": true,
+      "position": {
+        "x": 179,
+        "y": -167
+      },
+      "zIndex": 51
+    },
+    {
+      "name": "Red",
+      "description": "",
+      "uri": "red",
+      "color": "#EF2D56",
+      "done": false,
+      "position": {
+        "x": 287,
+        "y": -94
+      },
+      "zIndex": 54
+    },
+    {
+      "name": "Green",
+      "description": "",
+      "uri": "green",
+      "color": "#2FBF71",
+      "done": false,
+      "position": {
+        "x": 305,
+        "y": -74
+      },
+      "zIndex": 57
+    },
+    {
+      "name": "Purple",
+      "description": "",
+      "uri": "purple",
+      "color": "#731DD8",
+      "done": false,
+      "position": {
+        "x": 329,
+        "y": -52
+      },
+      "zIndex": 58
+    },
+    {
+      "name": "Structured text",
+      "description": "\nText can be **bold** or *italic*.\n\n# heading 1\n## heading 2\n### heading 3\n\n\nYou can use [Markdown syntax](https:\/\/github.com\/adam-p\/markdown-here\/wiki\/Markdown-Cheatsheet)",
+      "uri": "structured-text",
+      "color": "#54577C",
+      "done": false,
+      "position": {
+        "x": 332,
+        "y": -1
+      },
+      "zIndex": 61
+    }
+  ]
+}

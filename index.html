@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="/dist/todotable.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+
+
+    <!-- Dependencies -->
+    <!--<script src="/node_modules/handjs/hand.min.js"></script>-->
+    <script src="/node_modules/react/dist/react.js"></script>
+    <script src="/node_modules/react-dom/dist/react-dom.js"></script>
+
+
+
+    <!-- Main -->
+    <script src="/dist/personal-web.js"></script>
+
+
+
+    <!-- Create app -->
+    <div id="app"></div>
+    <script>
+
+            var app = new PersonalWeb.App(
+
+
+                    document.getElementById('app'),
+
+                    {
+
+                        name: 'Pavol Hejný',
+
+
+                        items: [
+                            {
+                                name: {cs:'Projekt',en:'project'}
+
+                            }
+
+
+
+                        ]
+                    }
+
+
+
+
+            );
+
+    </script>
+
+
+
+
+
+</body>
+</html>
