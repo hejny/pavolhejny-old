@@ -1,17 +1,30 @@
 
 
-
-.personal-web{
-
-
-  item{
+body {
 
 
-    border: 2px solid red;
+  background-image: url("/media/images/backgrounds/whiteboard.jpg");
+  text-align: center;
 
+
+  .personal-web {
+
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid green;
+
+    .item {
+
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+
+
+      border: 2px solid red;
+
+    }
 
   }
-
-
 
 }
