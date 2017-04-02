@@ -13,7 +13,7 @@ body {
     display: inline-block;
     width: 100%;
     max-width: 800px;
-    border: 2px solid green;
+    //border: 2px solid green;
 
 
 
@@ -38,6 +38,19 @@ body {
 
       animation: fadeInFromNone 1s ease-out;
 
+
+      background-color: rgba(255,255,255,0.3);
+
+
+      h3{
+        display: block;
+        margin: 0;
+        padding: 4px;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        vertical-align: middle;
+
+      }
 
 
       //&.selected{

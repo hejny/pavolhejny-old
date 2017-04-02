@@ -47,7 +47,7 @@ export class App{
                 }
                 ,(stateJS)=>{
 
-                    return `/${stateJS.language}/${stateJS.value.trim()}`;
+                    return `/${stateJS.language}/${stateJS.opened_item_id}`;
 
                 }
                 )

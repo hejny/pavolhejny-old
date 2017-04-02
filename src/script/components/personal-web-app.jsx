@@ -5,6 +5,7 @@ import * as React from "react";
 
 import {translate} from "../functions/translate.jsx";
 import {PersonalWebItem} from "./personal-web-item.jsx";
+import {PersonalWebItems} from "./personal-web-items.jsx";
 
 
 
@@ -43,11 +44,22 @@ export function PersonalWebApp(props) {
 
                     </div>
 
-                    <br/>
 
-                    <div className="about_text" itemProp="description">
-                        My name is Pavol Hejný live in Prague (Czech Republic). In the present I am working in the <a href="http://www.cso.cz/" target="_blank">Czech Society for Ornithology</a> as a programmer. I am interested in 3D graphics and games on the web (<a href="http://webappgames.com/" target="_blank">WebAppGames.com</a>). I also created a board game Towers. Sometimes i <a href="#articles" >talk about my activities or write an article</a>.
+
+                    <div className="contacts">
+                        <a href="mailto:me@pavolhejny.com" target="_blank"><i className="icon-envelope icons"/></a>
+                        <a href="https://twitter.com/pavolhejny" target="_blank"><i className="icon-social-twitter icons"/></a>
+                        <a href="https://www.facebook.com/hejny" target="_blank"><i className="icon-social-facebook icons"/></a>
+                        <a href="https://www.linkedin.com/profile/view?id=AAMAABL-alkBCN2nJuDO_lhg0Pg0H47UcYbeYgM&trk=hp-identity-photo" target="_blank"><i className="icon-social-linkedin icons"/></a>
+                        <a href="/media/data/pavol.hejny.vcf" target="_blank"><i className="icon-credit-card icons"/></a>
+
                     </div>
+
+
+
+
+                    <div className="about_text" itemProp="description" dangerouslySetInnerHTML={{__html: content.about[stateJS.language]}} />
+
 
 
                 </article>
@@ -56,47 +68,27 @@ export function PersonalWebApp(props) {
 
 
 
-                <h2>{stateJS.value}</h2>
-                <input type="text" value={stateJS.value} onChange={(event)=>store.dispatch({type:'CHANGE_VALUE',value:event.target.value})}/>
-                <input type="color" value={stateJS.value} onChange={(event)=>store.dispatch({type:'CHANGE_VALUE',value:event.target.value})}/>
-
-
-
-                <select value={stateJS.filters.status} onChange={(event)=>store.dispatch({type:'CHANGE_FILTER',filter:'status',value:event.target.value})}>
-
-                    <option value="working">Pracuje</option>
-                    <option value="done">Hotovo</option>
-
-                </select>
 
 
 
 
-                <div>
-
-                    {content.items.filter((item)=>{
 
 
-                        for(let filteredKey in stateJS.filters){
-                            let filteredValue = stateJS.filters[filteredKey];
-
-                            if(item[filteredKey]!==filteredValue){
-                                return false;
-                            }
-
-                        }
-                        return true;
 
 
-                    }).map((item)=>{
 
 
-                        return <PersonalWebItem key={item.id} store={store} item={item}/>
-                    }
 
-                    )}
 
-                </div>
+
+
+
+
+                {!stateJS.opened_item_id?
+                    <PersonalWebItems store={store} items={content.items}/>
+                    :
+                    <PersonalWebItem store={store} item={content.items.find((item)=>item.id===stateJS.opened_item_id)}/>
+                }
 
 
 

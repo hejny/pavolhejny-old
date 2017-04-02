@@ -11,7 +11,10 @@ export const INITIAL_STATE = {
 
 
     filters: {
-        status: 'working'
+        //status: 'working'
 
-    }
+    },
+
+    opened_item_id: null
+
 };

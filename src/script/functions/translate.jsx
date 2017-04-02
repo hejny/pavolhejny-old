@@ -3,11 +3,12 @@
 const MESSAGES = {
     cs: {
 
-        'Hello!': 'Ahoj!'
+        'Hello!': 'Ahoj!',
 
 
     }
 };
+
 
 
 
@@ -28,8 +29,6 @@ export function translate(language,message){
     }else{
         return message;
     }
-
-
 
 
 
