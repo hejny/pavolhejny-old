@@ -6,9 +6,17 @@ body {
   margin: 0px;
   padding: 0px;
   background: #fff;
-  overflow: hidden;
+  //overflow: hidden;
+
+  overflow-y: scroll;
 
 }
+
+
+*{
+  //transition: all 1s ease-out;
+}
+
 
 a {
 
@@ -45,7 +53,25 @@ button, .button, input[type="submit"] {
 
 
 
+
+.languages{
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+
+  img{
+    transition: all 1s ease-out;
+  }
+
+}
+
+
+
+
+
 @import "personal-web";
-@import "__2";
+@import "about";
 @import "__3";
 @import "__4";

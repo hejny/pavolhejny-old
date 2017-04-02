@@ -1,0 +1,67 @@
+
+
+
+.about {
+
+  //padding-top: 10vh;
+
+  .profile {
+
+    display: inline-block;
+    text-align: center;
+
+    .avatar {
+
+      display: inline-block;
+
+      width: 150px;
+      max-width: 80%;
+
+      /*border: 2px solid #000000;*/
+      border-radius: 1000px;
+
+    }
+
+    .name {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 2em;
+      margin: 10px;
+
+    }
+
+    .subname {
+
+      display: inline-block;
+
+      font-size: 1.4em;
+
+      margin-bottom: 20px;
+
+    }
+
+  }
+
+  .about_text {
+
+    display: inline-block;
+
+    padding: 10px;
+    margin: 0px;
+
+    text-align: justify;
+
+    background: rgba(146, 146, 146, 0.10);
+
+    a {
+
+      text-decoration: underline;
+
+    }
+
+  }
+
+}
+
+
+

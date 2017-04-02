@@ -50,6 +50,11 @@ function personalWebAppReducerCore(state,action){
 
             return state.set('value',action.value);
 
+
+        case 'CHANGE_FILTER':
+
+            return state.setIn(['filters',action.filter],action.value);
+
         default:
             return state
     }

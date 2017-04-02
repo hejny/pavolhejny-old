@@ -7,6 +7,7 @@ body {
   text-align: center;
 
 
+
   .personal-web {
 
     display: inline-block;
@@ -14,17 +15,71 @@ body {
     max-width: 800px;
     border: 2px solid green;
 
+
+
+    margin-top: 10vh;
+
+
+
     .item {
 
       display: inline-block;
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
+
+      overflow: hidden;
+      cursor: pointer;
 
 
-      border: 2px solid red;
+      //border: 2px solid red;
+      box-shadow: black 0px 0px 5px;
+      margin: 5px;
+
+
+      animation: fadeInFromNone 1s ease-out;
+
+
+
+      //&.selected{
+      &:hover{
+
+        box-shadow: black 0px 0px 10px;
+        /*z-index: 2;
+        width: 156px;
+        height: 156px;
+        margin: 2px;*/
+
+
+      }
+
+
+      transition: all 0.1s ease-out;
+
+
+
 
     }
 
   }
 
+}
+
+
+
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
