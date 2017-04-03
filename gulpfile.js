@@ -3,7 +3,7 @@
 
 var gulp = require('gulp');
 var rename = require('gulp-rename');
-var webpack = require('gulp-webpack');
+
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
@@ -88,11 +88,17 @@ gulp.task('build-css', function() {
 
 
 
-var babel = require("gulp-babel");
-var path = require('path');
+
+
+
+//var babel = require("gulp-babel");
+//var webpack = require('gulp-webpack');
+const webpack = require('webpack-stream');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
+
 
 gulp.task('build-js', function() {
-
 
 
 
@@ -127,7 +133,14 @@ gulp.task('build-js', function() {
                 resolve: {
                     extensions: ['', '.js', '.jsx']
                 }
-            }
+            },
+
+
+            plugins:[
+                new UglifyJSPlugin({
+                    sourceMap: true
+                })
+            ]
 
 
 
