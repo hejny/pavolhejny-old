@@ -39,14 +39,14 @@ body {
       animation: fadeInFromNone 1s ease-out;
 
 
-      background-color: rgba(255,255,255,0.3);
+
 
 
       h3{
         display: block;
         margin: 0;
         padding: 4px;
-        background-color: rgba(0, 0, 0, 0.3);
+        //background-color: rgba(0, 0, 0, 0.3);
 
         vertical-align: middle;
 
@@ -67,6 +67,22 @@ body {
 
 
       transition: all 0.1s ease-out;
+
+
+
+
+
+      &.PROJECT{
+        background-color: rgba(127, 182, 255, 0.05);
+      }
+      &.TALK{
+        background-color: rgba(255, 40, 101, 0.05);
+      }
+      &.ARTICLE{
+        background-color: rgba(255, 202, 61, 0.05);
+      }
+
+
 
 
 

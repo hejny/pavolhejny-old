@@ -11,9 +11,9 @@ export const INITIAL_STATE = {
 
 
     filters: {
-        //status: 'working'
-
+        "interesting": true,
     },
+
 
     opened_item_id: null
 

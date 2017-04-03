@@ -3,6 +3,9 @@
 import * as React from "react";
 import {translate} from "../functions/translate.jsx";
 
+import FontAwesome from 'react-fontawesome';
+
+import moment from "moment";
 
 
 
@@ -22,7 +25,7 @@ export function PersonalWebItems(props) {
             <h2>{stateJS.value}</h2>
 
 
-            <select value={stateJS.filters.status} onChange={(event)=>{
+            {/*<select value={stateJS.filters.status} onChange={(event)=>{
 
                 if(event.target.value=='all'){
                     store.dispatch({
@@ -45,7 +48,20 @@ export function PersonalWebItems(props) {
                 <option value="working">Pracuje</option>
                 <option value="done">Hotovo</option>
 
-            </select>
+            </select>*/}
+
+
+            {stateJS.filters.interesting?'':
+                <button onClick={(event)=>{
+                    store.dispatch({
+                        type: 'SET_FILTER',
+                        filter: 'interesting',
+                        value: true,
+                    });
+                }}>Show less <FontAwesome name="caret-square-o-up" /></button>
+
+            }
+
 
 
             <div>
@@ -68,8 +84,23 @@ export function PersonalWebItems(props) {
 
 
                         return (
-                            <div className="item" onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
+                            <div className={"item "+item.type} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
+
+
                                 <h3>{item.name[stateJS.language]}</h3>
+
+
+
+
+                                {item.type=='PROJECT'?
+                                    <div>{item.start} &mdash; {item.end}</div>
+                                    :
+                                    <div>{moment(item.date).format('LL')}</div>
+                                }
+
+
+
+
                             </div>
 
                         )
@@ -77,6 +108,23 @@ export function PersonalWebItems(props) {
                 )}
 
             </div>
+
+
+
+
+            {stateJS.filters.interesting?
+                <button onClick={(event)=>{
+                    store.dispatch({
+                        type: 'DROP_FILTER',
+                        filter: 'interesting',
+                    });
+                }}>Show more <FontAwesome name="caret-square-o-down" /></button>
+                :''
+            }
+
+
+
+
 
         </div>
 

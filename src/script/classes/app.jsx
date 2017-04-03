@@ -15,14 +15,36 @@ import { createHistoryReducer } from '../functions/create-history-reducer.jsx'
 import {INITIAL_STATE,WEB_NAME,TITLE_SEPARATOR} from '../config.jsx';
 
 
+import moment from 'moment';
+import 'moment/locale/cs';
 
 
 
 export class App{
 
 
-
     constructor(_container,_content) {
+
+
+
+
+        //todo non pure
+        _content.items = _content.items.map((item)=>{
+
+
+
+            /*start
+            end
+            date*/
+            item.date = moment(item.date,'DD.MM.YYYY').toDate();
+
+
+            return item;
+
+        });
+
+
+
         this._container = _container;
         this._content = _content;
         this.init();
@@ -72,7 +94,9 @@ export class App{
     render(){
 
 
-        const state = this._store.getState().toJS();
+        const stateJS = this._store.getState().toJS();
+        moment.locale(stateJS.language);
+
 
         ReactDOM.render(
             <PersonalWebApp store={this._store} content={this._content}/>,

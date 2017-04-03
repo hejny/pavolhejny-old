@@ -69,26 +69,23 @@ export function PersonalWebApp(props) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {!stateJS.opened_item_id?
                     <PersonalWebItems store={store} items={content.items}/>
                     :
                     <PersonalWebItem store={store} item={content.items.find((item)=>item.id===stateJS.opened_item_id)}/>
                 }
+
+
+
+
+
+
+                {/*<div>
+                    &copy; Pavol Hejný
+                </div>*/}
+
+
+
 
 
 
