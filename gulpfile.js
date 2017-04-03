@@ -17,7 +17,7 @@ gulp.task('default',['build']);
 
 
 
-gulp.task('build', ['build-js','build-css']);
+gulp.task('build', ['build-js-min','build-css']);
 
 
 
@@ -91,10 +91,8 @@ gulp.task('build-css', function() {
 
 
 
-//var babel = require("gulp-babel");
-//var webpack = require('gulp-webpack');
-const webpack = require('webpack-stream');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
+const gulpWebpack = require('webpack-stream');
 const path = require('path');
 
 
@@ -104,7 +102,7 @@ gulp.task('build-js', function() {
 
 
     return gulp.src('./src/*')
-        .pipe(webpack({
+        .pipe(gulpWebpack({
 
 
             entry: {
@@ -133,73 +131,7 @@ gulp.task('build-js', function() {
                 resolve: {
                     extensions: ['', '.js', '.jsx']
                 }
-            },
-
-
-            plugins:[
-                new UglifyJSPlugin({
-                    sourceMap: true
-                })
-            ]
-
-
-
-
-
-
-            /*entry: {
-                todotable: "./src/script/index.jsx"
-            },
-            output: {
-                filename: "personal-web.js",
-                path: __dirname + "/dist",
-                libraryTarget: 'var',
-                library: 'PersonalWeb'
-            },
-
-
-
-            /*devtool: "source-map",
-
-
-
-            resolve: {
-                extensions: ["", ".webpack.js", ".web.js", ".js", ".jsx", '.json', 'index.json']
-            },
-
-
-
-
-            module: {
-
-                loaders: [
-                    {
-                        test: /\.js$/,
-                        loader: 'babel'
-                    },
-                    {
-                        test: /\.json$/,
-                        loader: "json-loader"
-                    }
-                ],
-
-
-                preLoaders: [
-                    {
-                        test: /\.js$/,
-                        loader: "source-map-loader"
-                    },
-                ]
-            },
-
-
-            externals: {
-                "react": "React",
-                "react-dom": "ReactDOM"
-            }*/
-
-
-
+            }
 
         }))
         .pipe(gulp.dest('./dist/'));
@@ -208,6 +140,72 @@ gulp.task('build-js', function() {
 
 
 
+
+
+
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
+
+gulp.task('build-js-min', function() {
+
+
+
+
+    return gulp.src('./src/*')
+        .pipe(gulpWebpack({
+
+
+            entry: {
+                todotable: "./src/script/index.jsx"
+            },
+            output: {
+                filename: "personal-web.min.js",
+                path: __dirname + "/dist",
+                libraryTarget: 'var',
+                library: 'PersonalWeb'
+            },
+
+            devtool: "source-map",
+
+            module: {
+                loaders: [{
+                    test: /\.jsx?$/,
+                    loaders: ['babel?presets[]=es2015&presets[]=react'],
+                    include: [
+                        path.resolve(__dirname, "./src/script"),
+                    ],
+                    exclude: [
+                        path.resolve(__dirname, "node_modules"),
+                    ]
+                }],
+                resolve: {
+                    extensions: ['', '.js', '.jsx']
+                }
+            },
+
+
+
+
+            plugins:[
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        NODE_ENV: JSON.stringify('production')
+                    }
+                }),
+
+
+                new UglifyJSPlugin({
+                    sourceMap: true
+                })/*,
+                 require('rollup-plugin-replace')({
+                 'process.env.NODE_ENV': JSON.stringify('production')
+                 }),
+                 require('rollup-plugin-commonjs')()*/
+            ]
+
+        }))
+        .pipe(gulp.dest('./dist/'));
+});
 
 
 
