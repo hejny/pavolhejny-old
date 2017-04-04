@@ -6,6 +6,9 @@ import {translate} from "../functions/translate.jsx";
 import FontAwesome from 'react-fontawesome';
 
 
+import {PersonalWebItemTalk} from './personal-web-item-talk.jsx';
+
+
 
 export function PersonalWebItem(props) {
 
@@ -27,9 +30,56 @@ export function PersonalWebItem(props) {
 
 
 
-
             <h2>{item.name[stateJS.language]}</h2>
-            sss
+            <div>{translate(stateJS.language,item.type)}</div>
+
+
+
+
+            {(()=>{
+
+                let parts = [];
+
+                for(let key in item){
+
+
+
+                    parts.push(
+                        <div key={key}>
+                            <h3>{key}</h3>
+                            {item[key].toString()}
+                        </div>
+                    );
+
+
+
+
+                }
+
+
+                return parts;
+
+            })()}
+
+
+
+
+
+
+            {(()=>{
+                switch(item.type){
+
+                    case 'TALK':
+                        return <PersonalWebItemTalk store={store} item={item} />
+                    default:
+                        return "Unknown type"
+                }
+
+            })()}
+
+
+
+
         </div>
         );
 
