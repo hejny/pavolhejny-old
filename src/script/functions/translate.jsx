@@ -33,3 +33,24 @@ export function translate(language,message){
 
 
 }
+
+
+
+
+
+
+export function getMessage(language,language_object){
+
+    if(typeof language_object === 'string'){
+
+        return language_object;
+
+    }else{
+
+        return language_object[language];
+
+    }
+
+
+
+}

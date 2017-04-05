@@ -3,7 +3,7 @@
 import * as React from "react";
 
 
-import {translate} from "../functions/translate.jsx";
+import {translate,getMessage} from "../functions/translate.jsx";
 import {PersonalWebItem} from "./personal-web-item.jsx";
 import {PersonalWebItems} from "./personal-web-items.jsx";
 
@@ -40,7 +40,7 @@ export function PersonalWebApp(props) {
                         <br/>
                         <h1 className="name" itemProp="name">{content.name}</h1>
                         <br/>
-                        <div className="subname" itemProp="jobTitle">{content.subname[stateJS.language]}</div>
+                        <div className="subname" itemProp="jobTitle">{getMessage(stateJS.language,content.subname)}</div>
 
                     </div>
 
@@ -58,7 +58,7 @@ export function PersonalWebApp(props) {
 
 
 
-                    <div className="about_text" itemProp="description" dangerouslySetInnerHTML={{__html: content.about[stateJS.language]}} />
+                    <div className="about_text" itemProp="description" dangerouslySetInnerHTML={{__html: getMessage(stateJS.language,content.about)}} />
 
 
 

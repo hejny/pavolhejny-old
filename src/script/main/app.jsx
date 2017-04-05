@@ -7,12 +7,11 @@ import * as Immutable from "immutable";
 import { createStore } from 'redux';
 
 
-
 import {PersonalWebApp} from "../components/personal-web-app.jsx";
 import {personalWebAppReducer} from "../reducers/personal-web-app-reducer.jsx";
 
 import { createHistoryReducer } from '../functions/create-history-reducer.jsx'
-import {INITIAL_STATE,WEB_NAME,TITLE_SEPARATOR} from '../config.jsx';
+import {INITIAL_STATE} from '../config.jsx';
 
 
 import moment from 'moment';
@@ -20,13 +19,28 @@ import 'moment/locale/cs';
 
 
 
+import {createStateFromUri} from "./create-state-from-uri.js";
+
+import {createUriFromState} from "./create-uri-from-state.js";
+import {createTitleFromState} from "./create-title-from-state.js";
+
+
+
+
+
+import {PERSONAL} from '../data/personal.js';
+
+
+
+
 export class App{
 
 
-    constructor(_container,_content) {
+    constructor(_container/*,_content*/) {
 
 
-
+        //todo non pure
+        let _content = PERSONAL;
 
         //todo non pure
         _content.items = _content.items.map((item)=>{
@@ -54,26 +68,17 @@ export class App{
     init(){
 
 
+        const stateFromUri = createStateFromUri(this._content,window.location.pathname);
+
+
         this._store = createStore(
             createHistoryReducer(
                 personalWebAppReducer
-                ,(stateJS)=>{
-
-                    let titleParts = [];
-                    titleParts.push(stateJS.value.trim());
-                    titleParts.push(WEB_NAME);
-
-                    return titleParts.filter((part)=>part!=='').join(TITLE_SEPARATOR);
-
-
-                }
-                ,(stateJS)=>{
-
-                    return `/${stateJS.language}/${stateJS.opened_item_id}`;
-
-                }
+                ,createUriFromState.bind(this,this._content)
+                ,createTitleFromState.bind(this,this._content)
                 )
-            ,Immutable.fromJS(INITIAL_STATE)
+                //todo compatibility
+            ,Immutable.fromJS(stateFromUri/*INITIAL_STATE*/)
         );
 
 
@@ -107,3 +112,18 @@ export class App{
     }
 
 }
+
+
+
+/*
+import {makeRequest} from '../resources/make-request'
+export async function getData() {
+
+    let personal = JSON.parse(await makeRequest('GET','/data/personal.json'));
+    let items = JSON.parse(await makeRequest('GET','/data/items.json'));
+
+    personal.items = items;
+
+    return personal;
+
+}*/

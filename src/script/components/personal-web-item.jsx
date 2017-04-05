@@ -1,7 +1,7 @@
 
 
 import * as React from "react";
-import {translate} from "../functions/translate.jsx";
+import {translate,getMessage} from "../functions/translate.jsx";
 
 import FontAwesome from 'react-fontawesome';
 
@@ -30,7 +30,7 @@ export function PersonalWebItem(props) {
 
 
 
-            <h2>{item.name[stateJS.language]}</h2>
+            <h2>{getMessage(stateJS.language,item.name)}</h2>
             <div>{translate(stateJS.language,item.type)}</div>
 
 
@@ -43,13 +43,51 @@ export function PersonalWebItem(props) {
                 for(let key in item){
 
 
+                    let newPart = ((key,item)=> {
 
-                    parts.push(
-                        <div key={key}>
-                            <h3>{key}</h3>
-                            {item[key].toString()}
-                        </div>
-                    );
+                        switch (key) {
+
+                            case 'id':
+                            case 'name':
+                            case 'type':
+                            case 'uri':
+                            case 'interesting':
+                            case 'sendpress':
+
+
+                                return null;
+
+                            case 'gallery':
+
+                                return(
+                                    <div key={key}>
+                                        <h3>{key}</h3>
+                                        {item[key].map((image)=>
+
+                                            <img src={image}/>
+
+                                        )}
+                                    </div>
+                                );
+
+                            default:
+                                return(
+                                    <div key={key}>
+                                        <h3>{key}</h3>
+                                        {getMessage(stateJS.language,item[key])}
+                                    </div>
+                                );
+                        }
+
+
+                    })(key,item);
+
+
+
+                    if(newPart){
+                        parts.push(newPart);
+                    }
+
 
 
 

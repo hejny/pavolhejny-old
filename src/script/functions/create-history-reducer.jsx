@@ -5,7 +5,7 @@ import * as _ from "lodash";
 import {makeRequest} from '../resources/make-request.jsx';
 
 
-export function createHistoryReducer(reducer,getTitleFromState,getUriFromState){
+export function createHistoryReducer(reducer,createUriFromState,createTitleFromState){
 
 
 
@@ -17,8 +17,8 @@ export function createHistoryReducer(reducer,getTitleFromState,getUriFromState){
 
 
         const stateJS = stateWaitingForPush.toJS();
-        history.pushState(stateJS, getTitleFromState(stateJS),getUriFromState(stateJS));
-        document.title = getTitleFromState(stateJS);
+        history.pushState(stateJS, createTitleFromState(stateJS),createUriFromState(stateJS));
+        document.title = createTitleFromState(stateJS);
 
 
 

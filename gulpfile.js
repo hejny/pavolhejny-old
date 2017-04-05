@@ -127,7 +127,11 @@ gulp.task('build-js', function() {
                     exclude: [
                         path.resolve(__dirname, "node_modules"),
                     ]
-                }],
+                },{
+                    test: /\.json$/,
+                    loader: 'json'
+                }
+                ],
                 resolve: {
                     extensions: ['', '.js', '.jsx']
                 }
@@ -177,7 +181,11 @@ gulp.task('build-js-min', function() {
                     exclude: [
                         path.resolve(__dirname, "node_modules"),
                     ]
-                }],
+                },{
+                    test: /\.json$/,
+                    loader: 'json'
+                }
+                ],
                 resolve: {
                     extensions: ['', '.js', '.jsx']
                 }

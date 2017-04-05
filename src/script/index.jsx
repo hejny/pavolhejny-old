@@ -1,7 +1,7 @@
 
 
 
-import {App} from './classes/app.jsx';
+import {App} from './main/app.jsx';
 
 
 export {App};

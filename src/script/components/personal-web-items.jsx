@@ -1,7 +1,7 @@
 
 
 import * as React from "react";
-import {translate} from "../functions/translate.jsx";
+import {translate,getMessage} from "../functions/translate.jsx";
 
 import FontAwesome from 'react-fontawesome';
 
@@ -87,7 +87,7 @@ export function PersonalWebItems(props) {
                             <div className={"item "+item.type} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
 
 
-                                <h3>{item.name[stateJS.language]}</h3>
+                                <h3>{getMessage(stateJS.language,item.name)}</h3>
 
 
 
