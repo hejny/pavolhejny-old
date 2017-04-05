@@ -3,10 +3,12 @@
 
 export function createStateFromUri(webStaticContent,uri){
 
+    console.log(uri);
 
     const uriParts = uri.split('/').filter((part)=>part!=='');
 
 
+    let all=false;
     let opened_item_id;
 
 
@@ -15,11 +17,23 @@ export function createStateFromUri(webStaticContent,uri){
 
         if(uriParts[1]||false){
 
-            const opened_item = webStaticContent.items.find((item)=>{
-                if(item.id===uriParts[1])return true;
-            });
+            if(uriParts[1]!=='all'){
 
-            opened_item_id = opened_item.id;
+
+                const opened_item = webStaticContent.items.find((item)=>{
+                    if(item.id===uriParts[1])return true;
+                });
+                opened_item_id = opened_item.id;
+
+
+            }else{
+
+                all = true;
+                opened_item_id = null;
+
+            }
+
+
 
         }else{
             opened_item_id = null;
@@ -42,9 +56,10 @@ export function createStateFromUri(webStaticContent,uri){
         language: uriParts[0],
 
 
-        filters: {
+        all: all,
+        /*filters: {
             "interesting": true
-        },
+        },*/
 
 
         opened_item_id: opened_item_id

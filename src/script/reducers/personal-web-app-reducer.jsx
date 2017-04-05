@@ -50,14 +50,22 @@ function personalWebAppReducerCore(state,action){
 
             return state.set('value',action.value);
 
+        case 'SHOW_ALL':
 
-        case 'SET_FILTER':
+            return state.set('all',true);
+
+        case 'SHOW_INTERESTING':
+
+            return state.set('all',false);
+
+        /*case 'SET_FILTER':
 
             return state.setIn(['filters',action.filter],action.value);
 
         case 'DROP_FILTER':
 
             return state.deleteIn(['filters',action.filter]);
+        */
 
         case 'OPEN_ITEM':
 

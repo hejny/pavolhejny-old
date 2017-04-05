@@ -51,14 +51,13 @@ export function PersonalWebItems(props) {
             </select>*/}
 
 
-            {stateJS.filters.interesting?'':
+            {stateJS.all?
                 <button onClick={(event)=>{
                     store.dispatch({
-                        type: 'SET_FILTER',
-                        filter: 'interesting',
-                        value: true,
+                        type: 'SHOW_INTERESTING'
                     });
                 }}>Show less <FontAwesome name="caret-square-o-up" /></button>
+                :''
 
             }
 
@@ -69,7 +68,13 @@ export function PersonalWebItems(props) {
                 {items.filter((item)=> {
 
 
-                    for (let filteredKey in stateJS.filters) {
+                    if(stateJS.all){
+                        return true;
+                    }else{
+                        return item.interesting||false;
+                    }
+
+                    /*for (let filteredKey in stateJS.filters) {
                         let filteredValue = stateJS.filters[filteredKey];
 
                         if (item[filteredKey] !== filteredValue) {
@@ -77,7 +82,7 @@ export function PersonalWebItems(props) {
                         }
 
                     }
-                    return true;
+                    return true;*/
 
 
                 }).map((item)=> {
@@ -112,14 +117,13 @@ export function PersonalWebItems(props) {
 
 
 
-            {stateJS.filters.interesting?
+            {stateJS.all?'':
                 <button onClick={(event)=>{
                     store.dispatch({
-                        type: 'DROP_FILTER',
-                        filter: 'interesting',
+                        type: 'SHOW_ALL'
                     });
                 }}>Show more <FontAwesome name="caret-square-o-down" /></button>
-                :''
+
             }
 
 
