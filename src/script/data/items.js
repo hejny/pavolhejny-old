@@ -18,7 +18,8 @@ export const ITEMS =
     },
     "start": "10.2016",
     "status": "working",
-    "url": "todotable.com"
+    "url": "todotable.com",
+    fbgallery: 'ccc',
   },
 
 
@@ -82,13 +83,6 @@ export const ITEMS =
     "end": "9.2016",
     "status": "done",
     "url": "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/",
-    "gallery": [
-        '/media/gallery/logic/Screenshot from 2016-10-02 17:42:21.png',
-        '/media/gallery/logic/Screenshot from 2016-10-02 17:44:04.png',
-        '/media/gallery/logic/Screenshot from 2016-10-02 17:45:01.png',
-        '/media/gallery/logic/Screenshot from 2016-10-02 17:46:36.png',
-        '/media/gallery/logic/Screenshot from 2016-10-02 17:46:50.png',
-    ]
   },
 
 

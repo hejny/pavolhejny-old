@@ -7,6 +7,7 @@ import FontAwesome from 'react-fontawesome';
 
 
 import {PersonalWebItemTalk} from './personal-web-item-talk.jsx';
+import {FBGallery} from './fb-gallery.jsx';
 
 
 
@@ -57,17 +58,10 @@ export function PersonalWebItem(props) {
 
                                 return null;
 
-                            case 'gallery':
+                            case 'fbgallery':
 
                                 return(
-                                    <div key={key}>
-                                        <h3>{key}</h3>
-                                        {item[key].map((image)=>
-
-                                            <img src={image}/>
-
-                                        )}
-                                    </div>
+                                    <FBGallery store={store} fb_gallery_id={'10205480360514522'}/>
                                 );
 
                             default:

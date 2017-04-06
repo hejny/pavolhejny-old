@@ -1,6 +1,6 @@
 
 
-export function makeRequest (method:string, url:string, data?:string, headers?={}) {
+export function makeRequest (method, url, data={}, headers={}) {
 
 
     return new Promise(function (resolve, reject) {
