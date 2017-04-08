@@ -5,6 +5,7 @@ import * as React from "react";
 
 import {translate,getMessage} from "../functions/translate.jsx";
 import {makeRequest} from "../resources/make-request.jsx";
+import {Loading} from "./loading.jsx";
 
 
 /*
@@ -32,10 +33,17 @@ export class FBGallery extends React.Component {
 
         makeRequest('GET',url).then((response)=>{
 
-            response = JSON.parse(response);
-            this.setState({
-                data: response.data
-            });
+
+            setTimeout(()=>{
+
+                response = JSON.parse(response);
+                this.setState({
+                    data: response.data
+                });
+
+            },0);
+
+
 
         });
 
@@ -50,9 +58,11 @@ export class FBGallery extends React.Component {
         return (
             <div className="fb-gallery">
 
+
+
                 <ul>
                 {!this.state.data?
-                    'pending'
+                    <Loading/>
                     :this.state.data.map(picture=>{
 
 
@@ -74,7 +84,7 @@ export class FBGallery extends React.Component {
 
                 }).map(picture=>
                     <a key={picture.id} href={picture.link} target="_blank">
-                        <li>
+                        <li className="item">
                             <img src={picture.best_image.source}/>
                         </li>
                     </a>

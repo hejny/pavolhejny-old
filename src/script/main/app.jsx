@@ -94,6 +94,16 @@ export class App{
         this._store.subscribe(this.render.bind(this));
 
 
+
+
+
+        /*window.addEventListener("scroll", ()=>{
+            this._store.dispatch({type:'CHANGE_SCROLL',scroll: window.scrollY});
+        });*/
+
+
+
+
     }
 
     render(){
@@ -107,6 +117,8 @@ export class App{
             <PersonalWebApp store={this._store} content={this._content}/>,
             this._container
         );
+
+        //window.scroll(0, stateJS.scroll||0);
 
 
     }

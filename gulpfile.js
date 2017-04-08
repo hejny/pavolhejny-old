@@ -106,7 +106,7 @@ gulp.task('build-js', function() {
 
 
             entry: {
-                todotable: "./src/script/index.jsx"
+                personal_web: "./src/script/index.jsx"
             },
             output: {
                 filename: "personal-web.js",

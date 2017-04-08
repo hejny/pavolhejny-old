@@ -4,15 +4,22 @@
 .about {
 
   //padding-top: 10vh;
+  //border: 1px dashed red;
 
   .profile {
+
+    //border: 1px dashed red;
 
     display: inline-block;
     text-align: center;
 
     .avatar {
 
-      display: inline-block;
+      //border: 1px dashed red;
+
+      display: block;
+      margin: auto;
+      margin-bottom: 10px;
 
       width: 150px;
       max-width: 80%;
@@ -23,19 +30,24 @@
     }
 
     .name {
-      display: inline-block;
+
+      //border: 1px dashed red;
+
+      display: block;
       text-decoration: none;
       font-size: 2em;
-      margin: 10px;
+      margin: auto;
 
     }
 
     .subname {
 
-      display: inline-block;
+      //border: 1px dashed red;
+
+      display: block;
 
       font-size: 1.4em;
-
+      margin: auto;
       margin-bottom: 20px;
 
     }

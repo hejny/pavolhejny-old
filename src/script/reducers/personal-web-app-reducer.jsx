@@ -46,9 +46,9 @@ function personalWebAppReducerCore(state,action){
             return state.set('language',action.language);
 
 
-        case 'CHANGE_VALUE':
+        case 'CHANGE_SCROLL':
 
-            return state.set('value',action.value);
+            return state.set('scroll',action.scroll);
 
         case 'SHOW_ALL':
 

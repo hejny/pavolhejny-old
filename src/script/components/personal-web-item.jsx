@@ -31,8 +31,8 @@ export function PersonalWebItem(props) {
 
 
 
-            <h2>{getMessage(stateJS.language,item.name)}</h2>
-            <div>{translate(stateJS.language,item.type)}</div>
+            <h1>{getMessage(stateJS.language,item.name)}</h1>
+            {/*<div>{translate(stateJS.language,item.type)}</div>*/}
 
 
 
@@ -44,37 +44,55 @@ export function PersonalWebItem(props) {
                 for(let key in item){
 
 
-                    let newPart = ((key,item)=> {
+                    let newPart = ((key,value)=> {
 
                         switch (key) {
 
-                            case 'id':
-                            case 'name':
-                            case 'type':
-                            case 'uri':
-                            case 'interesting':
-                            case 'sendpress':
+
+                            case 'status':
+
+                                return(
+                                    <div className={["status",value].join(' ')}>{translate(stateJS.language,value)}</div>
+                                );
 
 
-                                return null;
+
+                            case 'description':
+
+                                return(
+                                    <p>{getMessage(stateJS.language,value)}</p>
+                                );
+
 
                             case 'fbgallery':
 
+
                                 return(
-                                    <FBGallery store={store} fb_gallery_id={'10205480360514522'}/>
+                                    <FBGallery store={store} fb_gallery_id={value}/>
                                 );
 
+
+
+
+
+                            /*case 'id':
+                             case 'name':
+                             case 'type':
+                             case 'uri':
+                             case 'interesting':
+                             case 'sendpress':*/
                             default:
-                                return(
+                                return null;
+                                {/*return(
                                     <div key={key}>
                                         <h3>{key}</h3>
                                         {getMessage(stateJS.language,item[key])}
                                     </div>
-                                );
+                                );*/}
                         }
 
 
-                    })(key,item);
+                    })(key,item[key]);
 
 
 
@@ -98,7 +116,7 @@ export function PersonalWebItem(props) {
 
 
 
-            {(()=>{
+            {/*{(()=>{
                 switch(item.type){
 
                     case 'TALK':
@@ -107,7 +125,7 @@ export function PersonalWebItem(props) {
                         return "Unknown type"
                 }
 
-            })()}
+            })()}*/}
 
 
 

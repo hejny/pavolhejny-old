@@ -71,6 +71,18 @@ button, .button, input[type="submit"] {
 
 
 
+.status{
+  border: 1px dashed red;
+
+  display: inline-block;
+  float: right;
+}
+
+
+
+
+
+
 @import "personal-web";
 @import "about";
 @import "fb-gallery";
