@@ -62,39 +62,79 @@ export class FBGallery extends React.Component {
         const stateJS = this.props.store.getState().toJS();
 
 
+
+        let openedPicture = null;
+        let previousPicture = null;
+        let nextPicture = null;
+
+
+        if(stateJS.opened_image_id){
+            openedPicture = this.state.data.find((picture)=>(stateJS.opened_image_id===picture.id));
+
+            const previousPictureIndex = this.state.data.indexOf(openedPicture)-1;
+            const nextPictureIndex = this.state.data.indexOf(openedPicture)+1;
+
+
+            if(previousPictureIndex>=0){
+                previousPicture = this.state.data[previousPictureIndex];
+            }
+
+            if(nextPictureIndex<=this.state.data.length-1){
+                nextPicture = this.state.data[nextPictureIndex];
+            }
+
+        }
+
+
+
         return (
             <div className="fb-gallery">
 
 
 
                 {stateJS.opened_image_id?(
-                    <div className="popup">
+                    <div className="popup" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
 
 
 
-                        <div className="content">
+                        <div className="content" onClick={(event)=>event.stopPropagation()}>
 
 
-                            <div className="previous">
-                                <FontAwesome name="chevron-right" />
-                            </div>
-                            <div className="next">
-                                <FontAwesome name="chevron-left" />
-                            </div>
+
+
+                            {previousPicture?
+                                <div className="previous" onClick={()=>this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:previousPicture.id})}>
+                                    <FontAwesome name="chevron-left" />
+                                </div>
+                                :''}
+
+
+                            <img src={openedPicture.images[0].source} onClick={()=>{
+                                if(nextPicture){
+                                    this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id});
+                                }else{
+                                    this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'});
+                                }
+
+                            }}/>
+
+
+
+                            {nextPicture?
+                                <div className="next">
+                                    <FontAwesome name="chevron-right" onClick={()=>this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id})}/>
+                                </div>
+                                :''}
+
+
                             <div className="close" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
                                 <FontAwesome name="times-circle" />
                             </div>
 
 
-                            {(()=>{
 
 
-                                const picture = this.state.data.find((picture)=>(stateJS.opened_image_id===picture.id));
 
-
-                                return  <img src={picture.images[0].source}/>;
-
-                            })()}
 
                         </div>
 

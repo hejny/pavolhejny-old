@@ -66,10 +66,12 @@ $size: 150px;
 
     position: fixed;
     top:0;
+    bottom:0;
     left:0;
     right:0;
-    bottom:0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.61);
+
+
 
 
 
@@ -77,13 +79,31 @@ $size: 150px;
 
     .content{
 
+      display: inline-block;
+      width: 50%;
+
+
+      margin-top: 50px;
+
 
       border: 1px dashed red;
 
-      img{
-        max-width: 80%;
-        max-height: 80%;
+      .previous{
+        display: block;
+        position: relative;
+        top: 50%
+        //vertical-align: 50%;
       }
+      img{
+        display: inline-block;
+        width: 90%;
+        //max-height: 80%;
+      }
+      .next{
+        display: inline-block;
+      }
+
+
 
 
 
