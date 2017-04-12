@@ -37,6 +37,8 @@ export function PersonalWebItem(props) {
 
 
 
+
+
             {(()=>{
 
                 let parts = [];
@@ -49,11 +51,60 @@ export function PersonalWebItem(props) {
                         switch (key) {
 
 
-                            case 'status':
+                            case 'roles':
+
+                                return(
+                                    <div>
+
+
+                                        {translate(stateJS.language,item.status)}
+
+
+
+                                        {item.type=='PROJECT'?
+                                            <div>{item.start} &mdash; {item.end}</div>
+                                            :
+                                            <div>{moment(item.date).format('LL')}</div>
+                                        }
+
+
+
+
+
+                                        {Object.keys(value).map(function(person) {
+
+                                            let role = value[person];
+
+                                            return(
+                                                <div>
+                                                    {person}
+                                                    {role}
+                                                </div>
+                                            );
+
+                                        })}
+
+
+
+
+
+                                    </div>
+                                );
+
+                           {/* case 'status':
 
                                 return(
                                     <div className={["status",value].join(' ')}>{translate(stateJS.language,value)}</div>
+                                );*/}
+
+
+
+                            case 'url':
+
+                                return(
+                                    <a href={value} target="_blank"><button>{translate(stateJS.language,'website')}</button></a>
                                 );
+
 
 
 

@@ -75,6 +75,23 @@ function personalWebAppReducerCore(state,action){
 
             return state.set('opened_item_id',null);
 
+
+
+
+
+        case 'OPEN_GALLERY_IMAGE':
+
+            return state.set('opened_image_id',action.image);
+
+        case 'CLOSE_CURRENT_GALLERY_IMAGE':
+
+            return state.set('opened_image_id',null);
+
+
+
+
+
+
         default:
             return state
     }

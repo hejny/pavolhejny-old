@@ -15,6 +15,7 @@ export const INITIAL_STATE = {
     },
 
 
-    opened_item_id: null
+    opened_item_id: null,
+    opened_image_id: null
 
 };

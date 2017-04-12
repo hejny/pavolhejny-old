@@ -97,11 +97,7 @@ export function PersonalWebItems(props) {
 
 
 
-                                {item.type=='PROJECT'?
-                                    <div>{item.start} &mdash; {item.end}</div>
-                                    :
-                                    <div>{moment(item.date).format('LL')}</div>
-                                }
+
 
 
 

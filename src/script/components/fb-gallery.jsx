@@ -8,6 +8,8 @@ import {makeRequest} from "../resources/make-request.jsx";
 import {Loading} from "./loading.jsx";
 
 
+import FontAwesome from 'react-fontawesome';
+
 /*
 const {store, fb_gallery_id} = props;
 const stateJS = store.getState().toJS();
@@ -55,8 +57,59 @@ export class FBGallery extends React.Component {
 
 
     render() {
+
+
+        const stateJS = this.props.store.getState().toJS();
+
+
         return (
             <div className="fb-gallery">
+
+
+
+                {stateJS.opened_image_id?(
+                    <div className="popup">
+
+
+
+                        <div className="content">
+
+
+                            <div className="previous">
+                                <FontAwesome name="chevron-right" />
+                            </div>
+                            <div className="next">
+                                <FontAwesome name="chevron-left" />
+                            </div>
+                            <div className="close" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
+                                <FontAwesome name="times-circle" />
+                            </div>
+
+
+                            {(()=>{
+
+
+                                const picture = this.state.data.find((picture)=>(stateJS.opened_image_id===picture.id));
+
+
+                                return  <img src={picture.images[0].source}/>;
+
+                            })()}
+
+                        </div>
+
+
+
+
+                    </div>
+                ):''}
+
+
+
+
+
+
+
 
 
 
@@ -83,7 +136,16 @@ export class FBGallery extends React.Component {
 
 
                 }).map(picture=>
-                    <a key={picture.id} href={picture.link} target="_blank">
+                    <a
+                        onClick={(event)=>{
+                            event.preventDefault();
+
+
+                            this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:picture.id});
+
+
+                        }}
+                        key={picture.id} href={picture.link} target="_blank">
                         <li className="item">
                             <img src={picture.best_image.source}/>
                         </li>
