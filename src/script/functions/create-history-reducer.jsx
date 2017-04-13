@@ -23,7 +23,7 @@ export function createHistoryReducer(reducer,createUriFromState,createTitleFromS
 
 
 
-    },500);
+    },20);
 
 
 

@@ -5,7 +5,7 @@ export const ITEMS =
 
         {
             id: "todotable.com",
-            type: "PROJECT",
+            type: "WEB_APP",
             interesting: true,
             name: "TodoTable.com",
             description: {
@@ -24,7 +24,7 @@ export const ITEMS =
 
         {
             id: "skydreamgame.com",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: "SkyDreamGame.com",
             description: {
                 cs: "",
@@ -42,9 +42,9 @@ export const ITEMS =
 
         {
             id: "webappgames.com",
-            type: "PROJECT",
+            type: "WEB_APP",
             interesting: true,
-            name: "WebAppGames.com",
+            name: "WebAppGames",
             sendpress: {
                 url: "http://blog.webappgames.com/",
                 list: 81
@@ -65,7 +65,7 @@ export const ITEMS =
 
         {
             id: "logic",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Logic",
                 en: "Logic"
@@ -87,7 +87,7 @@ export const ITEMS =
 
         {
             id: "towns5",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Towns 5",
                 en: "Towns 5"
@@ -114,7 +114,7 @@ export const ITEMS =
 
         {
             id: "towns4",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Towns 4",
                 en: "Towns 4"
@@ -138,7 +138,7 @@ export const ITEMS =
 
         {
             id: "towns3",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Towns 3",
                 en: "Towns 3"
@@ -159,7 +159,7 @@ export const ITEMS =
 
         {
             id: "towns2",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Towns 2",
                 en: "Towns 2"
@@ -181,7 +181,7 @@ export const ITEMS =
 
         {
             id: "towns1",
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Towns 1",
                 en: "Towns 1"
@@ -208,7 +208,7 @@ export const ITEMS =
                 en: "towers"
             },
             interesting: true,
-            type: "PROJECT",
+            type: "BOARD_GAME",
             name: {
                 cs: "Věže",
                 en: "Towers"
@@ -228,9 +228,9 @@ export const ITEMS =
         },
 
 
-        {
+        /*{
             id: "logic-ti89",
-            type: "PROJECT",
+            type: "TI89_APP",
             name: {
                 cs: "Logic",
                 en: "Logic"
@@ -247,7 +247,7 @@ export const ITEMS =
             end: "6.2007",
             status: "done",
             //fbgallery: "xxx",
-        },
+        },*/
 
 
         {
@@ -256,7 +256,7 @@ export const ITEMS =
                 cs: "kunraticky-les",
                 en: "kunraticky-forest"
             },
-            type: "PROJECT",
+            type: "WEB_PAGE",
             name: {
                 cs: "Kunratický les",
                 en: "Kunratický les"
@@ -310,7 +310,7 @@ export const ITEMS =
                 cs: "3d-graf",
                 en: "3d-graph"
             },
-            type: "PROJECT",
+            type: "DESKTOP_APP",
             name: {
                 cs: "3D Graf",
                 en: "3D Graph"
@@ -337,7 +337,7 @@ export const ITEMS =
                 cs: "kresleni",
                 en: "drawing"
             },
-            type: "PROJECT",
+            type: "DESKTOP_APP",
             name: {
                 cs: "Kreslení",
                 en: "Drawing"
@@ -366,7 +366,7 @@ export const ITEMS =
                 cs: "mobilni-aplikace-avif",
                 en: "avif-mobile"
             },
-            type: "PROJECT",
+            type: "MOBILE_APP",
             interesting: true,
             name: {
                 cs: "Avif Mobile",
@@ -389,7 +389,7 @@ export const ITEMS =
 
         {
             id: "avif",
-            type: "PROJECT",
+            type: "WEB_APP",
             name: {
                 cs: "Avif",
                 en: "Avif"
@@ -413,7 +413,7 @@ export const ITEMS =
                 cs: "novy-avif",
                 en: "new-avif"
             },
-            type: "PROJECT",
+            type: "WEB_APP",
             name: {
                 cs: "Nový Avif",
                 en: "New Avif"
@@ -437,7 +437,7 @@ export const ITEMS =
                 cs: "cso-hry",
                 en: "birds-games"
             },
-            type: "PROJECT",
+            type: "WEB_GAME",
             name: {
                 cs: "Ptáci ve městech",
                 en: "Birds in cities"
@@ -462,7 +462,7 @@ export const ITEMS =
                 cs: "bezpecne-zastavky",
                 en: "safe-stops"
             },
-            type: "PROJECT",
+            type: "WEB_APP",
             name: {
                 cs: "Bezpečné zastávky",
                 en: "Safe stops"
@@ -497,7 +497,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             url: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu",
-            embed: "-\"//www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR\"",
+            embed: "https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR",
             date: "25.11.2016"
         },
 
@@ -512,7 +512,7 @@ export const ITEMS =
             },
             event: "OpenAlt",
             url: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
-            embed: "-\"//www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7\"",
+            embed: "https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7",
             date: "6.11.2016"
         },
 

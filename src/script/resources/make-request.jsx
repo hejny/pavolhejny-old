@@ -1,6 +1,19 @@
 
 
+let cache = {};
+
+
+
+
 export function makeRequest (method, url, data={}, headers={}) {
+
+
+    if(method=='GET'){
+        if(url in cache){
+            return Promise.resolve(cache[url]);
+        }
+    }
+
 
 
     return new Promise(function (resolve, reject) {
@@ -10,6 +23,7 @@ export function makeRequest (method, url, data={}, headers={}) {
             if (this.status >= 200 && this.status < 300) {
 
 
+                cache[url] = xhr.response;
                 resolve(xhr.response);
 
 

@@ -1,6 +1,14 @@
 
 
 
+const host = window.location.hostname;
+const hostParts = host.split('.');
+const tdl = hostParts[hostParts.length-1];
+const hostLanguage = tdl==='cz'?'cs':'en';
+
+
+
+
 export function createStateFromUri(webStaticContent,uri){
 
     console.log(uri);
@@ -9,7 +17,7 @@ export function createStateFromUri(webStaticContent,uri){
 
 
     let all=false;
-    let opened_item_id;
+    let opened_item_id,opened_image_id;
 
 
 
@@ -26,10 +34,22 @@ export function createStateFromUri(webStaticContent,uri){
                 opened_item_id = opened_item.id;
 
 
+
+                if(uriParts[2]||false){
+                    opened_image_id=uriParts[2];
+                }else{
+                    opened_image_id=null
+                }
+
+
+
+
+
             }else{
 
                 all = true;
                 opened_item_id = null;
+                opened_image_id=null
 
             }
 
@@ -37,6 +57,7 @@ export function createStateFromUri(webStaticContent,uri){
 
         }else{
             opened_item_id = null;
+            opened_image_id=null
         }
 
 
@@ -53,7 +74,7 @@ export function createStateFromUri(webStaticContent,uri){
 
 
     return({
-        language: uriParts[0],
+        language: uriParts[0]||hostLanguage,
 
 
         all: all,
@@ -62,7 +83,8 @@ export function createStateFromUri(webStaticContent,uri){
         },*/
 
 
-        opened_item_id: opened_item_id
+        opened_item_id,
+        opened_image_id,
 
     });
 

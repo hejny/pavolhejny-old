@@ -22,6 +22,7 @@ export class FBGallery extends React.Component {
 
     constructor(props) {
 
+        console.log('new gallery');
 
         super(props);
         this.state = {
@@ -36,14 +37,14 @@ export class FBGallery extends React.Component {
         makeRequest('GET',url).then((response)=>{
 
 
-            setTimeout(()=>{
+            setImmediate(()=>{
 
                 response = JSON.parse(response);
                 this.setState({
                     data: response.data
                 });
 
-            },0);
+            });
 
 
 
@@ -64,23 +65,24 @@ export class FBGallery extends React.Component {
 
 
         let openedPicture = null;
+        let openedPictureIndex = -1;
         let previousPicture = null;
         let nextPicture = null;
 
 
-        if(stateJS.opened_image_id){
+
+        if(this.state.data && stateJS.opened_image_id){
             openedPicture = this.state.data.find((picture)=>(stateJS.opened_image_id===picture.id));
 
-            const previousPictureIndex = this.state.data.indexOf(openedPicture)-1;
-            const nextPictureIndex = this.state.data.indexOf(openedPicture)+1;
+            openedPictureIndex = this.state.data.indexOf(openedPicture);
 
 
-            if(previousPictureIndex>=0){
-                previousPicture = this.state.data[previousPictureIndex];
+            if(openedPictureIndex-1>=0){
+                previousPicture = this.state.data[openedPictureIndex-1];
             }
 
-            if(nextPictureIndex<=this.state.data.length-1){
-                nextPicture = this.state.data[nextPictureIndex];
+            if(openedPictureIndex+1<=this.state.data.length-1){
+                nextPicture = this.state.data[openedPictureIndex+1];
             }
 
         }
@@ -91,108 +93,171 @@ export class FBGallery extends React.Component {
             <div className="fb-gallery">
 
 
-
-                {stateJS.opened_image_id?(
-                    <div className="popup" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
-
-
-
-                        <div className="content" onClick={(event)=>event.stopPropagation()}>
+                {!this.state.data ?
+                    <Loading/>
+                    :
+                    <div>
 
 
 
 
-                            {previousPicture?
-                                <div className="previous" onClick={()=>this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:previousPicture.id})}>
-                                    <FontAwesome name="chevron-left" />
+
+
+
+
+
+
+
+
+
+                        {stateJS.opened_image_id?(
+                            <div className="popup" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
+
+
+
+                                <div className="content" onClick={(event)=>event.stopPropagation()}>
+
+
+
+
+
+                                    <div className="toolbar">
+
+
+                                        <div className="previous"
+                                             style={{
+                                                 opacity: previousPicture?1:0.2,
+                                                 cursor:  previousPicture?'Pointer':'not-allowed'
+                                             }}
+                                             onClick={()=>{if(previousPicture)this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:previousPicture.id})}}>
+                                            <FontAwesome name="chevron-left" />
+                                        </div>
+
+
+
+
+                                        ({openedPictureIndex+1}/{this.state.data.length})
+
+
+
+                                        <div className="next"
+                                             style={{
+                                                 opacity: nextPicture?1:0.2,
+                                                 cursor:  nextPicture?'Pointer':'not-allowed'
+                                             }}
+                                             onClick={()=>{if(nextPicture)this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id})}}>
+                                            <FontAwesome name="chevron-right" />
+                                        </div>
+
+
+
+
+
+                                        <div className="close" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
+                                            <FontAwesome name="times-circle" />
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+                                    <img src={openedPicture.images[0].source} onClick={()=>{
+                                        if(nextPicture){
+                                            this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id});
+                                        }else{
+                                            this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'});
+                                        }
+
+                                    }}/>
+
+
+
+
+
+
+
                                 </div>
-                                :''}
-
-
-                            <img src={openedPicture.images[0].source} onClick={()=>{
-                                if(nextPicture){
-                                    this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id});
-                                }else{
-                                    this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'});
-                                }
-
-                            }}/>
 
 
 
-                            {nextPicture?
-                                <div className="next">
-                                    <FontAwesome name="chevron-right" onClick={()=>this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:nextPicture.id})}/>
-                                </div>
-                                :''}
 
-
-                            <div className="close" onClick={()=>this.props.store.dispatch({type:'CLOSE_CURRENT_GALLERY_IMAGE'})}>
-                                <FontAwesome name="times-circle" />
                             </div>
+                        ):''}
 
 
 
 
 
 
-                        </div>
+
+
+
+
+
+
+
+
+                        <ul>
+                            {this.state.data.map(picture=>{
+
+
+                            const fit_images = picture.images.filter(image=>{
+                            return (image.width>=200 && image.height>=200)
+                        });
+
+
+
+                            if(fit_images.length===0){
+                            picture.best_image = picture.images[0];
+                        }else{
+                            picture.best_image = fit_images[fit_images.length-1];
+                        }
+
+
+                            return picture;
+
+
+                        }).map(picture=>
+                            <a
+                                onClick={(event)=>{
+                                    event.preventDefault();
+
+
+                                    this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:picture.id});
+
+
+                                }}
+                                key={picture.id} href={picture.link} target="_blank">
+                                <li className="item">
+                                    <img src={picture.best_image.source}/>
+                                </li>
+                            </a>
+
+                            )}
+                        </ul>
+
+
+
+
+
+
+
+
 
 
 
 
                     </div>
-                ):''}
+                }
 
 
 
 
 
-
-
-
-
-
-                <ul>
-                {!this.state.data?
-                    <Loading/>
-                    :this.state.data.map(picture=>{
-
-
-                    const fit_images = picture.images.filter(image=>{
-                        return (image.width>=200 && image.height>=200)
-                    });
-
-
-
-                    if(fit_images.length===0){
-                        picture.best_image = picture.images[0];
-                    }else{
-                        picture.best_image = fit_images[fit_images.length-1];
-                    }
-
-
-                    return picture;
-
-
-                }).map(picture=>
-                    <a
-                        onClick={(event)=>{
-                            event.preventDefault();
-
-
-                            this.props.store.dispatch({type:'OPEN_GALLERY_IMAGE',image:picture.id});
-
-
-                        }}
-                        key={picture.id} href={picture.link} target="_blank">
-                        <li className="item">
-                            <img src={picture.best_image.source}/>
-                        </li>
-                    </a>
-                )}
-
-                </ul>
 
 
             </div>

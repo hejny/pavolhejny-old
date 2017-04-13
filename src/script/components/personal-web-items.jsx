@@ -89,12 +89,15 @@ export function PersonalWebItems(props) {
 
 
                         return (
-                            <div className={"item "+item.type} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
+                            <div className={"item "/*+item.type*/} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
 
 
                                 <h3>{getMessage(stateJS.language,item.name)}</h3>
 
 
+                                <div className={"type "+item.type} >
+                                    {translate(stateJS.language,item.type)}
+                                </div>
 
 
 

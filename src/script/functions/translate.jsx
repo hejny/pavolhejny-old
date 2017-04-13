@@ -6,6 +6,34 @@ const MESSAGES = {
         'Hello!': 'Ahoj!',
 
 
+        'PROJECT': 'Project',
+        'TALK': 'Přednáška',
+        'ARTICLE': 'Článek',
+        'WEB_APP': 'Webová aplikace',
+        'WEB_PAGE': 'Webová stránka',
+        'WEB_GAME': 'Hra na webu',
+        'BOARD_GAME': 'Desková hra',
+        'DESKTOP_APP': 'Desktopová aplikace',
+        'MOBILE_APP': 'Mobilní aplikace',
+        //'TI89_GAME': 'Hra pro kalkulačky TI89',
+
+
+
+
+
+    },
+    en:{
+        'PROJECT': 'Projekt',
+        'TALK': 'Talk',
+        'ARTICLE': 'Article',
+        'WEB_APP': 'Web app',
+        'WEB_PAGE': 'Web page',
+        'WEB_GAME': 'Web game',
+        'BOARD_GAME': 'Board game',
+        'DESKTOP_APP': 'Desktop app',
+        'MOBILE_APP': 'Mobile app',
+        //'TI89_GAME': 'Game for TI89',
+
     }
 };
 
@@ -14,7 +42,7 @@ const MESSAGES = {
 
 export function translate(language,message){
 
-    if(language!=='en'){
+    //if(language!=='en'){
 
         try{
 
@@ -22,14 +50,14 @@ export function translate(language,message){
 
         }catch(error){
 
-            return language+'/'+message;
+            return message;
+            //return language+'/'+message;
 
         }
 
-    }else{
-        return message;
-    }
-
+    //}else{
+    //    return message;
+    //}
 
 
 }

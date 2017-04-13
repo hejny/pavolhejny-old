@@ -26,7 +26,7 @@ export function PersonalWebItem(props) {
 
 
             <button onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
-                <FontAwesome name="times" /> Zpět
+                 Zpět <FontAwesome name="times" />
             </button>
 
 
@@ -51,7 +51,7 @@ export function PersonalWebItem(props) {
                         switch (key) {
 
 
-                            case 'roles':
+                            case '--roles':
 
                                 return(
                                     <div>
@@ -102,7 +102,7 @@ export function PersonalWebItem(props) {
                             case 'url':
 
                                 return(
-                                    <a href={value} target="_blank"><button>{translate(stateJS.language,'website')}</button></a>
+                                    <a href={value} target="_blank"><button>{translate(stateJS.language,'website')} <FontAwesome name="external-link" /></button></a>
                                 );
 
 
@@ -120,6 +120,15 @@ export function PersonalWebItem(props) {
 
                                 return(
                                     <FBGallery store={store} fb_gallery_id={value}/>
+                                );
+
+
+
+                            case 'embed':
+
+
+                                return(
+                                    <iframe src={value}/>
                                 );
 
 
