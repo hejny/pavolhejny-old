@@ -56,7 +56,7 @@ export function PersonalWebItems(props) {
                     store.dispatch({
                         type: 'SHOW_INTERESTING'
                     });
-                }}>Show less <FontAwesome name="caret-square-o-up" /></button>
+                }}>{translate(stateJS.language,'Show less')} <FontAwesome name="caret-square-o-up" /></button>
                 :''
 
             }
@@ -121,7 +121,7 @@ export function PersonalWebItems(props) {
                     store.dispatch({
                         type: 'SHOW_ALL'
                     });
-                }}>Show more <FontAwesome name="caret-square-o-down" /></button>
+                }}>{translate(stateJS.language,'Show more')} <FontAwesome name="caret-square-o-down" /></button>
 
             }
 

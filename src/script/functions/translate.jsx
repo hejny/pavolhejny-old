@@ -3,7 +3,9 @@
 const MESSAGES = {
     cs: {
 
-        'Hello!': 'Ahoj!',
+        'Show more': 'Zobrazit další',
+        'Show less': 'Zobrazit pouze zajímavé',
+        'Back': 'Zpět',
 
 
         'PROJECT': 'Project',

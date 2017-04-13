@@ -26,7 +26,7 @@ export function PersonalWebItem(props) {
 
 
             <button onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
-                 Zpět <FontAwesome name="times" />
+                {translate(stateJS.language,'Back')} <FontAwesome name="times" />
             </button>
 
 

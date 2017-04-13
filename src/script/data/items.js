@@ -526,7 +526,7 @@ export const ITEMS =
             },
             event: "Game Developers Session",
             url: "http://www.slideshare.net/PavolHejn/web-app-games",
-            embed: "-\"//www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u\"",
+            embed: "https//www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u",
             date: "3.11.2016"
         },
 
@@ -540,7 +540,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             url: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu",
-            embed: "-\"//www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW\"",
+            embed: "https//www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW",
             date: "24.6.2016"
         },
 
@@ -554,7 +554,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             url: "http://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu",
-            embed: "//www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b",
+            embed: "https//www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b",
             date: "27.5.2016"
         },
 
