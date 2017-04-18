@@ -30,10 +30,12 @@ export function PersonalWebApp(props) {
 
 
 
-                {stateJS.special_page?
-                    <div>
-                        Special......
-                        {stateJS.special_page}
+                {stateJS.special_page=='404'?
+                    <div className="special-page">
+
+                        {translate(stateJS.language,'Not found :(')}
+
+
                     </div>
                 :''}
 
