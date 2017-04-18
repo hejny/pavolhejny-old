@@ -30,6 +30,17 @@ export function PersonalWebApp(props) {
 
 
 
+                {stateJS.special_page?
+                    <div>
+                        Special......
+                        {stateJS.special_page}
+                    </div>
+                :''}
+
+
+
+
+
 
                 {!stateJS.opened_item_id?
                     <div>

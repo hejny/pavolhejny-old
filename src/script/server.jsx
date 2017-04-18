@@ -57,7 +57,8 @@ app.get('/*', function (req, res) {
     }catch(error){//todo catch other errors
 
         res.status(404);
-        state = createStateFromUri('/');//todo maybe special page for 404
+        state = createStateFromUri('/404');
+        //todo maybe special page for 404
 
     }
 
