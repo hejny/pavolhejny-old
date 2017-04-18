@@ -17,7 +17,7 @@ export function createStateFromUri(webStaticContent,uri){
 
 
     let all=false;
-    let opened_item_id,opened_image_id;
+    let opened_item_id,opened_image_id,special_page=null;
 
 
 
@@ -25,27 +25,35 @@ export function createStateFromUri(webStaticContent,uri){
 
         if(uriParts[1]||false){
 
-            if(uriParts[1]!=='all'){
+            if(uriParts[1]!=='all') {
 
 
-                const opened_item = webStaticContent.items.find((item)=>{
-                    if(item.id===uriParts[1])return true;
-                });
+                const opened_item = webStaticContent.items.find((item) = > {
+                        if(item.id === uriParts[1]
+            )
+                return true;
+            })
+                ;
                 opened_item_id = opened_item.id;
 
 
-
-                if(uriParts[2]||false){
-                    opened_image_id=uriParts[2];
-                }else{
-                    opened_image_id=null
+                if (uriParts[2] || false) {
+                    opened_image_id = uriParts[2];
+                } else {
+                    opened_image_id = null
                 }
 
 
+            }else
+            if(uriParts[1]!=='404'){
 
 
+                all = false;
+                opened_item_id = null;
+                opened_image_id=null;
+                special_page='404';
 
-            }else{
+            else{
 
                 all = true;
                 opened_item_id = null;
@@ -63,9 +71,10 @@ export function createStateFromUri(webStaticContent,uri){
 
     }catch(error){
 
-        console.warn(error);
-        opened_item_id = null;
+        //console.warn(error);
+        //opened_item_id = null;
 
+        throw new Error('Not found!');//todo semantic error types
 
     }
 
@@ -85,6 +94,7 @@ export function createStateFromUri(webStaticContent,uri){
 
         opened_item_id,
         opened_image_id,
+        special_page: special_page,
 
     });
 

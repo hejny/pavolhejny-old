@@ -30,6 +30,19 @@ export function PersonalWebApp(props) {
 
 
 
+                {stateJS.special_page=='404'?
+                    <div className="special-page">
+
+                        {translate(stateJS.language,'Not found :(')}
+
+
+                    </div>
+                :''}
+
+
+
+
+
 
                 {!stateJS.opened_item_id?
                     <div>
@@ -80,13 +93,22 @@ export function PersonalWebApp(props) {
 
 
 
+                <div>
+                    Nahoru
+                </div>
 
-                {/*<div>
+
+                <footer>
+
                     &copy; Pavol Hejný
-                </div>*/}
 
 
-
+                    <ul>
+                        <li>Kontakt</li>
+                        <li>...</li>
+                        <li>Zdrojoý kód</li>
+                    </ul>
+                </footer>
 
 
 

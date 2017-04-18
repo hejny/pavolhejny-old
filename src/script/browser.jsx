@@ -1,0 +1,69 @@
+import * as ReactDOM from "react-dom";
+
+
+import {App} from './main/personal-web-app.jsx';
+import {PERSONAL} from './data/personal.js';
+
+
+import {createStateFromUri} from "./main/create-state-from-uri.js";
+import {createUriFromState} from "./main/create-uri-from-state.js";
+import {createTitleFromState} from "./main/create-title-from-state.js";
+
+
+
+
+
+
+
+window.addEventListener('load', function() {
+
+
+    const root = document.getElementById('root');
+    const personalWebApp = new PersonalWebApp(PERSONAL);
+
+
+
+    personalWebApp.setState(createStateFromUri(window.location.pathname));
+
+
+
+    window.onpopstate = (event) => {
+        personalWebApp.setState(event.state);
+    };
+
+
+
+    personalWebApp.subscribe(()=>{
+
+
+        //todo throttle
+        const url = personalWebApp.getStateUrl();
+        const title = personalWebApp.getStateTitle();
+        history.pushState(state,title,url);
+
+
+        //------
+
+        console.log('Render...');
+        const state = personalWebApp.getState();
+        ReactDOM.render(
+            personalWebApp.createJSX(),
+            root
+        );
+
+
+    });
+
+
+
+
+
+
+
+
+
+}, true);
+
+
+
+

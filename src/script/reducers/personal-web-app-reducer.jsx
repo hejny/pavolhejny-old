@@ -37,10 +37,10 @@ function personalWebAppReducerCore(state,action){
     switch (action.type) {
 
 
-        case 'CHANGE_STATE':
+        /*case 'CHANGE_STATE':
 
             return action.state;
-
+        */
         case 'CHANGE_LANGUAGE':
 
             return state.set('language',action.language);
