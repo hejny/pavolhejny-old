@@ -106,7 +106,7 @@ gulp.task('build-js', function() {
 
 
             entry: {
-                client: "./src/script/index.jsx",
+                browser: "./src/script/browser.jsx",
                 server: "./src/script/server.jsx"
             },
             output: {
@@ -160,7 +160,7 @@ gulp.task('build-js-min', function() {
 
 
             entry: {
-                client: "./src/script/index.jsx"
+                browser: "./src/script/browser.jsx"
             },
             output: {
                 filename: "[name].min.js",
