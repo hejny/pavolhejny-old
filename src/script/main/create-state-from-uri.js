@@ -63,9 +63,10 @@ export function createStateFromUri(webStaticContent,uri){
 
     }catch(error){
 
-        console.warn(error);
-        opened_item_id = null;
+        //console.warn(error);
+        //opened_item_id = null;
 
+        throw new Error('Not found!');//todo semantic error types
 
     }
 

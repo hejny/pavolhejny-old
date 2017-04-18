@@ -106,13 +106,14 @@ gulp.task('build-js', function() {
 
 
             entry: {
-                personal_web: "./src/script/index.jsx"
+                client: "./src/script/index.jsx",
+                server: "./src/script/server.jsx"
             },
             output: {
-                filename: "personal-web.js",
+                filename: "[name].js",
                 path: __dirname + "/dist",
-                libraryTarget: 'var',
-                library: 'PersonalWeb'
+                //libraryTarget: 'var',
+                //library: 'PersonalWeb'
             },
 
             devtool: "source-map",
@@ -146,7 +147,6 @@ gulp.task('build-js', function() {
 
 
 
-
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
@@ -160,13 +160,13 @@ gulp.task('build-js-min', function() {
 
 
             entry: {
-                todotable: "./src/script/index.jsx"
+                client: "./src/script/index.jsx"
             },
             output: {
-                filename: "personal-web.min.js",
+                filename: "[name].min.js",
                 path: __dirname + "/dist",
-                libraryTarget: 'var',
-                library: 'PersonalWeb'
+                //libraryTarget: 'var',
+                //library: 'PersonalWeb'
             },
 
             devtool: "source-map",
