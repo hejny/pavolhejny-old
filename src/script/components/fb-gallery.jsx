@@ -31,7 +31,7 @@ export class FBGallery extends React.Component {
 
 
 
-        const url = `http://localhost/pavolhejny/gallery.php?id=${props.fb_gallery_id}`;
+        const url = `/gallery.php?id=${props.fb_gallery_id}`;
 
 
         makeRequest('GET',url).then((response)=>{
