@@ -28,7 +28,7 @@ export function createStateFromUri(webStaticContent,uri){
             if(uriParts[1]!=='all') {
 
 
-                const opened_item = webStaticContent.items.find((item) = > {
+                const opened_item = webStaticContent.items.find((item) => {
                         if(item.id === uriParts[1]
             )
                 return true;
@@ -45,15 +45,15 @@ export function createStateFromUri(webStaticContent,uri){
 
 
             }else
-            if(uriParts[1]!=='404'){
+            if(uriParts[1]!=='404') {
 
 
                 all = false;
                 opened_item_id = null;
-                opened_image_id=null;
-                special_page='404';
+                opened_image_id = null;
+                special_page = '404';
 
-            else{
+            }else{
 
                 all = true;
                 opened_item_id = null;

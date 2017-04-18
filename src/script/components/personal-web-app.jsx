@@ -9,7 +9,7 @@ import {PersonalWebItems} from "./personal-web-items.jsx";
 
 
 
-export function PersonalWebApp(props) {
+export function PersonalWebAppComponent(props) {
 
     const {store, content} = props;
     const stateJS = store.getState().toJS();

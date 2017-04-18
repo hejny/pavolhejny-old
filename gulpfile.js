@@ -107,7 +107,7 @@ gulp.task('build-js', function() {
 
             entry: {
                 browser: "./src/script/browser.jsx",
-                server: "./src/script/server.jsx"
+                //server: "./src/script/server.jsx"
             },
             output: {
                 filename: "[name].js",
@@ -116,6 +116,7 @@ gulp.task('build-js', function() {
                 //library: 'PersonalWeb'
             },
 
+            //target: 'node',
             devtool: "source-map",
 
             module: {
@@ -160,7 +161,8 @@ gulp.task('build-js-min', function() {
 
 
             entry: {
-                browser: "./src/script/browser.jsx"
+                browser: "./src/script/browser.jsx",
+                server: "./src/script/server.jsx"
             },
             output: {
                 filename: "[name].min.js",
@@ -168,6 +170,8 @@ gulp.task('build-js-min', function() {
                 //libraryTarget: 'var',
                 //library: 'PersonalWeb'
             },
+
+            target: 'node',
 
             devtool: "source-map",
 

@@ -28,6 +28,7 @@ import {App} from './main/personal-web-app.jsx';
 import {PERSONAL} from './data/personal.js';
 
 
+import {PersonalWebApp} from "./main/personal-web-app.jsx";
 import {createStateFromUri} from "./main/create-state-from-uri.js";
 //import {createUriFromState} from "./main/create-uri-from-state.js";
 //import {createTitleFromState} from "./main/create-title-from-state.js";

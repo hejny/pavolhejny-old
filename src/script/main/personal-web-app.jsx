@@ -6,11 +6,11 @@ import * as Immutable from "immutable";
 import { createStore } from 'redux';
 
 
-import {PersonalWebApp} from "../components/personal-web-app.jsx";
+import {PersonalWebAppComponent} from "../components/personal-web-app.jsx";
 import {personalWebAppReducer} from "../reducers/personal-web-app-reducer.jsx";
 
 //import { createHistoryReducer } from '../functions/create-history-reducer.jsx'
-import {INITIAL_STATE} from '../config.jsx';
+//import {INITIAL_STATE} from '../config.jsx';
 
 
 import moment from 'moment';
@@ -42,7 +42,6 @@ export class PersonalWebApp{
 
 
 
-        this._container = _container;
         this._content = content;
         this._subscribers = [];
         this._stateInitialized = false;
@@ -69,8 +68,8 @@ export class PersonalWebApp{
 
 
     getState(){
-        this._this._stateInitializedCheck();
-        return this._store.getState.toJS();
+        this._stateInitializedCheck();
+        return this._store.getState().toJS();
     }
 
 
@@ -87,11 +86,11 @@ export class PersonalWebApp{
 
     createJSX(){
 
-        this._this._stateInitializedCheck();
+        this._stateInitializedCheck();
         const stateJS = this._store.getState().toJS();
         moment.locale(stateJS.language);
 
-        return <PersonalWebApp store={this._store} content={this._content}/>;
+        return <PersonalWebAppComponent store={this._store} content={this._content}/>;
     }
 
 }
