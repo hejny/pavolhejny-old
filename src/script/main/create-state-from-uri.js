@@ -1,15 +1,10 @@
 
 
 
-const host = window.location.hostname;
-const hostParts = host.split('.');
-const tdl = hostParts[hostParts.length-1];
-const hostLanguage = tdl==='cz'?'cs':'en';
 
 
 
-
-export function createStateFromUri(webStaticContent,uri){
+export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
     console.log(uri);
 
@@ -17,7 +12,7 @@ export function createStateFromUri(webStaticContent,uri){
 
 
     let all=false;
-    let opened_item_id,opened_image_id,special_page=null;
+    let opened_item_id,opened_image_id,httpStatus=200;
 
 
 
@@ -44,15 +39,6 @@ export function createStateFromUri(webStaticContent,uri){
                 }
 
 
-            }else
-            if(uriParts[1]!=='404') {
-
-
-                all = false;
-                opened_item_id = null;
-                opened_image_id = null;
-                special_page = '404';
-
             }else{
 
                 all = true;
@@ -72,18 +58,23 @@ export function createStateFromUri(webStaticContent,uri){
     }catch(error){
 
         //console.warn(error);
-        //opened_item_id = null;
-
-        throw new Error('Not found!');//todo semantic error types
+        httpStatus = 404;
+        opened_item_id = null;
 
     }
 
 
 
 
+    let language = uriParts[0]||defaultLanguae;
+    if(['cs','en']/*todo const*/.indexOf(language)===-1){
+        language=defaultLanguae;
+        httpStatus = 404;
+    }
+
 
     return({
-        language: uriParts[0]||hostLanguage,
+        language: language,
 
 
         all: all,
@@ -94,7 +85,7 @@ export function createStateFromUri(webStaticContent,uri){
 
         opened_item_id,
         opened_image_id,
-        special_page: special_page,
+        httpStatus: httpStatus,
 
     });
 

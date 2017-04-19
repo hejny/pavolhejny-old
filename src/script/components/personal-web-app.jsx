@@ -30,7 +30,7 @@ export function PersonalWebAppComponent(props) {
 
 
 
-                {stateJS.special_page=='404'?
+                {stateJS.httpStatus===404?
                     <div className="special-page">
 
                         {translate(stateJS.language,'Not found :(')}

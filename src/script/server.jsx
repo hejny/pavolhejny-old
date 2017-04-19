@@ -1,14 +1,13 @@
+
+
+//import * as path from 'path';
 import express from 'express';
 var app = express();
 
 
-
-
-
-
 //Static content
-app.use('/media', express.static(path.join(__dirname, '../media/')))
-app.use('/dist', express.static(path.join(__dirname, '../dist/')))
+app.use('/media', express.static('../media/'));
+app.use('/dist', express.static('../dist/'));
 //todo favicon
 
 
@@ -30,45 +29,67 @@ import {PERSONAL} from './data/personal.js';
 
 import {PersonalWebApp} from "./main/personal-web-app.jsx";
 import {createStateFromUri} from "./main/create-state-from-uri.js";
-//import {createUriFromState} from "./main/create-uri-from-state.js";
-//import {createTitleFromState} from "./main/create-title-from-state.js";
+import {createUriFromState} from "./main/create-uri-from-state.js";
+import {createTitleFromState} from "./main/create-title-from-state.js";
 
 
 import * as fs from 'fs';
-const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+import * as html from "html";
+//const indexHtml = fs.readFileSync(path.join(__dirname, '..','index.html'), 'utf8');
+const indexHtml = fs.readFileSync('../index.html', 'utf8');
 
 
 
 app.get('/*', function (req, res) {
 
 
-    const root = document.getElementById('root');
+    //-----------------Get language from domain name
+    const host = req.host;
+    const hostParts = host.split('.');
+    const tdl = hostParts[hostParts.length-1];
+    const defaultLanguae = tdl==='cz'?'cs':'en';
+    //-----------------
+
+
+
     const personalWebApp = new PersonalWebApp(PERSONAL);
 
     let state;
 
-    try{
 
-        state = createStateFromUri(req.path);
-        res.status(200);
+    state = createStateFromUri(PERSONAL,req.path,defaultLanguae);
 
-    }catch(error){//todo catch other errors
 
-        res.status(404);
-        state = createStateFromUri('/404');
-        //todo maybe special page for 404
+    if(state.httpStatus===200) {
 
+        const normalizedUri = createUriFromState(PERSONAL,state);
+
+        if (req.path !== normalizedUri) {
+            res.redirect(normalizedUri);
+            return;
+        }
     }
+
+
+    res.status(state.httpStatus);
+
 
 
 
     personalWebApp.setState(state);
+
+    const title = createTitleFromState(PERSONAL,state);
     const rootHtml = ReactDOMServer.renderToStaticMarkup(personalWebApp.createJSX());
 
 
-    const html = indexHtml.split('<!--root-->').join(rootHtml);
+    const outHtml = indexHtml
+        .split('<!--title-->').join(title)
+        .split('<!--root-->').join(rootHtml)
+        ;
+    const outHtmlPretty = html.prettyPrint(outHtml, {indent_size: 4});
 
-    res.send(html);
+
+    res.send(outHtmlPretty);
 
 });
 

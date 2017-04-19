@@ -1,30 +1,43 @@
-import * as Immutable from "immutable";
+//import * as Immutable from "immutable";
+
+
+
+const isBrowser=new Function("try {return this===window;}catch(e){ return false;}");
 
 
 
 export function personalWebAppReducer(oldState,action){
 
-    console.groupCollapsed(`==[${action.type}]==>`);
-    console.log(oldState.toJS());
-    console.log('||');
-    console.log('||');
+    if(isBrowser()){
+
+        console.groupCollapsed(`==[${action.type}]==>`);
+        console.log(oldState.toJS());
+        console.log('||');
+        console.log('||');
 
 
-    console.log(`[${action.type}]`,action);
-    const newState = personalWebAppReducerCore(oldState,action);
+        console.log(`[${action.type}]`,action);
+        const newState = personalWebAppReducerCore(oldState,action);
 
-    console.log('||');
-    console.log('||');
-    console.log('\\/');
-    console.log(newState.toJS());
-    if(oldState.equals(newState)){
-        console.log('==>States are equal');
+        console.log('||');
+        console.log('||');
+        console.log('\\/');
+        console.log(newState.toJS());
+        if(oldState.equals(newState)){
+            console.log('==>States are equal');
+        }
+
+        console.groupEnd();
+
+        return newState;
+
+
+    }else{
+
+        const newState = personalWebAppReducerCore(oldState,action);
+        return newState;
+
     }
-    console.groupEnd();
-
-
-
-    return newState;
 
 }
 

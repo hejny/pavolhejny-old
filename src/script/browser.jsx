@@ -19,11 +19,23 @@ import {createTitleFromState} from "./main/create-title-from-state.js";
 window.addEventListener('load', function() {
 
 
+
+    //-----------------Get language from domain name
+    const host = window.location.hostname;
+    const hostParts = host.split('.');
+    const tdl = hostParts[hostParts.length-1];
+    const defaultLanguae = tdl==='cz'?'cs':'en';
+    //-----------------
+
+
+
+
+
     const root = document.getElementById('root');
     const personalWebApp = new PersonalWebApp(PERSONAL);
 
 
-    personalWebApp.setState(createStateFromUri(PERSONAL,window.location.pathname));
+    personalWebApp.setState(createStateFromUri(PERSONAL,window.location.pathname,defaultLanguae));
 
 
 

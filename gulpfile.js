@@ -17,7 +17,7 @@ gulp.task('default',['build']);
 
 
 
-gulp.task('build', ['build-js-min','build-css']);
+gulp.task('build', ['build-js-browser-min','build-js-server','build-css']);
 
 
 
@@ -27,7 +27,7 @@ gulp.task('browser-sync', function() {
     runSequence(
         'browser-sync-init'
         ,'build-css'
-        ,'browser-sync-build-js'
+        ,'browser-sync-build-js-browser'
         ,'browser-sync-watch');
 
 });
@@ -59,15 +59,15 @@ gulp.task('browser-sync-init', function (done) {
 
 });
 gulp.task('browser-sync-watch', function (done) {
-    gulp.watch("./src/script/**/*.js",  ['browser-sync-build-js']);
-    gulp.watch("./src/script/**/*.jsx", ['browser-sync-build-js']);
+    gulp.watch("./src/script/**/*.js",  ['browser-sync-build-js-browser']);
+    gulp.watch("./src/script/**/*.jsx", ['browser-sync-build-js-browser']);
     gulp.watch("./src/style/**/*.scss", ['build-css']);
     gulp.watch("./*.html").on('change', browserSync.reload);
     done();
 });
 
 
-gulp.task('browser-sync-build-js', ['build-js'], function (done) {
+gulp.task('browser-sync-build-js-browser', ['build-js-browser'], function (done) {
     browserSync.reload();
     done();
 });
@@ -96,7 +96,7 @@ const gulpWebpack = require('webpack-stream');
 const path = require('path');
 
 
-gulp.task('build-js', function() {
+gulp.task('build-js-browser', function() {
 
 
 
@@ -151,7 +151,7 @@ gulp.task('build-js', function() {
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
-gulp.task('build-js-min', function() {
+gulp.task('build-js-browser-min', function() {
 
 
 
@@ -162,6 +162,76 @@ gulp.task('build-js-min', function() {
 
             entry: {
                 browser: "./src/script/browser.jsx",
+                //server: "./src/script/server.jsx"
+            },
+            output: {
+                filename: "[name].min.js",
+                path: __dirname + "/dist",
+                //libraryTarget: 'var',
+                //library: 'PersonalWeb'
+            },
+
+            devtool: "source-map",
+
+            module: {
+                loaders: [{
+                    test: /\.jsx?$/,
+                    loaders: ['babel?presets[]=es2015&presets[]=react'],
+                    include: [
+                        path.resolve(__dirname, "./src/script"),
+                    ],
+                    exclude: [
+                        path.resolve(__dirname, "node_modules"),
+                    ]
+                },{
+                    test: /\.json$/,
+                    loader: 'json'
+                }
+                ],
+                resolve: {
+                    extensions: ['', '.js', '.jsx']
+                }
+            },
+
+
+
+            /**/
+            plugins:[
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        NODE_ENV: JSON.stringify('production')
+                    }
+                }),
+
+
+                new UglifyJSPlugin({
+                    sourceMap: true
+                })
+            ]/**/
+
+        }))
+        .pipe(gulp.dest('./dist/'));
+});
+
+
+
+
+
+
+
+
+
+gulp.task('build-js-server', function() {
+
+
+
+
+    return gulp.src('./src/*')
+        .pipe(gulpWebpack({
+
+
+            entry: {
+                //browser: "./src/script/browser.jsx",
                 server: "./src/script/server.jsx"
             },
             output: {
@@ -197,34 +267,22 @@ gulp.task('build-js-min', function() {
 
 
 
+            /*/
+             plugins:[
+             new webpack.DefinePlugin({
+             'process.env': {
+             NODE_ENV: JSON.stringify('production')
+             }
+             }),
 
-            plugins:[
-                new webpack.DefinePlugin({
-                    'process.env': {
-                        NODE_ENV: JSON.stringify('production')
-                    }
-                }),
 
-
-                new UglifyJSPlugin({
-                    sourceMap: true
-                })/*,
-                 require('rollup-plugin-replace')({
-                 'process.env.NODE_ENV': JSON.stringify('production')
-                 }),
-                 require('rollup-plugin-commonjs')()*/
-            ]
+             new UglifyJSPlugin({
+             sourceMap: true
+             })
+             ]/**/
 
         }))
         .pipe(gulp.dest('./dist/'));
 });
-
-
-
-
-
-
-
-
 
 
