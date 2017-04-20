@@ -65,7 +65,7 @@ app.get('/*', function (req, res) {
         const normalizedUri = createUriFromState(PERSONAL,state);
 
         if (req.path !== normalizedUri) {
-            res.redirect(normalizedUri);
+            res.redirect(301,normalizedUri);
             return;
         }
     }
@@ -85,6 +85,7 @@ app.get('/*', function (req, res) {
     const outHtml = indexHtml
         .split('<!--title-->').join(title)
         .split('<!--root-->').join(rootHtml)
+        .split('browser.js').join('browser.min.js')
         ;
     const outHtmlPretty = html.prettyPrint(outHtml, {indent_size: 4});
 

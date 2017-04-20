@@ -30,14 +30,7 @@ export function PersonalWebAppComponent(props) {
 
 
 
-                {stateJS.httpStatus===404?
-                    <div className="special-page">
 
-                        {translate(stateJS.language,'Not found :(')}
-
-
-                    </div>
-                :''}
 
 
 
@@ -78,6 +71,18 @@ export function PersonalWebAppComponent(props) {
 
 
 
+
+
+                        {/*{stateJS.httpStatus===404?
+                            <div className="message warning">
+                                {translate(stateJS.language,'Not found :(')}
+                            </div>
+                            :''}*/}
+
+
+
+
+
                         <PersonalWebItems store={store} items={content.items}/>
 
 
@@ -93,22 +98,23 @@ export function PersonalWebAppComponent(props) {
 
 
 
-                <div>
+               {/* <div>
                     Nahoru
-                </div>
+                </div>*/}
 
 
-                <footer>
+                {/*<footer>
 
-                    &copy; Pavol Hejný
+
 
 
                     <ul>
+                        <li>&copy; Pavol Hejný</li>
                         <li>Kontakt</li>
                         <li>...</li>
                         <li>Zdrojoý kód</li>
                     </ul>
-                </footer>
+                </footer>*/}
 
 
 

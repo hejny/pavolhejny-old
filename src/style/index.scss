@@ -57,7 +57,7 @@ button, .button, input[type="submit"] {
 .languages{
 
 
-  z-index: 10010;
+  z-index: 9000;
 
   position: fixed;
   top: 0;
@@ -69,6 +69,24 @@ button, .button, input[type="submit"] {
   }
 
 }
+
+
+.logo{
+  z-index: 9000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  font-size: 1.2em;
+  img{
+    margin: 2px;
+    margin-right: 7px;
+    vertical-align: middle;
+    border-radius: 100px;
+  }
+}
+
+
 
 
 

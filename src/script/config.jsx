@@ -1,5 +1,8 @@
 
 
+export const GALLERY_URL = 'http://pavolhejny.com/gallery.php';
+
+
 export const WEB_NAME = 'Pavol Hejný';
 export const TITLE_SEPARATOR = ' | ';
 

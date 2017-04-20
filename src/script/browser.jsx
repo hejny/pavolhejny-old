@@ -53,13 +53,14 @@ window.addEventListener('load', function() {
         //todo throttle
         const url =   createUriFromState(  PERSONAL,state);
         const title = createTitleFromState(PERSONAL,state);
+        document.title = title;
         history.pushState(state,title,url);
 
 
         //------
 
         console.log('Render...');
-        //const state = personalWebApp.getState();
+        state;
         ReactDOM.render(
             personalWebApp.createJSX(),
             root

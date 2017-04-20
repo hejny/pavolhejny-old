@@ -17,7 +17,9 @@ export const ITEMS =
             },
             start: "10.2016",
             status: "working",
-            url: "http://todotable.com",
+            url:"http://todotable.com",
+
+            links:{Website: "http://todotable.com"},
             fbgallery: "10209122345241864",
         },
 
@@ -36,7 +38,8 @@ export const ITEMS =
             },
             start: "10.2016",
             status: "working",
-            url: "http://skydreamgame.com"
+            links:{Website: "http://skydreamgame.com"},
+            embed:["http://skydreamgame.com"],
         },
 
 
@@ -45,10 +48,6 @@ export const ITEMS =
             type: "WEB_APP",
             interesting: true,
             name: "WebAppGames",
-            sendpress: {
-                url: "http://blog.webappgames.com/",
-                list: 81
-            },
             description: {
                 cs: "Hry vyrobené jako plnohodnotné www aplikace.",
                 en: "Games as full-fledged web applications that can be played instantly without installation or manual downloading. "
@@ -59,7 +58,11 @@ export const ITEMS =
             },
             start: "10.2016",
             status: "working",
-            url: "http://webappgames.com"
+
+            url:"http://webappgames.com",
+
+            links:{Website: "http://webappgames.com"},
+            //embed:["http://galerie.fotobernovska.cz/zatisi"],
         },
 
 
@@ -80,7 +83,8 @@ export const ITEMS =
             start: "7.2016",
             end: "9.2016",
             status: "done",
-            url: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/",
+            links:{Game: "http://logic.towns.cz",Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
+            embed:["http://logic.towns.cz"],
             fbgallery: "10209122553847079",
         },
 
@@ -91,10 +95,6 @@ export const ITEMS =
             name: {
                 cs: "Towns 5",
                 en: "Towns 5"
-            },
-            sendpress: {
-                url: "http://blog.towns.cz/",
-                list: 1390
             },
             description: {
                 cs: "Poslední, právě vyvíjená verze Towns s otevřeným API. Hráči si zde budou moct vytvořit cokoliv od vlastních prvků na budovách až po celá impéria.",
@@ -107,7 +107,7 @@ export const ITEMS =
             },
             start: "6.2015",
             status: "paused",
-            url: "http://towns.cz",
+            links:{Website: "http://towns.cz"},
             fbgallery: "10209122537926681",
         },
 
@@ -213,7 +213,6 @@ export const ITEMS =
                 cs: "Věže",
                 en: "Towers"
             },
-            sendpress: 22,
             description: {
                 cs: "Desková stavební hra hraná v reálném čase. Ještě ne zcela dokončený projekt.",
                 en: ""
@@ -235,7 +234,6 @@ export const ITEMS =
                 cs: "Logic",
                 en: "Logic"
             },
-            sendpress: 24,
             description: {
                 cs: "Logická bludišťová plošinovka pro známé programovatelné kalkulačky TI-89. Součástí hry je i editor a mnoho vytvořených úrovní.",
                 en: ""
@@ -261,7 +259,6 @@ export const ITEMS =
                 cs: "Kunratický les",
                 en: "Kunratický les"
             },
-            sendpress: 23,
             description: {
                 cs: "Přes 500 propojených 360° snímků z Kunratického lesa z jara 2010.",
                 en: ""
@@ -271,7 +268,10 @@ export const ITEMS =
             },
             start: "5.2010",
             end: "6.2010",
-            url: "http://les.towns.cz",
+
+            url:"http://les.towns.cz",
+
+            links:{Website: "http://les.towns.cz"},
             status: "done",
             //fbgallery: "xxx",
         },
@@ -288,7 +288,6 @@ export const ITEMS =
                 cs: "Fraktály",
                 en: "Fractals"
             },
-            sendpress: 19,
             description: {
                 cs: "Generátor fraktálů odvozených z Mandelbrotovi množiny.",
                 en: ""
@@ -298,7 +297,7 @@ export const ITEMS =
             },
             start: "6.2013",
             end: "1.2016",
-            url: "http://fractal.towns.cz",
+            links:{Website: "http://fractal.towns.cz"},
             status: "working",
             fbgallery: "4963526252061",
         },
@@ -315,11 +314,12 @@ export const ITEMS =
                 cs: "3D Graf",
                 en: "3D Graph"
             },
-            sendpress: 20,
             description: {
                 cs: "2D / 3D program pro vykreslování grafů jedné nebo dvou funkcí. Netradiční možnost dynamicky měnit barvu a tloušťku čas podle vzorce.",
                 en: ""
             },
+
+            //todo download
             roles: {
                 "Pavol Hejný": "creator"
             },
@@ -327,7 +327,7 @@ export const ITEMS =
 
             start: "10.2012",
             end: "6.2013",
-            url: "http://3d.towns.cz",
+            links:{Website: "http://3d.towns.cz"},
             status: "done",
             fbgallery: "4833554642852",
         },
@@ -342,11 +342,11 @@ export const ITEMS =
                 cs: "Kreslení",
                 en: "Drawing"
             },
-            sendpress: 21,
             description: {
                 cs: "Jednoduchý kreslící bitmapový program s několika speciálními funkcemi např. paprsčité kreslení čar a obdélníků nebo kreslení pomocí textu.",
                 en: ""
             },
+            //todo download
             roles: {
                 "Pavol Hejný": "creator"
             },
@@ -355,7 +355,7 @@ export const ITEMS =
             start: "5.2012",
             end: "6.2012",
             status: "done",
-            url: "http://kresleni.towns.cz",
+            links:{Website: "http://kresleni.towns.cz"},
             fbgallery: "3433888252067",
         },
 
@@ -372,6 +372,7 @@ export const ITEMS =
                 cs: "Avif Mobile",
                 en: "Avif Mobile"
             },
+            url:"https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile",
             description: {
                 cs: "Mobilní aplikace pro AviFaunistickou databázi ČR. Projekt České společnosti ornitologické",
                 en: ""
@@ -383,7 +384,7 @@ export const ITEMS =
             start: "5.2015",
             end: "12.2015",
             status: "done",
-            url: "http://https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile",
+            links:{'Google Play': "https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile"},
         },
 
 
@@ -394,6 +395,7 @@ export const ITEMS =
                 cs: "Avif",
                 en: "Avif"
             },
+            url:"http://birds.cz",
             description: {
                 cs: "AviFaunistická databáze ČR, Projekt České společnosti ornitologické",
                 en: ""
@@ -403,11 +405,11 @@ export const ITEMS =
             },
             start: "9.2014",
             status: "working",
-            url: "http://birds.cz",
+            links:{Website: "http://birds.cz"},
         },
 
 
-        {
+        /*{
             id: "new-avif",
             uri: {
                 cs: "novy-avif",
@@ -427,8 +429,8 @@ export const ITEMS =
             },
             start: "6.2016",
             status: "working",
-            url: "http://birds.cz"
-        },
+            links:{Website: "http://birds.cz"},
+        },*/
 
 
         {
@@ -442,6 +444,7 @@ export const ITEMS =
                 cs: "Ptáci ve městech",
                 en: "Birds in cities"
             },
+            url:"http://hry.birds.cz",
             description: {
                 cs: "3 jednoduché minihry pro Českou společnost ornitologickou",
                 en: ""
@@ -452,7 +455,7 @@ export const ITEMS =
             start: "12.2015",
             end: "1.2016",
             status: "done",
-            url: "http://hry.birds.cz"
+            links:{Website: "http://hry.birds.cz"},
         },
 
 
@@ -467,6 +470,7 @@ export const ITEMS =
                 cs: "Bezpečné zastávky",
                 en: "Safe stops"
             },
+            url:"http://zastavky.birdlife.cz",
             description: {
                 cs: "Projekt České společnosti ornitologické",
                 en: ""
@@ -480,7 +484,7 @@ export const ITEMS =
             start: "1.2016",
             end: "3.2016",
             status: "done",
-            url: "http://zastavky.birdlife.cz"
+            links:{Website: "http://zastavky.birdlife.cz"},
         },
 
 
@@ -496,8 +500,8 @@ export const ITEMS =
                 en: "3D on the web"
             },
             event: "ITNetwork",
-            url: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu",
-            embed: "https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR",
+            links:{Slides: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu"},
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
             date: "25.11.2016"
         },
 
@@ -511,8 +515,8 @@ export const ITEMS =
                 en: "3D on the web"
             },
             event: "OpenAlt",
-            url: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
-            embed: "https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7",
+            links:{Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt"},
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
             date: "6.11.2016"
         },
 
@@ -525,8 +529,8 @@ export const ITEMS =
                 en: "Web App Games"
             },
             event: "Game Developers Session",
-            url: "http://www.slideshare.net/PavolHejn/web-app-games",
-            embed: "https//www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u",
+            links:{Slides: "http://www.slideshare.net/PavolHejn/web-app-games"},
+            embed: ["https//www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u"],
             date: "3.11.2016"
         },
 
@@ -539,8 +543,8 @@ export const ITEMS =
                 en: "Generating 2D graphics on web"
             },
             event: "ITNetwork",
-            url: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu",
-            embed: "https//www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW",
+            links:{Slides: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu"},
+            embed: ["https//www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW"],
             date: "24.6.2016"
         },
 
@@ -553,8 +557,8 @@ export const ITEMS =
                 en: "Web applications in JavaScript"
             },
             event: "ITNetwork",
-            url: "http://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu",
-            embed: "https//www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b",
+            links:{Slides: "http://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu"},
+            embed: ["https//www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b"],
             date: "27.5.2016"
         },
 
@@ -567,7 +571,7 @@ export const ITEMS =
                 en: "Fractals"
             },
             event: "ITNetwork",
-            url: "http://www.itnetwork.cz/zpravodajstvi/prednasky/fraktaly",
+            links:{Slides: "http://www.itnetwork.cz/zpravodajstvi/prednasky/fraktaly"},
             date: "25.9.2015"
         },
 
@@ -580,7 +584,7 @@ export const ITEMS =
                 en: "How does online game Towns work"
             },
             event: "ITNetwork",
-            url: "http://www.itnetwork.cz/zpravodajstvi/prednasky/jak-funguje-online-hra-towns",
+            links:{Slides: "http://www.itnetwork.cz/zpravodajstvi/prednasky/jak-funguje-online-hra-towns"},
             date: "26.6.2015"
         },
 
@@ -592,7 +596,8 @@ export const ITEMS =
                 cs: "Generátor stromů",
                 en: "Tree generator"
             },
-            url: "http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu",
+            url:"http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu",
+            //links:{Article: "http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu"},
             date: "1.6.2015"
         },
 
@@ -604,7 +609,8 @@ export const ITEMS =
                 cs: "Generátor map",
                 en: "Map generator"
             },
-            url: "http://www.itnetwork.cz/php/php-aplikace-generator-map",
+            url:"http://www.itnetwork.cz/php/php-aplikace-generator-map",
+            //links:{Article: "http://www.itnetwork.cz/php/php-aplikace-generator-map"},
             date: "3.5.2015"
         }
 

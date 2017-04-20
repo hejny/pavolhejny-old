@@ -6,6 +6,7 @@ import * as React from "react";
 import {translate,getMessage} from "../functions/translate.jsx";
 import {makeRequest} from "../resources/make-request.jsx";
 import {Loading} from "./loading.jsx";
+import {GALLERY_URL} from "../config.jsx";
 
 
 import FontAwesome from 'react-fontawesome';
@@ -31,7 +32,7 @@ export class FBGallery extends React.Component {
 
 
 
-        const url = `/gallery.php?id=${props.fb_gallery_id}`;
+        const url = `${GALLERY_URL}?id=${props.fb_gallery_id}`;
 
 
         makeRequest('GET',url).then((response)=>{

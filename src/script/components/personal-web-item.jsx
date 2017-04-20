@@ -25,9 +25,16 @@ export function PersonalWebItem(props) {
 
 
 
-            <button onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
-                {translate(stateJS.language,'Back')} <FontAwesome name="times" />
-            </button>
+            {/*<button className="back" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+                {translate(stateJS.language,'Back')}
+                <FontAwesome name="times" />
+            </button>*/}
+
+
+            <div className="logo" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+                <img itemProp="image" src="http://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=30&r=pg&d=mm" className="avatar" alt="Pavol Hejný"/>
+                Pavol Hejný
+            </div>
 
 
 
@@ -99,14 +106,6 @@ export function PersonalWebItem(props) {
 
 
 
-                            case 'url':
-
-                                return(
-                                    <a href={value} target="_blank"><button>{translate(stateJS.language,'website')} <FontAwesome name="external-link" /></button></a>
-                                );
-
-
-
 
                             case 'description':
 
@@ -123,13 +122,21 @@ export function PersonalWebItem(props) {
                                 );
 
 
+                            case 'links':
+
+
+                                return  Object.keys(value).map((key)=>
+
+                                    <a href={value[key]} target="_blank"><button>{translate(stateJS.language,key)} <FontAwesome name="external-link" /></button></a>
+
+                                );
+
+
 
                             case 'embed':
 
 
-                                return(
-                                    <iframe src={value}/>
-                                );
+                                return value.map((url)=><iframe src={url}/>);
 
 
 

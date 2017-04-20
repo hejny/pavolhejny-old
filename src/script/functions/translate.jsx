@@ -5,7 +5,10 @@ const MESSAGES = {
 
         'Show more': 'Zobrazit další',
         'Show less': 'Zobrazit pouze zajímavé',
-        'Back': 'Zpět',
+        //'Back': 'Zpět',
+        'Website': 'Web',
+        'Slides': 'Prezentace',
+        'Article': 'Článek',
 
 
         'PROJECT': 'Project',
