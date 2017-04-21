@@ -1,21 +1,41 @@
 
 
-//import * as path from 'path';
+import * as path from 'path';
 import express from 'express';
 var app = express();
+import requestPromise from 'request-promise';
+
 
 
 //Static content
-app.use('/media', express.static('../media/'));
-app.use('/dist', express.static('../dist/'));
+app.use('/media', express.static(path.join(__dirname,'../media/')));
+app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon
 
 
+import {FB_APP_ID,FB_APP_SECRET} from './config-server';
 
 
-app.get('/express-test', function (req, res) {
-    res.send('Hello World!')
-})
+app.get('/api/gallery', function (req, res) {
+
+
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Content-Type', 'application/json');
+
+
+    const url = `https://graph.facebook.com/v2.8/${req.param('id')}/photos?fields=id%2Clink%2Cname%2Cimages%2Cpicture&limit=999&access_token=${FB_APP_ID}|${FB_APP_SECRET}`;
+
+    requestPromise(url)
+        .then((data)=>{
+            res.send(data);
+        }).catch((error)=>{
+            res.send(error.response.body);
+    });
+
+
+
+
+});
 
 
 
@@ -35,9 +55,8 @@ import {createTitleFromState} from "./main/create-title-from-state.js";
 
 import * as fs from 'fs';
 import * as html from "html";
-//const indexHtml = fs.readFileSync(path.join(__dirname, '..','index.html'), 'utf8');
-const indexHtml = fs.readFileSync('../index.html', 'utf8');
 
+const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 
 
 app.get('/*', function (req, res) {

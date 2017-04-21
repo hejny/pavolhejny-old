@@ -1,6 +1,6 @@
 
 
-export const GALLERY_URL = 'http://pavolhejny.com/gallery.php';
+export const GALLERY_URL = '/api/gallery';
 
 
 export const WEB_NAME = 'Pavol Hejný';

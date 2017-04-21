@@ -242,6 +242,10 @@ gulp.task('build-js-server', function() {
             },
 
             target: 'node',
+            node: {
+                __dirname: false,
+                __filename: false,
+            },
 
             devtool: "source-map",
 
@@ -269,16 +273,9 @@ gulp.task('build-js-server', function() {
 
             /*/
              plugins:[
-             new webpack.DefinePlugin({
-             'process.env': {
-             NODE_ENV: JSON.stringify('production')
-             }
-             }),
-
-
-             new UglifyJSPlugin({
-             sourceMap: true
-             })
+                 new webpack.DefinePlugin({
+                     $dirname: '__dirname',
+                 })
              ]/**/
 
         }))
