@@ -13,8 +13,9 @@ app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon
 
 
-import {FB_APP_ID,FB_APP_SECRET} from './config-server';
-
+//import {FB_APP_ID,FB_APP_SECRET} from './config-server';
+const FB_APP_ID = '';
+const FB_APP_SECRET = '';
 
 app.get('/api/gallery', function (req, res) {
 
