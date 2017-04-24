@@ -14,8 +14,13 @@ app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 
 
 //import {FB_APP_ID,FB_APP_SECRET} from './config-server';
-const FB_APP_ID = '';
-const FB_APP_SECRET = '';
+
+
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, '../config-server.json'), 'utf8'));
+const FB_APP_ID = config.FB_APP_ID;
+const FB_APP_SECRET = config.FB_APP_SECRET;
+
+
 
 app.get('/api/gallery', function (req, res) {
 
