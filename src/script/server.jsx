@@ -55,9 +55,26 @@ import {createTitleFromState} from "./main/create-title-from-state.js";
 
 
 import * as fs from 'fs';
+import * as util from 'util';
 import * as html from "html";
 
+
+
 const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+const stats = fs.statSync(path.join(__filename));
+const mtime = new Date(util.inspect(stats.mtime));
+
+
+const buildInfo = `
+        (cc) Pavol Hejný
+        https://github.com/hejny/pavolhejny
+        Build with Strider CI at ${mtime.toString()}
+        Process started at ${(new Date()).toString()}
+    `;
+
+
+
+
 
 
 app.get('/*', function (req, res) {
@@ -102,6 +119,7 @@ app.get('/*', function (req, res) {
     const rootHtml = ReactDOMServer.renderToStaticMarkup(personalWebApp.createJSX());
 
 
+
     const outHtml = indexHtml
         .split('<!--title-->').join(title)
         .split('<!--root-->').join(rootHtml)
@@ -110,7 +128,13 @@ app.get('/*', function (req, res) {
     const outHtmlPretty = html.prettyPrint(outHtml, {indent_size: 4});
 
 
-    res.send(outHtmlPretty);
+
+    const outHtmlPrettyWithInfo = outHtmlPretty
+        .split('<!--build-info-->').join(`<!--${buildInfo}-->`);
+
+
+
+    res.send(outHtmlPrettyWithInfo);
 
 });
 
@@ -123,4 +147,4 @@ app.get('/*', function (req, res) {
 
 app.listen(31415, function () {
     console.log('Example app listening on port 31415!')
-})
+});
