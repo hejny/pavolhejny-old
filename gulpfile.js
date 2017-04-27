@@ -4,7 +4,7 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 
-var browserSync = require('browser-sync').create();
+
 var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
 var fs = require("fs");
@@ -21,7 +21,7 @@ gulp.task('build', ['build-js-browser-min','build-js-server','build-css']);
 
 
 
-
+var browserSync;
 gulp.task('browser-sync', function() {
 
     runSequence(
@@ -35,6 +35,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('browser-sync-init', function (done) {
 
+    browserSync = require('browser-sync').create();
     browserSync.init({
         server: {
             baseDir: "./",
