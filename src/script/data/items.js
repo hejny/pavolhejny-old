@@ -2,50 +2,46 @@ export const ITEMS =
 
     [
 
+        {
+            id: "3d-galleries",
+            type: "WEB_APPS",
+            interesting: true,
+            name: {
+                cs: "3D galerie na webu",
+                en: "3D galleries on web"
+            },
+            description: {
+                cs: "Systém pro vytváření 3D galerií přímo na webu.",
+                en: "System for creating 3D galleries on the web."
+            },
+
+
+            time: "6.2016-now",
+            //todo fbgallery
+            //todo links:{Website: "http://skydreamgame.com"},
+        },
+
 
         {
             id: "todotable.com",
             type: "WEB_APP",
+            language: 'en',
             interesting: true,
             name: "TodoTable.com",
-            description: {
-                cs: `Nekonečná nástěnka, kam si můžete „nalepit“ své poznámky.`,
-                en: `Simple app that provides you endless virtual table where you can "stick" your notes.`
-            },
             roles: {
                 "Pavol Hejný": "creator",
             },
-            start: "10.2016",
-            status: "working",
+            time: "4.2017-now",
             url:"http://todotable.com",
 
-            links:{Website: "http://todotable.com"},
-            fbgallery: "10209122345241864",
         },
 
-
-        {
-            id: "skydreamgame.com",
-            type: "WEB_GAME",
-            name: "SkyDreamGame.com",
-            description: {
-                cs: "",
-                en: "The player wakes up in a heavenly realm and his goal is to choose a path upon a spider web and solve logical puzzles that present themselves during the way. All possible ways lead to a great castle on clouds. The puzzles include logical keys and teleportation. During the game the player also learns more about his story. "
-            },
-            roles: {
-                "Pavol Hejný": "creator",
-                "Přemysl Černý": "creator"
-            },
-            start: "10.2016",
-            status: "working",
-            links:{Website: "http://skydreamgame.com"},
-            embed:["http://skydreamgame.com"],
-        },
 
 
         {
             id: "webappgames.com",
             type: "WEB_APP",
+            language: 'en',
             interesting: true,
             name: "WebAppGames",
             description: {
@@ -56,48 +52,52 @@ export const ITEMS =
                 "Pavol Hejný": "creator",
                 "Přemysl Černý": "creator"
             },
-            start: "10.2016",
-            status: "working",
-
-            url:"http://webappgames.com",
+            time: "10.2016-now",
 
             links:{Website: "http://webappgames.com"},
-            //embed:["http://galerie.fotobernovska.cz/zatisi"],
         },
 
 
         {
             id: "logic",
+            parent: "webappgames.com",
             type: "WEB_GAME",
             name: {
                 cs: "Logic",
                 en: "Logic"
             },
             description: {
-                cs: "",
-                en: ""
+                cs: "Hra pro soutěž v rámci ITNetwork.cz.",
+                en: "Game for competition on ITNetwork.cz."
             },
             roles: {
                 "Pavol Hejný": "creator"
             },
-            start: "7.2016",
-            end: "9.2016",
-            status: "done",
+            time: "7.2016-now",
             links:{Game: "http://logic.towns.cz",Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
             embed:["http://logic.towns.cz"],
             fbgallery: "10209122553847079",
         },
 
+        {
+            id: "towns",
+            type: "WEB_GAMES",
+            interesting: true,
+            name: "Towns",
+            description: {
+                cs: "Série strategických online her.",
+                en: "A series of strategic online games."
+            },
+        },
+
 
         {
             id: "towns5",
+            parent: "towns",
             type: "WEB_GAME",
-            name: {
-                cs: "Towns 5",
-                en: "Towns 5"
-            },
+            name: "Towns 5",
             description: {
-                cs: "Poslední, právě vyvíjená verze Towns s otevřeným API. Hráči si zde budou moct vytvořit cokoliv od vlastních prvků na budovách až po celá impéria.",
+                cs: "Poslední, nedokončená verze Towns s otevřeným API. Hráči si zde budou moct vytvořit cokoliv od vlastních prvků na budovách až po celá impéria.",
                 en: ""
             },
             roles: {
@@ -105,20 +105,17 @@ export const ITEMS =
                 "Štefan Kecskés": "creator",
                 mp: "collaborator"
             },
-            start: "6.2015",
-            status: "paused",
-            links:{Website: "http://towns.cz"},
+            time: "6.2015-10.2016",
+            //links:{Website: "http://towns.cz"},
             fbgallery: "10209122537926681",
         },
 
 
         {
             id: "towns4",
+            parent: "towns",
             type: "WEB_GAME",
-            name: {
-                cs: "Towns 4",
-                en: "Towns 4"
-            },
+            name: "Towns 4",
             description: {
                 cs: "Dlouho běžící online hra s izometrickou mapou. 3D budovami, spojováním budov a příběhy ve hře.",
                 en: ""
@@ -128,9 +125,7 @@ export const ITEMS =
                 "David Hrůša": "collaborator",
                 "Přemysl Černý": "collaborator"
             },
-            start: "6.2011",
-            end: "6.2015",
-            status: "done",
+            time: "6.2011-6.2015",
             fbgallery: "4537869370905",
 
         },
@@ -138,11 +133,9 @@ export const ITEMS =
 
         {
             id: "towns3",
+            parent: "towns",
             type: "WEB_GAME",
-            name: {
-                cs: "Towns 3",
-                en: "Towns 3"
-            },
+            name: "Towns 3",
             description: {
                 cs: "Nedokončený projekt ve Flashy."
             },
@@ -150,20 +143,16 @@ export const ITEMS =
                 "Pavol Hejný": "creator",
                 "David Hrůša": "collaborator"
             },
-            start: "4.2009",
-            end: "3.2010",
-            status: "stopped",
+            time: "4.2009-3.2010",
             fbgallery: "1087741439863",
         },
 
 
         {
             id: "towns2",
+            parent: "towns",
             type: "WEB_GAME",
-            name: {
-                cs: "Towns 2",
-                en: "Towns 2"
-            },
+            name: "Towns 2",
             description: {
                 cs: "Druhá verze s izometrickou mapou, vylepšeným designem, vygenerovaným ostrovem 200x200 políček.",
                 en: ""
@@ -172,20 +161,16 @@ export const ITEMS =
                 "Pavol Hejný": "creator",
                 "David Hrůša": "collaborator"
             },
-            start: "2.2008",
-            end: "4.2009",
-            status: "done",
+            time: "2.2008-4.2009",
             fbgallery: "10205480393795354",
         },
 
 
         {
             id: "towns1",
+            parent: "towns",
             type: "WEB_GAME",
-            name: {
-                cs: "Towns 1",
-                en: "Towns 1"
-            },
+            name: "Towns 1",
             description: {
                 cs: "První ze série her Towns. Jednoduchá strategická hra s 2D mapou 100x100 políček. ",
                 en: ""
@@ -194,9 +179,7 @@ export const ITEMS =
                 "Pavol Hejný": "creator",
                 "David Hrůša": "collaborator"
             },
-            start: "6.2007",
-            end: "2.2008",
-            status: "done",
+            time: "6.2007-2.2008",
             fbgallery: "10205480360514522",
         },
 
@@ -215,37 +198,17 @@ export const ITEMS =
             },
             description: {
                 cs: "Desková stavební hra hraná v reálném čase. Ještě ne zcela dokončený projekt.",
-                en: ""
+                en: "Board game played in real time. Not fully completed project."
             },
             roles: {
                 "Pavol Hejný": "creator"
             },
-            start: "2.2011",
-            end: "2.2014",
-            status: "paused",
+            start: "2.2011-2.2014",
             fbgallery: "1957571225064",
         },
 
 
-        /*{
-            id: "logic-ti89",
-            type: "TI89_APP",
-            name: {
-                cs: "Logic",
-                en: "Logic"
-            },
-            description: {
-                cs: "Logická bludišťová plošinovka pro známé programovatelné kalkulačky TI-89. Součástí hry je i editor a mnoho vytvořených úrovní.",
-                en: ""
-            },
-            roles: {
-                "Pavol Hejný": "creator"
-            },
-            start: "2.2007",
-            end: "6.2007",
-            status: "done",
-            //fbgallery: "xxx",
-        },*/
+
 
 
         {
@@ -255,25 +218,22 @@ export const ITEMS =
                 en: "kunraticky-forest"
             },
             type: "WEB_PAGE",
-            name: {
-                cs: "Kunratický les",
-                en: "Kunratický les"
-            },
+            language: 'cs',
+            name: "Kunratický les",
             description: {
-                cs: "Přes 500 propojených 360° snímků z Kunratického lesa z jara 2010.",
-                en: ""
+                cs: "Přes 500 panoramatických snímků z Kunratického lesa z jara 2010.",
+                en: "Over 500 panorama images from the Kunratický forest from spring 2010."
             },
             roles: {
                 "Pavol Hejný": "creator"
             },
-            start: "5.2010",
-            end: "6.2010",
+            start: "5.2010-now",
 
             url:"http://les.towns.cz",
 
             links:{Website: "http://les.towns.cz"},
-            status: "done",
             //fbgallery: "xxx",
+
         },
 
 
@@ -290,74 +250,16 @@ export const ITEMS =
             },
             description: {
                 cs: "Generátor fraktálů odvozených z Mandelbrotovi množiny.",
-                en: ""
+                en: "Fractal generator derived from the Mandelbrot set."
             },
             roles: {
                 "Pavol Hejný": "creator"
             },
-            start: "6.2013",
-            end: "1.2016",
+            start: "6.2013-now",
             links:{Website: "http://fractal.towns.cz"},
-            status: "working",
             fbgallery: "4963526252061",
         },
 
-
-        {
-            id: "graph",
-            uri: {
-                cs: "3d-graf",
-                en: "3d-graph"
-            },
-            type: "DESKTOP_APP",
-            name: {
-                cs: "3D Graf",
-                en: "3D Graph"
-            },
-            description: {
-                cs: "2D / 3D program pro vykreslování grafů jedné nebo dvou funkcí. Netradiční možnost dynamicky měnit barvu a tloušťku čas podle vzorce.",
-                en: ""
-            },
-
-            //todo download
-            roles: {
-                "Pavol Hejný": "creator"
-            },
-
-
-            start: "10.2012",
-            end: "6.2013",
-            links:{Website: "http://3d.towns.cz"},
-            status: "done",
-            fbgallery: "4833554642852",
-        },
-        {
-            id: "drawing",
-            uri: {
-                cs: "kresleni",
-                en: "drawing"
-            },
-            type: "DESKTOP_APP",
-            name: {
-                cs: "Kreslení",
-                en: "Drawing"
-            },
-            description: {
-                cs: "Jednoduchý kreslící bitmapový program s několika speciálními funkcemi např. paprsčité kreslení čar a obdélníků nebo kreslení pomocí textu.",
-                en: ""
-            },
-            //todo download
-            roles: {
-                "Pavol Hejný": "creator"
-            },
-
-
-            start: "5.2012",
-            end: "6.2012",
-            status: "done",
-            links:{Website: "http://kresleni.towns.cz"},
-            fbgallery: "3433888252067",
-        },
 
 
         {
@@ -367,6 +269,7 @@ export const ITEMS =
                 en: "avif-mobile"
             },
             type: "MOBILE_APP",
+            language: 'cs',
             interesting: true,
             name: {
                 cs: "Avif Mobile",
@@ -375,15 +278,13 @@ export const ITEMS =
             url:"https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile",
             description: {
                 cs: "Mobilní aplikace pro AviFaunistickou databázi ČR. Projekt České společnosti ornitologické",
-                en: ""
+                en: "Mobile application for the Czech AviFaunistic database. Project of the Czech Society of Ornithology"
             },
             roles: {
                 "Pavol Hejný": "backend",
                 "Přemysl Černý": "frontend"
             },
-            start: "5.2015",
-            end: "12.2015",
-            status: "done",
+            time: "5.2015-now",
             links:{'Google Play': "https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile"},
         },
 
@@ -391,6 +292,7 @@ export const ITEMS =
         {
             id: "avif",
             type: "WEB_APP",
+            language: 'cs',
             name: {
                 cs: "Avif",
                 en: "Avif"
@@ -398,39 +300,14 @@ export const ITEMS =
             url:"http://birds.cz",
             description: {
                 cs: "AviFaunistická databáze ČR, Projekt České společnosti ornitologické",
-                en: ""
+                en: "Czech AviFaunistic database, Project of the Czech Society of Ornithology"
             },
             roles: {
                 "Pavol Hejný": "administrator"
             },
-            start: "9.2014",
-            status: "working",
+            time: "9.2014",
             links:{Website: "http://birds.cz"},
         },
-
-
-        /*{
-            id: "new-avif",
-            uri: {
-                cs: "novy-avif",
-                en: "new-avif"
-            },
-            type: "WEB_APP",
-            name: {
-                cs: "Nový Avif",
-                en: "New Avif"
-            },
-            description: {
-                cs: "Nový frontend AviFaunistická databáze ČR, Projekt České společnosti ornitologické",
-                en: ""
-            },
-            roles: {
-                "Pavol Hejný": "creator"
-            },
-            start: "6.2016",
-            status: "working",
-            links:{Website: "http://birds.cz"},
-        },*/
 
 
         {
@@ -440,6 +317,7 @@ export const ITEMS =
                 en: "birds-games"
             },
             type: "WEB_GAME",
+            language: 'cs',
             name: {
                 cs: "Ptáci ve městech",
                 en: "Birds in cities"
@@ -447,54 +325,22 @@ export const ITEMS =
             url:"http://hry.birds.cz",
             description: {
                 cs: "3 jednoduché minihry pro Českou společnost ornitologickou",
-                en: ""
+                en: "3 simple mini games for the Czech Ornithological Society"
             },
             roles: {
                 "Pavol Hejný": "creator"
             },
-            start: "12.2015",
-            end: "1.2016",
-            status: "done",
+            start: "12.2015-now",
             links:{Website: "http://hry.birds.cz"},
         },
 
 
-        {
-            id: "bezpecne-zastavky",
-            uri: {
-                cs: "bezpecne-zastavky",
-                en: "safe-stops"
-            },
-            type: "WEB_APP",
-            name: {
-                cs: "Bezpečné zastávky",
-                en: "Safe stops"
-            },
-            url:"http://zastavky.birdlife.cz",
-            description: {
-                cs: "Projekt České společnosti ornitologické",
-                en: ""
-            },
-
-
-            roles: {
-                "Pavol Hejný": "creator",
-                "Zbyněk Janoška": "administrator"
-            },
-            start: "1.2016",
-            end: "3.2016",
-            status: "done",
-            links:{Website: "http://zastavky.birdlife.cz"},
-        },
 
 
         {
-            id: "talk-0",
-            uri: {
-                cs: "3d-na-webu",
-                en: "3d-on-web"
-            },
+            id: "3d-na-webu-itnetwork",
             type: "TALK",
+            language: 'cs',
             name: {
                 cs: "3D na webu",
                 en: "3D on the web"
@@ -506,10 +352,13 @@ export const ITEMS =
         },
 
 
+        //todo talk from 3.2016
+
         {
-            id: "talk-1",
+            id: "3d-na-webu-openalt",
             type: "TALK",
             interesting: true,
+            language: 'cs',
             name: {
                 cs: "3D na webu",
                 en: "3D on the web"
@@ -522,8 +371,10 @@ export const ITEMS =
 
 
         {
-            id: "talk-2",
+            id: "webappgames-gds2016",
+            parent: "webappgames.com",
             type: "TALK",
+            language: 'en',
             name: {
                 cs: "Web App Games",
                 en: "Web App Games"
@@ -536,8 +387,9 @@ export const ITEMS =
 
 
         {
-            id: "talk-3",
+            id: "generovana-2d-grafika-na-webu-itnetwork",
             type: "TALK",
+            language: 'cs',
             name: {
                 cs: "Generovaná 2D grafika na webu",
                 en: "Generating 2D graphics on web"
@@ -550,8 +402,9 @@ export const ITEMS =
 
 
         {
-            id: "talk-4",
+            id: "webove-aplikace-v-javascriptu-itnetwork",
             type: "TALK",
+            language: 'cs',
             name: {
                 cs: "Webové aplikace v JavaScriptu",
                 en: "Web applications in JavaScript"
@@ -564,8 +417,10 @@ export const ITEMS =
 
 
         {
-            id: "talk-5",
+            id: "fraktaly-itnetwork",
+            parent: "fractals",
             type: "TALK",
+            language: 'cs',
             name: {
                 cs: "Fraktály",
                 en: "Fractals"
@@ -577,8 +432,10 @@ export const ITEMS =
 
 
         {
-            id: "talk-6",
+            id: "jak-funguje-online-hra-towns",
+            parent: "towns",
             type: "TALK",
+            language: 'cs',
             name: {
                 cs: "Jak funguje online hra Towns",
                 en: "How does online game Towns work"
@@ -589,30 +446,166 @@ export const ITEMS =
         },
 
 
+
+
+
+
+
+
+
+
         {
-            id: "talk-7",
+            id: "generator-stromu-itnetwork",
+            parent: "towns",
             type: "ARTICLE",
+            language: 'cs',
             name: {
                 cs: "Generátor stromů",
                 en: "Tree generator"
             },
             url:"http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu",
-            //links:{Article: "http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu"},
             date: "1.6.2015"
         },
 
 
         {
-            id: "talk-8",
+            id: "generator-map-itnetwork",
+            parent: "towns",
             type: "ARTICLE",
+            language: 'cs',
             name: {
                 cs: "Generátor map",
                 en: "Map generator"
             },
             url:"http://www.itnetwork.cz/php/php-aplikace-generator-map",
-            //links:{Article: "http://www.itnetwork.cz/php/php-aplikace-generator-map"},
             date: "3.5.2015"
         }
 
 
     ]
+
+
+
+
+
+
+
+/*
+
+ {
+ id: "bezpecne-zastavky",
+ uri: {
+ cs: "bezpecne-zastavky",
+ en: "safe-stops"
+ },
+ type: "WEB_APP",
+ name: {
+ cs: "Bezpečné zastávky",
+ en: "Safe stops"
+ },
+ url:"http://zastavky.birdlife.cz",
+ description: {
+ cs: "",
+ en: ""
+ },
+
+
+ roles: {
+ "Pavol Hejný": "creator",
+ "Zbyněk Janoška": "creator, administrator"
+ },
+ time: "1.2016-now",
+ links:{Website: "http://zastavky.birdlife.cz"},
+ },
+
+
+{
+ id: "skydreamgame.com",
+ parent: "webappgames.com",
+ type: "WEB_GAME",
+ name: "SkyDreamGame.com",
+ description: {
+ cs: "",
+ en: "The player wakes up in a heavenly realm and his goal is to choose a path upon a spider web and solve logical puzzles that present themselves during the way. All possible ways lead to a great castle on clouds. The puzzles include logical keys and teleportation. During the game the player also learns more about his story. "
+ },
+ roles: {
+ "Pavol Hejný": "creator",
+ "Přemysl Černý": "creator"
+ },
+ start: "10.2016-11.2016",
+ //status: "working",
+ links:{Website: "http://skydreamgame.com"},
+ embed:["http://skydreamgame.com"],
+ },*/
+/*{
+ id: "logic-ti89",
+ type: "TI89_APP",
+ name: {
+ cs: "Logic",
+ en: "Logic"
+ },
+ description: {
+ cs: "Logická bludišťová plošinovka pro známé programovatelné kalkulačky TI-89. Součástí hry je i editor a mnoho vytvořených úrovní.",
+ en: ""
+ },
+ roles: {
+ "Pavol Hejný": "creator"
+ },
+ start: "2.2007",
+ end: "6.2007",
+ //status: "done",
+ //fbgallery: "xxx",
+ },*/
+/*{
+ id: "graph",
+ uri: {
+ cs: "3d-graf",
+ en: "3d-graph"
+ },
+ type: "DESKTOP_APP",
+ name: {
+ cs: "3D Graf",
+ en: "3D Graph"
+ },
+ description: {
+ cs: "2D / 3D program pro vykreslování grafů jedné nebo dvou funkcí. Netradiční možnost dynamicky měnit barvu a tloušťku čas podle vzorce.",
+ en: ""
+ },
+
+ //todo download
+ roles: {
+ "Pavol Hejný": "creator"
+ },
+
+
+ start: "10.2012-6.2013",
+ links:{Website: "http://3d.towns.cz"},
+ fbgallery: "4833554642852",
+ },
+ {
+ id: "drawing",
+ uri: {
+ cs: "kresleni",
+ en: "drawing"
+ },
+ type: "DESKTOP_APP",
+ name: {
+ cs: "Kreslení",
+ en: "Drawing"
+ },
+ description: {
+ cs: "Jednoduchý kreslící bitmapový program s několika speciálními funkcemi např. paprsčité kreslení čar a obdélníků nebo kreslení pomocí textu.",
+ en: ""
+ },
+ //todo download
+ roles: {
+ "Pavol Hejný": "creator"
+ },
+
+
+ start: "5.2012",
+ end: "6.2012",
+ //status: "done",
+ links:{Website: "http://kresleni.towns.cz"},
+ fbgallery: "3433888252067",
+ },*/
