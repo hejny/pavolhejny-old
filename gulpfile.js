@@ -17,7 +17,7 @@ gulp.task('default',['build']);
 
 
 
-gulp.task('build', ['build-js-browser-min','build-js-server','build-css']);
+gulp.task('build', ['build-js-browser-production','build-js-server-production','build-css']);
 
 
 
@@ -68,7 +68,7 @@ gulp.task('browser-sync-watch', function (done) {
 });
 
 
-gulp.task('browser-sync-build-js-browser', ['build-js-browser'], function (done) {
+gulp.task('browser-sync-build-js-browser', ['build-js-browser-development'], function (done) {
     browserSync.reload();
     done();
 });
@@ -92,6 +92,102 @@ gulp.task('build-css', function() {
 
 
 
+
+
+const webpack = require('webpack');
+const gulpWebpack = require('webpack-stream');
+const path = require('path');
+
+
+
+
+['browser','server'].forEach(function(target){
+    ['development','production'].forEach(function(environment){
+
+
+
+
+
+        gulp.task('build-js-'+target+'-'+environment, function() {
+
+
+
+            return gulp.src('./src/*')
+                .pipe(gulpWebpack({
+
+
+                    entry: {
+                        first: './src/script/'+target+'.jsx'
+                    },
+                    output: {
+                        filename: target+(environment==='production'?'.min':'')+".js",
+                        path: __dirname + "/dist",
+                    },
+
+
+                    target: target==='browser'?'web':'node',
+                    devtool: "source-map",
+
+
+                    module: {
+                        loaders: [{
+                            test: /\.jsx?$/,
+                            loaders: ['babel?presets[]=es2015&presets[]=react'],
+                            include: [
+                                path.resolve(__dirname, "./src/script"),
+                            ],
+                            exclude: [
+                                path.resolve(__dirname, "node_modules"),
+                            ]
+                        },{
+                            test: /\.json$/,
+                            loader: 'json'
+                        }
+                        ],
+                        resolve: {
+                            extensions: ['', '.js', '.jsx']
+                        }
+                    },
+
+
+
+                    plugins:environment==='production'?[
+                        new webpack.DefinePlugin({
+                            'process.env': {
+                                NODE_ENV: JSON.stringify('production')
+                            }
+                        }),
+
+
+                        new UglifyJSPlugin({
+                            sourceMap: true
+                        })
+                    ]:[]
+
+
+
+
+
+
+                }))
+                .pipe(gulp.dest('./dist/'));
+        });
+
+
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+/*
 const webpack = require('webpack');
 const gulpWebpack = require('webpack-stream');
 const path = require('path');
@@ -196,7 +292,7 @@ gulp.task('build-js-browser-min', function() {
 
 
 
-            /**/
+
             plugins:[
                 new webpack.DefinePlugin({
                     'process.env': {
@@ -208,7 +304,7 @@ gulp.task('build-js-browser-min', function() {
                 new UglifyJSPlugin({
                     sourceMap: true
                 })
-            ]/**/
+            ]
 
         }))
         .pipe(gulp.dest('./dist/'));
@@ -272,15 +368,11 @@ gulp.task('build-js-server', function() {
 
 
 
-            /*/
-             plugins:[
-                 new webpack.DefinePlugin({
-                     $dirname: '__dirname',
-                 })
-             ]/**/
+
 
         }))
         .pipe(gulp.dest('./dist/'));
 });
 
 
+/**/

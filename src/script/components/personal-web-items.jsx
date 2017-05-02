@@ -68,6 +68,10 @@ export function PersonalWebItems(props) {
                 {items.filter((item)=> {
 
 
+                    if('parent' in item){
+                        return false;
+                    }
+
                     if(stateJS.all){
                         return true;
                     }else{

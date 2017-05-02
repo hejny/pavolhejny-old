@@ -25,17 +25,18 @@ export function PersonalWebItem(props) {
 
 
 
-            {/*<button className="back" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+            <button className="back" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+                <FontAwesome name="home" />
                 {translate(stateJS.language,'Back')}
-                <FontAwesome name="times" />
-            </button>*/}
+            </button>
 
 
-            <div className="logo" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+
+            {/*<div className="logo" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
                 <img itemProp="image" src="http://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=30&r=pg&d=mm" className="avatar" alt="Pavol Hejný"/>
                 Pavol Hejný
             </div>
-
+*/}
 
 
             <h1>{getMessage(stateJS.language,item.name)}</h1>

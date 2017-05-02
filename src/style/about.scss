@@ -1,58 +1,94 @@
 
 
 
+.profile {
+
+  transition: all 1s ease-in-out;
+  * {  transition: all 1s ease-in-out;  }
+
+
+  &.small{
+
+    cursor: pointer;
+    //background-color: #37beff;
+    //padding: 15px;
+
+    .avatar {
+      width: 50px;
+    }
+    .name {
+      font-size: 1rem;
+    }
+
+    .subname {
+      display: none;
+    }
+  }
+
+
+
+  //border: 1px dashed red;
+
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  padding: 0px;
+  border-radius: 5px;
+
+  .avatar {
+
+    //border: 1px dashed red;
+
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+
+    width: 150px;
+    max-width: 80%;
+
+
+    /*border: 2px solid #000000;*/
+    border-radius: 1000px;
+
+  }
+
+  .name {
+
+    //border: 1px dashed red;
+
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: auto;
+
+  }
+
+  .subname {
+
+    //border: 1px dashed red;
+
+    display: block;
+
+    font-size: 1.4em;
+    margin: auto;
+    margin-bottom: 20px;
+
+  }
+
+}
+
+
+
+
+
+
+
 .about {
 
   //padding-top: 10vh;
   //border: 1px dashed red;
 
-  .profile {
 
-    //border: 1px dashed red;
-
-    display: inline-block;
-    text-align: center;
-
-    .avatar {
-
-      //border: 1px dashed red;
-
-      display: block;
-      margin: auto;
-      margin-bottom: 10px;
-
-      width: 150px;
-      max-width: 80%;
-
-      /*border: 2px solid #000000;*/
-      border-radius: 1000px;
-
-    }
-
-    .name {
-
-      //border: 1px dashed red;
-
-      display: block;
-      text-decoration: none;
-      font-size: 2em;
-      margin: auto;
-
-    }
-
-    .subname {
-
-      //border: 1px dashed red;
-
-      display: block;
-
-      font-size: 1.4em;
-      margin: auto;
-      margin-bottom: 20px;
-
-    }
-
-  }
 
   .about_text {
 

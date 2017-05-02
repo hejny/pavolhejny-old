@@ -33,6 +33,13 @@ export function PersonalWebAppComponent(props) {
 
 
 
+                <div className={'profile'+(stateJS.opened_item_id?' small':'')} itemScope itemType="http://schema.org/Person" onClick={()=>store.dispatch({type:'CLOSE_CURRENT_ITEM'})}>
+
+                    <img itemProp="image" src="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm" className="avatar" alt="Pavol Hejný"/>
+                    <h1 className="name" itemProp="name">{content.name}</h1>
+                    <div className="subname" itemProp="jobTitle">{getMessage(stateJS.language,content.subname)}</div>
+
+                </div>
 
 
 
@@ -42,13 +49,7 @@ export function PersonalWebAppComponent(props) {
 
 
                         <article className="about">
-                            <div className="profile" itemScope itemType="http://schema.org/Person">
 
-                                <img itemProp="image" src="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm" className="avatar" alt="Pavol Hejný"/>
-                                <h1 className="name" itemProp="name">{content.name}</h1>
-                                <div className="subname" itemProp="jobTitle">{getMessage(stateJS.language,content.subname)}</div>
-
-                            </div>
 
 
 

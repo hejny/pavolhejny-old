@@ -7,8 +7,8 @@ export const ITEMS =
             type: "WEB_APPS",
             interesting: true,
             name: {
-                cs: "3D galerie na webu",
-                en: "3D galleries on web"
+                cs: "3D galerie",
+                en: "3D galleries"
             },
             description: {
                 cs: "Systém pro vytváření 3D galerií přímo na webu.",
@@ -42,7 +42,6 @@ export const ITEMS =
             id: "webappgames.com",
             type: "WEB_APP",
             language: 'en',
-            interesting: true,
             name: "WebAppGames",
             description: {
                 cs: "Hry vyrobené jako plnohodnotné www aplikace.",
@@ -190,7 +189,6 @@ export const ITEMS =
                 cs: "veze",
                 en: "towers"
             },
-            interesting: true,
             type: "BOARD_GAME",
             name: {
                 cs: "Věže",
