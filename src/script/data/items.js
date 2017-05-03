@@ -18,7 +18,10 @@ export const ITEMS =
 
             time: "6.2016-now",
             //todo fbgallery
-            //todo links:{Website: "http://skydreamgame.com"},
+            links:{
+                'galerie.fotobernovska.cz': "http://galerie.fotobernovska.cz/",
+                'gallery.pavolhejny.com': "http://gallery.pavolhejny.com/"
+            },
         },
 
 

@@ -6,15 +6,16 @@ import {translate,getMessage} from "../functions/translate.jsx";
 import FontAwesome from 'react-fontawesome';
 
 
-import {PersonalWebItemTalk} from './personal-web-item-talk.jsx';
+//import {PersonalWebItemTalk} from './personal-web-item-talk.jsx';
 import {FBGallery} from './fb-gallery.jsx';
+import {PersonalWebItemsList} from "./personal-web-items-list.jsx";
 
 
 
 export function PersonalWebItem(props) {
 
 
-    const {store, item, filtered} = props;
+    const {store, item, subitems} = props;
     const stateJS = store.getState().toJS();
 
 
@@ -179,6 +180,12 @@ export function PersonalWebItem(props) {
 
             })()}
 
+
+
+
+
+
+            <PersonalWebItemsList store={store} items={subitems}/>
 
 
 

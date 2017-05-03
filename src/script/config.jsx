@@ -1,6 +1,6 @@
 
 
-export const GALLERY_URL = '/api/gallery';
+export const GALLERY_URL = 'https://www.pavolhejny.com/api/gallery';
 
 
 export const WEB_NAME = 'Pavol Hejný';

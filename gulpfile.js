@@ -170,7 +170,9 @@ const path = require('path');
 
 
                 }))
-                .pipe(gulp.dest('./dist/'));
+                .on('error', ()=>{})//todo maybe better
+                .pipe(gulp.dest('./dist/'))
+            ;
         });
 
 

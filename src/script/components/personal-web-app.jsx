@@ -15,6 +15,8 @@ export function PersonalWebAppComponent(props) {
     const stateJS = store.getState().toJS();
 
 
+    const opened_item = content.items.find((item)=>item.id===stateJS.opened_item_id)||null;
+
     return (
             <div className="personal-web">
 
@@ -44,7 +46,7 @@ export function PersonalWebAppComponent(props) {
 
 
 
-                {!stateJS.opened_item_id?
+                {!opened_item?
                     <div>
 
 
@@ -92,7 +94,9 @@ export function PersonalWebAppComponent(props) {
                     </div>
 
                     :
-                    <PersonalWebItem store={store} item={content.items.find((item)=>item.id===stateJS.opened_item_id)}/>
+                    <PersonalWebItem store={store} item={opened_item} subitems={content.items.filter((item)=>{
+                        return item.parent===opened_item.id;
+                    })}/>
                 }
 
 
