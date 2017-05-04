@@ -148,8 +148,8 @@ app.get('/*', function (req, res) {
 
 
 
+const port = process.env.PORT || 5000;
 
-
-app.listen(31415, function () {
-    console.log('Example app listening on port 31415!')
+app.listen(port, function () {
+    console.log(`Example app listening on port ${port}!`)
 });
