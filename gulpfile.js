@@ -97,6 +97,7 @@ gulp.task('build-css', function() {
 const webpack = require('webpack');
 const gulpWebpack = require('webpack-stream');
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
 
