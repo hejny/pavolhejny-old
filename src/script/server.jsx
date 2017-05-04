@@ -196,7 +196,7 @@ app.get('/*', function (req, res) {
 
 
 
-
+console.log(process.env);
 
 const port = process.env.PORT || 5000;
 
