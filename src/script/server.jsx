@@ -65,8 +65,8 @@ import * as html from "html";
 
 
 
-const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
-const stats = fs.statSync(path.join(__filename));
+const indexHtml = fs.readFileSync('../index.html', 'utf8');
+const stats = fs.statSync(__filename);
 const mtime = new Date(util.inspect(stats.mtime));
 
 
