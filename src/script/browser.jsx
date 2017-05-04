@@ -19,16 +19,7 @@ import {createTitleFromState} from "./main/create-title-from-state.js";
 window.addEventListener('load', function() {
 
 
-
-    //-----------------Get language from domain name
-    const host = window.location.hostname;
-    const hostParts = host.split('.');
-    const tdl = hostParts[hostParts.length-1];
-    const defaultLanguae = tdl==='cz'?'cs':'en';
-    //-----------------
-
-
-
+    const defaultLanguae = 'en';
 
 
     const root = document.getElementById('root');
@@ -41,12 +32,20 @@ window.addEventListener('load', function() {
 
     window.onpopstate = (event) => {
         personalWebApp.setState(event.state);
+
+        console.log('Onpopstate render...');
+        ReactDOM.render(
+            personalWebApp.createJSX(),
+            root
+        );
+
     };
 
 
 
-    personalWebApp.subscribe(()=>{
 
+
+    personalWebApp.subscribe(()=>{
 
         const state = personalWebApp.getState();
 
@@ -60,7 +59,6 @@ window.addEventListener('load', function() {
         //------
 
         console.log('Render...');
-        state;
         ReactDOM.render(
             personalWebApp.createJSX(),
             root
