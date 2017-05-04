@@ -115,7 +115,8 @@ const indexHtml = `
 </body>
 </html>
 `;
-const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+
+//const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 const stats = fs.statSync(__filename);
 const mtime = new Date(util.inspect(stats.mtime));
 
