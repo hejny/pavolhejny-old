@@ -64,8 +64,58 @@ import * as util from 'util';
 import * as html from "html";
 
 
+const indexHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!--title--></title>
 
-const indexHtml = fs.readFileSync('../index.html', 'utf8');
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/dist/personal-web.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.3/css/simple-line-icons.css">
+
+
+
+    <link rel="shortcut icon" href="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=64&r=pg&d=mm ?>" />
+
+
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-70710834-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <script src="/dist/browser.js" async></script>
+
+
+    <!--build-info-->
+
+
+</head>
+<body>
+
+
+<div id="root"><!--root--></div>
+
+
+</body>
+</html>
+`;
+const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 const stats = fs.statSync(__filename);
 const mtime = new Date(util.inspect(stats.mtime));
 
