@@ -205,6 +205,6 @@ app.get('/', function(request, response) {
 app.set('port', (process.env.PORT || 5000));
 
 
-app.listen(port, function () {
+app.listen(app.get('port'), function () {
     console.log(`Example app listening on port ${app.get('port')}!`)
 });
