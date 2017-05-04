@@ -117,14 +117,13 @@ const indexHtml = `
 `;
 
 //const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
-const stats = fs.statSync(__filename);
-const mtime = new Date(util.inspect(stats.mtime));
+//const stats = fs.statSync(__filename);
+//const mtime = new Date(util.inspect(stats.mtime));
 
 
 const buildInfo = `
         (cc) Pavol Hejný
         https://github.com/hejny/pavolhejny
-        Build with Strider CI at ${mtime.toString()}
         Process started at ${(new Date()).toString()}
     `;
 
