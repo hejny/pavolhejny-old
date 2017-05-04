@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node ./test/index.js"
+    "test": "./node_modules/.bin/jasmine-node ./test/index.js",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "gulp build"
   },
   "dependencies": {
     "express": "^4.15.2",
