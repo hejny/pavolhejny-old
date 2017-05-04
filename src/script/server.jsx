@@ -131,7 +131,7 @@ const buildInfo = `
 
 
 
-
+/*
 app.get('/*', function (req, res) {
 
 
@@ -192,14 +192,19 @@ app.get('/*', function (req, res) {
     res.send(outHtmlPrettyWithInfo);
 
 });
+*/
 
 
 
+app.get('/', function(request, response) {
+    var result = 'App is running';
+    response.send(result);
+});
 
-console.log(process.env);
 
-const port = process.env.PORT || 5000;
+app.set('port', (process.env.PORT || 5000));
+
 
 app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`)
+    console.log(`Example app listening on port ${app.get('port')}!`)
 });
