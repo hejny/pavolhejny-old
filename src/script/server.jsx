@@ -8,6 +8,18 @@ import requestPromise from 'request-promise';
 
 
 console.log(path.join(__dirname,'../media/'));
+
+
+const testFolder = path.join(__dirname,'../media/');
+const fs = require('fs');
+fs.readdir(testFolder, (err, files) => {
+    files.forEach(file => {
+        console.log(file);
+    });
+});
+
+
+
 //Static content
 app.use('/media', express.static(path.join(__dirname,'../media/')));
 app.use('/dist', express.static(path.join(__dirname,'../dist/')));
