@@ -7,17 +7,11 @@ import requestPromise from 'request-promise';
 
 
 
+
+
+
 console.log(path.join(__dirname,'../media/'));
-
-
-const testFolder = path.join(__dirname,'../media/');
-const fs = require('fs');
-fs.readdir(testFolder, (err, files) => {
-    files.forEach(file => {
-        console.log(file);
-    });
-});
-
+console.log(path.join(__dirname));
 
 
 //Static content
