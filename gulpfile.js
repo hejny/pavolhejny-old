@@ -83,7 +83,8 @@ gulp.task('build-css', function() {
         .pipe(sass())
         .pipe(rename("./personal-web.css"))
         .pipe(gulp.dest("./dist"))
-        .pipe(browserSync.stream());
+        //.pipe(browserSync.stream())
+    ;
 });
 
 
