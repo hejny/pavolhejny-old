@@ -7,14 +7,14 @@ import requestPromise from 'request-promise';
 
 
 
+console.log(path.join(__dirname,'../media/'));
 //Static content
-app.use('/media', express.static(__dirname+'../media/'));
-app.use('/dist', express.static(__dirname+'../dist/'));
-
-
-//app.use('/media', express.static(path.join(__dirname,'../media/')));
-//app.use('/dist', express.static(path.join(__dirname,'../dist/')));
+app.use('/media', express.static(path.join(__dirname,'../media/')));
+app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon
+
+
+
 
 
 //import {FB_APP_ID,FB_APP_SECRET} from './config-server';

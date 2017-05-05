@@ -21,7 +21,7 @@ gulp.task('build', ['build-js-browser-production','build-js-server-development',
 
 
 
-var browserSync;
+var browserSync=null;
 gulp.task('browser-sync', function() {
 
     runSequence(
@@ -79,11 +79,20 @@ gulp.task('browser-sync-build-js-browser', ['build-js-browser-development'], fun
 
 
 gulp.task('build-css', function() {
-    return gulp.src("./src/style/index.scss")
+
+    var stream = gulp.src("./src/style/index.scss")
         .pipe(sass())
         .pipe(rename("./personal-web.css"))
         .pipe(gulp.dest("./dist"))
-        //.pipe(browserSync.stream())
+        ;
+
+
+    if(browserSync) {
+        stream.pipe(browserSync.stream());
+    }
+
+    return stream
+
     ;
 });
 
