@@ -15,6 +15,7 @@ console.log(path.join(__dirname));
 
 
 //Static content
+app.use('/mediax', express.static('./media/'));
 app.use('/media', express.static(path.join(__dirname,'../media/')));
 app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon
