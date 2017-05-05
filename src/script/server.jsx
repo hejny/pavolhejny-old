@@ -131,7 +131,7 @@ const buildInfo = `
 
 
 
-/*
+
 app.get('/*', function (req, res) {
 
 
@@ -192,14 +192,9 @@ app.get('/*', function (req, res) {
     res.send(outHtmlPrettyWithInfo);
 
 });
-*/
 
 
 
-app.get('/', function(request, response) {
-    var result = 'App is running';
-    response.send(result);
-});
 
 
 app.set('port', (process.env.PORT || 5000));
