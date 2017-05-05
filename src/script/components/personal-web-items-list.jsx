@@ -23,7 +23,7 @@ export function PersonalWebItemsList(props) {
 
 
     return(
-        <div>
+        <div class="items">
 
             {items.map((item)=> {
 

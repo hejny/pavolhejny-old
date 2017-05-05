@@ -22,6 +22,7 @@ body {
 
 
 
+
   .personal-web {
 
     margin-top: calc(5vh + 20px);
@@ -34,10 +35,15 @@ body {
     //border: 2px solid green;
 
 
+    .items{
+      font-size: 0;
+    }
 
 
 
     .item {
+
+      font-size: 1rem;
 
       display: inline-block;
       width: 150px;
