@@ -25,8 +25,8 @@ app.use('/dist', express.static('./dist/'));
 
 
 //const config = JSON.parse(fs.readFileSync(path.join(__dirname, '../config-server.json'), 'utf8'));
-const FB_APP_ID = '';//config.FB_APP_ID;
-const FB_APP_SECRET = '';//config.FB_APP_SECRET;
+const FB_APP_ID = process.env.FB_APP_ID;//config.FB_APP_ID;
+const FB_APP_SECRET = process.env.FB_APP_SECRET;//config.FB_APP_SECRET;
 
 
 
