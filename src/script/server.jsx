@@ -8,8 +8,12 @@ import requestPromise from 'request-promise';
 
 
 //Static content
-app.use('/media', express.static(path.join(__dirname,'../media/')));
-app.use('/dist', express.static(path.join(__dirname,'../dist/')));
+app.use('/media', express.static(__dirname+'../media/'));
+app.use('/dist', express.static(__dirname+'../dist/'));
+
+
+//app.use('/media', express.static(path.join(__dirname,'../media/')));
+//app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon
 
 
