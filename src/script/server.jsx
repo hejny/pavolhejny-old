@@ -163,7 +163,7 @@ app.get('/*', function (req, res) {
 
 
         if(HOSTNAME) {
-            if(HOSTNAME!==req.req.headers.host) {
+            if(HOSTNAME!==req.headers.host) {
                 for (let alias in HOSTNAME_ALIASES) {
                     console.log(req.headers.host, alias);
                     if (req.headers.host === alias) {
