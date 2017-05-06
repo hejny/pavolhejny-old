@@ -163,10 +163,10 @@ app.get('/*', function (req, res) {
 
 
         if(HOSTNAME) {
-            if(HOSTNAME!==req.hostname) {
+            if(HOSTNAME!==req.req.headers.host) {
                 for (let alias in HOSTNAME_ALIASES) {
-                    console.log(req.hostname, alias);
-                    if (req.hostname === alias) {
+                    console.log(req.headers.host, alias);
+                    if (req.headers.host === alias) {
                         res.redirect(301, `//${HOSTNAME}${HOSTNAME_ALIASES[alias]}`);
                         return;
                     }
