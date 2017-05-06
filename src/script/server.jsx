@@ -165,9 +165,9 @@ app.get('/*', function (req, res) {
         if(HOSTNAME) {
             if(HOSTNAME!==req.headers.host) {
 
-                let xxx = json.stringify(process.env);
+                let xxx = JSON.stringify(process.env);
                 xxx += HOSTNAME +'\n';
-                xxx += json.stringify(HOSTNAME_ALIASES) +'\n';
+                xxx += JSON.stringify(HOSTNAME_ALIASES) +'\n';
 
 
 
