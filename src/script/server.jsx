@@ -129,14 +129,13 @@ const indexHtml = `
 //const mtime = new Date(util.inspect(stats.mtime));
 
 
-const buildInfo = `
+const BUILD_INFO = `
         (cc) Pavol Hejný
         https://github.com/hejny/pavolhejny
         Process started at ${(new Date()).toString()}
     `;
-
-
-
+const HOSTNAME = process.env.HOSTNAME||null;
+const HOSTNAME_ALIASES = JSON.parse(process.env.HOSTNAMES||'{}');
 
 
 
@@ -162,12 +161,25 @@ app.get('/*', function (req, res) {
 
     if(state.httpStatus===200) {
 
+
+        if(HOSTNAME) {
+            for (let alias in HOSTNAME_ALIASES) {
+                if (req.hostname !== alias) {
+                    res.redirect(301, `//${alias}${HOSTNAME_ALIASES[alias]}`);
+                    return;
+                }
+            }
+        }
+
+
         const normalizedUri = createUriFromState(PERSONAL,state);
 
         if (req.path !== normalizedUri) {
             res.redirect(301,normalizedUri);
             return;
         }
+
+
     }
 
 
@@ -193,7 +205,7 @@ app.get('/*', function (req, res) {
 
 
     const outHtmlPrettyWithInfo = outHtmlPretty
-        .split('<!--build-info-->').join(`<!--${buildInfo}-->`);
+        .split('<!--build-info-->').join(`<!--${BUILD_INFO}-->`);
 
 
 
