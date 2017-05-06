@@ -155,7 +155,6 @@ app.get('/*', function (req, res) {
 
     let state;
 
-
     state = createStateFromUri(PERSONAL,req.path,defaultLanguae);
 
 
@@ -165,16 +164,8 @@ app.get('/*', function (req, res) {
         if(HOSTNAME) {
             if(HOSTNAME!==req.headers.host) {
 
-                let xxx = JSON.stringify(process.env);
-                xxx += HOSTNAME +'\n';
-                xxx += JSON.stringify(HOSTNAME_ALIASES) +'\n';
-
-
 
                 for (let alias in HOSTNAME_ALIASES) {
-
-
-                    xxx += req.headers.host+' , '+ alias +'\n';
 
 
                     if (req.headers.host === alias) {
@@ -183,7 +174,6 @@ app.get('/*', function (req, res) {
                     }
                 }
 
-                //res.send(xxx);
                 res.redirect(301, `//${HOSTNAME}`);
                 return;
             }
