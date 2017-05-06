@@ -135,7 +135,7 @@ const BUILD_INFO = `
         Process started at ${(new Date()).toString()}
     `;
 const HOSTNAME = process.env.HOSTNAME||null;
-const HOSTNAME_ALIASES = JSON.parse(process.env.HOSTNAMES||'{}');
+const HOSTNAME_ALIASES = JSON.parse(process.env.HOSTNAME_ALIASES||'{}');
 
 
 
@@ -183,8 +183,8 @@ app.get('/*', function (req, res) {
                     }
                 }
 
-                res.send(xxx);
-                //res.redirect(301, `//${HOSTNAME}`);
+                //res.send(xxx);
+                res.redirect(301, `//${HOSTNAME}`);
                 return;
             }
         }
