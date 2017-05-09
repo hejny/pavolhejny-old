@@ -6,6 +6,8 @@ import * as React from "react";
 import {translate,getMessage} from "../functions/translate.jsx";
 import {PersonalWebItem} from "./personal-web-item.jsx";
 import {PersonalWebItems} from "./personal-web-items.jsx";
+import {Background} from "./background.jsx";
+
 
 
 
@@ -18,8 +20,8 @@ export function PersonalWebAppComponent(props) {
     const opened_item = content.items.find((item)=>item.id===stateJS.opened_item_id)||null;
 
     return (
-            <div className="personal-web">
-
+            <div>
+                <div className="personal-web">
 
 
                 <div className="languages">
@@ -120,9 +122,9 @@ export function PersonalWebAppComponent(props) {
                         <li>Zdrojoý kód</li>
                     </ul>
                 </footer>*/}
+                </div>
 
-
-
+                {/*<Background content={content}/>*/}
 
             </div>
     );

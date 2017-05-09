@@ -3,19 +3,23 @@
 body {
 
 
-  background-image: url("/media/images/backgrounds/whiteboard.jpg");
-  //background-image: url("/media/images/backgrounds/hall.png");
+  /*
+  //background-image: url("https://www.planwallpaper.com/static/images/Cool-Background-Wallpaper-Dekstop.jpg");
+  //background-image: url("/media/images/backgrounds/fract.png");
+  background-image: url("/media/images/backgrounds/d.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  //background-image: url("/media/images/backgrounds/b.png");
-  //background-image: url("/media/images/backgrounds/d.jpg");
 
+  //background-image: url("/media/images/backgrounds/whiteboard.jpg");
+  //background-color: #fefefe;
+*/
 
-  //background-image: url("https://www.ethereum.org/images/homestead-dawn-background.jpg");
-  //background-size: 100%;
-  //background-repeat: no-repeat;
-  //background-position: center center;
+  background-color: #f4fff2;
+  color: #0d0413;
+  text-shadow: rgb(255, 255, 255) 0px 0px 5px;
 
-  //background-color: #D2D6D9;
 
 
   text-align: center;
@@ -24,6 +28,9 @@ body {
 
 
   .personal-web {
+
+    z-index: 2000;
+    position: relative;
 
     margin-top: calc(5vh + 20px);
 
@@ -190,6 +197,49 @@ body {
   }
 
 }
+
+
+/*
+.background {
+
+  z-index: 1000;
+
+  canvas, .code{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+  .code{
+
+    display: none;
+    z-index: 100;
+
+    .col{
+      display: inline-block;
+      //width: calc( 50vw - 400px - 20px );
+      //background:red;
+      word-wrap: break-word;
+      padding: 0px;
+    }
+
+    .col.col1{
+      float: left;
+      text-align: left;
+    }
+    .col.col2{
+      float: right;
+      text-align: right;
+    }
+  }
+
+  canvas{
+    z-index: 200;
+  }
+
+}*/
 
 
 
