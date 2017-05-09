@@ -87,8 +87,8 @@ export const ITEMS =
             interesting: true,
             name: "Towns",
             description: {
-                cs: "Série strategických online her.",
-                en: "A series of strategic online games."
+                cs: "Série strategických online her",
+                en: "A series of strategic online games"
             },
         },
 
