@@ -16,9 +16,12 @@ body {
   //background-color: #fefefe;
 */
 
-  background-color: #f4fff2;
+
+
+  background: linear-gradient(0deg, #bbdcff, #cfffec);
+  background-attachment: fixed;
   color: #0d0413;
-  text-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  //text-shadow: rgb(112, 255, 110) 0px 0px 5px;
 
 
 
@@ -62,6 +65,7 @@ body {
 
       //border: 2px solid red;
       box-shadow: black 0px 0px 5px;
+      background-color: rgba(254, 255, 252, 0.51);
       margin: 5px;
 
 
