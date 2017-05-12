@@ -9,6 +9,20 @@ import requestPromise from 'request-promise';
 
 const app = express();
 app.use(helmet());
+app.disable('x-powered-by');
+app.use(function(req, res, next) {
+    var schema = req.headers['x-forwarded-proto'];
+
+    if (schema === 'https') {
+        // Already https; don't do anything special.
+        next();
+    }
+    else {
+        // Redirect to https.
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
+
 
 
 
