@@ -2,10 +2,13 @@
 
 import * as path from 'path';
 import express from 'express';
-var app = express();
+import helmet from 'helmet';
 import requestPromise from 'request-promise';
 
 
+
+const app = express();
+app.use(helmet());
 
 
 
