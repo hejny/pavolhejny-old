@@ -82,4 +82,37 @@ window.addEventListener('load', function() {
 
 
 
+let increment = 0;
+
+function bgFrame(){
+
+
+    //console.log('requestAnimationFrame');
+
+    const deg = Math.round((new Date())/1000+increment)%360;
+    //console.log(deg);
+
+    const degI = (deg+90)%360;
+    const color1 = `hsl(${deg} ,30%,90%)`;
+    const color2 = `hsl(${degI},30%,90%)`;
+
+    //${deg}deg
+    document.body.style.background = `linear-gradient(0deg, ${color1}, ${color2})`;//#bbdcff, #cfffec
+    document.body.style.backgroundPosition = `fixed`;
+
+
+    requestAnimationFrame(bgFrame);
+}
+bgFrame();
+
+
+
+
+document.body.addEventListener("mousemove", ()=>{
+    increment+=0.5;
+});
+
+
+
+
 

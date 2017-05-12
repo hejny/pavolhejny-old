@@ -18,15 +18,18 @@ body {
 
 
 
-  background: linear-gradient(0deg, #bbdcff, #cfffec);
-  background-attachment: fixed;
-  color: #0d0413;
+  //background: linear-gradient(0deg, #bbdcff, #cfffec);
+  //background-attachment: fixed;
+  color: #000;
   //text-shadow: rgb(112, 255, 110) 0px 0px 5px;
 
 
 
   text-align: center;
 
+  min-height: 100vh;
+
+  //border: 2px solid red;
 
 
 
@@ -42,6 +45,9 @@ body {
     display: inline-block;
     width: 100%;
     max-width: 800px;
+
+
+    //background-color: #37beff;
     //border: 2px solid green;
 
 
