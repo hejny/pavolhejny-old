@@ -9,7 +9,32 @@ import requestPromise from 'request-promise';
 
 const app = express();
 app.use(helmet());
-app.disable('x-powered-by');
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'",'www.google-analytics.com'],
+        styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
+        imgSrc: ["'self'",'1.gravatar.com','data:'],
+    }
+}));
+app.use(helmet.hidePoweredBy({ setTo: 'PavolHejny.com' }));
+app.use(helmet.hsts({
+    maxAge: 3600*24,
+    includeSubDomains: false,
+
+}));
+app.use(helmet.ieNoOpen());
+app.use(helmet.noCache());
+app.use(helmet.noSniff());
+app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+app.use(helmet.xssFilter());
+
+
+app.use(function(req, res, next) {
+    res.set('Vary', 'Accept-Encoding');
+    next();
+});
+
+
 app.use(function(req, res, next) {
     var schema = req.headers['x-forwarded-proto'];
 
