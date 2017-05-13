@@ -20,7 +20,7 @@ app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'",'www.google-analytics.com',(req, res)=>res.locals.nonce],
-        styleSrc: ["'self'", 'unsafe-inline', 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
+        styleSrc: ["'self'", "'unsafe-inline'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
         fontSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
         frameSrc: ["'self'", '*'],
         imgSrc: ["'self'",'data:','*'],
