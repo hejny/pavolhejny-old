@@ -12,14 +12,14 @@ const app = express();
 
 
 app.use(function (req, res, next) {
-    res.locals.nonce = 'nonce-'+uuid.v4();
+    res.locals.nonce = uuid.v4();
     next();
 });
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'",'www.google-analytics.com',(req, res)=>`'${res.locals.nonce}'`],
+        scriptSrc: ["'self'",'www.google-analytics.com',(req, res)=>`'nonce-${res.locals.nonce}'`],
         styleSrc: ["'self'", "'unsafe-inline'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
         fontSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
         frameSrc: ["'self'", '*'],
