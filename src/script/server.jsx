@@ -12,7 +12,7 @@ const app = express();
 
 
 app.use(function (req, res, next) {
-    res.locals.nonce = uuid.v4();
+    res.locals.nonce = 'nonce-'+uuid.v4();
     next();
 });
 app.use(helmet());
