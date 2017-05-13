@@ -2,7 +2,7 @@
 
 
 
-const isBrowser=new Function("try {return this===window;}catch(e){ return false;}");
+function isBrowser(){try {return this===window;}catch(e){ return false;}}
 
 
 
