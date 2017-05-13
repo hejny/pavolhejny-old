@@ -22,7 +22,7 @@ app.use(helmet.contentSecurityPolicy({
         scriptSrc: ["'self'",'www.google-analytics.com',(req, res)=>`'nonce-${res.locals.nonce}'`],
         styleSrc: ["'self'", "'unsafe-inline'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
         fontSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
-        frameSrc: ["'self'", '*'],
+        childSrc: ["'self'", '*'],
         imgSrc: ["'self'",'data:','*'],
     }
 }));
