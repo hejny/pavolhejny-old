@@ -259,7 +259,7 @@ app.get('/*', function (req, res) {
     const outHtml = indexHtml
         .split('<!--title-->').join(title)
         .split('<!--root-->').join(rootHtml)
-        .split('<script>').join(`<script nonce=${res.locals.nonce}>`)
+        .split('<script>').join(`<script nonce="${res.locals.nonce}">`)
         .split('browser.js').join('browser.min.js')
         ;
     const outHtmlPretty = html.prettyPrint(outHtml, {indent_size: 4});
