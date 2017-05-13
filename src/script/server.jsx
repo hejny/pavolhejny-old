@@ -3,17 +3,27 @@
 import * as path from 'path';
 import express from 'express';
 import helmet from 'helmet';
+import uuid from 'node-uuid';
 import requestPromise from 'request-promise';
 
 
 
 const app = express();
+
+
+app.use(function (req, res, next) {
+    res.locals.nonce = uuid.v4();
+    next();
+});
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
     directives: {
-        defaultSrc: ["'self'",'www.google-analytics.com'],
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'",'www.google-analytics.com',(req, res)=>`nonce-${res.locals.nonce}`],
         styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
-        imgSrc: ["'self'",'1.gravatar.com','data:'],
+        fontSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'cdnjs.cloudflare.com'],
+        frameSrc: ["'self'", '*'],
+        imgSrc: ["'self'",'data:','*'],
     }
 }));
 app.use(helmet.hidePoweredBy({ setTo: 'PavolHejny.com' }));
@@ -249,6 +259,7 @@ app.get('/*', function (req, res) {
     const outHtml = indexHtml
         .split('<!--title-->').join(title)
         .split('<!--root-->').join(rootHtml)
+        .split('<script>').join(`<script nonce=${res.locals.nonce}>`)
         .split('browser.js').join('browser.min.js')
         ;
     const outHtmlPretty = html.prettyPrint(outHtml, {indent_size: 4});
