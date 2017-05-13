@@ -30,6 +30,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PavolHejny.com' }));
 app.use(helmet.hsts({
     maxAge: 3600*24,
     includeSubDomains: false,
+    force: true,
 
 }));
 app.use(helmet.ieNoOpen());
