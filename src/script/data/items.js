@@ -401,7 +401,7 @@ export const ITEMS =
                 Slides: "http://js.slides.webappgames.com/",
                 Sample: "https://jsfiddle.net/phejny/vL5ae5L2/14/",
             },
-            embed: ["http://js.slides.webappgames.com/"],
+            //embed: ["http://js.slides.webappgames.com/"],
             date: "2017-03-31"
         },
 
@@ -414,8 +414,8 @@ export const ITEMS =
                 en: "3D on the web"
             },
             event: "ITNetwork",
-            links:{Slides: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu"},
-            //embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
+            links:{Slides: "https://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu"},
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
             date: "2016-11-25"
         },
 
@@ -433,10 +433,10 @@ export const ITEMS =
             },
             event: "OpenAlt",
             links:{
-                Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
+                Slides: "https://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
                 Video: 'https://www.superlectures.com/openalt2016/3d-na-webu'
             },
-            embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
+            //embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
             date: "2016-11-06"
         },
 
@@ -451,7 +451,7 @@ export const ITEMS =
                 en: "Web App Games"
             },
             event: "Game Developers Session",
-            links:{Slides: "http://www.slideshare.net/PavolHejn/web-app-games"},
+            links:{Slides: "https://www.slideshare.net/PavolHejn/web-app-games"},
             embed: ["https://www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u"],
             date: "2016-11-03"
         },
@@ -468,7 +468,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             links:{
-                Slides: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu",
+                Slides: "https://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu",
                 'Sample 1': "https://jsfiddle.net/phejny/aknp0z71/13/",
                 'Sample 2': "https://jsfiddle.net/phejny/497esp0z/15/",
                 'Sample 3': "https://jsfiddle.net/phejny/hasf4gag/8/"
@@ -488,7 +488,7 @@ export const ITEMS =
                 en: "Web applications in JavaScript"
             },
             event: "ITNetwork",
-            links:{Slides: "http://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu"},
+            links:{Slides: "https://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu"},
             embed: ["https://www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b"],
             date: "2016-05-27"
         },
