@@ -355,11 +355,6 @@ export const ITEMS =
 
 
 
-
-
-
-
-
         /*{
             id: "react-redux-paralelni-polis",
             type: "TALK",
@@ -384,10 +379,10 @@ export const ITEMS =
             },
             event: "Jobs Dev",
             links:{
-                //Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt"
+                Slides: "https://www.slideshare.net/PavolHejn/3d-na-webu",
                 Event: 'https://www.jobsdev.cz/'
             },
-            //embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/BqS93r0cqlYP0r"],
             date: "2017-05-27"
         },
         {
