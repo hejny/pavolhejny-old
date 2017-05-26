@@ -1,5 +1,3 @@
-
-
 import * as React from "react";
 import {translate,getMessage} from "../functions/translate.jsx";
 
@@ -7,6 +5,13 @@ import FontAwesome from 'react-fontawesome';
 
 import moment from "moment";
 import {PersonalWebItemsList} from "./personal-web-items-list.jsx";
+
+
+
+
+function isInTypes(type,types){
+    return type.split('_').some((subtype)=>types.indexOf(subtype)!==-1);
+}
 
 
 
@@ -26,78 +31,129 @@ export function PersonalWebItems(props) {
             <h2>{stateJS.value}</h2>
 
 
-            {/*<select value={stateJS.filters.status} onChange={(event)=>{
 
-             if(event.target.value=='all'){
-             store.dispatch({
-             type: 'DROP_FILTER',
-             filter: 'status',
-             });
-             }else{
-             store.dispatch({
-             type: 'SET_FILTER',
-             filter: 'status',
-             value: event.target.value
-             });
-             }
+            {stateJS.filter_types.length ?
+
+                <div>
 
 
+                    <button onClick={(event)=> {store.dispatch({type: 'SET_FILTER_TYPES', value:[]});}}>
+                        {/*{translate(stateJS.language, 'Show less')} <FontAwesome name="caret-square-o-up"/>*/}
+                        <FontAwesome name="home" />
+                        {translate(stateJS.language,'Back')}
 
-             }}>
+                    </button>
 
-             <option value="all">Vse</option>
-             <option value="working">Pracuje</option>
-             <option value="done">Hotovo</option>
-
-             </select>*/}
+                    <PersonalWebItemsList store={store} items={items.filter((item)=> {
 
 
-            {stateJS.all ?
-                <button onClick={(event)=> {
-                    store.dispatch({
-                        type: 'SHOW_INTERESTING'
-                    });
-                }}>{translate(stateJS.language, 'Show less')} <FontAwesome name="caret-square-o-up"/></button>
-                : ''
+                        /*if ('parent' in item) {
+                            return false;
+                        }*/
+
+
+                        if(!isInTypes(item.type,stateJS.filter_types)){
+                            return false;
+                        }
+
+
+                        return true;
+
+
+                    })}/>
+
+
+                </div>
+                :
+
+                <div>
+
+                    <h2>{translate(stateJS.language, 'Projects')}</h2>
+
+
+                    <PersonalWebItemsList store={store} items={items.filter((item)=> {
+
+
+                        /*if ('parent' in item) {
+                            return false;
+                        }*/
+
+                        if (!stateJS.all && !item.interesting) {
+                            return false;
+                        }
+
+
+                        if(!isInTypes(item.type,['PROJECT','APP','GAME'])){
+                            return false;
+                        }
+
+
+                        return true;
+
+
+                    })}/>
+
+
+
+                    <button onClick={(event)=> {
+                        store.dispatch({
+                            type: 'SET_FILTER_TYPES',
+                            value:['PROJECT','APP','GAME']
+                        });
+                    }}>
+                        <FontAwesome name="caret-square-o-down"/>
+                        {translate(stateJS.language, 'Show more')}
+                    </button>
+
+
+
+
+                    <h2>{translate(stateJS.language, 'Talks')}</h2>
+
+
+                    <PersonalWebItemsList store={store} items={items.filter((item)=> {
+
+
+                        /*if ('parent' in item) {
+                            return false;
+                        }*/
+
+                        if (!stateJS.all && !item.interesting) {
+                            return false;
+                        }
+
+
+                        if(!isInTypes(item.type,['TALK','ARTICLE'])){
+                            return false;
+                        }
+
+
+                        return true;
+
+
+                    })}/>
+
+
+
+
+
+                    <button onClick={(event)=> {
+                        store.dispatch({
+                            type: 'SET_FILTER_TYPES',
+                            value:['TALK','ARTICLE']
+                        });
+                    }}>
+                        <FontAwesome name="caret-square-o-down"/>
+                        {translate(stateJS.language, 'Show more')}
+                    </button>
+
+
+                </div>
 
             }
 
 
-            <PersonalWebItemsList store={store} items={items.filter((item)=> {
 
-
-                if ('parent' in item) {
-                    return false;
-                }
-
-                if (stateJS.all) {
-                    return true;
-                } else {
-                    return item.interesting || false;
-                }
-
-                /*for (let filteredKey in stateJS.filters) {
-                 let filteredValue = stateJS.filters[filteredKey];
-
-                 if (item[filteredKey] !== filteredValue) {
-                 return false;
-                 }
-
-                 }
-                 return true;*/
-
-
-            })}/>
-
-
-            {stateJS.all ? '' :
-                <button onClick={(event)=> {
-                    store.dispatch({
-                        type: 'SHOW_ALL'
-                    });
-                }}>{translate(stateJS.language, 'Show more')} <FontAwesome name="caret-square-o-down"/></button>
-
-            }
 
 
         </div>

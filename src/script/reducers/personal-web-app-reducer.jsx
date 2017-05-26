@@ -1,4 +1,4 @@
-//import * as Immutable from "immutable";
+import * as Immutable from "immutable";
 
 
 
@@ -63,22 +63,10 @@ function personalWebAppReducerCore(state,action){
 
             return state.set('scroll',action.scroll);
 
-        case 'SHOW_ALL':
+        case 'SET_FILTER_TYPES':
 
-            return state.set('all',true);
+            return state.set('filter_types',Immutable.fromJS(action.value));
 
-        case 'SHOW_INTERESTING':
-
-            return state.set('all',false);
-
-        /*case 'SET_FILTER':
-
-            return state.setIn(['filters',action.filter],action.value);
-
-        case 'DROP_FILTER':
-
-            return state.deleteIn(['filters',action.filter]);
-        */
 
         case 'OPEN_ITEM':
 

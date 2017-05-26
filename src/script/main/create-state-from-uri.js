@@ -11,7 +11,7 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
     const uriParts = uri.split('/').filter((part)=>part!=='');
 
 
-    let all=false;
+    let filter_types=[];
     let opened_item_id,opened_image_id,httpStatus=200;
 
 
@@ -20,7 +20,7 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
         if(uriParts[1]||false){
 
-            if(uriParts[1]!=='all') {
+            if(uriParts[1]!=='filter') {
 
 
                 const opened_item = webStaticContent.items.find((item) => {
@@ -41,7 +41,7 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
             }else{
 
-                all = true;
+                filter_types = uriParts[2].split('+');
                 opened_item_id = null;
                 opened_image_id=null
 
@@ -77,7 +77,7 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
         language: language,
 
 
-        all: all,
+        filter_types: filter_types,
         /*filters: {
             "interesting": true
         },*/

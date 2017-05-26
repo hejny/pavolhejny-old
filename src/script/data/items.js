@@ -4,7 +4,7 @@ export const ITEMS =
 
         {
             id: "3d-galleries",
-            type: "WEB_APPS",
+            type: "WEB_APP_S",
             interesting: true,
             name: {
                 cs: "3D galerie",
@@ -27,15 +27,30 @@ export const ITEMS =
 
         {
             id: "todotable.com",
-            type: "WEB_APP",
+            type: "MINI_WEB_APP",
             language: 'en',
-            interesting: true,
+            //interesting: true,
             name: "TodoTable.com",
             roles: {
                 "Pavol Hejný": "creator",
             },
             time: "4.2017-now",
             url:"http://todotable.com",
+
+        },
+
+
+        {
+            id: "crypto-poll",
+            type: "MINI_WEB_APP",
+            language: 'en',
+            interesting: true,
+            name: "Crypto poll",
+            roles: {
+                "Pavol Hejný": "creator",
+            },
+            time: "5.2017-now",
+            url:"https://hejny.github.io/crypto-poll/",
 
         },
 
@@ -83,7 +98,7 @@ export const ITEMS =
 
         {
             id: "towns",
-            type: "WEB_GAMES",
+            type: "WEB_GAME_S",
             interesting: true,
             name: "Towns",
             description: {
@@ -245,6 +260,7 @@ export const ITEMS =
                 en: "fractals"
             },
             type: "PROJECT",
+            interesting: true,
             name: {
                 cs: "Fraktály",
                 en: "Fractals"
@@ -338,6 +354,57 @@ export const ITEMS =
 
 
 
+
+
+
+
+
+
+        /*{
+            id: "react-redux-paralelni-polis",
+            type: "TALK",
+            interesting: true,
+            //preparing: true,
+            language: 'en',
+            name: "React+Redux",
+            event: "Paralelní Polis",
+            //links:{Slides: "http://js.slides.webappgames.com/"},
+            //embed: ["http://js.slides.webappgames.com/"],
+            date: "2017-06-05"
+        },*/
+        {
+            id: "3d-na-webu-jobsdev",
+            type: "TALK",
+            interesting: true,
+            //preparing: true,
+            language: 'cs',
+            name: {
+                cs: "3D na webu",
+                en: "3D on the web"
+            },
+            event: "Jobs Dev",
+            links:{
+                //Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt"
+                Event: 'https://www.jobsdev.cz/'
+            },
+            //embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
+            date: "2017-05-27"
+        },
+        {
+            id: "react-redux-itnetwork",
+            type: "TALK",
+            interesting: true,
+            language: 'cs',
+            name: "React+Redux",
+            event: "ITNetwork",
+            links:{
+                Slides: "http://js.slides.webappgames.com/",
+                Sample: "https://jsfiddle.net/phejny/vL5ae5L2/14/",
+            },
+            embed: ["http://js.slides.webappgames.com/"],
+            date: "2017-03-31"
+        },
+
         {
             id: "3d-na-webu-itnetwork",
             type: "TALK",
@@ -349,7 +416,7 @@ export const ITEMS =
             event: "ITNetwork",
             links:{Slides: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu"},
             embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
-            date: "25.11.2016"
+            date: "2016-11-25"
         },
 
 
@@ -365,9 +432,12 @@ export const ITEMS =
                 en: "3D on the web"
             },
             event: "OpenAlt",
-            links:{Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt"},
+            links:{
+                Slides: "http://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
+                Video: 'https://www.superlectures.com/openalt2016/3d-na-webu'
+            },
             embed: ["https://www.slideshare.net/slideshow/embed_code/key/phlBSFxDrHuLq7"],
-            date: "6.11.2016"
+            date: "2016-11-06"
         },
 
 
@@ -382,23 +452,30 @@ export const ITEMS =
             },
             event: "Game Developers Session",
             links:{Slides: "http://www.slideshare.net/PavolHejn/web-app-games"},
-            embed: ["https//www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u"],
-            date: "3.11.2016"
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/4UACJkubrTz30u"],
+            date: "2016-11-03"
         },
 
 
         {
             id: "generovana-2d-grafika-na-webu-itnetwork",
             type: "TALK",
+            interesting: true,
             language: 'cs',
             name: {
                 cs: "Generovaná 2D grafika na webu",
                 en: "Generating 2D graphics on web"
             },
             event: "ITNetwork",
-            links:{Slides: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu"},
-            embed: ["https//www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW"],
-            date: "24.6.2016"
+            links:{
+                Slides: "http://www.slideshare.net/PavolHejn/generovan-2d-grafika-na-webu",
+                'Sample 1': "https://jsfiddle.net/phejny/aknp0z71/13/",
+                'Sample 2': "https://jsfiddle.net/phejny/497esp0z/15/",
+                'Sample 3': "https://jsfiddle.net/phejny/hasf4gag/8/"
+
+            },
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/5nkcbs1xuxWKoW"],
+            date: "2016-06-24"
         },
 
 
@@ -412,8 +489,8 @@ export const ITEMS =
             },
             event: "ITNetwork",
             links:{Slides: "http://www.slideshare.net/PavolHejn/webov-aplikace-v-javascriptu"},
-            embed: ["https//www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b"],
-            date: "27.5.2016"
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/I7cENTfs9uL16b"],
+            date: "2016-05-27"
         },
 
 
@@ -421,14 +498,15 @@ export const ITEMS =
             id: "fraktaly-itnetwork",
             parent: "fractals",
             type: "TALK",
+            interesting: true,
             language: 'cs',
             name: {
                 cs: "Fraktály",
                 en: "Fractals"
             },
             event: "ITNetwork",
-            links:{Slides: "http://www.itnetwork.cz/zpravodajstvi/prednasky/fraktaly"},
-            date: "25.9.2015"
+            url: "http://www.itnetwork.cz/zpravodajstvi/prednasky/fraktaly",
+            date: "2015-09-25"
         },
 
 
@@ -443,7 +521,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             links:{Slides: "http://www.itnetwork.cz/zpravodajstvi/prednasky/jak-funguje-online-hra-towns"},
-            date: "26.6.2015"
+            date: "2015-06-26"
         },
 
 
@@ -465,7 +543,7 @@ export const ITEMS =
                 en: "Tree generator"
             },
             url:"http://www.itnetwork.cz/php/ostatni/php-aplikace-generator-stromu",
-            date: "1.6.2015"
+            date: "2015-06-01"
         },
 
 
@@ -479,7 +557,7 @@ export const ITEMS =
                 en: "Map generator"
             },
             url:"http://www.itnetwork.cz/php/php-aplikace-generator-map",
-            date: "3.5.2015"
+            date: "2015-05-03"
         }
 
 

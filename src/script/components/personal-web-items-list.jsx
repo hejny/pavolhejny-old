@@ -10,6 +10,49 @@ import moment from "moment";
 
 
 
+
+
+function ItemInner(props){
+
+    const {item,language} = props;
+
+
+    return(
+        <div>
+            <h3>{getMessage(language,item.name)}</h3>
+
+            {(item.type==='TALK')?item.date.toLocaleDateString(language):undefined}
+
+
+            <div className={"type "+item.type} >
+                {translate(language,item.type)}
+                {('url' in item)?<FontAwesome name="external-link" />:undefined}
+
+                {(item.type==='TALK')?
+
+
+                ' '+translate(language,'at')+' '+item.event
+
+                    :undefined}
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    )
+
+}
+
+
+
+
+
+
 export function PersonalWebItemsList(props) {
 
 
@@ -20,27 +63,24 @@ export function PersonalWebItemsList(props) {
 
 
 
-
-
     return(
-        <div class="items">
+        <div className="items">
 
             {items.map((item)=> {
 
 
 
+                    /*const style = {
+                        opacity: 'preparing' in item?0.5:1
+                    };*/
+
+
                     if('url' in item){
 
                         return (
-                            <a href={item.url} target="_blank">
+                            <a key={item.id} href={item.url} target="_blank">
                                 <div className={"item "/*+item.type*/}>
-
-                                    <h3>{getMessage(stateJS.language,item.name)}</h3>
-
-                                    <div className={"type "+item.type} >
-                                        {translate(stateJS.language,item.type)}
-                                        <FontAwesome name="external-link" />
-                                    </div>
+                                    <ItemInner item={item} language={stateJS.language}/>
                                 </div>
                             </a>
 
@@ -48,13 +88,8 @@ export function PersonalWebItemsList(props) {
                     }else{
 
                         return (
-                            <div className={"item "/*+item.type*/} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
-
-                                <h3>{getMessage(stateJS.language,item.name)}</h3>
-
-                                <div className={"type "+item.type} >
-                                    {translate(stateJS.language,item.type)}
-                                </div>
+                            <div key={item.id} className={"item "/*+item.type*/} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
+                                <ItemInner item={item} language={stateJS.language}/>
                             </div>
 
                         )

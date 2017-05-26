@@ -39,6 +39,7 @@ body {
     position: relative;
 
     margin-top: calc(5vh + 20px);
+    margin-bottom: 200px;
 
 
 
@@ -129,13 +130,13 @@ body {
         &.ARTICLE{
             background-color: rgba(133, 255, 208, 0.3);
         }
-        &.WEB_APP, &.WEB_APPS{
+        &.WEB_APP, &.WEB_APP_S, &.MINI_WEB_APP{
             background-color: rgba(127, 182, 255, 0.3);
         }
         &.WEB_PAGE{
             background-color: rgba(127, 182, 255, 0.3);
         }
-        &.WEB_GAME, &.WEB_GAMES{
+        &.WEB_GAME, &.WEB_GAME_S{
             background-color: rgba(148, 151, 255, 0.3);
         }
         &.BOARD_GAME{

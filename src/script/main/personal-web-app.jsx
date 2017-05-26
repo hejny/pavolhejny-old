@@ -33,7 +33,7 @@ export class PersonalWebApp{
             /*start
             end
             date*/
-            item.date = moment(item.date,'DD.MM.YYYY').toDate();
+            item.date = new Date(item.date);//moment(item.date,'DD.MM.YYYY').toDate();
 
 
             return item;

@@ -29,8 +29,9 @@ export function createUriFromState(webStaticContent,stateJS){
 
     }else{
 
-        if(stateJS.all){
-            uriParts.push('all');
+        if(stateJS.filter_types.length){
+            uriParts.push('filter');
+            uriParts.push(stateJS.filter_types.join('+'));
         }
 
     }
