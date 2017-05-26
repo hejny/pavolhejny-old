@@ -415,7 +415,7 @@ export const ITEMS =
             },
             event: "ITNetwork",
             links:{Slides: "http://www.slideshare.net/PavolHejn/itnetwork-3d-na-webu"},
-            embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
+            //embed: ["https://www.slideshare.net/slideshow/embed_code/key/n0Jfwxs3NQr1vR"],
             date: "2016-11-25"
         },
 
