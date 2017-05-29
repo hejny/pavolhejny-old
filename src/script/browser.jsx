@@ -43,6 +43,55 @@ window.addEventListener('load', function() {
 
 
 
+    function render() {
+
+
+        console.log('Render...');
+        ReactDOM.render(
+            personalWebApp.createJSX(),
+            root
+        );
+
+
+
+        const item = personalWebApp.getCurrentItem();
+        if(item){
+            document.body.setAttribute('data-opened-item',item.id);
+        }else{
+            document.body.setAttribute('data-opened-item','');//todo remove attr
+        }
+
+
+        /*try{
+
+            const style = personalWebApp.getCurrentItem().style;
+
+            console.log(style);
+
+            document.body.style.backgroundImage = style.backgroundImage;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center center';
+            document.body.style.backgroundRepeat = 'no-repeat';
+            document.body.style.backgroundAttachment = 'fixed';
+
+
+            document.body.style.color = style.color;
+
+
+        }catch(error){
+
+            document.body.style.backgroundImage = undefined;//todo defaults
+            document.body.style.color = 'black';
+
+            console.log(error);
+
+        }*/
+
+
+    }
+
+
+
 
 
     personalWebApp.subscribe(()=>{
@@ -55,26 +104,16 @@ window.addEventListener('load', function() {
         document.title = title;
         history.pushState(state,title,url);
 
-
         //------
+        render();
 
-        console.log('Render...');
-        ReactDOM.render(
-            personalWebApp.createJSX(),
-            root
-        );
 
 
     });
 
 
 
-    ReactDOM.render(
-        personalWebApp.createJSX(),
-        root
-    );
-
-
+    render();
 
 
 
@@ -82,8 +121,8 @@ window.addEventListener('load', function() {
 
 
 
+/*
 let increment = 0;
-
 function bgFrame(){
 
 
@@ -111,7 +150,7 @@ bgFrame();
 document.body.addEventListener("mousemove", ()=>{
     increment+=0.5;
 });
-
+*/
 
 
 

@@ -10,7 +10,7 @@ ul.items{
 
     //flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: space-around;
     //align-items: stretch;
 
     flex-wrap: wrap;
@@ -73,12 +73,12 @@ li.item {
 
 
 
-
     img{
 
         //border: 1px solid red;
 
-
+        margin: 0;
+        //margin: -20px;
         transform: translate(calc(-50% + #{$size / 2}),calc( -50% + #{$size / 2}));
 
 

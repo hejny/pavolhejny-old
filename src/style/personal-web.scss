@@ -3,25 +3,42 @@
 body {
 
 
-  /*
-  //background-image: url("https://www.planwallpaper.com/static/images/Cool-Background-Wallpaper-Dekstop.jpg");
-  //background-image: url("/media/images/backgrounds/fract.png");
-  background-image: url("/media/images/backgrounds/d.jpg");
-  background-size: 100vw 100vh;
+
+  background: linear-gradient(0deg, #f8fdff, #e6faff);
+  color: #000;
+
+
+
+
+
+  background-size: cover;//100vw 100vh;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
 
-  //background-image: url("/media/images/backgrounds/whiteboard.jpg");
-  //background-color: #fefefe;
-*/
+  &[data-opened-item='fractals']{
+    color: white;
+    background-image: url("https://scontent.xx.fbcdn.net/v/t31.0-8/464707_4975105821543_533938353_o.jpg?oh=430e954ed5ddfa5d90dde7e0d860614a&oe=59AB057D");
+  }
+
+  &[data-opened-item='logic']{
+    color: white;
+    background-image: url("https://scontent.xx.fbcdn.net/v/t31.0-8/17632362_10209122554767102_6724720868562101116_o.jpg?oh=f26a5a0f52f08c1a176ace8d294e5044&oe=59A18288");
+  }
+
+  /*&[data-opened-item='towns']{
+
+
+    color: #cbffc8;
+    text-shadow: black 0 0 10px;
+
+
+    background-image: url("https://scontent.xx.fbcdn.net/v/t31.0-8/17854686_10209122540686750_4599413546906722771_o.jpg?oh=bf74533891ea09017e15c42d1a40339f&oe=599FF9DF");
+  }*/
 
 
 
-  //background: linear-gradient(0deg, #bbdcff, #cfffec);
-  //background-attachment: fixed;
-  color: #000;
-  //text-shadow: rgb(112, 255, 110) 0px 0px 5px;
 
 
 
@@ -112,32 +129,6 @@ body {
       }
     }
 
-
-
-
-
-
-    footer{
-
-      ul {
-
-        display: inline-block;
-
-        border: 1px solid red;
-        margin: 0;
-        padding: 0;
-
-        li{
-
-          border: 1px solid red;
-          list-style: none;
-
-        }
-
-      }
-
-
-    }
 
 
 

@@ -233,9 +233,7 @@ export class FBGallery extends React.Component {
 
                                 }}
                                 key={picture.id} href={picture.link} target="_blank">
-                                <li className="item">
-                                    <img src={picture.best_image.source}/>
-                                </li>
+                                <li className="item"><img src={picture.best_image.source}/></li>
                             </a>
 
                             )}

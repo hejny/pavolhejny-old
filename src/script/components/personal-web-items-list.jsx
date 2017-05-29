@@ -21,7 +21,8 @@ function ItemInner(props){
         <div>
             <h3>{getMessage(language,item.name)}</h3>
 
-            {(item.type==='TALK')?item.date.toLocaleDateString(language):undefined}
+
+            {(item.type==='TALK')?<div>{item.date.toLocaleDateString(language)}</div>:undefined}
 
 
             <div className={"type "+item.type} >

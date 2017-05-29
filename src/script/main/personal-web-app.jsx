@@ -73,6 +73,16 @@ export class PersonalWebApp{
     }
 
 
+    getCurrentItem(){
+
+        const stateJS = this.getState();
+        const opened_item = this._content.items.find((item)=>item.id===stateJS.opened_item_id)||null;
+
+        return(opened_item);
+        
+    }
+
+
     subscribe(subscriberCallback){
         this._subscribers.push(subscriberCallback);
     }

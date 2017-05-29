@@ -8,6 +8,7 @@ import {PersonalWebItem} from "./personal-web-item.jsx";
 import {PersonalWebItems} from "./personal-web-items.jsx";
 import {Background} from "./background.jsx";
 
+import FontAwesome from 'react-fontawesome';
 
 
 
@@ -110,18 +111,15 @@ export function PersonalWebAppComponent(props) {
                 </div>*/}
 
 
-                {/*<footer>
+                    {/*<footer>
+                        <ul>
+                            <li>&copy; Pavol Hejný</li>
+                            <a href="https://github.com/hejny/pavolhejny" target="_blank"><li><FontAwesome name="github"/> Zdrojový kód</li></a>
+                        </ul>
+                    </footer>*/}
 
 
 
-
-                    <ul>
-                        <li>&copy; Pavol Hejný</li>
-                        <li>Kontakt</li>
-                        <li>...</li>
-                        <li>Zdrojoý kód</li>
-                    </ul>
-                </footer>*/}
                 </div>
 
                 {/*<Background content={content}/>*/}
