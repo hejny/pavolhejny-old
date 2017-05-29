@@ -26,7 +26,6 @@ function ItemInner(props){
 
             <div className={"type "+item.type} >
                 {translate(language,item.type)}
-                {('url' in item)?<FontAwesome name="external-link" />:undefined}
 
                 {(item.type==='TALK')?
 
@@ -34,6 +33,10 @@ function ItemInner(props){
                 ' '+translate(language,'at')+' '+item.event
 
                     :undefined}
+
+                {('url' in item)?<FontAwesome name="external-link" />:undefined}
+
+
 
             </div>
 
@@ -64,7 +67,7 @@ export function PersonalWebItemsList(props) {
 
 
     return(
-        <div className="items">
+        <ul className="items">
 
             {items.map((item)=> {
 
@@ -79,18 +82,18 @@ export function PersonalWebItemsList(props) {
 
                         return (
                             <a key={item.id} href={item.url} target="_blank">
-                                <div className={"item "/*+item.type*/}>
+                                <li className={"item "/*+item.type*/}>
                                     <ItemInner item={item} language={stateJS.language}/>
-                                </div>
+                                </li>
                             </a>
 
                         )
                     }else{
 
                         return (
-                            <div key={item.id} className={"item "/*+item.type*/} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
+                            <li key={item.id} className={"item "/*+item.type*/} onClick={()=>store.dispatch({type: 'OPEN_ITEM', item: item.id})}>
                                 <ItemInner item={item} language={stateJS.language}/>
-                            </div>
+                            </li>
 
                         )
 
@@ -103,7 +106,7 @@ export function PersonalWebItemsList(props) {
                 }
             )}
 
-        </div>
+        </ul>
     )
 
 

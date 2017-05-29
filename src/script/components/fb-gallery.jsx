@@ -202,7 +202,7 @@ export class FBGallery extends React.Component {
 
 
 
-                        <ul>
+                        <ul className="items">
                             {this.state.data.map(picture=>{
 
 

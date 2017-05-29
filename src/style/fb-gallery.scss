@@ -1,61 +1,6 @@
-$size: 150px;
-
 
 
 .fb-gallery{
-
-
-  //border: 1px solid red;
-
-
-
-  ul{
-
-    //border: 1px solid red;
-    margin: 0;
-    padding: 0;
-
-
-
-    li{
-
-      //border: 1px solid red;
-
-
-      //box-shadow: black 0px 0px 5px;
-      //margin: 5px;
-
-
-
-      //display: inline-block;
-      //list-style: none;
-
-      width: $size;
-      height: $size;
-      overflow: hidden;
-
-
-
-      img{
-
-        //border: 1px solid red;
-
-
-        transform: translate(calc(-50% + #{$size / 2}),calc( -50% + #{$size / 2}));
-
-
-        height: $size;
-        min-width: $size;
-      }
-
-
-    }
-
-
-
-
-  }
-
 
 
 
