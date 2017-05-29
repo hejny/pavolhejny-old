@@ -92,7 +92,7 @@ export const ITEMS =
             },
             time: "7.2016-now",
             links:{Game: "http://logic.towns.cz",Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
-            embed:["http://logic.towns.cz"],
+            //embed:["http://logic.towns.cz"],
             fbgallery: "10209122553847079",
 
         },
