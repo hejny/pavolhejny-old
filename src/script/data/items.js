@@ -4,6 +4,10 @@ export const ITEMS =
 
         {
             id: "3d-galleries",
+            uri: {
+                cs: '3d-galerie',
+                en: '3d-galleries'
+            },
             type: "WEB_APP_S",
             interesting: true,
             name: {
@@ -494,7 +498,7 @@ export const ITEMS =
             id: "fraktaly-itnetwork",
             parent: "fractals",
             type: "TALK",
-            interesting: true,
+            //interesting: true,
             language: 'cs',
             name: {
                 cs: "Fraktály",
@@ -527,7 +531,19 @@ export const ITEMS =
 
 
 
-
+        {
+            //id: "",
+            //parent: "towns",
+            interesting: true,
+            type: "ARTICLE_S",
+            language: 'cs',
+            name: {
+                cs: "Vytvoř si vlastní webovou hru",
+                en: "Create your own web game"
+            },
+            url:"https://www.itnetwork.cz/vytvor-si-vlastni-webovou-hru",
+            date: "2017-06-07"
+        },
 
         {
             id: "generator-stromu-itnetwork",

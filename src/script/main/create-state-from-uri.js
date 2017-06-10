@@ -16,6 +16,16 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
 
 
+
+    let language = uriParts[0]||defaultLanguae;
+    if(['cs','en']/*todo const*/.indexOf(language)===-1){
+        language=defaultLanguae;
+        httpStatus = 404;
+    }
+
+
+
+
     try{
 
         if(uriParts[1]||false){
@@ -24,10 +34,12 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
 
                 const opened_item = webStaticContent.items.find((item) => {
-                        if(item.id === uriParts[1]
-            )
-                return true;
-            })
+                        if(item.id === uriParts[1])return true;
+                        if("uri" in item){
+                            if(item.uri[language] === uriParts[1])return true;
+                        }
+                        return false;
+                })
                 ;
                 opened_item_id = opened_item.id;
 
@@ -63,14 +75,6 @@ export function createStateFromUri(webStaticContent,uri,defaultLanguae='en'){
 
     }
 
-
-
-
-    let language = uriParts[0]||defaultLanguae;
-    if(['cs','en']/*todo const*/.indexOf(language)===-1){
-        language=defaultLanguae;
-        httpStatus = 404;
-    }
 
 
     return({
