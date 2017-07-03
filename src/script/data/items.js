@@ -365,7 +365,7 @@ export const ITEMS =
                 cs: "Hesla",
                 en: "Passwords"
             },
-            event: "Jobs Dev",
+            event: "LŠ Pythagoras",
             links:{
                 Slides: "https://www.slideshare.net/secret/NUM3fvx7p1qBmo",
                 //Event: 'https://www.jobsdev.cz/'
