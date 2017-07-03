@@ -357,9 +357,22 @@ export const ITEMS =
         },
 
 
-
-
-
+        {
+            id: "hesla-pythagoras",
+            type: "TALK",
+            language: 'sk',
+            name: {
+                cs: "Hesla",
+                en: "Passwords"
+            },
+            event: "Jobs Dev",
+            links:{
+                Slides: "https://www.slideshare.net/secret/NUM3fvx7p1qBmo",
+                //Event: 'https://www.jobsdev.cz/'
+            },
+            embed: ["https://www.slideshare.net/slideshow/embed_code/key/NUM3fvx7p1qBmo"],
+            date: "2017-07-08"
+        },
         /*{
             id: "react-redux-paralelni-polis",
             type: "TALK",
