@@ -1,5 +1,6 @@
 # Bitcoin
-## Klíčové vlastnosti
+# Klíčové vlastnosti
+
 - Měna i internetový platební systém
 - Decentralizovaná
 - Zabezpečená silnou kryptografií
@@ -8,27 +9,35 @@
 - "Těžitelná"
 - Není možné ji padělat.
 
-----------------------------------------------------------
-## Historie
+---
+
+# Historie
+
 - Barter
 - Drahé kovy
 - Bankovnictví
 - 1998 Liberty dolar year
 - 2009 Satoshi Nakamoto
 
-----------------------------------------------------------
-## Blockchain
+---
+
+# Blockchain
+
 - Účetní kniha Bitoinu
 - blockchain.info
 
-### Transakce
+---
+
+## Transakce
  - Vstupy
  - Výstupy
  - Částka
  - Poplatek
  - Digitální podpis privátním klíčem odesílatele
 
-### Blok
+---
+
+## Blok
  - Odkaz na předchozí blok
  - Čas
  - Transakce s nově vytěženými bitcoiny
@@ -36,7 +45,9 @@
  - Nonce
  - Max 1MB
  
-### Těžba
+---
+ 
+## Těžba
 http://misc.pavolhejny.com/form/
 
 - Běžné PC
@@ -44,15 +55,17 @@ http://misc.pavolhejny.com/form/
 - FPGA čipy
 - ASIC čipy
 
-----------------------------------------------------------
-## "Peněženky"
+---
+
+# "Peněženky"
 - Internetové peněženky (a jejich mobilní aplikace)
 - Původní bitcoin klient
 - Papírové peněženky nebo bitcoinové karty s NFC čipem
 - Hardwarový trezor
 
 ---
-## Kde získat/koupit BTC
+
+# Kde získat/koupit BTC
 - "Těžba"
 - Přijímat platby v BTC
     - Právně?
@@ -62,30 +75,36 @@ http://misc.pavolhejny.com/form/
 - Burza
 - LocalBitcoins.com
 
-----------------------------------------------------------
-## Investování / spekulace
+---
+
+# Investování / spekulace
 
 https://coinmarketcap.com
 
-----------------------------------------------------------
-## Další kryptoměny
+---
+
+# Další kryptoměny
 https://coinmarketcap.com
 
-### Bitcoin cash
+## Bitcoin cash
 - 1.8.2017 odtržení od Bitcoinu.
  
-### Litecoin
+## Litecoin
 - Jiný hashovací algoritmus **scrypt**
 - 4x rychlejší těžba bloků
 - 4x více "mincí"
 
-### Monero
+---
+
+## Monero
 - Plně anonymní kryptoměna
 
-### Namecoin
+## Namecoin
 - Decentralizované DNS
 
-### Ethereum
+---
+
+## Ethereum
 - Decentralizovaný výpočetní stroj
 - Smart contracts
 
