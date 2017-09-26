@@ -357,6 +357,27 @@ export const ITEMS =
         },
 
 
+        
+        
+        
+        
+        
+         {
+            id: "2017-09-26-bitcoin-ceske-budejovice",
+            type: "TALK",
+            language: 'cs',
+            name: {
+                cs: "Bitcoin",
+                en: "Bitcoin"
+            },
+            event: "Gymnázium Jírovcova",
+            links:{
+                Slides: "//slides.com/pavolhejny/deck/embed",
+                //Event: 'https://www.jobsdev.cz/'
+            },
+            embed: ["//slides.com/pavolhejny/deck/embed"],
+            date: "2017-09-26"
+        },
         {
             id: "hesla-pythagoras",
             type: "TALK",
