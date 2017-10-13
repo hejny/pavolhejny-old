@@ -75,9 +75,28 @@ export const ITEMS =
             },
             time: "10.2016-now",
 
-            links:{Website: "http://webappgames.com"},
+            links:{/*Website: "http://webappgames.com"*/Experimental:'https://hejny.github.io/webappgames/'},
         },
+        
+        {
+            type: "WEB_GAME",
+            name: {
+                cs: "Logic",
+                en: "Logic"
+            },
+            description: {
+                cs: "Hra pro soutěž v rámci ITNetwork.cz.",
+                en: "Game for competition on ITNetwork.cz."
+            },
+            roles: {
+                "Pavol Hejný": "creator"
+            },
+            time: "7.2016-now",
+            links:{/*Game: "http://logic.towns.cz",*/Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
+            //embed:["http://logic.towns.cz"],
+            fbgallery: "10209122553847079",
 
+        },
 
         {
             id: "logic",
@@ -95,7 +114,7 @@ export const ITEMS =
                 "Pavol Hejný": "creator"
             },
             time: "7.2016-now",
-            links:{Game: "http://logic.towns.cz",Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
+            links:{/*Game: "http://logic.towns.cz",*/Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
             //embed:["http://logic.towns.cz"],
             fbgallery: "10209122553847079",
 
