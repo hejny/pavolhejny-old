@@ -59,11 +59,11 @@ export function PersonalWebAppComponent(props) {
 
 
                             <div className="contacts">
-                                <a href="mailto:me@pavolhejny.com" target="_blank"><i className="icon-envelope icons"/></a>
-                                <a href="https://twitter.com/pavolhejny" target="_blank"><i className="icon-social-twitter icons"/></a>
-                                <a href="https://www.facebook.com/hejny" target="_blank"><i className="icon-social-facebook icons"/></a>
-                                <a href="https://www.linkedin.com/profile/view?id=AAMAABL-alkBCN2nJuDO_lhg0Pg0H47UcYbeYgM&trk=hp-identity-photo" target="_blank"><i className="icon-social-linkedin icons"/></a>
-                                <a href="/media/data/pavol.hejny.vcf" target="_blank"><i className="icon-credit-card icons"/></a>
+                                <a href="mailto:me@pavolhejny.com" target="_blank" title="Email"><i className="icon-envelope icons"/></a>
+                                <a href="https://github.com/hejny/" target="_blank" title="Github"><i className="icon-social-github icons"/></a>
+                                <a href="https://www.facebook.com/hejny" target="_blank" title="Facebook"><i className="icon-social-facebook icons"/></a>
+                                <a href="https://www.linkedin.com/profile/view?id=AAMAABL-alkBCN2nJuDO_lhg0Pg0H47UcYbeYgM&trk=hp-identity-photo" target="_blank" title="LinkedIn"><i className="icon-social-linkedin icons"/></a>
+                                <a href="/media/data/pavol.hejny.vcf" target="_blank" title="VCard"><i className="icon-credit-card icons"/></a>
 
                             </div>
 

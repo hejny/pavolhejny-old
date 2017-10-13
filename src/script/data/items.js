@@ -9,7 +9,7 @@ export const ITEMS =
                 en: '3d-galleries'
             },
             type: "WEB_APP_S",
-            interesting: true,
+            //interesting: true,
             name: {
                 cs: "3D galerie",
                 en: "3D galleries"
@@ -48,7 +48,7 @@ export const ITEMS =
             id: "crypto-poll",
             type: "MINI_WEB_APP",
             language: 'en',
-            interesting: true,
+            //interesting: true,
             name: "Crypto poll",
             roles: {
                 "Pavol Hejný": "creator",
@@ -64,6 +64,7 @@ export const ITEMS =
             id: "webappgames.com",
             type: "WEB_APP",
             language: 'en',
+            interesting: true,
             name: "WebAppGames",
             description: {
                 cs: "Hry vyrobené jako plnohodnotné www aplikace.",
@@ -375,13 +376,23 @@ export const ITEMS =
             links:{Website: "http://hry.birds.cz"},
         },
 
-
+        {
+            id: "h-edu",
+            type: "WEB_APP",
+            language: 'cs',
+            interesting: true,
+            name: {
+                cs: "H-Edu",
+                en: "H-Edu"
+            },
+            url:"https://www.h-edu.cz/",
+        },
         
         
         
         
         
-         {
+         /*{
             id: "2017-09-26-bitcoin-ceske-budejovice",
             type: "TALK",
             language: 'cs',
@@ -396,7 +407,7 @@ export const ITEMS =
             },
             embed: ["//slides.com/pavolhejny/deck/embed"],
             date: "2017-09-26"
-        },
+        },*/
         {
             id: "hesla-pythagoras",
             type: "TALK",

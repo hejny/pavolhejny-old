@@ -113,7 +113,7 @@ export class Background extends React.Component {
 
 
 
-        function renderLoop(){
+        /*function renderLoop(){
 
             ctx.globalCompositeOperation = "source-over";
             ctx.fillStyle = "rgba(255,255,255,0.01)";
@@ -124,7 +124,7 @@ export class Background extends React.Component {
             requestAnimationFrame(renderLoop);
 
         }
-        requestAnimationFrame(renderLoop);
+        requestAnimationFrame(renderLoop);*/
 
 
 
