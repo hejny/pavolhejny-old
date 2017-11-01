@@ -16,7 +16,7 @@ export const PERSONAL =
 Pracuji v rodinné firmě, kde vyrábím interaktivní elektronickou verzi
 <a href="http://www.h-mat.cz/" target="_blank">učebnic matematiky</a>. 
 
-Velmi me zajímá 3D grafika na webu a hledám způsoby, kde všude by se dala využít.
+Velmi mě zajímá 3D grafika na webu a hledám způsoby, kde všude by se dala využít.
 
 Mám také mnoho <a href="https://www.pavolhejny.com/cs/filter/PROJECT+APP+GAME">vlastních projektů</a> např.
 <a href="https://www.pavolhejny.com/cs/webappgames.com">WebAppGames.com</a>
