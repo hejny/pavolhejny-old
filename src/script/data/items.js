@@ -9,7 +9,7 @@ export const ITEMS =
                 en: '3d-galleries'
             },
             type: "WEB_APP_S",
-            interesting: true,
+            //interesting: true,
             name: {
                 cs: "3D galerie",
                 en: "3D galleries"
@@ -48,7 +48,7 @@ export const ITEMS =
             id: "crypto-poll",
             type: "MINI_WEB_APP",
             language: 'en',
-            interesting: true,
+            //interesting: true,
             name: "Crypto poll",
             roles: {
                 "Pavol Hejný": "creator",
@@ -64,6 +64,7 @@ export const ITEMS =
             id: "webappgames.com",
             type: "WEB_APP",
             language: 'en',
+            interesting: true,
             name: "WebAppGames",
             description: {
                 cs: "Hry vyrobené jako plnohodnotné www aplikace.",
@@ -75,9 +76,28 @@ export const ITEMS =
             },
             time: "10.2016-now",
 
-            links:{Website: "http://webappgames.com"},
+            links:{/*Website: "http://webappgames.com"*/Experimental:'https://hejny.github.io/webappgames/'},
         },
+        
+        {
+            type: "WEB_GAME",
+            name: {
+                cs: "Logic",
+                en: "Logic"
+            },
+            description: {
+                cs: "Hra pro soutěž v rámci ITNetwork.cz.",
+                en: "Game for competition on ITNetwork.cz."
+            },
+            roles: {
+                "Pavol Hejný": "creator"
+            },
+            time: "7.2016-now",
+            links:{/*Game: "http://logic.towns.cz",*/Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
+            //embed:["http://logic.towns.cz"],
+            fbgallery: "10209122553847079",
 
+        },
 
         {
             id: "logic",
@@ -95,7 +115,7 @@ export const ITEMS =
                 "Pavol Hejný": "creator"
             },
             time: "7.2016-now",
-            links:{Game: "http://logic.towns.cz",Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
+            links:{/*Game: "http://logic.towns.cz",*/Forum: "http://www.itnetwork.cz/nezarazene/programatorska-soutez-geekwork-2016/hra-monster-canvas/"},
             //embed:["http://logic.towns.cz"],
             fbgallery: "10209122553847079",
 
@@ -356,13 +376,23 @@ export const ITEMS =
             links:{Website: "http://hry.birds.cz"},
         },
 
-
+        {
+            id: "h-edu",
+            type: "WEB_APP",
+            language: 'cs',
+            interesting: true,
+            name: {
+                cs: "H-Edu",
+                en: "H-Edu"
+            },
+            url:"https://www.h-edu.cz/",
+        },
         
         
         
         
         
-         {
+         /*{
             id: "2017-09-26-bitcoin-ceske-budejovice",
             type: "TALK",
             language: 'cs',
@@ -377,7 +407,7 @@ export const ITEMS =
             },
             embed: ["//slides.com/pavolhejny/deck/embed"],
             date: "2017-09-26"
-        },
+        },*/
         {
             id: "hesla-pythagoras",
             type: "TALK",

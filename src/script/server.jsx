@@ -66,6 +66,7 @@ app.use(function(req, res, next) {
 //Static content
 app.use('/media', express.static('./media/'));
 app.use('/dist', express.static('./dist/'));
+app.use('/misc', express.static('./misc/'));
 //app.use('/media', express.static(path.join(__dirname,'../media/')));
 //app.use('/dist', express.static(path.join(__dirname,'../dist/')));
 //todo favicon

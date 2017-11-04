@@ -11,11 +11,31 @@ export const PERSONAL =
     about: {
 
 
-        cs: 'Jmenuji se Pavol Hejný, žiju v Praze a zabývám se programováním. V současnosti pracuji v <a href="http://www.cso.cz/" target="_blank">České společnosti ornitologické</a> jako programátor, kde vytvářím aplikace pro sledování a vyhodnocování ptačí populace v ČR. Zajímám se o 3D grafiku na webu a vyrábím aplikace na pomezí klasických www stránek a her (<a href="http://webappgames.com/" target="_blank">WebAppGames.com</a>). Také jsem vytvořil deskovou hru Věže. Občas mám o své činnosti přednášku či napíšu článek.',
+        cs: `
 
+Pracuji v rodinné firmě, kde vyrábím interaktivní elektronickou verzi
+<a href="http://www.h-mat.cz/" target="_blank">učebnic matematiky</a>. 
 
-        en: 'My name is Pavol Hejný live in Prague (Czech Republic). In the present I am working in the <a href="http://www.cso.cz/" target="_blank">Czech Society for Ornithology</a> as a programmer. I am interested in 3D graphics and games on the web (<a href="http://webappgames.com/" target="_blank">WebAppGames.com</a>). I also created a board game Towers. Sometimes i talk about my activities or write an article.'
+Velmi mě zajímá 3D grafika na webu a hledám způsoby, kde všude by se dala využít.
 
+Mám také mnoho <a href="https://www.pavolhejny.com/cs/filter/PROJECT+APP+GAME">vlastních projektů</a> např.
+<a href="https://www.pavolhejny.com/cs/webappgames.com">WebAppGames.com</a>
+nebo <a href="https://www.pavolhejny.com/cs/veze">vlastní deskovou hru</a>. 
+
+`,
+
+        en: `
+
+I work in a family business where I am creating an interactive electronic version of
+<a href="http://www.h-mat.cz/" target="_blank"> math textbooks</a>.
+
+I'm very interested in 3D graphics on the web and I'm looking for ways to use it
+
+I also have a lot of <a href="https://www.pavolhejny.com/en/filter/PROJECT+APP+GAME">my own projects</a>. For example
+<a href="https://www.pavolhejny.com/en/webappgames.com">WebAppGames.com</a>
+or <a href="https://www.pavolhejny.com/en/veze">my own board game</a>.
+
+`
 
     },
 
