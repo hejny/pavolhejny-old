@@ -298,10 +298,9 @@ this.mesh.physicsImpostor = new BABYLON.PhysicsImpostor(
 ------------------------------------------------
 # Děkuji za pozornost
 
-**Prosím hodnoťte můj workshop na:**
-http://a.openalt.cz/280
-
 - www.pavolhejny.com
 - www.webappgames.com
+- https://hejny.github.io/3d-project/
+- https://github.com/hejny/3d-project
 - https://www.babylonjs-playground.com/#DCR6ZG#5
 - https://www.itnetwork.cz/vytvor-si-vlastni-webovou-hru/
