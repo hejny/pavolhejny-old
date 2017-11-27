@@ -47,9 +47,9 @@ export function PersonalWebItems(props) {
                     <PersonalWebItemsList store={store} items={items.filter((item)=> {
 
 
-                        /*if ('parent' in item) {
+                        if ('parent' in item) {
                             return false;
-                        }*/
+                        }
 
 
                         if(!isInTypes(item.type,stateJS.filter_types)){
@@ -68,7 +68,7 @@ export function PersonalWebItems(props) {
 
                 <div>
 
-                    <h2>{translate(stateJS.language, 'Projects')}</h2>
+                    {/*<h2>{translate(stateJS.language, 'Projects')}</h2>*/}
 
 
                     <PersonalWebItemsList store={store} items={items.filter((item)=> {
@@ -98,7 +98,7 @@ export function PersonalWebItems(props) {
                     <button onClick={(event)=> {
                         store.dispatch({
                             type: 'SET_FILTER_TYPES',
-                            value:['PROJECT','APP','GAME']
+                            value:['PROJECT','APP','GAME','TALK','ARTICLE']
                         });
                     }}>
                         <FontAwesome name="caret-square-o-down"/>
@@ -108,15 +108,9 @@ export function PersonalWebItems(props) {
 
 
 
-                    <h2>{translate(stateJS.language, 'Talks')}</h2>
-
+                    {/*<h2>{translate(stateJS.language, 'Talks')}</h2>
 
                     <PersonalWebItemsList store={store} items={items.filter((item)=> {
-
-
-                        /*if ('parent' in item) {
-                            return false;
-                        }*/
 
                         if (!stateJS.all && !item.interesting) {
                             return false;
@@ -134,9 +128,6 @@ export function PersonalWebItems(props) {
                     })}/>
 
 
-
-
-
                     <button onClick={(event)=> {
                         store.dispatch({
                             type: 'SET_FILTER_TYPES',
@@ -145,7 +136,7 @@ export function PersonalWebItems(props) {
                     }}>
                         <FontAwesome name="caret-square-o-down"/>
                         {translate(stateJS.language, 'Show more')}
-                    </button>
+                    </button>*/}
 
 
                 </div>

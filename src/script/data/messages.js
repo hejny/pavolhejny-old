@@ -20,6 +20,7 @@ export const MESSAGES = {
 
 
         'PROJECT': 'Project',
+        'SAMPLE_PROJECT': 'Ukázkový project',
         'TALK': 'Přednáška',
         'ARTICLE': 'Článek',
         'ARTICLE_S': 'Serie článků',
@@ -42,6 +43,7 @@ export const MESSAGES = {
     en:{
         'Talks': 'Talks and articles',
         'PROJECT': 'Projekt',
+        'SAMPLE_PROJECT': 'Sample project',
         'TALK': 'Talk',
         'ARTICLE': 'Article',
         'ARTICLE_S': 'Article series',
