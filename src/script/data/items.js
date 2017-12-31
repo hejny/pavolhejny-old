@@ -2,14 +2,14 @@ export const ITEMS =
 
     [
 
-        {
+        /*{
             id: "3d-galleries",
             uri: {
                 cs: '3d-galerie',
                 en: '3d-galleries'
             },
             type: "WEB_APP_S",
-            //interesting: true,
+            parent: '3d-on-the-web',
             name: {
                 cs: "3D galerie",
                 en: "3D galleries"
@@ -26,7 +26,7 @@ export const ITEMS =
                 'galerie.fotobernovska.cz': "http://galerie.fotobernovska.cz/",
                 'gallery.pavolhejny.com': "http://gallery.pavolhejny.com/"
             },
-        },
+        },*/
 
 
         {
@@ -60,11 +60,48 @@ export const ITEMS =
 
 
 
+
         {
+            id: "3d-on-the-web",
+            uri: {
+                cs: '3d-na-webu',
+                en: '3d-on-the-web'
+            },
+            type: "PROJECT",
+            interesting: true,
+            name: {
+                cs: '3D na webu',
+                en: '3D on the web',
+            }
+            //Website: "http://webappgames.com"
+        },
+
+
+
+        {
+            id: "3d-project",
+            type: "SAMPLE_PROJECT",
+            parent: "3d-on-the-web",
+            name: {
+                cs: 'Ukázkový 3D FPS projekt',
+                en: 'Sample 3D FPS project',
+            },
+            roles: {
+                "Pavol Hejný": "creator",
+            },
+            links:{
+                "Live Demo": "https://hejny.github.io/3d-project/",
+                "Source": "https://github.com/hejny/3d-project"
+            },
+        },
+
+
+
+        /*{
             id: "webappgames.com",
             type: "WEB_APP",
             language: 'en',
-            interesting: true,
+            parent: "3d-on-the-web",
             name: "WebAppGames",
             description: {
                 cs: "Hry vyrobené jako plnohodnotné www aplikace.",
@@ -76,8 +113,8 @@ export const ITEMS =
             },
             time: "10.2016-now",
 
-            links:{/*Website: "http://webappgames.com"*/Experimental:'https://hejny.github.io/webappgames/'},
-        },
+            links:{Experimental:'https://hejny.github.io/webappgames/'},
+        },*/
         
         {
             type: "WEB_GAME",
@@ -439,7 +476,7 @@ export const ITEMS =
         {
             id: "3d-na-webu-jobsdev",
             type: "TALK",
-            interesting: true,
+            parent: '3d-on-the-web',
             //preparing: true,
             language: 'cs',
             name: {
@@ -472,6 +509,7 @@ export const ITEMS =
         {
             id: "3d-na-webu-itnetwork",
             type: "TALK",
+            parent: '3d-on-the-web',
             language: 'cs',
             name: {
                 cs: "3D na webu",
@@ -489,13 +527,13 @@ export const ITEMS =
         {
             id: "3d-na-webu-openalt",
             type: "TALK",
-            interesting: true,
+            parent: '3d-on-the-web',
             language: 'cs',
             name: {
                 cs: "3D na webu",
                 en: "3D on the web"
             },
-            event: "OpenAlt",
+            event: "OpenAlt 2016",
             links:{
                 Slides: "https://www.slideshare.net/PavolHejn/3d-na-webu-konference-openalt",
                 Video: 'https://www.superlectures.com/openalt2016/3d-na-webu'
@@ -600,6 +638,7 @@ export const ITEMS =
             //parent: "towns",
             interesting: true,
             type: "ARTICLE_S",
+            parent: "3d-on-the-web",
             language: 'cs',
             name: {
                 cs: "Vytvoř si vlastní webovou hru",
