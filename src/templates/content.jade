@@ -1,0 +1,121 @@
+mixin item(name)
+    a(href='http://todotable.com', target='_blank')
+        li.item
+            div
+                h3= name
+                .type.MINI_WEB_APP
+                    | Mini-web app
+                    span.fa.fa-external-link(aria-hidden='true')
+
+
+mixin logoitem(name,url)
+    a(href='http://todotable.com', target='_blank')
+        li.item
+            div
+                img(src=url)
+                h3= name
+
+
+
+
+div.content
+    h2
+    div
+        button
+            span.fa.fa-home(aria-hidden='true')
+            | Back
+        ul.items
+            +logoitem('OpenAlt',  '../media/logos/openalt.png'  )
+            +logoitem('Barcamp',  '../media/logos/barcamp.svg'  )
+            +logoitem('JobsDev',  '../media/logos/jobsdev.png'  )
+            +logoitem('ITNetwork','../media/logos/itnetwork.png')
+
+//
+    h2
+    div
+        button
+            span.fa.fa-home(aria-hidden='true')
+            | Back
+        ul.items
+            a(href='http://todotable.com', target='_blank')
+                li.item
+                    div
+                        h3 TodoTable.com
+                        .type.MINI_WEB_APP
+                            | Mini-web app
+                            span.fa.fa-external-link(aria-hidden='true')
+            a(href='https://hejny.github.io/crypto-poll/', target='_blank')
+                li.item
+                    div
+                        h3 Crypto poll
+                        .type.MINI_WEB_APP
+                            | Mini-web app
+                            span.fa.fa-external-link(aria-hidden='true')
+            li.item
+                div
+                    h3 3D on the web
+                    .type.PROJECT Projekt
+            li.item
+                div
+                    h3 Logic
+                    .type.WEB_GAME Web game
+            li.item
+                div
+                    h3 Towns
+                    .type.WEB_GAME_S Web games
+            li.item
+                div
+                    h3 Towers
+                    .type.BOARD_GAME Board game
+            li.item
+                div
+                    h3 Fractals
+                    .type.PROJECT Projekt
+            a(href='https://play.google.com/store/apps/details?id=czavif.httpbirds.avifmobile', target='_blank')
+                li.item
+                    div
+                        h3 Avif Mobile
+                        .type.MOBILE_APP
+                            | Mobile app
+                            span.fa.fa-external-link(aria-hidden='true')
+            a(href='http://birds.cz', target='_blank')
+                li.item
+                    div
+                        h3 Avif
+                        .type.WEB_APP
+                            | Web app
+                            span.fa.fa-external-link(aria-hidden='true')
+            a(href='http://hry.birds.cz', target='_blank')
+                li.item
+                    div
+                        h3 Birds in cities
+                        .type.WEB_GAME
+                            | Web game
+                            span.fa.fa-external-link(aria-hidden='true')
+            a(href='https://www.h-edu.cz/', target='_blank')
+                li.item
+                    div
+                        h3 H-Edu
+                        .type.WEB_APP
+                            | Web app
+                            span.fa.fa-external-link(aria-hidden='true')
+            li.item
+                div
+                    h3 Passwords
+                    div 7/8/2017
+                    .type.TALK Talk at LŠ Pythagoras
+            li.item
+                div
+                    h3 React+Redux
+                    div 3/31/2017
+                    .type.TALK Talk at ITNetwork
+            li.item
+                div
+                    h3 Generating 2D graphics on web
+                    div 6/24/2016
+                    .type.TALK Talk at ITNetwork
+            li.item
+                div
+                    h3 Web applications in JavaScript
+                    div 5/27/2016
+                    .type.TALK Talk at ITNetwork
