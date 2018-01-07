@@ -3,29 +3,28 @@ const GulpRename = require('gulp-rename');
 const GulpSass = require('gulp-sass');
 const GulpJade = require('gulp-jade');
 
-
 gulp.task('default', ['build']);
-gulp.task('build', ['build-html', 'build-css', 'build-js']);
+gulp.task('build', ['build-html', 'build-css', 'build-js','copy-images']);
 
 
-gulp.task('build-html', ()=>{
-
-    gulp.src('./src/templates/index.jade')
-        .pipe(GulpJade({
-            pretty: true
-        }))
+gulp.task('build-html', () => {
+    return gulp.src('./src/templates/index.jade')
+        .pipe(GulpJade({pretty: true}))
         .pipe(gulp.dest('./dist/'))
 });
 
 
-gulp.task('build-css', ()=>{
-    const stream = gulp.src("./src/style/index.scss")
+gulp.task('build-css', () => {
+    return gulp.src("./src/style/index.scss")
         .pipe(GulpSass())
         .pipe(GulpRename("./index.css"))
-        .pipe(gulp.dest("./dist"))
-    ;
-    return stream
-        ;
+        .pipe(gulp.dest("./dist"));
+});
+
+
+gulp.task('copy-images', () => {
+    return gulp.src('src/images/*/**', { base: 'src' })
+        .pipe(gulp.dest("./dist"));
 });
 
 
@@ -35,8 +34,7 @@ const Path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
-
-gulp.task('build-js', ()=>{
+gulp.task('build-js', () => {
     return gulp.src('./src/*')
         .pipe(GulpWebpack({
             entry: {
@@ -90,8 +88,8 @@ gulp.task('build-js', ()=>{
 const GulpRunSequence = require('run-sequence');
 const BrowserSync = require('browser-sync');//todo use cases for modules
 
-gulp.task('develop', ['build','browser-sync']);
-gulp.task('browser-sync', ()=>{
+gulp.task('develop', ['build', 'browser-sync']);
+gulp.task('browser-sync', () => {
     const browserSync = BrowserSync.create();
     browserSync.init({
         server: {
@@ -99,7 +97,7 @@ gulp.task('browser-sync', ()=>{
         },
         open: false
     });
-    gulp.watch("./src/**/*", ['build',()=>{
+    gulp.watch("./src/**/*", ['build', () => {
         browserSync.reload();
     }]);
     //todo css reloading without reloading page
