@@ -1,27 +1,27 @@
 const gulp = require('gulp');
-const gulpRename = require('gulp-rename');
-const gulpSass = require('gulp-sass');
-const gulpJade = require('gulp-jade');
+const GulpRename = require('gulp-rename');
+const GulpSass = require('gulp-sass');
+const GulpJade = require('gulp-jade');
 
 
 gulp.task('default', ['build']);
-gulp.task('build', ['build-html', 'build-css', 'build-js-production']);
+gulp.task('build', ['build-html', 'build-css', 'build-js']);
 
 
-gulp.task('build-html', function () {
+gulp.task('build-html', ()=>{
 
     gulp.src('./src/templates/index.jade')
-        .pipe(gulpJade({
+        .pipe(GulpJade({
             pretty: true
         }))
         .pipe(gulp.dest('./dist/'))
 });
 
 
-gulp.task('build-css', function () {
+gulp.task('build-css', ()=>{
     const stream = gulp.src("./src/style/index.scss")
-        .pipe(gulpSass())
-        .pipe(gulpRename("./index.css"))
+        .pipe(GulpSass())
+        .pipe(GulpRename("./index.css"))
         .pipe(gulp.dest("./dist"))
     ;
     return stream
@@ -29,58 +29,78 @@ gulp.task('build-css', function () {
 });
 
 
-const webpack = require('webpack');
-const gulpWebpack = require('webpack-stream');
-const path = require('path');
-const uglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const Webpack = require('webpack');
+const GulpWebpack = require('webpack-stream');
+const Path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
-[/*'development', */'production'].forEach(function (environment) {
-    gulp.task('build-js-' + environment, function () {
-        return gulp.src('./src/*')
-            .pipe(gulpWebpack({
-                entry: {
-                    first: './src/script/index.js'
-                },
-                output: {
-                    filename: 'index' + (environment === 'production' ? '.min' : '') + ".js",
-                    path: __dirname + "/dist",
-                },
-                target: 'web',
-                devtool: "source-map",
-                module: {
-                    loaders: [{
-                        test: /\.jsx?$/,
-                        loaders: ['babel?presets[]=es2015&presets[]=react'],
-                        include: [
-                            path.resolve(__dirname, "./src/script"),
-                        ],
-                        exclude: [
-                            path.resolve(__dirname, "node_modules"),
-                        ]
-                    }, {
-                        test: /\.json$/,
-                        loader: 'json'
-                    }
+
+gulp.task('build-js', ()=>{
+    return gulp.src('./src/*')
+        .pipe(GulpWebpack({
+            entry: {
+                first: './src/script/index.js'
+            },
+            output: {
+                filename: 'index.js',
+                path: __dirname + "/dist",
+            },
+            target: 'web',
+            devtool: "source-map",
+            module: {
+                loaders: [{
+                    test: /\.jsx?$/,
+                    loaders: ['babel?presets[]=es2015&presets[]=react'],
+                    include: [
+                        Path.resolve(__dirname, "./src/script"),
                     ],
-                    resolve: {
-                        extensions: ['', '.js', '.jsx']
+                    exclude: [
+                        Path.resolve(__dirname, "node_modules"),
+                    ]
+                }, {
+                    test: /\.json$/,
+                    loader: 'json'
+                }
+                ],
+                resolve: {
+                    extensions: ['', '.js', '.jsx']
+                }
+            },
+            plugins: [
+                new Webpack.DefinePlugin({
+                    'process.env': {
+                        NODE_ENV: JSON.stringify('production')
                     }
-                },
-                plugins: environment === 'production' ? [
-                    new webpack.DefinePlugin({
-                        'process.env': {
-                            NODE_ENV: JSON.stringify('production')
-                        }
-                    }),
-                    new uglifyJSPlugin({
-                        sourceMap: true
-                    })
-                ] : []
-            }))
-            .on('error', () => {
-            })//todo maybe better
-            .pipe(gulp.dest('./dist/'))
-            ;
+                }),
+                new UglifyJSPlugin({
+                    sourceMap: true
+                })
+            ]
+        }))
+        .on('error', () => {
+        })//todo maybe better
+        .pipe(gulp.dest('./dist/'))
+        ;
+});
+
+
+///--------------------------------------------------------
+
+const GulpRunSequence = require('run-sequence');
+const BrowserSync = require('browser-sync');//todo use cases for modules
+
+gulp.task('develop', ['build','browser-sync']);
+gulp.task('browser-sync', ()=>{
+    const browserSync = BrowserSync.create();
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+        },
+        open: false
     });
+    gulp.watch("./src/**/*", ['build',()=>{
+        browserSync.reload();
+    }]);
+    //todo css reloading without reloading page
 });
