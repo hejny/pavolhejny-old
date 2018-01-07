@@ -19,8 +19,18 @@ mixin logoitem(name,url)
 
 
 div.content
-    h2
+
     div
+        h2 Projects
+        ul.items
+            +logoitem('TypeScript',  '/images/logos/skills/typescript.png'  )
+            +logoitem('Game Development',  '/images/logos/skills/typescript.png'  )
+            +logoitem('WebGl',  '/images/logos/skills/typescript.png'  )
+            +logoitem('SQL',  '/images/logos/skills/typescript.png'  )
+
+
+    div
+        h2 Technologies
         ul.items
             +logoitem('TypeScript',  '/images/logos/skills/typescript.png'  )
             +logoitem('Game Development',  '/images/logos/skills/typescript.png'  )
@@ -29,7 +39,13 @@ div.content
 
 
 
-
+    div
+        h2 Talks
+        h3 Upcomming
+        ul
+            li aaaa
+            li aaaa
+        h3 Past
         ul.items
             +logoitem('OpenAlt',  '/images/logos/speak/openalt.png'  )
             +logoitem('Barcamp',  '/images/logos/speak/barcamp.svg'  )
