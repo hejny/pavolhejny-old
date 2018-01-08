@@ -20,7 +20,7 @@ mixin logoitem(name,url)
 
 div.content
 
-    div
+    //div
         h2 Projects
         ul.items
             +logoitem('TypeScript',  '/images/logos/skills/typescript.png'  )
@@ -29,7 +29,7 @@ div.content
             +logoitem('SQL',  '/images/logos/skills/typescript.png'  )
 
 
-    div
+    //div
         h2 Technologies
         ul.items
             +logoitem('TypeScript',  '/images/logos/skills/typescript.png'  )
@@ -41,16 +41,18 @@ div.content
 
     div
         h2 Talks
-        h3 Upcomming
-        ul
-            li aaaa
-            li aaaa
-        h3 Past
-        ul.items
-            +logoitem('OpenAlt',  '/images/logos/speak/openalt.png'  )
-            +logoitem('Barcamp',  '/images/logos/speak/barcamp.svg'  )
-            +logoitem('JobsDev',  '/images/logos/speak/jobsdev.png'  )
-            +logoitem('ITNetwork','/images/logos/speak/itnetwork.png')
+        //div
+            h3 Upcomming
+            ul
+                li aaaa
+                li aaaa
+        div
+            h3 Past
+            ul.items
+                +logoitem('OpenAlt',  '/images/logos/speak/openalt.png'  )
+                +logoitem('Barcamp',  '/images/logos/speak/barcamp.svg'  )
+                +logoitem('JobsDev',  '/images/logos/speak/jobsdev.png'  )
+                +logoitem('ITNetwork','/images/logos/speak/itnetwork.png')
 
 //
     h2

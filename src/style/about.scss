@@ -69,13 +69,21 @@
 
   .subname {
 
+    display: inline-block;
     //border: 1px dashed red;
 
-    display: block;
+    &:not(:last-child):after {
+      display: inline-block;
+      width: 30px;
+      content: ".";//•
+    }
+
+
 
     font-size: 1.4em;
-    margin: auto;
-    margin-bottom: 20px;
+
+    //margin: auto;
+    //margin-bottom: 20px;
 
   }
 
