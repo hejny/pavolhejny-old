@@ -1,42 +1,19 @@
-$size: 130px;//10em;
+.items{
 
 
-ul.items{
-
-
-    //border: 1px dotted red;
+    border: 1px dotted red;
 
     display: flex;
-
-    //flex-direction: column;
-
-    justify-content: space-around;
-    //align-items: stretch;
-
-    flex-wrap: wrap;
-
-
-    //height: 500px;
-
-
-    margin: 0px;
-    padding: 0px;
-    perspective: 1000px;
-
-
+    //justify-content: space-around;
+    //flex-wrap: wrap;
 }
 
 
 
-li.logoitem {
+.logoitem {
+
 
     filter: grayscale(100%);
-
-
-
-    width: $size;
-    height: $size;
-    overflow: hidden;
 
     flex-grow: 1;
 
@@ -44,18 +21,17 @@ li.logoitem {
     cursor: pointer;
 
 
-    //border: 2px solid red;
-    box-shadow: #a8a8a8 0px 0px 5px;
-    background-color: rgba(255, 255, 255, 0.51);
+    border: 2px solid red;
+
     margin: 3px;
-    border-radius: 3px;
-    //padding: 5px;
+
 
 
     animation: fadeInFromNone 1s ease-out;
 
-
-
+    img{
+        max-width: 30%;
+    }
 
 
     h3{
@@ -71,34 +47,10 @@ li.logoitem {
 
 
 
-    img{
-
-        //border: 1px solid red;
-
-        margin: 0;
-        //margin: -20px;
-        transform: translate(calc(-50% + #{$size / 2}),calc( -50% + #{$size / 2}));
-
-
-        height: $size;
-        min-width: $size;
-    }
-
-
-
 
     //&.selected{
     &:hover{
-
-        box-shadow: black 0px 0px 10px;
-        transform: translateZ(10px);//rotateY(5deg);
-
-        /*z-index: 2;
-        width: 156px;
-        height: 156px;
-        margin: 2px;*/
-
-
+        filter: grayscale(0%);
     }
 
 

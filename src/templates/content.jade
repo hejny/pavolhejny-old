@@ -8,12 +8,11 @@ mixin item(name)
                     span.fa.fa-external-link(aria-hidden='true')
 
 
-mixin logoitem(name,url)
+mixin logoitem(name,imageurl)
     a(href='http://todotable.com', target='_blank')
-        li.logoitem
-            div
-                img(src=url)
-                h3= name
+        div.logoitem
+            img(src=imageurl)
+            h3= name
 
 
 
@@ -48,7 +47,7 @@ div.content
                 li aaaa
         div
             h3 Past
-            ul.items
+            div.items
                 +logoitem('OpenAlt',  '/images/logos/speak/openalt.png'  )
                 +logoitem('Barcamp',  '/images/logos/speak/barcamp.svg'  )
                 +logoitem('JobsDev',  '/images/logos/speak/jobsdev.png'  )
