@@ -1,20 +1,15 @@
 body {
-
-
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: #000000;
   margin: 0px;
   padding: 0px;
-  background: #fff;
-  //overflow: hidden;
 
-  overflow-y: scroll;
-
+  background: url('/images/textures/norwegian_rose.png');
 }
 
 
 *{
-  //transition: all 1s ease-out;
+  transition: all .3s ease-out;
 }
 
 
@@ -24,6 +19,10 @@ a {
   color: inherit;
   outline: 0;
   cursor: Pointer;
+
+  &:hover{
+    color: #3d64ff;
+  }
 
 }
 
@@ -55,62 +54,6 @@ button, .button, input[type="submit"] {
 
 
 
-
-
-
-.languages{
-
-
-  z-index: 9000;
-
-  position: fixed;
-  top: 0;
-  right: 0;
-
-
-  img{
-    transition: all 1s ease-out;
-  }
-
-}
-
-
-.logo{
-  z-index: 9000;
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  font-size: 1.2em;
-  img{
-    margin: 2px;
-    margin-right: 7px;
-    vertical-align: middle;
-    border-radius: 100px;
-  }
-}
-
-
-
-
-
-
-
-.status{
-  border: 1px dashed red;
-
-  display: inline-block;
-  float: right;
-}
-
-
-
-
-
-
-@import "personal-web";
-@import "items";
 @import "about";
-@import "fb-gallery";
-@import "footer";
-@import "__4";
+@import "contacts";
+@import "personal-web";
