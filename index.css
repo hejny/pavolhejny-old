@@ -3,7 +3,7 @@ body {
   color: #000000;
   margin: 0px;
   padding: 0px;
-  background: url("/images/textures/norwegian_rose.png"); }
+  background: url("./images/textures/norwegian_rose.png"); }
 
 * {
   transition: all .3s ease-out; }
