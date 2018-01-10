@@ -5,16 +5,13 @@ doctype html
 html(lang='en')
     include ./head.jade
     body
-        #root
-            div.personal-web
-                include ./about.jade
-                include ./contacts.jade
-                include ./content.jade
-
-
-                //footer
-                    button Write me!
-                    div
-                        span Copyleft
-                        span.copyleft ©
-                        span Pavol Hejný
+        main.card
+            include ./about.jade
+            include ./contacts.jade
+            //include ./content.jade
+            //footer
+                button Write me!
+                div
+                    span Copyleft
+                    span.copyleft ©
+                    span Pavol Hejný

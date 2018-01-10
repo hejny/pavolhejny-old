@@ -1,33 +1,8 @@
 
 
-
 .about {
 
-  //transition: all 1s ease-in-out;
-  * {  transition: all 0.5s ease-in-out;  }
 
-
-  &.small{
-
-    cursor: pointer;
-    //background-color: #37beff;
-    //padding: 15px;
-
-    .avatar {
-      width: 50px;
-    }
-    .name {
-      font-size: 1rem;
-    }
-
-    .subname {
-      display: none;
-    }
-  }
-
-
-
-  //border: 1px dashed red;
 
   display: inline-block;
   text-align: center;
@@ -37,22 +12,28 @@
 
   .avatar {
 
-    //border: 1px dashed red;
+    height: 40px;
 
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
+    img{
+      transform: translate(0, -120px);
 
-    width: 150px;
-    max-width: 80%;
+      display: block;
+      margin: auto;
+      margin-bottom: 10px;
+
+      width: 150px;
+      height: 150px;
+      max-width: 80%;
 
 
-    /*border: 2px solid #000000;*/
-    border-radius: 1000px;
+      /*border: 2px solid #000000;*/
+      border-radius: 1000px;
 
-    padding: 3px;
-    box-shadow: black 0 0 5px;
-    //border: 2px solid black;
+      padding: 3px;
+      box-shadow: black 0 0 5px;
+      //border: 2px solid black;
+    }
+
 
   }
 
@@ -69,13 +50,14 @@
 
   .subname {
 
-    display: inline-block;
+    display: block;
+    //display: inline-block;
     //border: 1px dashed red;
 
     &:not(:last-child):after {
       display: inline-block;
       width: 30px;
-      content: ".";//•
+      content: "";//•
     }
 
 
