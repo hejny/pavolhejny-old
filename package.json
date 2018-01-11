@@ -1,5 +1,6 @@
 {
   "private": false,
+  "homepage": "https://www.pavolhejny.com/",
   "engines": {
     "node": "6.10.2"
   },
