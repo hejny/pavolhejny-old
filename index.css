@@ -1,9 +1,11 @@
+@charset "UTF-8";
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: #000000;
   margin: 0px;
   padding: 0px;
-  background: url("./images/textures/norwegian_rose.png"); }
+  background: url("./images/textures/norwegian_rose.png");
+  background-position: center; }
 
 * {
   transition: all .3s ease-out; }
@@ -58,22 +60,35 @@ button, .button, input[type="submit"] {
     display: block;
     text-decoration: none;
     font-size: 2rem;
-    margin: auto; }
+    margin: 10px; }
   .about .subname {
     display: block;
-    font-size: 1.4em; }
-    .about .subname:not(:last-child):after {
+    /*&:not(:last-child):after {
       display: inline-block;
       width: 30px;
-      content: ""; }
+      content: "";//•
+    }*/
+    font-size: 1.4em; }
+    .about .subname img {
+      display: inline-block;
+      margin-left: 4px;
+      vertical-align: bottom;
+      height: 1em; }
 
-.contacts a {
-  display: inline-block;
-  font-size: 30px;
-  margin: 10px;
-  /*&:hover{
-      color: #3d64ff;
-    }*/ }
+.contacts {
+  height: 70px; }
+  .contacts .inner {
+    background-color: rgba(0, 0, 0, 0.06);
+    width: 100%;
+    position: absolute;
+    bottom: 0; }
+    .contacts .inner a {
+      display: inline-block;
+      font-size: 30px;
+      margin: 10px;
+      /*&:hover{
+        color: #3d64ff;
+      }*/ }
 
 .card {
   position: absolute;
@@ -81,12 +96,12 @@ button, .button, input[type="submit"] {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
-  border-radius: 3px;
-  width: 400px;
+  width: 504px;
+  height: 280px;
   background-color: #ffffff;
   text-align: center; }
 
-@media screen and (max-width: 420px), screen and (max-height: 500px) {
+@media screen and (max-width: 520px), screen and (max-height: 500px) {
   .card {
     top: 130px;
     left: 0px;
