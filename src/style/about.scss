@@ -44,7 +44,7 @@
     display: block;
     text-decoration: none;
     font-size: 2rem;
-    margin: auto;
+    margin: 10px;
 
   }
 
@@ -54,15 +54,23 @@
     //display: inline-block;
     //border: 1px dashed red;
 
-    &:not(:last-child):after {
+    /*&:not(:last-child):after {
       display: inline-block;
       width: 30px;
       content: "";//•
-    }
+    }*/
 
 
 
     font-size: 1.4em;
+
+
+    img/*, .logo*/{
+      display: inline-block;
+      margin-left: 4px;
+      vertical-align: bottom;
+      height: 1em;
+    }
 
     //margin: auto;
     //margin-bottom: 20px;

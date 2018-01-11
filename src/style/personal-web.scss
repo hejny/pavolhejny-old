@@ -8,17 +8,17 @@
 
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
 
-  border-radius: 3px;
+  //border-radius: 30px;
 
-  width: 400px;
-  //height: 300px;
+  width: 504px;
+  height: 280px;
   background-color: #ffffff;
 
   text-align: center;
 
 }
 
-@media screen and (max-width: 420px), screen and (max-height: 500px) {
+@media screen and (max-width: 520px), screen and (max-height: 500px) {
 
   .card {
     top: 130px;

@@ -1,15 +1,28 @@
-.contacts{
-
-  a{
-    display: inline-block;
-    font-size: 30px;
-
-    margin: 10px;
+.contacts {
 
 
-    /*&:hover{
-      color: #3d64ff;
-    }*/
+  height: 70px;
+
+  .inner {
+
+    background-color: rgba(0, 0, 0, 0.06);
+    //border: 2px dotted red;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    a {
+      display: inline-block;
+      font-size: 30px;
+
+      margin: 10px;
+
+      /*&:hover{
+        color: #3d64ff;
+      }*/
+
+    }
 
   }
 

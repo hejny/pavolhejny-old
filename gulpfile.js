@@ -102,3 +102,21 @@ gulp.task('browser-sync', () => {
     }]);
     //todo css reloading without reloading page
 });
+
+///--------------------------------------------------------
+
+var ghpages = require('gh-pages');
+
+gulp.task('deploy', (done) => {
+
+
+    ghpages.publish('dist', {
+        repo: 'https://github.com/hejny/pavolhejny.git'
+    }, () => {
+        console.log(arguments);
+        done();
+    });
+
+
+
+});
