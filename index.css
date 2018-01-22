@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #000000;
   margin: 0px;
   padding: 0px;
@@ -97,7 +97,7 @@ button, .button, input[type="submit"] {
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
   width: 504px;
-  height: 280px;
+  min-height: 280px;
   background-color: #ffffff;
   text-align: center; }
 
