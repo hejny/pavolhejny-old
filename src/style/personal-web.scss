@@ -1,20 +1,40 @@
+body {
+  perspective: 1000px;
+  min-height: 100vh;
+  
+
+}
+
 
 .card {
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  //transform: translate(-50%, -50%);
 
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
 
   //border-radius: 30px;
 
   width: 504px;
   min-height: 280px;
-  background-color: #ffffff;
+
 
   text-align: center;
+
+  background: url('./images/textures/norwegian_rose.png');
+  background-position: center;
+
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotateY(0deg);
+
+
+  &:hover{
+    transform: translate(-50%, -50%) rotateY(-30deg);
+    //transform-origin: 50% 50%;
+    
+  }
 
 }
 
