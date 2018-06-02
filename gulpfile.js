@@ -95,7 +95,7 @@ gulp.task('browser-sync', () => {
         server: {
             baseDir: "./dist",
         },
-        open: false
+        open: true
     });
     gulp.watch("./src/**/*", ['build', () => {
         browserSync.reload();
