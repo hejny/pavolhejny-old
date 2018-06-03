@@ -1,59 +1,53 @@
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #000000;
-  margin: 0px;
-  padding: 0px;
-  background-color: #ffffff;
-
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    margin: 0px;
+    padding: 0px;
+    background-color: #111;
 }
 
-
-*{
-  transition: all .3s ease-out;
+* {
+    transition: all 0.1s ease-out;
 }
-
 
 a {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+    cursor: Pointer;
 
-  text-decoration: none;
-  color: inherit;
-  outline: 0;
-  cursor: Pointer;
-
-  &:hover{
-    color: #3d64ff;
-  }
-
+    &:hover {
+        color: #008080;
+    }
 }
 
-button, .button, input[type="submit"] {
+/*
+button,
+.button,
+input[type='submit'] {
+    display: inline-block;
+    border: none;
+    padding: 0 10px;
+    margin: 2px;
+    min-width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
 
+    &:hover {
+        background-color: #008080;
+    }
 
-  display: inline-block;
-  border: none;
-  padding: 0 10px;
-  margin: 2px;
-  min-width: 100px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: #0098ff;
-  color: white;
-  cursor: pointer;
-
-  &:hover{
-    background-color: #37beff;
-  }
-
-  .fa{
-    margin-right: 4px;
-  }
-
+    .fa {
+        margin-right: 4px;
+    }
 }
+*/
 
 
-
-@import "about";
+@import 'vcard';
 @import "contacts";
-@import "personal-web";
