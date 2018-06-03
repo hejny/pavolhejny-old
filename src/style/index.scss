@@ -90,7 +90,7 @@ input[type='submit'] {
         list-style: none;
         padding-left:0;
 
-        &::before{
+        .line{
           content: "aaa";
           display: block;
           position: absolute;
@@ -99,7 +99,7 @@ input[type='submit'] {
           margin-left: 50%;
           background-color: #008080;
           box-shadow: #008080 0 0 10px;
-          width: 3px;
+          width: 2px;
           height: 100%;
         }
 
@@ -122,28 +122,29 @@ input[type='submit'] {
 
           box-shadow: #008080 0 0 10px;
 
-          &::before{
+          .line{
             content: "aaa";
             display: block;
-            position: absolute;
+            //position: absolute;
             background-color: #008080;
             box-shadow: #008080 0 0 10px;
-            width: 100px;
+            width: 77px;
             height: 2px;
-
+            transform: translate(0,100%);
+            //margin-top: 50px; 
           }
 
 
           &:nth-child(odd){
-            &::before{
+            .line{
               margin-left: 163px; 
             }
           }
 
           &:nth-child(even){
-            margin-left: calc(504px - 30% );
-            &::before{
-              margin-left: -103px; 
+            margin-left: calc(504px - 30% - 25px );
+            .line{
+              margin-left: -87px; 
             }
           }
 
