@@ -6,34 +6,5 @@ html(lang='en')
     include ./head
     body
         include ./vcard
+        include ./timeline
         include ./contacts
-
-        div.timeline
-
-          //h3 Projekty
-
-          mixin project(name)
-            li.project
-              .line
-              .circle
-              h3= name
-              
-          ul.projects
-            .line
-            .circle
-            +project('Kóduj pro Česko')
-            +project('JobsDev')
-            +project('StartupWeekend Plzeň')
-            +project('StartupWeekend Olomouc')
-            +project('StartupWeekend Olomouc vvvvvvvvvvvvv')
-
-          //
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta, ante ultricies blandit varius, mi nisl ultricies ex, ac commodo nunc velit mattis leo. Aenean nec orci sed libero tincidunt semper nec id ante. Etiam tellus neque, auctor ut ligula vel, facilisis ullamcorper ligula. Aliquam efficitur faucibus dui, vel venenatis metus lobortis in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum turpis velit, mattis ac risus eget, efficitur congue nibh. Suspendisse potenti. Morbi dictum ante ut turpis tristique varius.
-
-            h3 události
-
-            p Sed vulputate dolor est, a pulvinar justo tristique in. Vestibulum a justo blandit, condimentum metus quis, congue lacus. Nullam id est vitae lacus efficitur efficitur nec nec risus. Ut eget faucibus diam, ac sodales odio. Etiam et ipsum vel felis dignissim blandit non et tellus. Aliquam erat volutpat. Nam pretium tortor augue. Nunc interdum lobortis tellus, sit amet vestibulum libero venenatis mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ut ante sed est consectetur bibendum. Vivamus eu eleifend massa. Proin turpis nulla, tempus vel posuere quis, sagittis a orci.
-
-            p Pellentesque faucibus suscipit eleifend. Suspendisse id semper est. Etiam commodo viverra quam a hendrerit. Morbi tempus felis rutrum risus gravida, in iaculis diam hendrerit. Vivamus ornare felis non tellus sollicitudin, ac molestie ligula dignissim. Nulla erat tortor, aliquet vitae gravida ac, volutpat at quam. Nunc hendrerit imperdiet orci, eu elementum dolor feugiat et.
-
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam elementum ante justo. Cras bibendum nibh nisi. Nunc non ex ut velit dignissim ullamcorper in efficitur lorem. Suspendisse efficitur erat eu posuere pretium. Fusce pellentesque ex ipsum, in consequat arcu interdum eu. Duis efficitur enim arcu, et vulputate nibh rhoncus a. Sed pellentesque feugiat lobortis. Maecenas sollicitudin nisi sit amet mollis auctor. Donec non lorem nisl. Donec dictum ipsum quis laoreet consectetur.
