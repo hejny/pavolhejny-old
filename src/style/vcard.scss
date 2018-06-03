@@ -1,7 +1,7 @@
-body {
+/*body {
     perspective: 800px;
     min-height: 100vh;
-}
+}*/
 
 .vcard {
     position: absolute;
@@ -10,8 +10,8 @@ body {
     //transform: translate(-50%, -50%);
 
 
-
-    box-shadow: rgba(255, 255, 255, .5) 0 0 5px;
+    border: 2px solid #008080;
+    box-shadow: #008080 0 0 10px;
     //border: 1px solid #666666;
 
     //border-radius: 30px;
@@ -32,9 +32,9 @@ body {
     transform-origin: center center;
     transform: translate(-50%, -50%) rotateY(0deg);
 
-    &:hover {
+    /*&:hover {
         transform: translate(-50%, -50%) rotateY(10deg);
-    }
+    }*/
 
     //---------------------
 
@@ -46,10 +46,10 @@ body {
             margin-bottom: 12px;
 
             width: 125px;
-            //height: 130px;
+            height: 125px;
             max-width: 80%;
 
-            border: 2px solid #008080;//todo to config
+            border: 1px solid #008080;//todo to config
             border-radius: 1000px;
 
             padding: 3px;

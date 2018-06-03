@@ -4,6 +4,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #111;
+    text-align: center;
 }
 
 * {
@@ -50,4 +51,108 @@ input[type='submit'] {
 
 
 @import 'vcard';
-@import "contacts";
+@import 'contacts';
+
+
+
+.timeline {
+
+      border: 1px dotted red;
+      z-index: 100;
+      display: inline-block;
+      //background-color: rgba(255, 255, 255, 1);
+      //border: 2px dotted red;
+      width: 504px;//todo config
+
+
+      position: absolute;
+      top: calc( 50vh + 200px);
+      
+      transform: translate(-50%, 0);
+
+      color: white;
+
+      p{
+        border: 1px dotted red;
+
+          //width: 100px;
+          display: block;
+          font-size: 1em;
+
+          
+          //margin: 10px;
+      }
+
+
+
+      ul.projects{
+        border: 1px dotted red;
+        list-style: none;
+        padding-left:0;
+
+        &::before{
+          content: "aaa";
+          display: block;
+          position: absolute;
+          //left: 150px;
+          //top: 50%;
+          margin-left: 50%;
+          background-color: #008080;
+          box-shadow: #008080 0 0 10px;
+          width: 3px;
+          height: 100%;
+        }
+
+
+        li{
+          border: 2px solid #008080;
+          
+          display: block;
+          background-color: white;
+          color: black;
+          //margin: 10px;
+          padding: 10px;
+          width: 30%;
+
+          //left: 100px;
+          
+
+
+
+
+          box-shadow: #008080 0 0 10px;
+
+          &::before{
+            content: "aaa";
+            display: block;
+            position: absolute;
+            background-color: #008080;
+            box-shadow: #008080 0 0 10px;
+            width: 100px;
+            height: 2px;
+
+          }
+
+
+          &:nth-child(odd){
+            &::before{
+              margin-left: 163px; 
+            }
+          }
+
+          &:nth-child(even){
+            margin-left: calc(504px - 30% );
+            &::before{
+              margin-left: -103px; 
+            }
+          }
+
+
+
+        }
+
+      }
+
+
+  
+}
