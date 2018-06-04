@@ -38,3 +38,9 @@ function generateNoise() {
 }
 
 generateNoise();
+
+
+$(function(){
+
+    //$('.card').draggable();
+})
