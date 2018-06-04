@@ -24,8 +24,8 @@ function generateNoise() {
 
             r = Math.random() > 0.5;
 
-            //r = r ? 0.06 : 0.08;
-            r = r ? 0.1 : 0.2;
+            r = r ? 0.06 : 0.12;
+            //r = r ? 0.1 : 0.2;
             r = Math.floor(r * 255);
             g = r;
             b = r;
