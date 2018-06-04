@@ -1,102 +1,77 @@
-ul.events{
-    border: 1px dotted red;
+ul.events {
+    //border: 1px dotted red;
 
     margin-top: 60px;
     margin-bottom: 30px;
 
-
-    .line{
-      display: block;
-      position: absolute;
-      //left: 150px;
-      //top: 50%;
-      margin-left: 50%;
-      background-color: #008080;
-      box-shadow: #008080 0 0 10px;
-      width: 2px;
-      height: 100%;
+    .line {
+        display: block;
+        position: absolute;
+        margin-left: 50%;
+        background-color: #008080;
+        box-shadow: #008080 0 0 10px;
+        width: 2px;
+        height: 100%;
     }
 
-    .circle{
-      display: block;
-      position: absolute;
-      margin-left: calc( 50% - 9px );
-      margin-top: -20px;
-      background-color: #008080;
-      //border: 2px solid #008080;
-      box-shadow: #008080 0 0 10px;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+    .circle {
+        display: block;
+        position: absolute;
+        margin-left: calc(50% - 9px);
+        margin-top: -20px;
+        background-color: #008080;
+        //border: 2px solid #008080;
+        box-shadow: #008080 0 0 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
 
-      .label{
-          margin-left: 25px;
-          color: #008080;
-      }
-     
-      
+        .label {
+            margin-left: 25px;
+            color: #008080;
+        }
     }
 
-
-    li.event{
-
+    li.event {
         width: 40%;
         //height: 80px;
-        .inner{
+        .inner {
             //height: 120px;
             //overflow: hidden;
         }
 
-
-        .line{
-            display: block;
-            //position: absolute;
-            background-color: #008080;
-            box-shadow: #008080 0 0 10px;
-            width: calc( 10% + 2px);
+        .line {
+            width: calc(10% + 2px);
             height: 2px;
-            //transform: translate(0,50%);
-            margin-top: 50px; 
-          }
-    
-          .circle{
+            margin-top: 50px;
+        }
+
+        .circle {
             display: block;
             position: absolute;
-            
             margin-top: 46px;
-            background-color: #008080;
-            //border: 2px solid #008080;
-            box-shadow: #008080 0 0 10px;
             width: 10px;
             height: 10px;
-            border-radius: 10px
-          }
-    
+            border-radius: 10px;
+        }
 
-        
-        &:nth-child(odd){
-            .line{
-              margin-left:calc( 40% - 2px );
+        &:nth-child(odd) {
+            .line {
+                margin-left: calc(40% - 2px);
             }
-            .circle{
-              margin-left: calc( 50% - 4px );
+            .circle {
+                margin-left: calc(50% - 4px);
             }
-    
-            
-          }
-    
-          &:nth-child(even){
+        }
+
+        &:nth-child(even) {
             margin-left: calc(504px - 40% - 2px);
-            .line{
-              margin-left:calc( -10% - 2px );
+            .line {
+                margin-left: calc(-10% - 2px);
             }
-            .circle{
-              margin-left: calc( -10% - 3px );
+            .circle {
+                margin-left: calc(-10% - 3px);
             }
-          }
-
-
-
+        }
     }
-
-  }
+}

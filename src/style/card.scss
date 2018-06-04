@@ -1,0 +1,63 @@
+.card {
+    .arrow {
+        display: none;
+    }
+    /*.arrow{
+
+        display: block;
+        position: absolute;
+        margin-left: calc( 50% - 9px );
+        margin-top: calc( 50% - 0px );
+        //background-color: #008080;
+        //border: 2px solid #008080;
+        //box-shadow: #008080 0 0 10px;
+
+        //transform: translate(100%,100%);
+
+        width: 0; 
+        height: 0; 
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #008080;
+    }*/
+
+    .inner {
+        border: 2px solid #008080;
+        box-shadow: #008080 0 0 10px;
+        text-align: center;
+        background: url('./images/textures/norwegian_rose.png');
+        background-position: center;
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+
+        .name {
+            font-weight: normal;
+        }
+        .subname {
+            font-weight: normal;
+            span.meta {
+                color: #008080;
+            }
+        }
+
+        &:hover {
+            box-shadow: #008080 0 0 15px;
+        }
+    }
+
+    &:nth-child(odd) {
+        .inner {
+            &:hover {
+                transform: rotate(5deg);
+            }
+        }
+    }
+    &:nth-child(even) {
+        .inner {
+            &:hover {
+                transform: rotate(-5deg);
+            }
+        }
+    }
+}

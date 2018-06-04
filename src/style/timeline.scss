@@ -2,14 +2,11 @@
     //border: 1px dotted red;
     z-index: 100;
     display: inline-block;
-    width: 504px;//todo config
+    width: 504px; //todo config
     position: absolute;
-    top: calc( 10vh + 300px);
+    top: calc(10vh + 300px);
     transform: translate(-50%, 0);
-
-
 
     @import 'projects';
     @import 'events';
-
 }
