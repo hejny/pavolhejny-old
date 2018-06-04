@@ -7,6 +7,9 @@ div.timeline
             .line
                 .label-above 2018 - 2016
             .circle
+            .more
+                .line
+                    .circle
             .inner
                 .arrow
                 h3.name= name
@@ -19,6 +22,12 @@ div.timeline
         li.card.event
             .line
             .circle
+            .more
+                .line
+                    .circle
+            //article.content
+                .inner
+                    p= content
             .inner
                 .arrow
                 h3.name= name
@@ -26,10 +35,7 @@ div.timeline
                     span.meta /^
                     span.text hackathon
                     span.meta $/
-                article.content
 
-                    .inner
-                        p= content
 
 
     mixin year(year)
