@@ -55,29 +55,47 @@ ul.clear{
 }
 
 .card{
-  border: 2px solid #008080;
-  box-shadow: #008080 0 0 10px;
-  text-align: center;
-  background: url('./images/textures/norwegian_rose.png');
-  background-position: center;
-  color: black;
-  padding: 10px;
-  cursor: pointer;
+  .inner{
+    border: 2px solid #008080;
+    box-shadow: #008080 0 0 10px;
+    text-align: center;
+    background: url('./images/textures/norwegian_rose.png');
+    background-position: center;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
 
-  .name{
-    font-weight: normal;
+    .name{
+      font-weight: normal;
+    }
+    .subname{
+      font-weight: normal;
+      span.meta{
+        color: #008080;
+      }
+    }
+
+    &:hover{
+      box-shadow: #008080 0 0 15px;
+    }
+
   }
-  .subname{
-    font-weight: normal;
-    span.meta{
-      color: #008080;
+
+  &:nth-child(odd){
+    .inner{
+      &:hover{
+        transform: rotate(5deg);
+      }
+    }
+  }
+  &:nth-child(even){
+    .inner{
+      &:hover{
+        transform: rotate(-5deg);
+      }
     }
   }
 
-  &:hover{
-    box-shadow: #008080 0 0 15px;
-    transform: rotate(5deg);
-  }
 }
 
 

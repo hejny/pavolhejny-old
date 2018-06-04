@@ -27,6 +27,10 @@
     transform-origin: center center;
     transform: translate(-50%, 0) rotateY(0deg);
 
+    .inner{
+      transform: none!important;
+    }
+    
     /*&:hover {
         transform: translate(-50%, -50%) rotateY(10deg);
     }*/
@@ -69,7 +73,7 @@
         display: block;
         font-size: 1.25em;
         margin-top: 5px;
-        
+
         //todo unused
         img{
             display: inline-block;

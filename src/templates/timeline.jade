@@ -8,15 +8,12 @@ div.timeline
 
     mixin project(name)
         li.card.project
-            h3.name= name
-            h4.subname
-                span.meta /^(
-                span.text web&nbsp;
-                span.meta )?(
-                span.text app&nbsp;
-                span.meta )?
-                span.text developer
-                span.meta $/
+            .inner
+                h3.name= name
+                h4.subname
+                    span.meta /^
+                    span.text project
+                    span.meta $/
 
     ul.clear.projects
         +project('H-Edu')
@@ -31,11 +28,12 @@ div.timeline
         li.card.event
             .line
             .circle
-            h3.name= name
-            h4.subname
-                span.meta /^
-                span.text hackathon
-                span.meta $/
+            .inner
+                h3.name= name
+                h4.subname
+                    span.meta /^
+                    span.text hackathon
+                    span.meta $/
 
 
     ul.clear.events
