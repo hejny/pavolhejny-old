@@ -4,6 +4,36 @@ ul.projects {
     margin-top: 60px;
     margin-bottom: 30px;
 
+
+    .line {
+        display: block;
+        position: absolute;
+        background-color: #008080;
+        box-shadow: #008080 0 0 10px;
+        width: calc( 100%  +0px);
+        height: 2px;
+        //transform: translate(0,50%);
+        margin-top: 50px;
+        //margin-left: 50%;
+
+        .label-above {
+            margin-top: -25px;
+            //margin-left: 25px;
+            color: #008080;
+        }
+
+        .label-bellow {
+            margin-top: 15px;
+            //margin-left: 25px;
+            color: #008080;
+        }
+    }
+
+    .empty{
+        height: 100px;
+    }
+
+
     li.project {
         width: 40%;
         //height: 80px;
@@ -13,21 +43,9 @@ ul.projects {
         }
 
         .line {
-            display: block;
-            position: absolute;
-            background-color: #008080;
-            box-shadow: #008080 0 0 10px;
             width: calc(50% + 2px);
             height: 2px;
-            //transform: translate(0,50%);
             margin-top: 50px;
-            //margin-left: 50%;
-
-            .label {
-                margin-top: -25px;
-                //margin-left: 25px;
-                color: #008080;
-            }
         }
 
         .circle {

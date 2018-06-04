@@ -9,7 +9,7 @@ div.timeline
     mixin project(name)
         li.card.project
             .line
-                .label 2018 - 2016
+                .label-above 2018 - 2016
             .circle
             .inner
                 .arrow
@@ -22,6 +22,10 @@ div.timeline
     ul.clear.projects
         +project('H-Edu')
         +project('ITNetwork')
+        .line
+            .label-above Current
+            .label-bellow Past
+        .empty
         +project('Towns')
         +project('Birds.cz')
         //+project('StartupWeekend Olomouc vvvvvvvvvvvvv')
