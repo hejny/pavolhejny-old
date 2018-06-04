@@ -4,12 +4,25 @@ const GulpSass = require('gulp-sass');
 const GulpJade = require('gulp-jade');
 
 gulp.task('default', ['build']);
-gulp.task('build', ['build-html', 'build-css', 'build-js', 'copy-images']);
+gulp.task('build', ['build-cleanup','build-html', 'build-css', 'build-js', 'copy-images']);
+
+function swallowError (error) {
+    // If you want details of the error in the console
+    console.log(error.toString())
+    this.emit('end')
+}
+
+gulp.task('build-cleanup', () => {
+    console.clear();
+    console.clear();
+    console.log(`===============================================[BUILD]======>`);
+});
 
 gulp.task('build-html', () => {
     return gulp
         .src('./src/templates/index.jade')
         .pipe(GulpJade({ pretty: true }))
+        .on('error', swallowError)
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -17,6 +30,7 @@ gulp.task('build-css', () => {
     return gulp
         .src('./src/style/index.scss')
         .pipe(GulpSass())
+        .on('error', swallowError)
         .pipe(GulpRename('./index.css'))
         .pipe(gulp.dest('./dist'));
 });
@@ -73,7 +87,7 @@ gulp.task('build-js', () => {
                 ],
             }),
         )
-        .on('error', () => {}) //todo maybe better
+        .on('error', swallowError)
         .pipe(gulp.dest('./dist/'));
 });
 
