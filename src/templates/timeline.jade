@@ -26,7 +26,10 @@ div.timeline
                     span.meta /^
                     span.text hackathon
                     span.meta $/
-                p.content= content
+                article.content
+
+                    .inner
+                        p= content
 
 
     mixin year(year)
