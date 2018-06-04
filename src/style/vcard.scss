@@ -5,24 +5,19 @@
 
 .vcard {
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
     //transform: translate(-50%, -50%);
 
 
-    border: 2px solid #008080;
-    box-shadow: #008080 0 0 10px;
+
     //border: 1px solid #666666;
 
     //border-radius: 30px;
 
     width: 504px;
     height: 280px;
-
-    text-align: center;
-
-    background: url('./images/textures/norwegian_rose.png');
-    background-position: center;
+    padding: 0;
 
     //background: url('./images/front.png');
     //background-position: center;
@@ -30,7 +25,7 @@
 
 
     transform-origin: center center;
-    transform: translate(-50%, -50%) rotateY(0deg);
+    transform: translate(-50%, 0) rotateY(0deg);
 
     /*&:hover {
         transform: translate(-50%, -50%) rotateY(10deg);
@@ -65,22 +60,16 @@
         display: block;
         text-decoration: none;
         font-size: 2.48rem;
-        font-weight: normal;
         margin-top: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 8px;
     }
 
     h2.subname{
 
         display: block;
         font-size: 1.25em;
-        font-weight: normal;
         margin-top: 5px;
-
-        span.meta{
-          color: #008080;
-        }
-
+        
         //todo unused
         img{
             display: inline-block;

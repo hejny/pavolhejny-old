@@ -49,6 +49,37 @@ input[type='submit'] {
 }
 */
 
+ul.clear{
+  list-style: none;
+  padding-left:0;
+}
+
+.card{
+  border: 2px solid #008080;
+  box-shadow: #008080 0 0 10px;
+  text-align: center;
+  background: url('./images/textures/norwegian_rose.png');
+  background-position: center;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+
+  .name{
+    font-weight: normal;
+  }
+  .subname{
+    font-weight: normal;
+    span.meta{
+      color: #008080;
+    }
+  }
+
+  &:hover{
+    box-shadow: #008080 0 0 15px;
+    transform: rotate(5deg);
+  }
+}
+
 
 @import 'vcard';
 @import 'timeline';

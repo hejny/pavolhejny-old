@@ -1,136 +1,15 @@
 .timeline {
-
-    border: 1px dotted red;
+    //border: 1px dotted red;
     z-index: 100;
     display: inline-block;
-    //background-color: rgba(255, 255, 255, 1);
-    //border: 2px dotted red;
     width: 504px;//todo config
-
-
     position: absolute;
-    top: calc( 50vh + 170px);
-    
+    top: calc( 10vh + 300px);
     transform: translate(-50%, 0);
 
-    color: white;
-
-    p{
-      border: 1px dotted red;
-
-        //width: 100px;
-        display: block;
-        font-size: 1em;
-
-        
-        //margin: 10px;
-    }
 
 
-
-    ul.events{
-      border: 1px dotted green;
-      list-style: none;
-      padding-left:0;
-
-      .line{
-        display: block;
-        position: absolute;
-        //left: 150px;
-        //top: 50%;
-        margin-left: 50%;
-        background-color: #008080;
-        box-shadow: #008080 0 0 10px;
-        width: 2px;
-        height: 100%;
-      }
-
-      .circle{
-        display: block;
-        position: absolute;
-        margin-left: calc( 50% - 9px );
-        margin-top: -20px;
-        background-color: #008080;
-        //border: 2px solid #008080;
-        box-shadow: #008080 0 0 10px;
-        width: 20px;
-        height: 20px;
-        border-radius: 20px
-      }
-
-
-      li.event{
-        border: 2px solid #008080;
-        
-        display: block;
-        background: url('./images/textures/norwegian_rose.png');
-        background-position: center;
-        color: black;
-        //margin: 10px;
-        padding: 10px;
-        width: 30%;
-
-
-        //left: 100px;
-        
-
-
-
-
-        box-shadow: #008080 0 0 10px;
-
-        .line{
-          display: block;
-          //position: absolute;
-          background-color: #008080;
-          box-shadow: #008080 0 0 10px;
-          width: 77px;
-          height: 2px;
-          transform: translate(0,100%);
-          //margin-top: 50px; 
-        }
-
-        .circle{
-          display: block;
-          position: absolute;
-          
-          margin-top: -2px;
-          background-color: #008080;
-          //border: 2px solid #008080;
-          box-shadow: #008080 0 0 10px;
-          width: 10px;
-          height: 10px;
-          border-radius: 10px
-        }
-
-
-        &:nth-child(odd){
-          .line{
-            margin-left: 163px; 
-          }
-          .circle{
-            margin-left: calc( 50% - 16px );
-          }
-
-          
-        }
-
-        &:nth-child(even){
-          margin-left: calc(504px - 30% - 25px );
-          .line{
-            margin-left: -87px; 
-          }
-          .circle{
-            margin-left: calc( -15% - 16px );
-          }
-        }
-
-
-
-      }
-
-    }
-
-
+    @import 'projects';
+    @import 'events';
 
 }
