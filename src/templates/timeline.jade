@@ -2,10 +2,6 @@
 
 div.timeline
 
-
-
-    //h3 Projekty
-
     mixin project(name)
         li.card.project
             .line
@@ -18,19 +14,6 @@ div.timeline
                     span.meta /^
                     span.text project
                     span.meta $/
-
-    //ul.clear.projects
-        +project('H-Edu')
-        +project('ITNetwork')
-        .line
-            .label-above Current
-            .label-bellow Past
-        .empty
-        +project('Towns')
-        +project('Birds.cz')
-        //+project('StartupWeekend Olomouc vvvvvvvvvvvvv')
-    
-
 
     mixin event(name, content)
         li.card.event
@@ -46,10 +29,16 @@ div.timeline
                 p.content= content
 
 
-    ul.clear.events
-        .line
+    mixin year(year)
         .circle
-            .label 2018
+            .label= year
+        .empty
+
+
+    ul.clear.events
+        //.empty-todo-remove-this-hack
+        .line
+        +year(2018)
         +project('H-Edu')
         +event(
             'Kóduj pro Česko',
@@ -59,10 +48,8 @@ div.timeline
         +event('StartupWeekend Plzeň')
         +project('H-Edu')
         +event('StartupWeekend Olomouc')
-        +event('StartupWeekend Olomouc vvvvvvvvvvvvv')
-        .circle
-            .label 2018
-        .empty
+        +project('H-Edu')
+        +year(2017)
         +event('Kóduj pro Česko')
         +event('JobsDev')
         +event('StartupWeekend Plzeň')
