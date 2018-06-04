@@ -4,34 +4,42 @@ div.timeline
 
     mixin project(name)
         li.card.project
-            .line
-                .label-above 2018 - 2016
-            .circle
-            .more
+            .skeleton
                 .line
-                    .circle
+                    .label-above 2018 - 2016
+                .circle
+                .more
+                    .line
+                        .circle
+                        .label-above
+                            span.meta /^
+                            span.text project
+                            span.meta $/
+                        .label-bellow 
+                            span 24/6/2018
             .inner
                 .arrow
                 h3.name= name
-                h4.subname
+                //h4.subname
                     span.meta /^
                     span.text project
                     span.meta $/
 
     mixin event(name, content)
         li.card.event
-            .line
-            .circle
-            .more
-                .line
-                    .circle
+            .skeleton
+                .line   
+                .circle
+                .more
+                    .line
+                        .circle
             //article.content
                 .inner
                     p= content
             .inner
                 .arrow
                 h3.name= name
-                h4.subname
+                //h4.subname
                     span.meta /^
                     span.text hackathon
                     span.meta $/
@@ -57,6 +65,7 @@ div.timeline
         +event('StartupWeekend Plzeň')
         +project('H-Edu')
         +event('StartupWeekend Olomouc')
+        +project('H-Edu')
         +project('H-Edu')
         +year(2017)
         +event('Kóduj pro Česko')
