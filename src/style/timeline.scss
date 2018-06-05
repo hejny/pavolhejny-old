@@ -97,10 +97,10 @@
             }
 
             .skeleton{
-                opacity: 0.9;
+                opacity: 0.3;
             }
             
-            &:hover{
+            &.selected{
                 .skeleton{
                     opacity: 1;
                 }
@@ -195,7 +195,7 @@
             }
         }
 
-        &:hover{
+        &.selected{
             .more{
                 opacity: 1;
             }

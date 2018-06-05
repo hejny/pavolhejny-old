@@ -3,7 +3,7 @@
 div.timeline
 
     mixin project(name)
-        li.card.project
+        li.card.project.selectable
             .skeleton
                 .line
                     .label-above 2018 - 2016
@@ -26,7 +26,7 @@ div.timeline
                     span.meta $/
 
     mixin event(name, content)
-        li.card.event
+        li.card.event.selectable
             .skeleton
                 .line   
                 .circle

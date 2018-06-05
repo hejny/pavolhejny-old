@@ -41,7 +41,19 @@ function generateNoise() {
 generateNoise();
 
 
+const selectableElements = document.getElementsByClassName('selectable');
+for( const element of selectableElements){
+
+    element.addEventListener('mouseenter',()=>{
+        for( const element of selectableElements){
+            element.classList.remove('selected');
+        }
+        element.classList.add('selected');
+    })
+}
+/*
 $(function(){
 
     //$('.card').draggable();
 })
+*/
