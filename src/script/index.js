@@ -1,6 +1,6 @@
 console.log('(cc) Pavol Hejný');
 
-function generateNoise() {
+function generateNoise(element) {
     if (!!!document.createElement('canvas').getContext) {
         return false;
     }
@@ -34,11 +34,16 @@ function generateNoise() {
             ctx.fillRect(x, y, 1, 1);
         }
     }
-    document.body.style.backgroundImage =
+    element.style.backgroundImage =
         'url(' + canvas.toDataURL('image/png') + ')';
 }
 
-generateNoise();
+
+for( const element of document.getElementsByClassName('generated-noise')){
+    generateNoise(element);
+}
+
+
 
 
 const selectableElements = document.getElementsByClassName('selectable');
