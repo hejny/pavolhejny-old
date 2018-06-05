@@ -45,7 +45,7 @@ for( const element of document.getElementsByClassName('generated-noise')){
 
 
 
-
+const featureImageMirror = document.getElementById('featured-image-mirror');
 const selectableElements = document.getElementsByClassName('selectable');
 for( const element of selectableElements){
 
@@ -54,6 +54,9 @@ for( const element of selectableElements){
             element.classList.remove('selected');
         }
         element.classList.add('selected');
+
+        featureImageMirror.style.background = `url('./images/events/${element.getAttribute('data-featured-image')}.jpg')`;
+        
     })
 }
 /*

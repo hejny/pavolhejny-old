@@ -2,7 +2,7 @@
 
 div.timeline
 
-    mixin project(name)
+    mixin project(name, featuredImage)
         li.card.project.selectable
             .skeleton
                 .line
@@ -25,8 +25,10 @@ div.timeline
                     span.text project
                     span.meta $/
 
-    mixin event(name, content)
-        li.card.event.selectable
+    mixin event(name, featuredImage)
+        li.card.event.selectable(
+            data-featured-image= featuredImage
+        )
             .skeleton
                 .line   
                 .circle
@@ -59,10 +61,10 @@ div.timeline
         +project('H-Edu')
         +event(
             'Kóduj pro Česko',
-            'div popis'
+            '33692658_10155680999023590_4747848035172614144_n'
         )
-        +event('JobsDev')
-        +event('StartupWeekend Plzeň')
+        +event('JobsDev','23915683_1943247489329010_7075262240567444466_n')
+        +event('StartupWeekend Plzeň','14947711_1778991995650932_1228791466977297790_n')
         +project('H-Edu')
         +event('StartupWeekend Olomouc')
         +project('H-Edu')
