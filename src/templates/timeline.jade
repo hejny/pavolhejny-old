@@ -6,7 +6,9 @@ div.timeline
         img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm', alt='Pavol Hejný')
 
     mixin project(name, featuredImage)
-        li.card.project.selectable
+        li.card.project.selectable(
+            data-featured-image= featuredImage
+        )
             .skeleton
                 .line
                     .label-above 2018 - 2016
@@ -19,7 +21,9 @@ div.timeline
                             span.text project
                             span.meta $/
                         .label-bellow 
-                            span 24/6/2018
+                            span.time 24/6/2018
+                            p Článek o skvělém víkendovém hackathonu #kodujprocesko na Těchinternetech! Byl to asi nejdelší hackathnon v kuse, co jsem kdy byl.
+                            p Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
             .inner
                 .arrow
                 h3.name= name
@@ -61,7 +65,7 @@ div.timeline
         //.empty-todo-remove-this-hack
         .line
         +year(2018)
-        +project('H-Edu')
+        +project('H-Edu','33692658_10155680999023590_4747848035172614144_n')
         +event(
             'Kóduj pro Česko',
             '33692658_10155680999023590_4747848035172614144_n'
