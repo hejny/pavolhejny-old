@@ -3,7 +3,25 @@
     min-height: 100vh;
 }*/
 
+.avatar {
+  img {
+      display: inline-block;
+      width: 125px;
+      height: 125px;
+      max-width: 80%;
+
+      border: 1px solid #008080; //todo to config
+      border-radius: 1000px;
+
+      padding: 3px;
+      //box-shadow: black 0 0 5px;
+      //border: 2px solid black;
+  }
+}
+
+
 .vcard {
+  z-index: 200;
     position: absolute;
     top: 10%;
     left: 50%;
@@ -38,23 +56,13 @@
 
     //---------------------
 
+
+
     .avatar {
         img {
-            display: block;
             margin: auto;
             margin-top: 10px;
             margin-bottom: 12px;
-
-            width: 125px;
-            height: 125px;
-            max-width: 80%;
-
-            border: 1px solid #008080; //todo to config
-            border-radius: 1000px;
-
-            padding: 3px;
-            //box-shadow: black 0 0 5px;
-            //border: 2px solid black;
         }
     }
 
