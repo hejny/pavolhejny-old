@@ -4,7 +4,7 @@
     display: inline-block;
     width: 504px; //todo config
     position: absolute;
-    top: calc(10vh + 300px);
+    top: calc(10vh + 250px);
     transform: translate(-50%, 0);
 
     text-align: center;
@@ -25,21 +25,21 @@
             display: block;
             position: absolute;
             margin-left: 50%;
-            background-color: #008080;
-            box-shadow: #008080 0 0 10px;
+            background-color: $color1;
+            box-shadow: $color1 0 0 10px;
             width: 2px;
             height: 100%;
     
             .label-above {
                 margin-top: -25px;
                 //margin-left: 25px;
-                color: #008080;
+                color: $color1;
             }
     
             .label-bellow {
                 margin-top: 15px;
                 //margin-left: 25px;
-                color: #008080;
+                color: $color1;
             }
     
             
@@ -50,9 +50,9 @@
             position: absolute;
             margin-left: calc(50% - 9px);
             margin-top: -20px;
-            background-color: #008080;
-            //border: 2px solid #008080;
-            box-shadow: #008080 0 0 10px;
+            background-color: $color1;
+            //border: 2px solid $color1;
+            box-shadow: $color1 0 0 10px;
             width: 20px;
             height: 20px;
             border-radius: 20px;
@@ -60,7 +60,7 @@
             .label {
                 margin-top: -2px;
                 font-size: 1.3em;
-                color: #008080;
+                color: $color1;
             }
 
             &:nth-child(odd) {
@@ -105,7 +105,7 @@
             }
 
             .skeleton{
-                opacity: 0.3;
+                opacity: 0.8;
             }
             
             &.selected{

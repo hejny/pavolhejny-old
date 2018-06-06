@@ -8,9 +8,9 @@
         position: absolute;
         margin-left: calc( 50% - 9px );
         margin-top: calc( 50% - 0px );
-        //background-color: #008080;
-        //border: 2px solid #008080;
-        //box-shadow: #008080 0 0 10px;
+        //background-color: $color1;
+        //border: 2px solid $color1;
+        //box-shadow: $color1 0 0 10px;
 
         //transform: translate(100%,100%);
 
@@ -18,33 +18,23 @@
         height: 0; 
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: 20px solid #008080;
+        border-top: 20px solid $color1;
     }*/
 
     .inner {
-        border: 2px solid #008080;
-        box-shadow: #008080 0 0 10px;
+        border: 2px solid $color1;
+        box-shadow: $color1 0 0 10px;
         text-align: center;
         
-        background-color: #005050;
+        background-color: darken($color1,80%);//transpdaarentize(darken($color1,20%),20%);
         //background: url('./images/textures/norwegian_rose.png');
         //background-position: center;
         color: white;
         padding: 10px;
         cursor: pointer;
 
-        .name {
-            font-weight: normal;
-        }
-        .subname {
-            font-weight: normal;
-            span.meta {
-                color: #008080;
-            }
-        }
-
         &:hover {
-            box-shadow: #008080 0 0 15px;
+            box-shadow: $color1 0 0 15px;
         }
     }
 

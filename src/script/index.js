@@ -56,7 +56,9 @@ for( const element of selectableElements){
         element.classList.add('selected');
 
         featureImageMirror.style.background = `url('./images/events/${element.getAttribute('data-featured-image')}.jpg')`;
-        
+        featureImageMirror.style.backgroundSize = `cover`;
+
+
     })
 }
 /*

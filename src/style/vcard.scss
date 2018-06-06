@@ -10,11 +10,11 @@
       height: 125px;
       max-width: 80%;
 
-      border: 1px solid #008080; //todo to config
+      border: 1px solid $color1; //todo to config
       border-radius: 1000px;
 
       padding: 3px;
-      //box-shadow: black 0 0 5px;
+      box-shadow: $color1 0 0 10px;
       //border: 2px solid black;
   }
 }
@@ -31,9 +31,11 @@
 
     //border-radius: 30px;
 
-    width: 504px;
-    height: 280px;
-    padding: 0;
+    //width: 504px;
+    //height: 280px;
+    //padding: 0;
+
+    color: white;
 
     /*/
     .inner{
@@ -79,14 +81,6 @@
         display: block;
         font-size: 1.25em;
         margin-top: 5px;
-
-        //todo unused
-        img {
-            display: inline-block;
-            margin-left: 4px;
-            vertical-align: bottom;
-            height: 1em;
-        }
     }
 
     //---------------------
