@@ -1,2 +1,3 @@
 # Jak funguje Bitcoin?
-# Bitcoin a další kryptoměny
+
+Jak funguje Bitcoin? Co to je peněženka, adresa, veřejný a privátní klíč? Jak funguje decentralizované ověřování transakcí pomocí Blockchainu. A jaké jsou další kryptoměny a jejich výhody a nevýhody?

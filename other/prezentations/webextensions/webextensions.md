@@ -1,1 +1,3 @@
-# 3D na webu
+# WebExtensions
+
+Jak psát doplňky pro prohlížeč? 
