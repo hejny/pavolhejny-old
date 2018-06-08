@@ -1,27 +1,40 @@
 const gulp = require('gulp');
-const GulpRename = require('gulp-rename');
-const GulpSass = require('gulp-sass');
-const GulpJade = require('gulp-jade');
+const gulpRename = require('gulp-rename');
+const gulpSass = require('gulp-sass');
+const gulpJade = require('gulp-jade');
+const gulpClean = require('gulp-clean');
+const gulpSequence = require('gulp-sequence');
 
 gulp.task('default', ['build']);
-gulp.task('build', ['build-cleanup','build-html', 'build-css', 'build-js', 'copy-images']);
 
-function swallowError (error) {
+gulp.task('build', function(callback) {
+    return gulpSequence('build-cleanup', [
+        'build-html',
+        'build-css',
+        'build-js',
+        'copy-images',
+    ])(callback);
+});
+
+function swallowError(error) {
     // If you want details of the error in the console
-    console.log(error.toString())
-    this.emit('end')
+    console.log(error.toString());
+    this.emit('end');
 }
 
 gulp.task('build-cleanup', () => {
     console.clear();
     console.clear();
-    console.log(`===============================================[BUILD]======>`);
+    console.log(
+        `===============================================[BUILD]======>`,
+    );
+    return gulp.src('./dist/', { read: false }).pipe(gulpClean());
 });
 
 gulp.task('build-html', () => {
     return gulp
         .src('./src/templates/index.jade')
-        .pipe(GulpJade({ pretty: true }))
+        .pipe(gulpJade({ pretty: true }))
         .on('error', swallowError)
         .pipe(gulp.dest('./dist/'));
 });
@@ -29,9 +42,9 @@ gulp.task('build-html', () => {
 gulp.task('build-css', () => {
     return gulp
         .src('./src/style/index.scss')
-        .pipe(GulpSass())
+        .pipe(gulpSass())
         .on('error', swallowError)
-        .pipe(GulpRename('./index.css'))
+        .pipe(gulpRename('./index.css'))
         .pipe(gulp.dest('./dist'));
 });
 
