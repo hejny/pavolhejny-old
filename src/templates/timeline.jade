@@ -2,64 +2,46 @@
 
 div.timeline
 
-    //.avatar
-        img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm', alt='Pavol Hejný')
 
-    mixin project(name, featuredImage)
-        li.card.project.selectable(
-            data-featured-image= featuredImage
-        )
-            .skeleton
-                //todo refactor
-                .line
-                    .label-above 2018 - 2016
-                .circle
-                .more
+
+
+    mixin item(name,featuredImageInner,featuredImageOuter,innerSkeletonLabel)
+        a(href="/article1")
+            li.card.project.selectable(data-featured-image= featuredImageOuter)
+
+                if innerSkeletonLabel
+                    .skeleton-inner-with-label
+                        .line
+                            .label-above 2018 - 2016
+                        .circle
+                else
+                    .skeleton-inner
+                        .line
+                        .circle
+
+                .skeleton-outer
                     .line
                         .circle
                         .label-above
-                            span.meta /^
-                            span.text project
-                            span.meta $/
+                            h1.name= name
+                            h2.subname
+                                span.meta /^
+                                span.text project
+                                span.meta $/
                         .label-bellow 
                             
-                            span.time 2018-06-02
-                            ul.participants
-                                li Honza Karásek
-                                li ccccc
-                                li dddddddd
-                            
-                            p Článek o skvělém víkendovém hackathonu #kodujprocesko na Těchinternetech! Byl to asi nejdelší hackathnon v kuse, co jsem kdy byl.
-                            p Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
-            .inner(style=`background-image:url(/images/events/${featuredImage}.jpg);background-size: cover;background-position: center;`)
-                .arrow
-                h3.name= name
-                //h4.subname
-                    span.meta /^
-                    span.text project
-                    span.meta $/
+                            span ahoj
+                            //span.time 2018-06-02
+                            //ul.participants
+                                li Ahoj Ahoj
+                                li Ahoj Ahoj
+                                li Ahoj Ahoj
+                            //p.abstract Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
 
-    mixin event(name, featuredImage)
-        li.card.event.selectable(
-            data-featured-image= featuredImage
-        )
-            .skeleton
-                .line   
-                .circle
-                .more
-                    .line
-                        .circle
-            //article.content
-                .inner
-                    p= content
-            .inner(style=`background-image:url(/images/events/${featuredImage}.jpg);background-size: cover;background-position: center;`)
-                .arrow
-                h3.name= name
-                //h4.subname
-                    span.meta /^
-                    span.text hackathon
-                    span.meta $/
 
+                .inner(style=`background-image:url(/images/events/${featuredImageInner}.jpg);background-size: cover;background-position: center;`)
+                    .arrow
+                    h3.name= name
 
 
     mixin year(year)
@@ -72,20 +54,31 @@ div.timeline
         //.empty-todo-remove-this-hack
         .line
         +year(2018)
-        +project('H-Edu','33692658_10155680999023590_4747848035172614144_n')
-        +event(
+        +item(
             'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n'
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
         )
-        +event('JobsDev','23915683_1943247489329010_7075262240567444466_n')
-        +event('StartupWeekend Plzeň','14947711_1778991995650932_1228791466977297790_n')
-        +project('H-Edu')
-        +event('StartupWeekend Olomouc')
-        +project('H-Edu')
-        +project('H-Edu')
-        +year(2017)
-        +event('Kóduj pro Česko')
-        +event('JobsDev')
-        +event('StartupWeekend Plzeň')
-        +event('StartupWeekend Olomouc')
-        +event('StartupWeekend Olomouc vvvvvvvvvvvvv')
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '2015 - 2017'
+
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '2015 - 2017'
+
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            null
+
+        )
+

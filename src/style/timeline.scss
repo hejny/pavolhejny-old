@@ -8,19 +8,19 @@
     transform: translate(-50%, 0);
 
     text-align: center;
-    .avatar{
+    .avatar {
         //border: 1px dotted red;
-        .inner{
+        .inner {
             //mar
-        }   
+        }
     }
 
     ul.events {
         //border: 1px dotted red;
-    
+
         margin-top: 60px;
         margin-bottom: 30px;
-    
+
         .line {
             display: block;
             position: absolute;
@@ -29,22 +29,20 @@
             box-shadow: $color1 0 0 10px;
             width: 2px;
             height: 100%;
-    
+
             .label-above {
                 margin-top: -25px;
                 //margin-left: 25px;
                 color: $color1;
             }
-    
+
             .label-bellow {
                 margin-top: 15px;
                 //margin-left: 25px;
                 color: $color1;
             }
-    
-            
         }
-    
+
         .circle {
             display: block;
             position: absolute;
@@ -56,7 +54,7 @@
             width: 20px;
             height: 20px;
             border-radius: 20px;
-    
+
             .label {
                 margin-top: -2px;
                 font-size: 1.3em;
@@ -66,36 +64,34 @@
             &:nth-child(odd) {
                 .label {
                     margin-left: -20px;
-                    transform: translate(-100%,0);
+                    transform: translate(-100%, 0);
                 }
             }
-    
+
             &:nth-child(even) {
                 .label {
                     margin-left: 33px;
                 }
             }
         }
-    
-        .empty{
+
+        .empty {
             height: 70px;
         }
-        li {
+        li.item {
             width: 40%;
             margin-top: -30px;
 
-            .inner{
+            .inner {
                 //transform: translate(0,-40px);
             }
-                
+
             .line {
-                
                 height: 2px;
                 margin-top: 50px;
             }
-    
+
             .circle {
-                
                 display: block;
                 position: absolute;
                 margin-top: 46px;
@@ -104,60 +100,58 @@
                 border-radius: 10px;
             }
 
-            .skeleton{
+            .skeleton {
                 opacity: 0.8;
             }
-            
-            &.selected{
-                .skeleton{
+
+            &.selected {
+                .skeleton {
                     opacity: 1;
                 }
             }
-    
+
             &:nth-child(even) {
                 margin-left: calc(504px - 40% - 2px);
             }
-
-            
         }
 
-    
-        li.event {
-   
-            .line {
-                width: calc(10% + 2px);
-            }
-    
-            &:nth-child(odd) {
+        li {
+            .skeleton-inner {
                 .line {
-                    margin-left: calc(40% - 2px);
+                    width: calc(10% + 2px);
                 }
-                .circle {
-                    margin-left: calc(50% - 4px);
+
+                /*&:nth-child(odd) {
+                    .line {
+                        margin-left: calc(40% - 2px);
+                    }
+                    .circle {
+                        margin-left: calc(50% - 4px);
+                    }
                 }
-            }
     
-            &:nth-child(even) {
-                .line {
-                    margin-left: calc(-10% - 2px);
-                }
-                .circle {
-                    margin-left: calc(-10% - 3px);
-                }
+                &:nth-child(even) {
+                    .line {
+                        margin-left: calc(-10% - 2px);
+                    }
+                    .circle {
+                        margin-left: calc(-10% - 3px);
+                    }
+                }*/
             }
         }
-    
-    
+
         li.project {
-    
-            margin-top: 10px;
-            margin-bottom: 10px;
+            //margin-top: 10px;
+            //margin-bottom: 10px;
 
-            .line {
-                width: calc(50% + 2px);
+            .skeleton-inner-with-label {
+                .line {
+                    width: calc(50% + 2px);
+                }
             }
-    
-            &:nth-child(odd) {
+
+            /*&:nth-child(odd) {
                 .line {
                     margin-left: calc(40% - 2px);
                 }
@@ -165,7 +159,7 @@
                     margin-left: calc(90% - 4px);
                 }
             }
-    
+
             &:nth-child(even) {
                 .line {
                     margin-left: calc(-50% - 2px);
@@ -173,13 +167,11 @@
                 .circle {
                     margin-left: calc(-50% - 3px);
                 }
-            }
+            }*/
         }
     }
 
     li {
-    
-        
         /*.content{
             display: none;
             opacity: 0;
@@ -190,57 +182,53 @@
             }
         }*/
 
-
-
-        .more{
+        .more {
             opacity: 0;
             //transform: rotate(30deg);
-            .line{
-                width: calc(50vw - 504px / 2 - 30px )!important;
-                .circle{ 
-                    margin-top: -4px!important;
+            .line {
+                width: calc(50vw - 504px / 2 - 30px) !important;
+                .circle {
+                    margin-top: -4px !important;
                 }
             }
-            .label-above, .label-bellow{
-                color:white!important;
+            .label-above,
+            .label-bellow {
+                color: white !important;
             }
         }
 
-        &.selected{
-            .more{
+        &.selected {
+            .more {
                 opacity: 1;
             }
             /*.content{
                 display: block;
                 opacity: 1;
-            } */  
+            } */
         }
 
         &:nth-child(odd) {
-            .more{
-                .line{
-                    margin-left: 0px!important;
-                    transform: translate(-100%,0);
-                    .circle{
-                        margin-left: 0px!important;  
+            .more {
+                .line {
+                    margin-left: 0px !important;
+                    transform: translate(-100%, 0);
+                    .circle {
+                        margin-left: 0px !important;
                     }
                 }
             }
         }
 
         &:nth-child(even) {
-            .more{
-                .line{
-                    margin-left: 200px!important;
+            .more {
+                .line {
+                    margin-left: 200px !important;
                     //transform: translate(0%,0);
-                    .circle{
-                        margin-left: 100%!important;  
+                    .circle {
+                        margin-left: 100% !important;
                     }
                 }
             }
         }
-
-        
     }
-    
 }
