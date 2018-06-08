@@ -10,6 +10,7 @@ div.timeline
             data-featured-image= featuredImage
         )
             .skeleton
+                //todo refactor
                 .line
                     .label-above 2018 - 2016
                 .circle
@@ -21,10 +22,16 @@ div.timeline
                             span.text project
                             span.meta $/
                         .label-bellow 
-                            span.time 24/6/2018
+                            
+                            span.time 2018-06-02
+                            ul.participants
+                                li Honza Karásek
+                                li ccccc
+                                li dddddddd
+                            
                             p Článek o skvělém víkendovém hackathonu #kodujprocesko na Těchinternetech! Byl to asi nejdelší hackathnon v kuse, co jsem kdy byl.
                             p Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
-            .inner
+            .inner(style=`background-image:url(/images/events/${featuredImage}.jpg);background-size: cover;background-position: center;`)
                 .arrow
                 h3.name= name
                 //h4.subname
@@ -45,7 +52,7 @@ div.timeline
             //article.content
                 .inner
                     p= content
-            .inner
+            .inner(style=`background-image:url(/images/events/${featuredImage}.jpg);background-size: cover;background-position: center;`)
                 .arrow
                 h3.name= name
                 //h4.subname
