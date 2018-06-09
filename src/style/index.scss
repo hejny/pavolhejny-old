@@ -1,4 +1,4 @@
-$color1: #ff8855;
+@import 'config';
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -9,6 +9,7 @@ body {
     //margin: 0px;
     //padding: 0px;
     //background-color: #111;
+    color: white;
     text-align: center;
 }
 
@@ -45,11 +46,11 @@ a {
     text-decoration: none;
     color: inherit;
     outline: 0;
-    cursor: Pointer;
+    /*cursor: Pointer;
 
     &:hover {
         color: $color1;
-    }
+    }*/
 }
 
 /*

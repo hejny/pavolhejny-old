@@ -1,13 +1,3 @@
-$timeline-width: 504px;
-$card-width: 180px;
-
-$card-project-line-padding: 30px;
-
-//todo maybe
-//timeline-circle-size
-//item-circle-size
-
-
 .timeline {
     //border: 1px dotted red;
     z-index: 100;
@@ -66,18 +56,28 @@ $card-project-line-padding: 30px;
             }
         }
 
+        .circle.small{
+            width: 15px;
+            height: 15px;
+            border-radius:15px;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+        }
+
+        .circle.big{
+            width: 20px;
+            height: 20px;
+            border-radius:20px;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+
+
         .year {
-
             height: 70px;
-
             .circle {
                 margin-left: calc(50% - 9px);
-                margin-top: -20px;
-
-                width: 20px;
-                height: 20px;
-                border-radius:20px;
-
+                //margin-top: -20px;
                 .label {
                     transform: translate(-50%,0);
                 }
@@ -99,160 +99,7 @@ $card-project-line-padding: 30px;
             }
         }
 
-        
+        @import 'timeline-item';
 
-        .item {
-            .card {
-                .inner {
-                    width: $card-width;
-                    margin-top: -30px;
-
-                    h3.name{
-                        margin: 15px;
-                        margin-top: 30px;
-                        margin-bottom: 30px;
-                    }
-                }
-
-                .skeleton-inner, .skeleton-inner-with-label {
-                    .line {
-                        .circle {
-                            width: 15px;
-                            height: 15px;
-                            border-radius:15px;
-                            margin-top: -7.5px;
-                            margin-left: -7.5px;
-                            
-                        }
-                    }
-                }
-
-                .skeleton-inner {
-                    
-                    .line {
-                        width: $timeline-width / 2 - $card-width - 7.5px;
-                        margin-top: 30px;
-                    }
-                }
-
-                .skeleton-inner-with-label {
-                    //margin-top: 50px;
-                    //margin-bottom: 50px;
-                    height: 50px;
-                    .line {
-
-                        width: $timeline-width - $card-width - $card-project-line-padding;
-                        margin-top: 50px;
-
-                        .label.label-above {
-                        }
-                        .circle {
-                        }
-                    }
-                }
-
-                .skeleton-outer {
-                    display: none;
-                    .line {
-                        .circle {
-                        }
-                        .label-above {
-                            h1.name {
-                            }
-                            h2.subname {
-                            }
-                        }
-
-                        .label.label-bellow {
-                        }
-                    }
-                }
-            }
-
-            &:nth-child(even) {
-                .card {
-
-                    .skeleton-inner, .skeleton-inner-with-label {
-                        //border: 1px solid red;
-                        .line {
-                            margin-left: $card-width + 2px;
-                            .circle {
-                                margin-left: calc(100% - 2px);
-                            }
-                        }
-                    }
-
-                    /*.skeleton-inner-with-label {
-                        .line {
-                            margin-left: $card-width;
-                            .label.label-above {
-                            }
-                            .circle {
-                                margin-left: calc(100% - 2px);
-                            }
-                        }
-                    }*/
-
-                    .skeleton-outer {
-                        .line {
-                            .circle {
-                            }
-                            .label-above {
-                                h1.name {
-                                }
-                                h2.subname {
-                                }
-                            }
-
-                            .label.label-bellow {
-                            }
-                        }
-                    }
-                }
-            }
-
-            &:nth-child(odd) {
-                .card {
-                    .inner {
-                        margin-left: $timeline-width - $card-width - 7.5px;//- 26px;
-                    }
-
-                    .skeleton-inner {
-                        //border: 1px solid red;
-                        .line {
-                            margin-left: $timeline-width/2;
-                            .circle {
-                            }
-                        }
-                    }
-
-                    .skeleton-inner-with-label {
-                        .line {
-                            margin-left: $card-project-line-padding - 7.5px;
-                            .label.label-above {
-                            }
-                            .circle {
-                            }
-                        }
-                    }
-
-                    .skeleton-outer {
-                        .line {
-                            .circle {
-                            }
-                            .label-above {
-                                h1.name {
-                                }
-                                h2.subname {
-                                }
-                            }
-
-                            .label.label-bellow {
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }

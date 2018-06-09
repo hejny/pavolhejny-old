@@ -6,23 +6,24 @@ div.timeline
 
 
     mixin item(name,featuredImageInner,featuredImageOuter,innerSkeletonLabel)
-        a.item.selectable(data-featured-image= featuredImageOuter, href="/article1")
-            li.card
+        .item
+            li.card.selectable(data-featured-image= featuredImageOuter)
+
 
                 if innerSkeletonLabel
                     .skeleton-inner-with-label
                         .line
-                            .circle
+                            .circle.small
                             .label.label-above 2018 - 2016
                         
                 else
                     .skeleton-inner
                         .line
-                            .circle
+                            .circle.small
 
                 .skeleton-outer
                     .line
-                        .circle
+                        .circle.small
                         .label-above
                             h1.name= name
                             h2.subname
@@ -39,8 +40,8 @@ div.timeline
                                 li Ahoj Ahoj
                             //p.abstract Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
 
-
-                .inner(style=`background-image:url(/images/events/${featuredImageInner}.jpg);background-size: cover;background-position: center;`)
+     
+                a.inner(href="/article1",style=`background-image:url(/images/events/${featuredImageInner}.jpg);background-size: cover;background-position: center;`)
                     .arrow
                     h3.name= name
 
@@ -48,12 +49,12 @@ div.timeline
     mixin year(year,left)
         if left
             .year.left
-                .circle
+                .circle.big
                     .label= year
         else 
             //todo DRY
             .year.right
-                .circle
+                .circle.big
                     .label= year
         .keep-odd-even-hack
 

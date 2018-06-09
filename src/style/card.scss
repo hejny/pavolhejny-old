@@ -24,6 +24,7 @@
     //padding: 0;
 
     .inner {
+        display: block;
         border: 2px solid $color1;
         box-shadow: $color1 0 0 10px;
         text-align: center;
@@ -35,7 +36,6 @@
         ); //transpdaarentize(darken($color1,20%),20%);
         //background: url('./images/textures/norwegian_rose.png');
         //background-position: center;
-        color: white;
         padding: 0px;
         cursor: pointer;
 
