@@ -1,74 +1,59 @@
 .timeline {
-    
     @if $debug {
-    border: 1px dotted red;
+        border: 1px dotted red;
     }
     z-index: 100;
     text-align: center;
 
+    .card {
+        .inner {
+            @include disable-select;
 
+            display: block;
+            border: 2px solid $color1;
+            box-shadow: $color1 0 0 $highlight-normal;
+            text-align: center;
+            //width: 100%;
+            margin: 20px;
+            pointer-events: all;
 
-       .card {
-
-            .inner {
-    
-                @include disable-select;
-    
-                display: block;
-                border: 2px solid $color1;
-                box-shadow: $color1 0 0 $highlight-normal;
-                text-align: center;
-                //width: 100%;
-                margin: 20px;
-                pointer-events: all;
-                
-    
-                h3.name{
-                    background-color: rgba($color: #000000, $alpha: 0.6);
-                    //border: 1px solid red;
-                    margin: 0;
-                    padding: 15px;
-                    padding-top: 30px;
-                    padding-bottom: 30px;
-                }
-
-                &:hover{
-                    box-shadow: $color1 0 0 $highlight-selected;
-                    h3.name{
-                        opacity: 0.8;
-                    }
-                }
+            h3.name {
+                background-color: rgba($color: #000000, $alpha: 0.6);
+                //border: 1px solid red;
+                margin: 0;
+                padding: 15px;
+                padding-top: 30px;
+                padding-bottom: 30px;
             }
 
-
+            &:hover {
+                box-shadow: $color1 0 0 $highlight-selected;
+                h3.name {
+                    opacity: 0.8;
+                }
+            }
         }
+    }
 
-
-    @media all and  (min-width: $timeline-width + 30px) {
-
+    @media all and (min-width: $timeline-width + 30px) {
         @import 'timeline-item';
 
         //display: inline-block;
-        width: $timeline-width; 
+        width: $timeline-width;
         position: absolute;
         //top: calc(10vh + 250px);
         transform: translate(calc(-50% + 50vw), 0);
 
-
-        ul.events{
+        ul.events {
             margin-top: 30px;
         }
-
     }
-
-
 
     ul.events {
         @if $debug {
-        border: 1px dotted red;
+            border: 1px dotted red;
         }
 
-        
         margin-bottom: 30px;
 
         .line {
@@ -98,7 +83,6 @@
             height: 100%;
         }
 
-
         .circle {
             display: block;
             position: absolute;
@@ -114,22 +98,21 @@
             }
         }
 
-        .circle.small{
+        .circle.small {
             width: 15px;
             height: 15px;
-            border-radius:15px;
+            border-radius: 15px;
             margin-top: -7.5px;
             margin-left: -7.5px;
         }
 
-        .circle.big{
+        .circle.big {
             width: 20px;
             height: 20px;
-            border-radius:20px;
+            border-radius: 20px;
             margin-top: -10px;
             margin-left: -10px;
         }
-
 
         .year {
             @include disable-select;
@@ -139,18 +122,18 @@
                 margin-left: calc(50% - 9px);
                 //margin-top: -20px;
                 .label {
-                    transform: translate(-50%,0);
+                    transform: translate(-50%, 0);
                 }
             }
 
-            &.right{
+            &.right {
                 .circle {
                     .label {
                         margin-left: 30px;
                     }
                 }
             }
-            &.left{
+            &.left {
                 .circle {
                     .label {
                         margin-left: -30px;
@@ -159,15 +142,13 @@
             }
         }
 
-    
-
-
-
-        @media not all and  (min-width: $timeline-width + 30px) {
-            .line, .circle, .label, .year{
+        @media not all and (min-width: $timeline-width + 30px) {
+            .line,
+            .circle,
+            .label,
+            .year {
                 display: none;
             }
         }
-
     }
 }

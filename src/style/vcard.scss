@@ -1,8 +1,6 @@
-
 .vcard {
-    
     @if $debug {
-    border: 1px dotted orange;
+        border: 1px dotted orange;
     }
 
     z-index: 100;
@@ -13,10 +11,10 @@
             width: 125px;
             height: 125px;
             max-width: 80%;
-    
+
             border: 1px solid $color1; //todo to config
             border-radius: 1000px;
-    
+
             padding: 3px;
             box-shadow: $color1 0 0 10px;
             //border: 2px solid black;

@@ -14,8 +14,8 @@ body {
     padding: 0;
     margin: 0;
 
-
-    .layer1,.layer2 {
+    .layer1,
+    .layer2 {
         //display: none;
         position: fixed;
         top: 0;
@@ -47,8 +47,6 @@ body {
     }
 }
 
-
-
 * {
     transition: all 0.2s ease-out;
 }
@@ -69,7 +67,6 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
 }
 
 /*

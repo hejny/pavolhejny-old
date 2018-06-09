@@ -1,28 +1,17 @@
-
-
 .item {
-
     pointer-events: none;
 
     .card {
-
-    
-
-            .inner {
-    
-
-    margin-top: -30px;
-    width: $card-width;
-    margin: 0;
-                h3.name{
-
-                }
+        .inner {
+            margin-top: -30px;
+            width: $card-width;
+            margin: 0;
+            h3.name {
             }
+        }
 
-
-        
-
-        .skeleton-inner, .skeleton-inner-with-label {
+        .skeleton-inner,
+        .skeleton-inner-with-label {
             @include disable-select;
             .line {
                 margin-top: 30px;
@@ -32,18 +21,16 @@
         }
 
         .skeleton-inner {
-            
             .line {
                 width: $timeline-width / 2 - $card-width - 7.5px;
-                
             }
         }
 
         .skeleton-inner-with-label {
             height: 40px;
             .line {
-
-                width: $timeline-width - $card-width - $card-project-line-inner-padding;
+                width: $timeline-width - $card-width -
+                    $card-project-line-inner-padding;
                 margin-top: 50px;
 
                 .label.label-above {
@@ -53,85 +40,76 @@
             }
         }
 
-
-
-        @media not all and  (min-width: $timeline-width + 2*$card-line-outer-width + 30px) {
+        @media not all and (min-width: $timeline-width + 2*$card-line-outer-width + 30px) {
             .skeleton-outer {
                 display: none;
             }
         }
-
 
         @media all and (min-width: $timeline-width + 2*$card-line-outer-width + 30px) {
             .skeleton-outer {
                 pointer-events: all;
                 opacity: 0;
                 pointer-events: none;
-                
-                
+
                 .line {
-    
                     margin-top: 30px;
-                    width:$card-line-outer-width;
-                
-    
+                    width: $card-line-outer-width;
+
                     .circle {
                     }
                     .label-above {
                         @if $debug {
-                        border: 1px dotted green;
+                            border: 1px dotted green;
                         }
                         position: absolute;
-                        transform: translate(0,-100%);
-                        padding-left: $card-line-outer-inner-offset;
-                        margin-top: -10px;//todo to effects config
-                        width: $card-line-outer-width - $card-line-outer-inner-offset;
+                        transform: translate(0, -100%);
+                        margin-top: -10px; //todo to effects config
+                        width: $card-line-outer-width -
+                            $card-line-outer-inner-offset;
                         padding-bottom: 10px;
-                        
+
                         h1.name {
                             @if $debug {
-                            border: 1px dotted green;
+                                border: 1px dotted green;
                             }
                             font-size: 1.7rem;
                             margin: 0;
                             padding: 0;
-                           
                         }
                         h2.subname {
                             @if $debug {
-                            border: 1px dotted green;
+                                border: 1px dotted green;
                             }
                             font-size: 1.3rem;
                             margin: 0;
                             padding: 0;
                         }
                     }
-    
+
                     .label.label-bellow {
                         @if $debug {
-                        border: 1px dotted green;
+                            border: 1px dotted green;
                         }
                         position: absolute;
                         color: white;
                         //transform: translate(0,-100%);
-                        padding-left:50px;
-                        margin-top: 10px;//todo to effects config
-                        width: $card-line-outer-width - $card-line-outer-inner-offset;
+                        margin-top: 10px; //todo to effects config
+                        width: $card-line-outer-width -
+                            $card-line-outer-inner-offset;
                         padding-top: 10px;
-    
-                        .abstract{
+
+                        .abstract {
                             margin: 0;
                             @if $debug {
-                            border: 1px dotted green;
+                                border: 1px dotted green;
                             }
                         }
-    
                     }
                 }
             }
 
-            &.selected{ 
-            
+            &.selected {
                 .skeleton-outer {
                     opacity: 1;
                     pointer-events: all;
@@ -140,7 +118,7 @@
                         }
                         .label-above {
                             margin-top: 0px;
-    
+
                             h1.name {
                             }
                             h2.subname {
@@ -152,37 +130,27 @@
                     }
                 }
             }
-
         }
 
-
-
-        
-
-        &.selected{ 
-            
-            .circle, .line, .inner{
+        &.selected {
+            .circle,
+            .line,
+            .inner {
                 box-shadow: $color1 0 0 $highlight-selected;
             }
 
-            .inner{
-                h3.name{
+            .inner {
+                h3.name {
                     opacity: 0;
                 }
             }
-           
-       }
-
+        }
     }
-
-    
-   
-    
 
     &:nth-child(even) {
         .card {
-
-            .skeleton-inner, .skeleton-inner-with-label {
+            .skeleton-inner,
+            .skeleton-inner-with-label {
                 //border: 1px solid red;
                 .line {
                     margin-left: $card-width + 2px;
@@ -204,9 +172,7 @@
             }*/
 
             .skeleton-outer {
-             
                 .line {
-
                     margin-left: 0px - $card-line-outer-width;
 
                     .circle {
@@ -225,12 +191,10 @@
         }
     }
 
-    
-
     &:nth-child(odd) {
         .card {
             .inner {
-                margin-left: $timeline-width - $card-width - 7.5px;//- 26px;
+                margin-left: $timeline-width - $card-width - 7.5px; //- 26px;
             }
 
             .skeleton-inner {
@@ -244,7 +208,7 @@
 
             .skeleton-inner-with-label {
                 .line {
-                    margin-left: $card-project-line-inner-padding - 7.5px;
+                    margin-left: $card-project-line-inner-padding;
                     .label.label-above {
                     }
                     .circle {
@@ -253,16 +217,14 @@
             }
 
             .skeleton-outer {
-                
                 .line {
-
                     margin-left: $timeline-width - 4px;
-
 
                     .circle {
                         margin-left: calc(100% - 2px);
                     }
                     .label-above {
+                        padding-left: $card-line-outer-inner-offset;
                         h1.name {
                         }
                         h2.subname {
@@ -270,11 +232,10 @@
                     }
 
                     .label.label-bellow {
+                        padding-left: $card-line-outer-inner-offset;
                     }
                 }
             }
         }
     }
-
-
 }
