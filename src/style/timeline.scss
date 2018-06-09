@@ -1,7 +1,8 @@
 .timeline {
     
-    
+    @if $debug {
     border: 1px dotted red;
+    }
     z-index: 100;
     text-align: center;
 
@@ -63,7 +64,9 @@
 
 
     ul.events {
+        @if $debug {
         border: 1px dotted red;
+        }
 
         
         margin-bottom: 30px;

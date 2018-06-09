@@ -1,8 +1,9 @@
 
 .vcard {
     
-
+    @if $debug {
     border: 1px dotted orange;
+    }
 
     z-index: 100;
 

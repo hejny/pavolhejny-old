@@ -78,7 +78,9 @@
                     .circle {
                     }
                     .label-above {
+                        @if $debug {
                         border: 1px dotted green;
+                        }
                         position: absolute;
                         transform: translate(0,-100%);
                         padding-left: $card-line-outer-inner-offset;
@@ -87,14 +89,18 @@
                         padding-bottom: 10px;
                         
                         h1.name {
+                            @if $debug {
                             border: 1px dotted green;
+                            }
                             font-size: 1.7rem;
                             margin: 0;
                             padding: 0;
                            
                         }
                         h2.subname {
+                            @if $debug {
                             border: 1px dotted green;
+                            }
                             font-size: 1.3rem;
                             margin: 0;
                             padding: 0;
@@ -102,7 +108,9 @@
                     }
     
                     .label.label-bellow {
+                        @if $debug {
                         border: 1px dotted green;
+                        }
                         position: absolute;
                         color: white;
                         //transform: translate(0,-100%);
@@ -113,7 +121,9 @@
     
                         .abstract{
                             margin: 0;
+                            @if $debug {
                             border: 1px dotted green;
+                            }
                         }
     
                     }
