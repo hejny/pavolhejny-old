@@ -1,63 +1,24 @@
-/*body {
-    perspective: 800px;
-    min-height: 100vh;
-}*/
-
-.avatar {
-    img {
-        display: inline-block;
-        width: 125px;
-        height: 125px;
-        max-width: 80%;
-
-        border: 1px solid $color1; //todo to config
-        border-radius: 1000px;
-
-        padding: 3px;
-        box-shadow: $color1 0 0 10px;
-        //border: 2px solid black;
-    }
-}
 
 .vcard {
-    z-index: 200;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    //transform: translate(-50%, -50%);
+    
 
-    //border: 1px solid #666666;
+    border: 1px dotted orange;
 
-    //border-radius: 30px;
-
-    //width: 504px;
-    //height: 280px;
-    //padding: 0;
-
-
-    /*/
-    .inner{
-      background: url('./images/front.png')!important;
-      background-position: center!important;
-      background-size: cover!important;
-    }
-    /**/
-
-    transform-origin: center center;
-    transform: translate(-50%, 0) rotateY(0deg);
-
-    .inner {
-        transform: none !important;
-    }
-
-    /*&:hover {
-        transform: translate(-50%, -50%) rotateY(10deg);
-    }*/
-
-    //---------------------
+    z-index: 100;
 
     .avatar {
         img {
+            display: inline-block;
+            width: 125px;
+            height: 125px;
+            max-width: 80%;
+    
+            border: 1px solid $color1; //todo to config
+            border-radius: 1000px;
+    
+            padding: 3px;
+            box-shadow: $color1 0 0 10px;
+            //border: 2px solid black;
             margin: auto;
             margin-top: 10px;
             margin-bottom: 12px;
@@ -80,15 +41,4 @@
     }
 
     //---------------------
-}
-
-@media screen and (max-width: 520px), screen and (max-height: 500px) {
-    .vcard {
-        top: 130px;
-        left: 0px;
-        width: 100vw;
-        min-height: calc(100vh - 130px);
-        transform: translate(0, 0);
-        //overflow-y: hidden;
-    }
 }

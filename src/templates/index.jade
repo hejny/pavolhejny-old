@@ -5,10 +5,12 @@ doctype html
 html(lang='en')
     include ./head
     body
-        include ./vcard
-        include ./timeline
+
         //include ./contacts
         //include ./vcard
-        .background
-          .layer.layer1.generated-noise
-          .layer.layer2#featured-image-mirror
+
+        .layer.layer1.generated-noise
+        .layer.layer2#featured-image-mirror
+        .layer.layer3
+          include ./vcard
+          include ./timeline

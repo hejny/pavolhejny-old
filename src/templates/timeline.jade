@@ -9,18 +9,6 @@ div.timeline
         .item
             li.card.selectable(data-featured-image= featuredImageOuter)
 
-
-                if innerSkeletonLabel
-                    .skeleton-inner-with-label
-                        .line
-                            .circle.small
-                            .label.label-above 2018 - 2016
-                        
-                else
-                    .skeleton-inner
-                        .line
-                            .circle.small
-
                 .skeleton-outer
                     .line
                         .circle.small
@@ -39,6 +27,18 @@ div.timeline
                                 li Ahoj Ahoj
                                 li Ahoj Ahoj
                             p.abstract Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
+
+
+                if innerSkeletonLabel
+                    .skeleton-inner-with-label
+                        .line
+                            .circle.small
+                            .label.label-above 2018 - 2016
+                        
+                else
+                    .skeleton-inner
+                        .line
+                            .circle.small
 
      
                 a.inner(href="/article1",style=`background-image:url(/images/events/${featuredImageInner}.jpg);background-size: cover;background-position: center;`)
