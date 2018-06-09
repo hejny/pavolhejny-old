@@ -39,7 +39,7 @@ body {
 }
 
 * {
-    //transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 a {
@@ -51,6 +51,14 @@ a {
     &:hover {
         color: $color1;
     }*/
+}
+
+@mixin disable-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
 /*
@@ -95,7 +103,6 @@ ul.clear {
     }
 }
 
-@import 'card';
 @import 'vcard';
 @import 'timeline';
-@import 'contacts';
+//@import 'contacts';

@@ -19,7 +19,7 @@
             position: absolute;
 
             background-color: $color1;
-            box-shadow: $color1 0 0 10px;
+            box-shadow: $color1 0 0 $highlight-normal;
             width: 2px;
             height: 2px;
 
@@ -47,7 +47,7 @@
 
             background-color: $color1;
             //border: 2px solid $color1;
-            box-shadow: $color1 0 0 10px;
+            box-shadow: $color1 0 0 $highlight-normal;
 
             .label {
                 margin-top: -2px;
@@ -74,6 +74,8 @@
 
 
         .year {
+            @include disable-select;
+
             height: 70px;
             .circle {
                 margin-left: calc(50% - 9px);
