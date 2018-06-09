@@ -16,7 +16,7 @@ body {
 
 
     .layer1,.layer2 {
-        display: none;
+        //display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -24,6 +24,7 @@ body {
         bottom: 0;
     }
     .layer1 {
+        //display: none;
         z-index: 10;
     }
     .layer2 {
@@ -40,6 +41,8 @@ body {
     }
 
     .layer3 {
+        position: absolute;
+        width: 100%;
         z-index: 30;
     }
 }
