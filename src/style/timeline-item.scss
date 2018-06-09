@@ -27,7 +27,7 @@
         }
 
         .skeleton-inner-with-label {
-            height: 40px;
+            //height: 40px;
             .line {
                 width: $timeline-width - $card-width -
                     $card-project-line-inner-padding;
@@ -208,7 +208,7 @@
 
             .skeleton-inner-with-label {
                 .line {
-                    margin-left: $card-project-line-inner-padding;
+                    margin-left: $card-project-line-inner-padding - 7.5px;
                     .label.label-above {
                     }
                     .circle {
