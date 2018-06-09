@@ -5,7 +5,7 @@ div.timeline
 
 
 
-    mixin item(name,featuredImageInner,featuredImageOuter,innerSkeletonLabel)
+    mixin item(name, type, innerSkeletonLabel, featuredImageInner,featuredImageOuter, abstractText)
         .item
             li.card.selectable(data-featured-image= featuredImageOuter)
 
@@ -26,7 +26,7 @@ div.timeline
                                 li Ahoj Ahoj
                                 li Ahoj Ahoj
                                 li Ahoj Ahoj
-                            p.abstract Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
+                            p.abstract= abstractText
 
 
                 if innerSkeletonLabel
@@ -59,86 +59,13 @@ div.timeline
 
 
 
+    //Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa...
+    
+    
+    
     ul.clear.events
         .line.timeline-line
-        +year(2018,false)
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '2015 - 2017'
-
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '2015 - 2017'
-
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            null
-
-        )
-        +year(2018,true)
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-             null
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '2015 - 2017'
-
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '2015 - 2017'
-
-        )
-        +item(
-            'Kóduj pro Česko',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            null
-
-        )
+        include ./timeline-content
+        
+        
 
