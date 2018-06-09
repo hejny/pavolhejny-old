@@ -6,18 +6,19 @@ div.timeline
 
 
     mixin item(name,featuredImageInner,featuredImageOuter,innerSkeletonLabel)
-        a(href="/article1")
-            li.card.project.selectable(data-featured-image= featuredImageOuter)
+        a.item.selectable(data-featured-image= featuredImageOuter, href="/article1")
+            li.card
 
                 if innerSkeletonLabel
                     .skeleton-inner-with-label
                         .line
-                            .label-above 2018 - 2016
-                        .circle
+                            .circle
+                            .label.label-above 2018 - 2016
+                        
                 else
                     .skeleton-inner
                         .line
-                        .circle
+                            .circle
 
                 .skeleton-outer
                     .line
@@ -28,7 +29,7 @@ div.timeline
                                 span.meta /^
                                 span.text project
                                 span.meta $/
-                        .label-bellow 
+                        .label.label-bellow 
                             
                             span ahoj
                             //span.time 2018-06-02
@@ -44,16 +45,75 @@ div.timeline
                     h3.name= name
 
 
-    mixin year(year)
-        .circle
-            .label= year
-        .empty
+    mixin year(year,left)
+        if left
+            .year.left
+                .circle
+                    .label= year
+        else 
+            //todo DRY
+            .year.right
+                .circle
+                    .label= year
+        .keep-odd-even-hack
+
 
 
     ul.clear.events
-        //.empty-todo-remove-this-hack
-        .line
-        +year(2018)
+        .line.timeline-line
+        +year(2018,false)
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '2015 - 2017'
+
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '2015 - 2017'
+
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+            null
+
+        )
+        +year(2018,true)
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
+        )
+        +item(
+            'Kóduj pro Česko',
+            '33692658_10155680999023590_4747848035172614144_n',
+            '33692658_10155680999023590_4747848035172614144_n',
+             null
+        )
         +item(
             'Kóduj pro Česko',
             '33692658_10155680999023590_4747848035172614144_n',

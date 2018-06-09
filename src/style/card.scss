@@ -21,10 +21,13 @@
         border-top: 20px solid $color1;
     }*/
 
+    //padding: 0;
+
     .inner {
         border: 2px solid $color1;
         box-shadow: $color1 0 0 10px;
         text-align: center;
+
 
         background-color: darken(
             $color1,
@@ -33,7 +36,7 @@
         //background: url('./images/textures/norwegian_rose.png');
         //background-position: center;
         color: white;
-        padding: 10px;
+        padding: 0px;
         cursor: pointer;
 
         &:hover {

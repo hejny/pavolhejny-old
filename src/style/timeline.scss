@@ -1,22 +1,25 @@
+$timeline-width: 504px;
+$card-width: 180px;
+
+$card-project-line-padding: 30px;
+
+//todo maybe
+//timeline-circle-size
+//item-circle-size
+
+
 .timeline {
     //border: 1px dotted red;
     z-index: 100;
     display: inline-block;
-    width: 504px; //todo config
+    width: $timeline-width; 
     position: absolute;
     top: calc(10vh + 250px);
     transform: translate(-50%, 0);
-
     text-align: center;
-    .avatar {
-        //border: 1px dotted red;
-        .inner {
-            //mar
-        }
-    }
 
     ul.events {
-        //border: 1px dotted red;
+        border: 1px dotted red;
 
         margin-top: 60px;
         margin-bottom: 30px;
@@ -24,208 +27,229 @@
         .line {
             display: block;
             position: absolute;
-            margin-left: 50%;
+
             background-color: $color1;
             box-shadow: $color1 0 0 10px;
             width: 2px;
-            height: 100%;
+            height: 2px;
 
-            .label-above {
+            .label.label-above {
                 margin-top: -25px;
                 //margin-left: 25px;
                 color: $color1;
             }
 
-            .label-bellow {
+            .label.label-bellow {
                 margin-top: 15px;
                 //margin-left: 25px;
                 color: $color1;
             }
         }
 
+        .line.timeline-line {
+            margin-left: 50%;
+            height: 100%;
+        }
+
         .circle {
             display: block;
             position: absolute;
-            margin-left: calc(50% - 9px);
-            margin-top: -20px;
+
             background-color: $color1;
             //border: 2px solid $color1;
             box-shadow: $color1 0 0 10px;
-            width: 20px;
-            height: 20px;
-            border-radius: 20px;
 
             .label {
                 margin-top: -2px;
                 font-size: 1.3em;
                 color: $color1;
             }
-
-            &:nth-child(odd) {
-                .label {
-                    margin-left: -20px;
-                    transform: translate(-100%, 0);
-                }
-            }
-
-            &:nth-child(even) {
-                .label {
-                    margin-left: 33px;
-                }
-            }
         }
 
-        .empty {
+        .year {
+
             height: 70px;
-        }
-        li.item {
-            width: 40%;
-            margin-top: -30px;
-
-            .inner {
-                //transform: translate(0,-40px);
-            }
-
-            .line {
-                height: 2px;
-                margin-top: 50px;
-            }
 
             .circle {
-                display: block;
-                position: absolute;
-                margin-top: 46px;
-                width: 10px;
-                height: 10px;
-                border-radius: 10px;
+                margin-left: calc(50% - 9px);
+                margin-top: -20px;
+
+                width: 20px;
+                height: 20px;
+                border-radius:20px;
+
+                .label {
+                    transform: translate(-50%,0);
+                }
             }
 
-            .skeleton {
-                opacity: 0.8;
+            &.right{
+                .circle {
+                    .label {
+                        margin-left: 30px;
+                    }
+                }
             }
+            &.left{
+                .circle {
+                    .label {
+                        margin-left: -30px;
+                    }
+                }
+            }
+        }
 
-            &.selected {
-                .skeleton {
-                    opacity: 1;
+        
+
+        .item {
+            .card {
+                .inner {
+                    width: $card-width;
+                    margin-top: -30px;
+
+                    h3.name{
+                        margin: 15px;
+                        margin-top: 30px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .skeleton-inner, .skeleton-inner-with-label {
+                    .line {
+                        .circle {
+                            width: 15px;
+                            height: 15px;
+                            border-radius:15px;
+                            margin-top: -7.5px;
+                            margin-left: -7.5px;
+                            
+                        }
+                    }
+                }
+
+                .skeleton-inner {
+                    
+                    .line {
+                        width: $timeline-width / 2 - $card-width - 7.5px;
+                        margin-top: 30px;
+                    }
+                }
+
+                .skeleton-inner-with-label {
+                    //margin-top: 50px;
+                    //margin-bottom: 50px;
+                    height: 50px;
+                    .line {
+
+                        width: $timeline-width - $card-width - $card-project-line-padding;
+                        margin-top: 50px;
+
+                        .label.label-above {
+                        }
+                        .circle {
+                        }
+                    }
+                }
+
+                .skeleton-outer {
+                    display: none;
+                    .line {
+                        .circle {
+                        }
+                        .label-above {
+                            h1.name {
+                            }
+                            h2.subname {
+                            }
+                        }
+
+                        .label.label-bellow {
+                        }
+                    }
                 }
             }
 
             &:nth-child(even) {
-                margin-left: calc(504px - 40% - 2px);
-            }
-        }
+                .card {
 
-        li {
-            .skeleton-inner {
-                .line {
-                    width: calc(10% + 2px);
-                }
-
-                /*&:nth-child(odd) {
-                    .line {
-                        margin-left: calc(40% - 2px);
+                    .skeleton-inner, .skeleton-inner-with-label {
+                        //border: 1px solid red;
+                        .line {
+                            margin-left: $card-width + 2px;
+                            .circle {
+                                margin-left: calc(100% - 2px);
+                            }
+                        }
                     }
-                    .circle {
-                        margin-left: calc(50% - 4px);
-                    }
-                }
-    
-                &:nth-child(even) {
-                    .line {
-                        margin-left: calc(-10% - 2px);
-                    }
-                    .circle {
-                        margin-left: calc(-10% - 3px);
-                    }
-                }*/
-            }
-        }
 
-        li.project {
-            //margin-top: 10px;
-            //margin-bottom: 10px;
+                    /*.skeleton-inner-with-label {
+                        .line {
+                            margin-left: $card-width;
+                            .label.label-above {
+                            }
+                            .circle {
+                                margin-left: calc(100% - 2px);
+                            }
+                        }
+                    }*/
 
-            .skeleton-inner-with-label {
-                .line {
-                    width: calc(50% + 2px);
-                }
-            }
+                    .skeleton-outer {
+                        .line {
+                            .circle {
+                            }
+                            .label-above {
+                                h1.name {
+                                }
+                                h2.subname {
+                                }
+                            }
 
-            /*&:nth-child(odd) {
-                .line {
-                    margin-left: calc(40% - 2px);
-                }
-                .circle {
-                    margin-left: calc(90% - 4px);
-                }
-            }
-
-            &:nth-child(even) {
-                .line {
-                    margin-left: calc(-50% - 2px);
-                }
-                .circle {
-                    margin-left: calc(-50% - 3px);
-                }
-            }*/
-        }
-    }
-
-    li {
-        /*.content{
-            display: none;
-            opacity: 0;
-            position: absolute;
-            width: 200px;
-            .inner{
-                
-            }
-        }*/
-
-        .more {
-            opacity: 0;
-            //transform: rotate(30deg);
-            .line {
-                width: calc(50vw - 504px / 2 - 30px) !important;
-                .circle {
-                    margin-top: -4px !important;
-                }
-            }
-            .label-above,
-            .label-bellow {
-                color: white !important;
-            }
-        }
-
-        &.selected {
-            .more {
-                opacity: 1;
-            }
-            /*.content{
-                display: block;
-                opacity: 1;
-            } */
-        }
-
-        &:nth-child(odd) {
-            .more {
-                .line {
-                    margin-left: 0px !important;
-                    transform: translate(-100%, 0);
-                    .circle {
-                        margin-left: 0px !important;
+                            .label.label-bellow {
+                            }
+                        }
                     }
                 }
             }
-        }
 
-        &:nth-child(even) {
-            .more {
-                .line {
-                    margin-left: 200px !important;
-                    //transform: translate(0%,0);
-                    .circle {
-                        margin-left: 100% !important;
+            &:nth-child(odd) {
+                .card {
+                    .inner {
+                        margin-left: $timeline-width - $card-width - 7.5px;//- 26px;
+                    }
+
+                    .skeleton-inner {
+                        //border: 1px solid red;
+                        .line {
+                            margin-left: $timeline-width/2;
+                            .circle {
+                            }
+                        }
+                    }
+
+                    .skeleton-inner-with-label {
+                        .line {
+                            margin-left: $card-project-line-padding - 7.5px;
+                            .label.label-above {
+                            }
+                            .circle {
+                            }
+                        }
+                    }
+
+                    .skeleton-outer {
+                        .line {
+                            .circle {
+                            }
+                            .label-above {
+                                h1.name {
+                                }
+                                h2.subname {
+                                }
+                            }
+
+                            .label.label-bellow {
+                            }
+                        }
                     }
                 }
             }
