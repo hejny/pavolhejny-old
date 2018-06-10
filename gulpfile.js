@@ -32,7 +32,7 @@ gulp.task('build-cleanup', () => {
     return gulp.src('./dist/', { read: false }).pipe(gulpClean());
 });
 
-gulp.task('build-html', ['build-html-index','build-html-content']);
+gulp.task('build-html', ['build-html-index', 'build-html-content']);
 
 gulp.task('build-html-index', () => {
     return gulp
@@ -43,16 +43,15 @@ gulp.task('build-html-index', () => {
 });
 
 gulp.task('build-html-content', () => {
-
-    const {articles} = getContent();
+    const { articles } = getContent();
 
     const article = articles[0];
 
     return gulp
         .src(['./src/templates/article.jade'])
-        .pipe(gulpJade({ pretty: true, locals: {article} }))
+        .pipe(gulpJade({ pretty: true, locals: { article } }))
         .on('error', swallowError)
-        .pipe(gulpRename(article.uri+'.html'))//todo maybe remove .html
+        .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
         .pipe(gulp.dest('./dist/'));
 });
 

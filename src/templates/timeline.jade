@@ -7,7 +7,7 @@ div.timeline
 
     mixin item(article)
         .item
-            li.card.selectable(data-featured-image= article.featuredImages.front)
+            li.card.selectable(data-featured-image= article.featuredImages.back)
 
                 .skeleton-outer
                     .line
@@ -36,7 +36,7 @@ div.timeline
                             .circle.small
 
      
-                a.inner(href="/code-for-czechia.html",style=`background-image:url('${article.featuredImages.back}');background-size: cover;background-position: center;`)
+                a.inner(href=`/${article.uri}.html`,style=`background-image:url('${article.featuredImages.front}');background-size: cover;background-position: center;`)
                     h3.name= article.title
 
 
