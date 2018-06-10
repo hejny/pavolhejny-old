@@ -5,15 +5,15 @@ div.timeline
 
 
 
-    mixin item(name, type, innerSkeletonLabel, featuredImageInner,featuredImageOuter, abstractText)
+    mixin item(article)
         .item
-            li.card.selectable(data-featured-image= featuredImageOuter)
+            li.card.selectable(data-featured-image= article.featuredImages.front)
 
                 .skeleton-outer
                     .line
                         .circle.small
                         .label-above
-                            h1.name= name
+                            h1.name= article.title
                             //h2.subname
                                 span.meta <
                                 span.text project
@@ -21,14 +21,14 @@ div.timeline
                         .label.label-bellow
                             .abstract
                                 :verbatim
-                                    !{abstractText}
+                                    !{article.abstract}
 
 
                 if innerSkeletonLabel
                     .skeleton-inner-with-label
                         .line
                             .circle.small
-                            .label.label-above 2018 - 2016
+                            .label.label-above article.innerLabel
                         
                 else
                     .skeleton-inner
@@ -36,8 +36,8 @@ div.timeline
                             .circle.small
 
      
-                a.inner(href="/article1",style=`background-image:url(/images/events/${featuredImageInner}.jpg);background-size: cover;background-position: center;`)
-                    h3.name= name
+                a.inner(href="/code-for-czechia.html",style=`background-image:url('${article.featuredImages.back}');background-size: cover;background-position: center;`)
+                    h3.name= article.title
 
 
     mixin year(year,left)
@@ -59,17 +59,10 @@ div.timeline
     
     ul.clear.events
         .line.timeline-line
-        +year(2018,false)
-        each article in content.articles
-            +item(
-                article.title,
-                'type',
-                '2017 - ',
-                '33692658_10155680999023590_4747848035172614144_n',
-                '33692658_10155680999023590_4747848035172614144_n',
-                content.articles[0].content
-            )
-        //include ./timeline-content
+        each year, yearIndex in content.years
+            +year(year.label,yearIndex%2)
+            each article in year.articles
+                +item(article)
         
         
 

@@ -29,22 +29,48 @@ const markdown = require('markdown-it')({
     },
 });
 
+function baseName(str)
+{
+   var base = new String(str).substring(str.lastIndexOf('/') + 1); 
+    if(base.lastIndexOf(".") != -1)       
+        base = base.substring(0, base.lastIndexOf("."));
+   return base;
+}
+
 module.exports = function() {
     const articlesFiles = glob.sync('./src/content/articles/*.md');
+    const articles = articlesFiles.map((articlesFile) => {
+
+        const articleMarkdown = fs.readFileSync(articlesFile, 'utf8');
+        const articleHtml = markdown.render(articleMarkdown);
+        const articleDom = new dom().parseFromString(articleHtml);
+
+        const result = xpath.select('h1', articleDom);
+        const articleTitle = result[0].childNodes[0].nodeValue;
+
+        return {
+            title: articleTitle,
+            uri: baseName(articlesFile),
+            innerLabel: null,
+            featuredImages:{
+                front: 'http://localhost:3000/images/events/33692658_10155680999023590_4747848035172614144_n.jpg',
+                back: 'http://localhost:3000/images/events/33692658_10155680999023590_4747848035172614144_n.jpg'
+            },
+            abstract: articleHtml,
+            content: articleHtml,
+        };
+    });
 
     return {
-        articles: articlesFiles.map((articlesFile) => {
-            const articleMarkdown = fs.readFileSync(articlesFile, 'utf8');
-            const articleHtml = markdown.render(articleMarkdown);
-            const articleDom = new dom().parseFromString(articleHtml);
-
-            const result = xpath.select('h1', articleDom);
-            const articleTitle = result[0].childNodes[0].nodeValue;
-
-            return {
-                title: articleTitle,
-                content: articleHtml,
-            };
-        }),
+        articles,
+        years: [
+            {
+                label: 2018,
+                articles
+            },{
+                label: 2017,
+                articles
+            }
+        ]
     };
 };

@@ -32,11 +32,27 @@ gulp.task('build-cleanup', () => {
     return gulp.src('./dist/', { read: false }).pipe(gulpClean());
 });
 
-gulp.task('build-html', () => {
+gulp.task('build-html', ['build-html-index','build-html-content']);
+
+gulp.task('build-html-index', () => {
     return gulp
-        .src(['./src/templates/index.jade', './src/templates/articles/*.jade'])
+        .src('./src/templates/index.jade')
         .pipe(gulpJade({ pretty: true, locals: { content: getContent() } }))
         .on('error', swallowError)
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('build-html-content', () => {
+
+    const {articles} = getContent();
+
+    const article = articles[0];
+
+    return gulp
+        .src(['./src/templates/article.jade'])
+        .pipe(gulpJade({ pretty: true, locals: {article} }))
+        .on('error', swallowError)
+        .pipe(gulpRename(article.uri+'.html'))//todo maybe remove .html
         .pipe(gulp.dest('./dist/'));
 });
 

@@ -1,0 +1,15 @@
+doctype html
+//
+  (cc) Pavol Hejný
+  https://github.com/hejny/pavolhejny
+html(lang='en')
+    include ./head
+    body
+
+        .layer.layer1.generated-noise
+        .layer.layer2#featured-image-mirror
+        .layer.layer3
+          include ./vcard
+          main
+            :verbatim
+                !{article.content}
