@@ -14,20 +14,14 @@ div.timeline
                         .circle.small
                         .label-above
                             h1.name= name
-                            h2.subname
+                            //h2.subname
                                 span.meta <
                                 span.text project
                                 span.meta />
-                        .label.label-bellow 
-                            
-                            //span ahoj
-                            //span.time 2018-06-02
-                            //ul.participants
-                                li Ahoj Ahoj
-                                li Ahoj Ahoj
-                                li Ahoj Ahoj
-                            p.abstract
-                                !{abstractText}
+                        .label.label-bellow
+                            .abstract
+                                :verbatim
+                                    !{abstractText}
 
 
                 if innerSkeletonLabel
@@ -66,14 +60,15 @@ div.timeline
     ul.clear.events
         .line.timeline-line
         +year(2018,false)
-        +item(
-            content.articles[0].title,
-            'type',
-            '2017 - ',
-            '33692658_10155680999023590_4747848035172614144_n',
-            '33692658_10155680999023590_4747848035172614144_n',
-            content.articles[0].content
-        )
+        each article in content.articles
+            +item(
+                article.title,
+                'type',
+                '2017 - ',
+                '33692658_10155680999023590_4747848035172614144_n',
+                '33692658_10155680999023590_4747848035172614144_n',
+                content.articles[0].content
+            )
         //include ./timeline-content
         
         

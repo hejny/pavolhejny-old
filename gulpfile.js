@@ -4,7 +4,7 @@ const gulpSass = require('gulp-sass');
 const gulpJade = require('gulp-jade');
 const gulpClean = require('gulp-clean');
 const gulpSequence = require('gulp-sequence');
-const content = require('./content');
+const getContent = require('./getContent');
 
 gulp.task('default', ['build']);
 
@@ -33,10 +33,9 @@ gulp.task('build-cleanup', () => {
 });
 
 gulp.task('build-html', () => {
-    console.log(content);
     return gulp
-        .src(['./src/templates/index.jade','./src/templates/articles/*.jade'])
-        .pipe(gulpJade({ pretty: true, locals: {content} }))
+        .src(['./src/templates/index.jade', './src/templates/articles/*.jade'])
+        .pipe(gulpJade({ pretty: true, locals: { content: getContent() } }))
         .on('error', swallowError)
         .pipe(gulp.dest('./dist/'));
 });
