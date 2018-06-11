@@ -1,6 +1,6 @@
 .vcard
     .inner
-        .avatar
+        a.avatar(href='/')
             img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm', alt='Pavol Hejný')
         h1.name Pavol Hejný
         h2.subname
@@ -11,6 +11,20 @@
             span.meta )?
             span.text developer
             span.meta $/
+
+        .contacts
+            a(href='mailto:me@pavolhejny.com', target='_blank', title='Email')
+                i.icon-envelope.icons
+            a(href='https://github.com/hejny/', target='_blank', title='Github')
+                i.icon-social-github.icons
+            a(href='https://www.facebook.com/hejny', target='_blank', title='Facebook')
+                i.icon-social-facebook.icons
+            a(href='https://instagram.com/hejnypavol/', target='_blank', title='Instagram')
+                i.icon-social-instagram.icons
+            a(href='https://www.linkedin.com/in/hejny/', target='_blank', title='LinkedIn')
+                i.icon-social-linkedin.icons
+            //a(href='/media/data/pavol.hejny.vcf', target='_blank', title='VCard')
+                i.icon-credit-card.icons
 
 
     //.subname Web app developer

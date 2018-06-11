@@ -42,7 +42,7 @@
         width: $timeline-width;
         position: absolute;
         //top: calc(10vh + 250px);
-        transform: translate(calc(-50% + 50vw), 0);
+        transform: translate(calc(-50% + 50vw - 6px), 0);
 
         ul.events {
             margin-top: 30px;

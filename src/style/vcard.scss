@@ -5,6 +5,15 @@
 
     z-index: 100;
 
+    .inner{
+
+        @if $debug {
+            border: 1px dotted orange;
+        }
+
+
+        display: inline-block;
+        width: $timeline-width;
     .avatar {
         img {
             display: inline-block;
@@ -16,12 +25,18 @@
             border-radius: 1000px;
 
             padding: 3px;
-            box-shadow: $color1 0 0 10px;
+            box-shadow: $color1 0 0 $highlight-normal;
             //border: 2px solid black;
             margin: auto;
             margin-top: 17vh;
             margin-bottom: 12px;
+
+            &:hover{
+                box-shadow: $color1 0 0 $highlight-selected;
+            }
         }
+
+        
     }
 
     h1.name {
@@ -39,5 +54,29 @@
         margin-top: 5px;
     }
 
-    //---------------------
+    .contacts {
+    
+    
+        
+            background: url('./images/textures/norwegian_rose.png');
+            background-position: center;
+            //border: 2px dotted red;
+    
+            text-align: center;
+    
+            a {
+                display: inline-block;
+                font-size: 33px;
+                text-decoration: none;
+                margin: 10px;
+    
+                /*&:hover{
+            color: #3d64ff;
+          }*/
+            }
+        
+    }
+
+}
+    
 }
