@@ -5,8 +5,7 @@ doctype html
 html(lang='en')
     include ./head
     body
-        .layer.layer1.generated-noise
-        .layer.layer2#featured-image-mirror(style=`background:url('/images/default-background.jpg');background-size:cover;`)
-        .layer.layer3
+        .layer.layer1#featured-image-mirror(style=`background:url('/images/default-background.jpg');background-size:cover;`)
+        .layer.layer2
           include ./vcard
           include ./timeline

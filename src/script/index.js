@@ -1,5 +1,6 @@
 console.log('(cc) Pavol Hejný');
 
+/*
 function generateNoise(element) {
     if (!!!document.createElement('canvas').getContext) {
         return false;
@@ -40,7 +41,7 @@ function generateNoise(element) {
 
 for (const element of document.getElementsByClassName('generated-noise')) {
     generateNoise(element);
-}
+}*/
 
 const featureImageMirror = document.getElementById('featured-image-mirror');
 const selectableElements = document.getElementsByClassName('selectable');

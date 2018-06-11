@@ -1,0 +1,26 @@
+.layer1,
+.layer2 {
+    //display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.layer1 {
+    z-index: 10;
+    //background: url('./images/events/33692658_10155680999023590_4747848035172614144_n.jpg');
+    //background: url('./images/events/23915683_1943247489329010_7075262240567444466_n.jpg');
+    //background: url('./images/events/14947711_1778991995650932_1228791466977297790_n.jpg');
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px) grayscale(20%) brightness(0.2);
+}
+.layer2 {
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+}
