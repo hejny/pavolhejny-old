@@ -11,5 +11,6 @@ main.article {
 
         display: inline-block;
         width: $timeline-width;
+        max-width: 100%;
     }
 }

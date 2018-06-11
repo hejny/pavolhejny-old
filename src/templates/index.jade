@@ -5,12 +5,8 @@ doctype html
 html(lang='en')
     include ./head
     body
-
-        //include ./contacts
-        //include ./vcard
-
         .layer.layer1.generated-noise
-        .layer.layer2#featured-image-mirror
+        .layer.layer2#featured-image-mirror(style=`background:url('/images/default-background.jpg');background-size:cover;`)
         .layer.layer3
           include ./vcard
           include ./timeline

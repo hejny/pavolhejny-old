@@ -16,6 +16,7 @@
             //width: 100%;
             margin: 20px;
             pointer-events: all;
+            text-decoration: none;
 
             h3.name {
                 background-color: rgba($color: #000000, $alpha: 0.6);
@@ -42,7 +43,8 @@
         width: $timeline-width;
         position: absolute;
         //top: calc(10vh + 250px);
-        transform: translate(calc(-50% + 50vw - 6px), 0);
+        margin-left: 50%;
+        transform: translate(-50%, 0);
 
         ul.events {
             margin-top: 30px;

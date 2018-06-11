@@ -7,7 +7,7 @@ html(lang='en')
     body
 
         .layer.layer1.generated-noise
-        .layer.layer2#featured-image-mirror
+        .layer.layer2#featured-image-mirror(style=`background:url('${article.featuredImages.back}');background-size:cover;`)
         .layer.layer3
           include ./vcard
 

@@ -59,8 +59,8 @@ for (const element of selectableElements) {
 }
 
 
-featureImageMirror.style.background = `url('/images/default-background.jpg')`;
-featureImageMirror.style.backgroundSize = `cover`;
+//featureImageMirror.style.background = `url('/images/default-background.jpg')`;
+//featureImageMirror.style.backgroundSize = `cover`;
 /*
 $(function(){
 
