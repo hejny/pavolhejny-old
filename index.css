@@ -1,29 +1,10 @@
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #000;
   color: white;
   text-align: center;
   padding: 0;
   margin: 0; }
-  body .layer1,
-  body .layer2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-  body .layer1 {
-    z-index: 10; }
-  body .layer2 {
-    z-index: 20;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    filter: blur(1px); }
-  body .layer3 {
-    position: absolute;
-    width: 100%;
-    z-index: 30; }
 
 * {
   transition: all 0.2s ease-out; }
@@ -69,6 +50,33 @@ ul.clear {
   font-weight: normal; }
   .subname span.meta {
     color: #ff8855; }
+
+.layer1,
+.layer2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.layer1 {
+  z-index: 10; }
+  .layer1 div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px) grayscale(20%) brightness(0.2);
+    transition: filter,opacity 300ms linear; }
+
+.layer2 {
+  position: absolute;
+  width: 100%;
+  z-index: 20; }
 
 .vcard {
   z-index: 100; }
@@ -129,7 +137,7 @@ ul.clear {
     pointer-events: all;
     text-decoration: none; }
     .timeline .card .inner h3.name {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.75);
       margin: 0;
       padding: 15px;
       padding-top: 30px;
