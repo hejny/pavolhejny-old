@@ -14,10 +14,24 @@
     //background: url('./images/events/23915683_1943247489329010_7075262240567444466_n.jpg');
     //background: url('./images/events/14947711_1778991995650932_1228791466977297790_n.jpg');
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(2px) grayscale(20%) brightness(0.2);
+    div{
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: blur(2px) grayscale(20%) brightness(0.2);
+
+        transition : filter,opacity 300ms linear
+
+
+    }
+
+    //
 }
 .layer2 {
     position: absolute;
