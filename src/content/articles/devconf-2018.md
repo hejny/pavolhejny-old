@@ -1,7 +1,5 @@
-# Code for Czechia
+# JobsDev 2018
 
-<!--time:2018-->
-<!--time:2018-->
 <!--time:2018-->
 
 Vytvořili jsme volební kalkulačku offline. Je to perfektní nástroj na přinesení diskuse o politických tématech na veřejná místa.

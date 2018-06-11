@@ -1,4 +1,4 @@
-# H-edu
+# Code for Czechia
 
 <!--time:2018-->
 
