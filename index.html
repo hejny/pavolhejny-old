@@ -7,13 +7,17 @@ https://github.com/hejny/pavolhejny
   <head>
     <meta charset="UTF-8">
     <title>Pavol Hejný</title>
+    <!--todo update-->
     <meta name="description" content="WebApp developer🌍 • Game developer🎮 • Fractal💗 • Crypto💛">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.3/css/simple-line-icons.css">
     <link rel="shortcut icon" href="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=64&amp;r=pg&amp;d=mm ?&gt;">
+    <!--script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=', crossorigin='anonymous')-->
+    <!--script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')-->
+    <!--script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=', crossorigin='anonymous')-->
     <script type="application/ld+json">
       {
         "@context": "http://schema.org/",
@@ -47,33 +51,368 @@ https://github.com/hejny/pavolhejny
       ga('send', 'pageview');
     </script>
     <script src="./index.js" async=""></script>
+    <!--script(src='https://cdn.ampproject.org/v0.js', async='')-->
   </head>
   <body>
-    <main class="card">
-      <div class="about">
-        <div class="avatar"><img src="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&amp;r=pg&amp;d=mm" alt="Pavol Hejný"></div>
-        <h1 class="name">Pavol Hejný</h1>
-        <div class="subname">Web app developer<img src="./images/logos/firefox.png" alt="🌍"></div>
-        <div class="subname">Game developer<img src="./images/logos/games.png" alt="🎮"></div>
-        <div class="subname">Fractal artist<img src="./images/logos/mandelbrot.png" alt="💗"></div>
-        <div class="subname">Crypto lover<img src="./images/logos/bitcoin.png" alt="💛"><img src="./images/logos/ethereum.png" alt="❤"></div>
+    <div class="layer layer1 generated-noise"></div>
+    <div id="featured-image-mirror" style="background:url('/images/default-background.jpg');background-size:cover;" class="layer layer2"></div>
+    <div class="layer layer3">
+      <div class="vcard">
+        <div class="inner"><a href="/" data-featured-image="/images/default-background.jpg" class="selectable avatar"><img src="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&amp;r=pg&amp;d=mm" alt="Pavol Hejný"></a>
+          <h1 class="name">Pavol Hejný</h1>
+          <h2 class="subname"><span class="meta">/^(</span><span class="text">web&nbsp;</span><span class="meta">)?(</span><span class="text">app&nbsp;</span><span class="meta">)?</span><span class="text">developer</span><span class="meta">$/</span></h2>
+          <div class="contacts"><a href="mailto:me@pavolhejny.com" target="_blank" title="Email"><i class="icon-envelope icons"></i></a><a href="https://github.com/hejny/" target="_blank" title="Github"><i class="icon-social-github icons"></i></a><a href="https://www.facebook.com/hejny" target="_blank" title="Facebook"><i class="icon-social-facebook icons"></i></a><a href="https://instagram.com/hejnypavol/" target="_blank" title="Instagram"><i class="icon-social-instagram icons"></i></a><a href="https://www.linkedin.com/in/hejny/" target="_blank" title="LinkedIn"><i class="icon-social-linkedin icons"></i></a>
+            <!--a(href='/media/data/pavol.hejny.vcf', target='_blank', title='VCard')
+            i.icon-credit-card.icons
+            
+            
+            -->
+          </div>
+        </div>
+        <!--.subname Web app developer-->
+        <!--    img(src='./images/logos/firefox.png', alt='🌍')-->
+        <!--.subname Game developer-->
+        <!--    img(src='./images/logos/games.png', alt='🎮')-->
+        <!--.subname Fractal artist-->
+        <!--    img(src='./images/logos/mandelbrot.png', alt='💗')-->
+        <!--.subname Crypto lover-->
+        <!--    img(src='./images/logos/bitcoin.png', alt='💛')-->
+        <!--    img(src='./images/logos/ethereum.png', alt='❤')  -->
         <!--.subname(itemprop='jobTitle') Prague-->
         <!--.subname(itemprop='jobTitle') Painting🖌🖍-->
       </div>
-      <div class="contacts">
-        <div class="inner"><a href="mailto:me@pavolhejny.com" target="_blank" title="Email"><i class="icon-envelope icons"></i></a><a href="https://github.com/hejny/" target="_blank" title="Github"><i class="icon-social-github icons"></i></a><a href="https://www.facebook.com/hejny" target="_blank" title="Facebook"><i class="icon-social-facebook icons"></i></a><a href="https://instagram.com/hejnypavol/" target="_blank" title="Instagram"><i class="icon-social-instagram icons"></i></a><a href="https://www.linkedin.com/in/hejny/" target="_blank" title="LinkedIn"><i class="icon-social-linkedin icons"></i></a>
-          <!--a(href='/media/data/pavol.hejny.vcf', target='_blank', title='VCard')i.icon-credit-card.icons
-          -->
-        </div>
+      <div class="timeline">
+        <ul class="clear events">
+          <div class="line timeline-line"></div>
+                  <!--todo DRY-->
+                  <div class="year right">
+                    <div class="circle big">
+                      <div class="label">2018</div>
+                    </div>
+                  </div>
+                  <div class="keep-odd-even-hack"></div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/code-for-czechia-2018/34015806_10155680999028590_541623400687206400_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">Code for Czechia</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>We have created a paper and offline election calculator. It is the perfect tool to bring the debate about political topics to public places.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/code-for-czechia-2018.html" style="background-image:url('/content/articles/code-for-czechia-2018/34015806_10155680999028590_541623400687206400_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">Code for Czechia</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/startup-weekend-pilsen-2018/32705422_1614108618703078_5164035992562171904_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">Startup Weekend Pilsen 2018</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>Another Startup Weekend - this time I did not participate as a competitor, but as an organizer/mentor. And it was awesome!</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/startup-weekend-pilsen-2018.html" style="background-image:url('/content/articles/startup-weekend-pilsen-2018/32705422_1614108618703078_5164035992562171904_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">Startup Weekend Pilsen 2018</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/startup-weekend-olomouc-2018/30710393_572521496450671_5736902067692240896_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">Startup Weekend Olomouc 2018</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>The second Startup Weekend I was on. We have customized the service for making our own branded games.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/startup-weekend-olomouc-2018.html" style="background-image:url('/content/articles/startup-weekend-olomouc-2018/30710393_572521496450671_5736902067692240896_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">Startup Weekend Olomouc 2018</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/allforjan-hackathon/8YhCO3ZhSTrJJ9GL_OfMuw~Hackathon-v-mene-J-na-Kuciaka.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">#AllForJan hackathon</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>Hackathon aimed to help Slovak journalists with the detection of subsidy frauds. In was happening in memory of murdered journalist Ján Kuciak.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/allforjan-hackathon.html" style="background-image:url('/content/articles/allforjan-hackathon/8YhCO3ZhSTrJJ9GL_OfMuw~Hackathon-v-mene-J-na-Kuciaka.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">#AllForJan hackathon</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/startup-weekend-prague-2018/28619210_1609827479101029_6175169618374862451_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">Startup Weekend Prague 2018</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>The first Startup Weekend where I was. I heard about this event a month before it was happening. I did not expect much from it, but it eventually amazed me!</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/startup-weekend-prague-2018.html" style="background-image:url('/content/articles/startup-weekend-prague-2018/28619210_1609827479101029_6175169618374862451_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">Startup Weekend Prague 2018</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/devconf-2018/27368448_10211444230447543_1300172171406499411_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">DevConf 2018</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>Large developers conference in Brno organized by Red Hat. We came there with <a href="https://www.mozilla.cz/">Mozilla community</a> with <a href="https://www.linkedin.com/in/vasicekmichal/">Michal</a> and <a href="https://twitter.com/zelitomas">Tomáš</a> and <a href="https://www.mozilla.cz/zpravicky/jak-jsme-se-meli-na-devconfu-2018/">show virtual reality directly from Firefox</a>.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/devconf-2018.html" style="background-image:url('/content/articles/devconf-2018/27368448_10211444230447543_1300172171406499411_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">DevConf 2018</h3></a>
+                    </li>
+                  </div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/fake-hacks/27355561_1275915819176938_4913047383189524606_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">FakeHacks</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>Hackathon aimed to fight against fake news. We've created a plugin to analyze in which social bubble you're moving based on Facebook data.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/fake-hacks.html" style="background-image:url('/content/articles/fake-hacks/27355561_1275915819176938_4913047383189524606_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">FakeHacks</h3></a>
+                    </li>
+                  </div>
+                  <div class="year left">
+                    <div class="circle big">
+                      <div class="label">2017</div>
+                    </div>
+                  </div>
+                  <div class="keep-odd-even-hack"></div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/train-hack/24059387_1941448352842257_6046693604774767798_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">TrainHack</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>Hackathon directly in the train during journey from Prague to Košice(Slovakia). We have programmed only during the ride.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner">
+                        <div class="line">
+                          <div class="circle small"></div>
+                        </div>
+                      </div><a href="/train-hack.html" style="background-image:url('/content/articles/train-hack/24059387_1941448352842257_6046693604774767798_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">TrainHack</h3></a>
+                    </li>
+                  </div>
+                  <!--todo DRY-->
+                  <div class="year right">
+                    <div class="circle big">
+                      <div class="label">2016</div>
+                    </div>
+                  </div>
+                  <div class="keep-odd-even-hack"></div>
+                  <div class="item">
+                    <li data-featured-image="/content/articles/towns/17834217_10209122541966782_5259923754560657280_o.jpg" class="card selectable">
+                      <div class="skeleton-outer">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label-above">
+                            <h1 class="name">Towns</h1>
+                            <!--h2.subname
+                            span.meta <
+                            span.text project
+                            span.meta />
+                            -->
+                          </div>
+                          <div class="label label-bellow">
+                            <div class="abstract"><p>A series of online strategy games I've been developing for a long time.</p>
+
+                            </div>
+                            <!--a.button(href='/')
+                            button ...Preparing...
+                            
+                            
+                            
+                            -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton-inner-with-label">
+                        <div class="line">
+                          <div class="circle small"></div>
+                          <div class="label label-above">2007 ‒ 2016</div>
+                        </div>
+                      </div><a href="/towns.html" style="background-image:url('/content/articles/towns/17834217_10209122541966782_5259923754560657280_o.jpg');background-size: cover;background-position: center;" class="inner">
+                        <h3 class="name">Towns</h3></a>
+                    </li>
+                  </div>
+        </ul>
       </div>
-      <!--include ./content.jade-->
-      <!--footer
-      button Write me!
-      div
-          span Copyleft
-          span.copyleft ©
-          span Pavol Hejný
-      -->
-    </main>
+    </div>
   </body>
 </html>
