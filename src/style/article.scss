@@ -1,0 +1,15 @@
+main.article {
+    @if $debug {
+        border: 1px dotted blue;
+    }
+
+    text-align: center;
+    .inner {
+        @if $debug {
+            border: 1px dotted blue;
+        }
+
+        display: inline-block;
+        width: $timeline-width;
+    }
+}

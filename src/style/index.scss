@@ -52,14 +52,14 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: inherit;
     outline: 0;
-    /*cursor: Pointer;
+    //cursor: Pointer;
 
     &:hover {
         color: $color1;
-    }*/
+    }
 }
 
 @mixin disable-select() {
@@ -69,32 +69,39 @@ a {
     user-select: none;
 }
 
-/*
-button,
-.button,
-input[type='submit'] {
+
+
+.button{
     display: inline-block;
-    border: none;
-    padding: 0 10px;
-    margin: 2px;
-    min-width: 100px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
+    box-shadow: $color1 0 0 $highlight-normal;
     border-radius: 3px;
-    background-color: $color1;
-    color: white;
     cursor: pointer;
 
     &:hover {
         background-color: $color1;
+        box-shadow: $color1 0 0 $highlight-selected;
     }
 
-    .fa {
-        margin-right: 4px;
+    button{
+        display: inline-block;
+        border: none;
+        //border: 1px solid black;
+        padding: 10px;
+        margin: 2px;
+        min-width: 100px;
+        font-size: 1.2rem;
+        border-radius: 3px;
+        //background-color: $color1;
+        background-color: rgba($color:  $color1, $alpha: 0.6);
+        color: white;
+        cursor: pointer;
     }
+
+    /*.fa {
+        margin-right: 4px;
+    }*/
 }
-*/
+
 
 ul.clear {
     list-style: none;
@@ -113,4 +120,5 @@ ul.clear {
 
 @import 'vcard';
 @import 'timeline';
+@import 'article';
 //@import 'contacts';

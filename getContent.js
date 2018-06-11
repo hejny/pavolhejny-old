@@ -55,8 +55,7 @@ module.exports = function() {
         const articleDom = new dom().parseFromString(articleHtml);
 
         const title = xpath.select('h1', articleDom)[0].childNodes[0].nodeValue;
-        const abstract = xpath.select('p', articleDom)[0].childNodes[0]
-            .nodeValue;
+        const abstract = xpath.select('p', articleDom)[0].toString();
 
         return {
             title,
