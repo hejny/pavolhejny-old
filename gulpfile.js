@@ -4,6 +4,7 @@ const gulpSass = require('gulp-sass');
 const gulpJade = require('gulp-jade');
 const gulpClean = require('gulp-clean');
 const gulpSequence = require('gulp-sequence');
+const eventStream = require('event-stream');
 const getContent = require('./getContent');
 
 gulp.task('default', ['build']);
@@ -32,27 +33,23 @@ gulp.task('build-cleanup', () => {
     return gulp.src('./dist/', { read: false }).pipe(gulpClean());
 });
 
-gulp.task('build-html', ['build-html-index', 'build-html-content']);
-
-gulp.task('build-html-index', () => {
-    return gulp
-        .src('./src/templates/index.jade')
-        .pipe(gulpJade({ pretty: true, locals: { content: getContent() } }))
-        .on('error', swallowError)
-        .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('build-html-content', () => {
-    const { articles } = getContent();
-
-    const article = articles[0];
-
-    return gulp
-        .src(['./src/templates/article.jade'])
-        .pipe(gulpJade({ pretty: true, locals: { article } }))
-        .on('error', swallowError)
-        .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
-        .pipe(gulp.dest('./dist/'));
+gulp.task('build-html', () => {
+    const content = getContent();
+    return eventStream.merge([
+        gulp
+            .src('./src/templates/index.jade')
+            .pipe(gulpJade({ pretty: true, locals: { content } }))
+            .on('error', swallowError)
+            .pipe(gulp.dest('./dist/')),
+        ...content.articles.map((article) =>
+            gulp
+                .src(['./src/templates/article.jade'])
+                .pipe(gulpJade({ pretty: true, locals: { article } }))
+                .on('error', swallowError)
+                .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
+                .pipe(gulp.dest('./dist/')),
+        ),
+    ]);
 });
 
 gulp.task('build-css', () => {

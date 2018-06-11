@@ -42,7 +42,7 @@ function fileFallback(...files) {
             return file;
         }
     }
-    return '';//todo better
+    return ''; //todo better
 }
 
 module.exports = function() {
@@ -81,7 +81,7 @@ module.exports = function() {
         };
     });
 
-    console.log(articles);
+    //console.log(articles);
 
     return {
         articles,
