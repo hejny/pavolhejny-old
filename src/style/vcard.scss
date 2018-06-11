@@ -5,80 +5,70 @@
 
     z-index: 100;
 
-    .inner{
-
+    .inner {
         @if $debug {
             border: 1px dotted orange;
         }
-
 
         display: inline-block;
         width: $timeline-width;
         max-width: 100%;
 
-    .avatar {
-        img {
-            display: inline-block;
-            width: 125px;
-            height: 125px;
-            max-width: 80%;
+        .avatar {
+            img {
+                display: inline-block;
+                width: 125px;
+                height: 125px;
+                max-width: 80%;
 
-            border: 1px solid $color1; //todo to config
-            border-radius: 1000px;
+                border: 1px solid $color1; //todo to config
+                border-radius: 1000px;
 
-            padding: 3px;
-            box-shadow: $color1 0 0 $highlight-normal;
-            //border: 2px solid black;
-            margin: auto;
-            margin-top: 17vh;
-            margin-bottom: 12px;
+                padding: 3px;
+                box-shadow: $color1 0 0 $highlight-normal;
+                //border: 2px solid black;
+                margin: auto;
+                margin-top: 17vh;
+                margin-bottom: 12px;
 
-            &:hover{
-                box-shadow: $color1 0 0 $highlight-selected;
+                &:hover {
+                    box-shadow: $color1 0 0 $highlight-selected;
+                }
             }
         }
 
-        
-    }
+        h1.name {
+            //border: 1px dashed red;
+            display: block;
+            text-decoration: none;
+            font-size: 2.48rem;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
 
-    h1.name {
-        //border: 1px dashed red;
-        display: block;
-        text-decoration: none;
-        font-size: 2.48rem;
-        margin-top: 10px;
-        margin-bottom: 8px;
-    }
+        h2.subname {
+            display: block;
+            font-size: 1.25em;
+            margin-top: 5px;
+        }
 
-    h2.subname {
-        display: block;
-        font-size: 1.25em;
-        margin-top: 5px;
-    }
-
-    .contacts {
-    
-    
-        
+        .contacts {
             background: url('./images/textures/norwegian_rose.png');
             background-position: center;
             //border: 2px dotted red;
-    
+
             text-align: center;
-    
+
             a {
                 display: inline-block;
                 font-size: 33px;
                 text-decoration: none;
                 margin: 10px;
-    
+
                 /*&:hover{
             color: #3d64ff;
           }*/
             }
-        
+        }
     }
-
-}
-    
 }

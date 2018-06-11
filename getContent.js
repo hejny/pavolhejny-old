@@ -49,29 +49,39 @@ function baseName(str) {
 
 module.exports = function() {
     const articlesFiles = glob.sync('./src/content/articles/**/*.md');
-    const articles = articlesFiles.map((articlesFile) => {
-        const uri = baseName(articlesFile);
+    const articles = articlesFiles
+        .map((articlesFile) => {
+            const uri = baseName(articlesFile);
 
-        const articleMarkdown = fs.readFileSync(articlesFile, 'utf8');
-        const articleHtml = markdown.render(articleMarkdown);
-        const articleDom = new dom().parseFromString(articleHtml);
+            const articleMarkdown = fs.readFileSync(articlesFile, 'utf8');
+            const articleHtml = markdown.render(articleMarkdown);
+            const articleDom = new dom().parseFromString(articleHtml);
 
-        const title = xpath.select('h1', articleDom)[0].childNodes[0].nodeValue;
-        const abstract = xpath.select('p', articleDom)[0].toString();
+            const title = xpath.select('h1', articleDom)[0].childNodes[0]
+                .nodeValue;
+            const abstract = xpath.select('p', articleDom)[0].toString();
 
-        const date = articleMarkdown.split('<!--date:')[1].split('-->')[0].split('--');
-        const dateFrom = moment(date[0]);
-        const dateTo = moment(date[1]==='now'?undefined:(date[1]||date[0]));
+            const date = articleMarkdown
+                .split('<!--date:')[1]
+                .split('-->')[0]
+                .split('--');
+            const dateFrom = moment(date[0]);
+            const dateTo = moment(
+                date[1] === 'now' ? undefined : date[1] || date[0],
+            );
 
-        const images = glob.sync(path.dirname(articlesFile)+'/*.jpg');
+            const images = glob.sync(path.dirname(articlesFile) + '/*.jpg');
 
-        return {
-            title,
-            uri,
-            dateFrom,
-            dateTo,
-            innerLabel: dateFrom.year()===dateTo.year()?null:`${dateFrom.year()} ‒ ${dateTo.year()}`,
-            /*featuredImages: {
+            return {
+                title,
+                uri,
+                dateFrom,
+                dateTo,
+                innerLabel:
+                    dateFrom.year() === dateTo.year()
+                        ? null
+                        : `${dateFrom.year()} ‒ ${dateTo.year()}`,
+                /*featuredImages: {
                 front: fileFallback(
                     `./src/images/articles/${uri}.jpg`,
                     `./src/images/articles/${uri}-front.jpg`,
@@ -85,19 +95,23 @@ module.exports = function() {
                     .split('./src/')
                     .join('/'),
             },*/
-            featuredImages: {
-                front: images[0].split('./src/').join('/'),
-                back:  images[0].split('./src/').join('/'),
-            },
-            abstract,
-            content: articleHtml,
-        };
-    }).sort((article1,article2)=>article1.dateTo.isBefore(article2.dateTo)?1:-1);
+                featuredImages: {
+                    front: images[0].split('./src/').join('/'),
+                    back: images[0].split('./src/').join('/'),
+                },
+                abstract,
+                content: articleHtml,
+            };
+        })
+        .sort(
+            (article1, article2) =>
+                article1.dateTo.isBefore(article2.dateTo) ? 1 : -1,
+        );
 
     const years = [];
-    let currentYear = {label:null};
-    for(const article of articles){
-        if(article.dateTo.year()!==currentYear.label){
+    let currentYear = { label: null };
+    for (const article of articles) {
+        if (article.dateTo.year() !== currentYear.label) {
             currentYear = {
                 label: article.dateTo.year(),
                 articles: [],
@@ -107,8 +121,5 @@ module.exports = function() {
         currentYear.articles.push(article);
     }
 
-
-
-
-    return {articles,years};
-}
+    return { articles, years };
+};

@@ -69,9 +69,7 @@ a {
     user-select: none;
 }
 
-
-
-.button{
+.button {
     display: inline-block;
     box-shadow: $color1 0 0 $highlight-normal;
     border-radius: 3px;
@@ -82,7 +80,7 @@ a {
         box-shadow: $color1 0 0 $highlight-selected;
     }
 
-    button{
+    button {
         display: inline-block;
         border: none;
         //border: 1px solid black;
@@ -92,7 +90,7 @@ a {
         font-size: 1.2rem;
         border-radius: 3px;
         //background-color: $color1;
-        background-color: rgba($color:  $color1, $alpha: 0.6);
+        background-color: rgba($color: $color1, $alpha: 0.6);
         color: white;
         cursor: pointer;
     }
@@ -101,7 +99,6 @@ a {
         margin-right: 4px;
     }*/
 }
-
 
 ul.clear {
     list-style: none;
