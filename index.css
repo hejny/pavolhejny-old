@@ -71,7 +71,7 @@ ul.clear {
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(2px) grayscale(20%) brightness(0.2);
-    transition: filter,opacity 300ms linear; }
+    transition: filter, opacity 300ms linear; }
 
 .layer2 {
   position: absolute;
