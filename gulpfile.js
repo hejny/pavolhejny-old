@@ -61,7 +61,7 @@ gulp.task('build-css', () => {
 });
 
 gulp.task('copy-images', () => {
-    return gulp.src('src/images/**', { base: 'src' }).pipe(gulp.dest('./dist'));
+    return gulp.src('src/**/*.jpg', { base: 'src' }).pipe(gulp.dest('./dist'));
 });
 
 const Webpack = require('webpack');

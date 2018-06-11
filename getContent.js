@@ -1,5 +1,6 @@
 const glob = require('glob');
 const fs = require('fs');
+const path = require('path');
 const xpath = require('xpath');
 const moment = require('moment');
 const dom = require('xmldom').DOMParser;
@@ -37,17 +38,17 @@ function baseName(str) {
     return base;
 }
 
-function fileFallback(...files) {
+/*function fileFallback(...files) {
     for (const file of files.reverse()) {
         if (fs.existsSync(file)) {
             return file;
         }
     }
     return ''; //todo better
-}
+}*/
 
 module.exports = function() {
-    const articlesFiles = glob.sync('./src/content/articles/*.md');
+    const articlesFiles = glob.sync('./src/content/articles/**/*.md');
     const articles = articlesFiles.map((articlesFile) => {
         const uri = baseName(articlesFile);
 
@@ -62,25 +63,31 @@ module.exports = function() {
         const dateFrom = moment(date[0]);
         const dateTo = moment(date[1]==='now'?undefined:(date[1]||date[0]));
 
+        const images = glob.sync(path.dirname(articlesFile)+'/*.jpg');
+
         return {
             title,
             uri,
             dateFrom,
             dateTo,
             innerLabel: dateFrom.year()===dateTo.year()?null:`${dateFrom.year()} ‒ ${dateTo.year()}`,
-            featuredImages: {
+            /*featuredImages: {
                 front: fileFallback(
-                    /*`./src/images/front.jpg`,*/ `./src/images/articles/${uri}.jpg`,
+                    `./src/images/articles/${uri}.jpg`,
                     `./src/images/articles/${uri}-front.jpg`,
                 )
                     .split('./src/')
                     .join('/'),
                 back: fileFallback(
-                    /*`./src/images/back.jpg`,*/ `./src/images/articles/${uri}.jpg`,
+                    `./src/images/articles/${uri}.jpg`,
                     `./src/images/articles/${uri}-back.jpg`,
                 )
                     .split('./src/')
                     .join('/'),
+            },*/
+            featuredImages: {
+                front: images[0].split('./src/').join('/'),
+                back:  images[0].split('./src/').join('/'),
             },
             abstract,
             content: articleHtml,
