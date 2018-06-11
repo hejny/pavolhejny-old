@@ -25,8 +25,7 @@ function swallowError(error) {
 }
 
 gulp.task('build-cleanup', () => {
-    console.clear();
-    console.clear();
+    console.log('\x1Bc');
     console.log(
         `===============================================[BUILD]======>`,
     );
@@ -115,6 +114,13 @@ gulp.task('build-js', () => {
         )
         .on('error', swallowError)
         .pipe(gulp.dest('./dist/'));
+});
+
+///--------------------------------------------------------
+
+gulp.task('content', function(callback) {
+    console.log('\x1Bc');
+    console.log(getContent());
 });
 
 ///--------------------------------------------------------

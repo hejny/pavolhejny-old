@@ -1,6 +1,7 @@
 const glob = require('glob');
 const fs = require('fs');
 const xpath = require('xpath');
+const moment = require('moment');
 const dom = require('xmldom').DOMParser;
 const markdown = require('markdown-it')({
     html: true, // Enable HTML tags in source
@@ -57,10 +58,17 @@ module.exports = function() {
         const title = xpath.select('h1', articleDom)[0].childNodes[0].nodeValue;
         const abstract = xpath.select('p', articleDom)[0].toString();
 
+        const time = articleMarkdown.split('<!--time:')[1].split('-->')[0].split('--');
+        const timeFrom = moment(time[0]);
+        const timeTo = moment(time[1]==='now'?undefined:(time[1]||time[0]));
+
         return {
             title,
             uri,
-            innerLabel: null,
+            //time:time.join(' '),
+            timeFrom,
+            timeTo,
+            innerLabel: timeFrom.year()===timeTo.year()?null:`${timeFrom.year()} ‒ ${timeTo.year()}`,
             featuredImages: {
                 front: fileFallback(
                     /*`./src/images/front.jpg`,*/ `./src/images/articles/${uri}.jpg`,
@@ -78,9 +86,7 @@ module.exports = function() {
             abstract,
             content: articleHtml,
         };
-    });
-
-    //console.log(articles);
+    }).sort((article1,article2)=>article1.timeTo.isBefore(article2.timeTo)?1:-1);
 
     return {
         articles,
