@@ -24,11 +24,11 @@ div.timeline
                                     !{article.abstract}
 
 
-                if innerSkeletonLabel
+                if article.innerLabel
                     .skeleton-inner-with-label
                         .line
                             .circle.small
-                            .label.label-above article.innerLabel
+                            .label.label-above= article.innerLabel
                         
                 else
                     .skeleton-inner

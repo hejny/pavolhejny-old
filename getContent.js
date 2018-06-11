@@ -58,17 +58,16 @@ module.exports = function() {
         const title = xpath.select('h1', articleDom)[0].childNodes[0].nodeValue;
         const abstract = xpath.select('p', articleDom)[0].toString();
 
-        const time = articleMarkdown.split('<!--time:')[1].split('-->')[0].split('--');
-        const timeFrom = moment(time[0]);
-        const timeTo = moment(time[1]==='now'?undefined:(time[1]||time[0]));
+        const date = articleMarkdown.split('<!--date:')[1].split('-->')[0].split('--');
+        const dateFrom = moment(date[0]);
+        const dateTo = moment(date[1]==='now'?undefined:(date[1]||date[0]));
 
         return {
             title,
             uri,
-            //time:time.join(' '),
-            timeFrom,
-            timeTo,
-            innerLabel: timeFrom.year()===timeTo.year()?null:`${timeFrom.year()} ‒ ${timeTo.year()}`,
+            dateFrom,
+            dateTo,
+            innerLabel: dateFrom.year()===dateTo.year()?null:`${dateFrom.year()} ‒ ${dateTo.year()}`,
             featuredImages: {
                 front: fileFallback(
                     /*`./src/images/front.jpg`,*/ `./src/images/articles/${uri}.jpg`,
@@ -86,19 +85,23 @@ module.exports = function() {
             abstract,
             content: articleHtml,
         };
-    }).sort((article1,article2)=>article1.timeTo.isBefore(article2.timeTo)?1:-1);
+    }).sort((article1,article2)=>article1.dateTo.isBefore(article2.dateTo)?1:-1);
 
-    return {
-        articles,
-        years: [
-            {
-                label: 2018,
-                articles,
-            },
-            {
-                label: 2017,
-                articles,
-            },
-        ],
-    };
-};
+    const years = [];
+    let currentYear = {label:null};
+    for(const article of articles){
+        if(article.dateTo.year()!==currentYear.label){
+            currentYear = {
+                label: article.dateTo.year(),
+                articles: [],
+            };
+            years.push(currentYear);
+        }
+        currentYear.articles.push(article);
+    }
+
+
+
+
+    return {articles,years};
+}

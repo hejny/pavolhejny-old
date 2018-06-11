@@ -1,5 +1,5 @@
 # H-edu
 
-<!--time:2017-06--now-->
+<!--date:2017-06--now-->
 
 Interactive Mathematics Textbook we are developing.
