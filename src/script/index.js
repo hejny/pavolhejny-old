@@ -54,8 +54,7 @@ for (const element of selectableElements) {
         }
         element.classList.add('selected');
 
-
-        const layer = document.createElement("div");
+        const layer = document.createElement('div');
         featureImageMirror.appendChild(layer);
 
         //layer.style.zIndex=zIndex++;
@@ -66,20 +65,20 @@ for (const element of selectableElements) {
         layer.style.opacity = 0;
         layer.style.filter = 'blur(20px) grayscale(20%) brightness(0.2)';
 
-        setImmediate(()=>{
+        setImmediate(() => {
             layer.style.opacity = 1;
             layer.style.filter = 'blur(2px) grayscale(20%) brightness(0.2)';
         });
 
-        setTimeout(()=>{
-
-            const layers = Array.prototype.slice.call(featureImageMirror.children);
+        setTimeout(() => {
+            const layers = Array.prototype.slice.call(
+                featureImageMirror.children,
+            );
             layers.pop();
-            for(const layer of layers){
+            for (const layer of layers) {
                 layer.remove();
             }
-
-        },300);
+        }, 300);
     });
 }
 

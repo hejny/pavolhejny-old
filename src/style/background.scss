@@ -14,8 +14,7 @@
     //background: url('./images/events/23915683_1943247489329010_7075262240567444466_n.jpg');
     //background: url('./images/events/14947711_1778991995650932_1228791466977297790_n.jpg');
 
-    div{
-
+    div {
         position: fixed;
         top: 0;
         left: 0;
@@ -26,9 +25,7 @@
         background-repeat: no-repeat;
         filter: blur(2px) grayscale(20%) brightness(0.2);
 
-        transition : filter,opacity 300ms linear
-
-
+        transition: filter, opacity 300ms linear;
     }
 
     //
