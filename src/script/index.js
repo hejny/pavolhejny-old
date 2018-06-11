@@ -43,44 +43,48 @@ for (const element of document.getElementsByClassName('generated-noise')) {
     generateNoise(element);
 }*/
 
-const featureImageMirror = document.getElementById('featured-image-mirror');
-const selectableElements = document.getElementsByClassName('selectable');
-//let zIndex = 0;
+window.onload = () => {
+    console.log('loaded');
 
-for (const element of selectableElements) {
-    element.addEventListener('mouseenter', () => {
-        for (const element of selectableElements) {
-            element.classList.remove('selected');
-        }
-        element.classList.add('selected');
+    const featureImageMirror = document.getElementById('featured-image-mirror');
+    const selectableElements = document.getElementsByClassName('selectable');
+    //let zIndex = 0;
 
-        const layer = document.createElement('div');
-        featureImageMirror.appendChild(layer);
-
-        //layer.style.zIndex=zIndex++;
-        layer.style.background = `url('${element.getAttribute(
-            'data-featured-image',
-        )}')`;
-        layer.style.backgroundSize = `cover`;
-        layer.style.opacity = 0;
-        layer.style.filter = 'blur(20px) grayscale(20%) brightness(0.2)';
-
-        setImmediate(() => {
-            layer.style.opacity = 1;
-            layer.style.filter = 'blur(2px) grayscale(20%) brightness(0.2)';
-        });
-
-        setTimeout(() => {
-            const layers = Array.prototype.slice.call(
-                featureImageMirror.children,
-            );
-            layers.pop();
-            for (const layer of layers) {
-                layer.remove();
+    for (const element of selectableElements) {
+        element.addEventListener('mouseenter', () => {
+            for (const element of selectableElements) {
+                element.classList.remove('selected');
             }
-        }, 300);
-    });
-}
+            element.classList.add('selected');
+
+            const layer = document.createElement('div');
+            featureImageMirror.appendChild(layer);
+
+            //layer.style.zIndex=zIndex++;
+            layer.style.background = `url('${element.getAttribute(
+                'data-featured-image',
+            )}')`;
+            layer.style.backgroundSize = `cover`;
+            layer.style.opacity = 0;
+            layer.style.filter = 'blur(20px) grayscale(20%) brightness(0.2)';
+
+            setImmediate(() => {
+                layer.style.opacity = 1;
+                layer.style.filter = 'blur(2px) grayscale(20%) brightness(0.2)';
+            });
+
+            setTimeout(() => {
+                const layers = Array.prototype.slice.call(
+                    featureImageMirror.children,
+                );
+                layers.pop();
+                for (const layer of layers) {
+                    layer.remove();
+                }
+            }, 300);
+        });
+    }
+};
 
 //featureImageMirror.style.background = `url('/images/default-background.jpg')`;
 //featureImageMirror.style.backgroundSize = `cover`;

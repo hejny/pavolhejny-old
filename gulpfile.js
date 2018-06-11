@@ -10,12 +10,11 @@ const getContent = require('./getContent');
 gulp.task('default', ['build']);
 
 gulp.task('build', function(callback) {
-    return gulpSequence('build-cleanup', [
-        'build-html',
-        'build-css',
-        'build-js',
-        'copy-images',
-    ])(callback);
+    return gulpSequence(
+        'build-cleanup',
+        ['build-html', 'build-css', 'build-js', 'copy-images'],
+        'build-finish',
+    )(callback);
 });
 
 function swallowError(error) {
@@ -32,6 +31,10 @@ gulp.task('build-cleanup', () => {
     return gulp.src('./dist/', { read: false }).pipe(gulpClean());
 });
 
+gulp.task('build-finish', () => {
+    require('fs').writeFileSync('./dist/CNAME', 'www.pavolhejny.com');
+});
+
 gulp.task('build-html', () => {
     const content = getContent();
     return eventStream.merge([
@@ -39,6 +42,12 @@ gulp.task('build-html', () => {
             .src('./src/templates/index.jade')
             .pipe(gulpJade({ pretty: true, locals: { content } }))
             .on('error', swallowError)
+            .pipe(gulp.dest('./dist/')),
+        gulp
+            .src('./src/templates/index.jade')
+            .pipe(gulpJade({ pretty: true, locals: { content } }))
+            .on('error', swallowError)
+            .pipe(gulpRename('404.html')) //todo better 404 page
             .pipe(gulp.dest('./dist/')),
         ...content.articles.map((article) =>
             gulp
