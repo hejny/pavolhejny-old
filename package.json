@@ -44,6 +44,7 @@
     "start": "npm run develop",
     "build": "gulp build",
     "develop": "gulp develop",
+    "predeploy": "gulp build",
     "deploy": "gh-pages -d dist",
     "content": "gulp content",
     "prettier": "prettier --config .prettierrc --write \"src/**/*.{jade,scss,js,md}\" \"*.js\" ",
