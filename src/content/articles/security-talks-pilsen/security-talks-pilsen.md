@@ -2,8 +2,7 @@
 
 <!--date:2018-06-12-->
 
-On tuesday 13th od june I was at very interesting event organized by TechHeaven.
-
+I was at security/crypto event organized by [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/).
 
 There were 3 takls:
 17:50 Vladimír Smitka - Lynt services s.r.o.

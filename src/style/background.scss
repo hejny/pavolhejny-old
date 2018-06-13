@@ -10,12 +10,10 @@
 
 .layer1 {
     z-index: 10;
-    
-    
+
     //background: url('./images/textures/norwegian_rose.png');
     //background-position: center;
     //filter: invert(1) grayscale(20%) brightness(1);
-            
 
     div {
         position: fixed;
@@ -26,12 +24,10 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        filter: blur(2px) grayscale(20%) brightness(0.2);
+        filter: blur(2px) grayscale(20%) brightness(0.3);
 
         transition: filter, opacity 300ms linear;
     }
-
-
 }
 .layer2 {
     position: absolute;

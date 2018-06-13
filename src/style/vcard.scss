@@ -72,3 +72,76 @@
         }
     }
 }
+
+.vcard-small {
+    @if $debug {
+        border: 1px dotted orange;
+    }
+
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.75);;
+
+    box-shadow: $color1 0 0 $highlight-normal;
+
+    .inner {
+        @if $debug {
+            border: 1px dotted orange;
+        }
+
+        display: inline-block;
+        max-width: 100%;
+
+        .name {
+            @if $debug {
+                border: 1px dotted orange;
+            }
+
+            display: inline-block;
+            margin: 5px;
+
+            .label {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+                display: inline-block;
+                text-decoration: none;
+                font-size: 1.6rem;
+                vertical-align: middle;
+            }
+
+            .avatar {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+                display: inline-block;
+                vertical-align: middle;
+                //margin-top: 0.25em;
+                //margin-bottom: 0.25em;
+
+                img {
+                    display: inline-block;
+                    width: 45px;
+                    height: 45px;
+                    margin-right: 0.5em;
+                    //max-width: 80%;
+
+                    border: 1px solid $color1; //todo to config
+                    border-radius: 1000px;
+
+                    box-shadow: $color1 0 0 $highlight-normal;
+                }
+            }
+
+            &:hover {
+                img {
+                    box-shadow: $color1 0 0 $highlight-selected;
+                }
+                color: $highlight-selected;
+            }
+        }
+    }
+}

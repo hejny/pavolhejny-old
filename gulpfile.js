@@ -72,7 +72,8 @@ gulp.task('build-css', () => {
 gulp.task('copy-images', () => {
     return eventStream.merge([
         gulp.src('src/**/*.jpg', { base: 'src' }).pipe(gulp.dest('./dist')),
-        gulp.src('src/**/*.png', { base: 'src' }).pipe(gulp.dest('./dist'))
+        gulp.src('src/**/*.png', { base: 'src' }).pipe(gulp.dest('./dist')),
+        gulp.src('src/**/*.svg', { base: 'src' }).pipe(gulp.dest('./dist')),
     ]);
 });
 
@@ -147,7 +148,7 @@ gulp.task('browser-sync', () => {
         server: {
             baseDir: './dist',
             serveStaticOptions: {
-                extensions: ['html']
+                extensions: ['html'],
             },
         },
         open: true,

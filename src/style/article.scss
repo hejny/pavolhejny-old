@@ -3,6 +3,8 @@ main.article {
         border: 1px dotted blue;
     }
 
+    margin-top: 100px;
+
     text-align: center;
     .inner {
         @if $debug {
@@ -12,5 +14,9 @@ main.article {
         display: inline-block;
         width: $timeline-width;
         max-width: 100%;
+
+        //margin: 20px;
+        //padding: 10px;
+        //background-color: rgba($color: white, $alpha: 0.8);
     }
 }

@@ -107,6 +107,14 @@
                             @if $debug {
                                 border: 1px dotted green;
                             }
+
+                            img {
+                                //position: absolute;
+                                height: 1em;
+
+                                top: 8px;
+                                margin-left: 10px;
+                            }
                         }
                     }
                 }
