@@ -70,7 +70,10 @@ gulp.task('build-css', () => {
 });
 
 gulp.task('copy-images', () => {
-    return gulp.src('src/**/*.jpg', { base: 'src' }).pipe(gulp.dest('./dist'));
+    return eventStream.merge([
+        gulp.src('src/**/*.jpg', { base: 'src' }).pipe(gulp.dest('./dist')),
+        gulp.src('src/**/*.png', { base: 'src' }).pipe(gulp.dest('./dist'))
+    ]);
 });
 
 const Webpack = require('webpack');

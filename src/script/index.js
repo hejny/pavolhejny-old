@@ -57,6 +57,7 @@ window.onload = () => {
             }
             element.classList.add('selected');
 
+            /*
             const layer = document.createElement('div');
             featureImageMirror.appendChild(layer);
 
@@ -82,6 +83,7 @@ window.onload = () => {
                     layer.remove();
                 }
             }, 300);
+            /**/
         });
     }
 };
