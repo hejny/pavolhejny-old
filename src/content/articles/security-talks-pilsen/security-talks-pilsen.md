@@ -4,13 +4,17 @@
 
 When I was at the Startup Weekend Pilsen I didn`t know that I will be back in Pilsen in a month at the security/crypto event organized by [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/).
 
-The whole event was held in 
+The whole event was held in beautifull place DEPO2015.
+
+![DEPO2015]()
 
 There were 3 talks:
 
 ## Security issues in web apps
 
-Vladimír Smitka shows interesting security mistakes eg. vulnerabilities when using target="\_blank". He continues with problems of uploading, keeping debugger on and keeping backup files from Vim and .git directory accessible from the network.
+Vladimír Smitka shows interesting security mistakes eg. vulnerabilities when using <code>target="\_blank"</code>. He continues with problems of uploading, keeping debugger, keeping backup files from Vim and .git directory accessible from the network and CSRF.
+
+It was very similar as my talk 2 months ago at ITNetwork meetup. I have written article<flag-cs/> about it.
 
 ## Cryptography
 
@@ -22,11 +26,7 @@ Jiří Vaněk told interesting cases of critical vulnerabilities in history, sto
 
 ---
 
-After that, there was a meal
-
-There are l
-
-for example 
+After that, there was a networking. I met there one of my friends from Startup Weekend Pilsen xxxx Žahour who is [creating hydrogen car]() and lot of other cool projects in hardware.
 
 
-Next day
+I have stayed at beautifull coworking space [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/). And next day Jan Steinbach (main organizer of thes event and CEO of [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/)) planned next events and hackathons. So I am looking forward to next cool events in Pilsen!
