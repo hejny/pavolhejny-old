@@ -49,14 +49,16 @@ gulp.task('build-html', () => {
             .on('error', swallowError)
             .pipe(gulpRename('404.html')) //todo better 404 page
             .pipe(gulp.dest('./dist/')),
-        ...content.articles.map((article) =>
-            gulp
-                .src(['./src/templates/article.jade'])
-                .pipe(gulpJade({ pretty: true, locals: { article } }))
-                .on('error', swallowError)
-                .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
-                .pipe(gulp.dest('./dist/')),
-        ),
+        ...content.articles
+            .filter((article) => article.isWritten)
+            .map((article) =>
+                gulp
+                    .src(['./src/templates/article.jade'])
+                    .pipe(gulpJade({ pretty: true, locals: { article } }))
+                    .on('error', swallowError)
+                    .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
+                    .pipe(gulp.dest('./dist/')),
+            ),
     ]);
 });
 
@@ -133,7 +135,8 @@ gulp.task('build-js', () => {
 
 gulp.task('content', function(callback) {
     console.log('\x1Bc');
-    console.log(getContent());
+    const { articles } = getContent();
+    console.log(articles.reverse());
 });
 
 ///--------------------------------------------------------

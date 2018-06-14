@@ -2,28 +2,31 @@
 
 <!--date:2018-06-12-->
 
-I was at security/crypto event organized by [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/).
+When I was at the Startup Weekend Pilsen I didn`t know that I will be back in Pilsen in a month at the security/crypto event organized by [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/).
 
-There were 3 takls:
-17:50 Vladimír Smitka - Lynt services s.r.o.
+The whole event was held in 
 
-## Common security issues
+There were 3 talks:
 
-Bezpečnost webů není jen obrana proti XSS a SQLi, důležité je domýšlet i dopady drobnějších a méně známých chyb. Podíváme se na HPP, XXE i zdánlivě banální problémy.
+## Security issues in web apps
 
-18:45 Pavel Škoda - Heureka.cz
+Vladimír Smitka shows interesting security mistakes eg. vulnerabilities when using target="\_blank". He continues with problems of uploading, keeping debugger on and keeping backup files from Vim and .git directory accessible from the network.
 
 ## Cryptography
 
-Povíme si něco o symetrickém a asymetrickém šifrování, zabrousíme trochu do historie a na závěr vám Pavel ukáže, kdy na kryptografii naráží ve svých projektech.
-/images/default-background.jpg
-19:35 Jiří Vaněk - Unicorn a.s.
-/IT ne-bezpečnost a její důsledky/
+Pavel Škoda showed the history of cryptography and differences between symmetric vs. asymmetric ciphers.
 
 ## IT (in)security
 
-Dávno jsme si zvykli na to, že IT a software je všude okolo nás, bez Internetu nedokážeme už ani vstát, natož pracovat. Tato závislost má i své stinné stránky. Porušení důvěrnosti, dostupnosti či integrity informací, které každodenně potřebujeme, může mít pro organizaci fatální následky. Jak IT bezpečnost uchopit, kde začít a kde skončit? O těchto i dalších tématech bude pojednávat tato přednáška.
+Jiří Vaněk told interesting cases of critical vulnerabilities in history, stories from penetration testing and how to do it better.
 
 ---
 
-After that thare was
+After that, there was a meal
+
+There are l
+
+for example 
+
+
+Next day

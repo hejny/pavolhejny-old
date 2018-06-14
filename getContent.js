@@ -70,6 +70,9 @@ module.exports = function() {
                 date[1] === 'now' ? undefined : date[1] || date[0],
             );
 
+            const isHidden = articleMarkdown.indexOf('<!--hidden-->') !== -1;
+            const isWritten = xpath.select('p', articleDom).length > 1;
+
             const images = glob.sync(path.dirname(articlesFile) + '/*.jpg');
 
             return {
@@ -101,6 +104,8 @@ module.exports = function() {
                 },
                 abstract,
                 content: articleHtml,
+                isHidden,
+                isWritten,
             };
         })
         .sort(
@@ -110,7 +115,7 @@ module.exports = function() {
 
     const years = [];
     let currentYear = { label: null };
-    for (const article of articles) {
+    for (const article of articles.filter((article) => !article.isHidden)) {
         if (article.dateTo.year() !== currentYear.label) {
             currentYear = {
                 label: article.dateTo.year(),

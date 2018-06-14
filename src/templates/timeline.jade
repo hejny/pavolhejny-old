@@ -23,6 +23,16 @@ div.timeline
                                 :verbatim
                                     !{article.abstract}
 
+                             if !article.isWritten
+                                div.preparing
+                                    .loader
+                                    span Preparing
+                                //a.button(href='/')
+                                    button
+                                        .loader
+                                        span Preparing
+
+                            //else 
                             //a.button(href='/')
                                 button ...Preparing...
                                 

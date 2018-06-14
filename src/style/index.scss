@@ -83,6 +83,23 @@ ul.clear {
     }
 }
 
+
+.loader {
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top: 3px solid $color1;
+    border-bottom: 3px solid $color1;
+    width: calc(1em - 3px);
+    height: calc(1em - 3px);
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
 @import 'background';
 @import 'vcard';
 @import 'timeline';
