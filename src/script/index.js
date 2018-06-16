@@ -1,4 +1,7 @@
 console.log('(cc) Pavol Hejný');
+import './components/place';
+import './components/person';
+import './components/flags';
 
 /*
 function generateNoise(element) {

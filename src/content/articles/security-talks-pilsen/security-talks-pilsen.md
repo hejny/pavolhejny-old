@@ -2,11 +2,11 @@
 
 <!--date:2018-06-12-->
 
-When I was at the Startup Weekend Pilsen I didn`t know that I will be back in Pilsen in a month at the security/crypto event organized by [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/).
+When I was at the [Startup Weekend Pilsen](/startup-weekend-pilsen-2018) I didn`t know that I will be back in Pilsen in a month at the security/crypto event organized by <place>TechHeaven</place>.
 
-The whole event was held in beautiful place DEPO2015.
+The whole event was held in beautiful place <place>DEPO2015</place>.
 
-![DEPO2015]()
+![DEPO2015](depo2015.jpg)
 
 There were 3 talks:
 
@@ -28,4 +28,4 @@ It was very similar to my talk 2 months ago at ITNetwork meetup. I have written 
 
 After that, there was a networking. I met there one of my friends from [Startup Weekend Pilsen](/startup-weekend-Pilsen-2018) <person>David Žahour</person> who is [creating hydrogen car](https://www.youtube.com/watch?v=LPE3o9neP0M) and a lot of other cool projects in hardware.
 
-I have stayed at beautifull coworking space [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/). And next day <person>Jan <!--Steinbach--><role>main organizer of thes event and CEO of <place>TechHeaven</place></role><person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!
+I have stayed at beautifull coworking space [![TechHeaven logo](/images/logos/techheaven-icon.svg) TechHeaven](https://techheaven.org/). And next day <person>Jan <!--Steinbach--><role>main organizer of this event and CEO of <place>TechHeaven</place></role></person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!

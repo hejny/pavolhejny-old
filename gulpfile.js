@@ -5,7 +5,11 @@ const gulpJade = require('gulp-jade');
 const gulpClean = require('gulp-clean');
 const gulpSequence = require('gulp-sequence');
 const eventStream = require('event-stream');
-const getContent = require('./getContent');
+
+function requireUncached(module){
+    delete require.cache[require.resolve(module)]
+    return require(module)
+}
 
 gulp.task('default', ['build']);
 
@@ -36,7 +40,7 @@ gulp.task('build-finish', () => {
 });
 
 gulp.task('build-html', () => {
-    const content = getContent();
+    const content = requireUncached('./getContent')();
     return eventStream.merge([
         gulp
             .src('./src/templates/index.jade')
@@ -50,7 +54,7 @@ gulp.task('build-html', () => {
             .pipe(gulpRename('404.html')) //todo better 404 page
             .pipe(gulp.dest('./dist/')),
         ...content.articles
-            .filter((article) => article.isWritten)
+            //.filter((article) => article.isWritten)
             .map((article) =>
                 gulp
                     .src(['./src/templates/article.jade'])
@@ -135,7 +139,7 @@ gulp.task('build-js', () => {
 
 gulp.task('content', function(callback) {
     console.log('\x1Bc');
-    const { articles } = getContent();
+    const { articles } = requireUncached('./getContent')();
     console.log(articles.reverse());
 });
 
@@ -156,12 +160,11 @@ gulp.task('browser-sync', () => {
         },
         open: true,
     });
-    gulp.watch('./src/**/*', [
+    gulp.watch(['./src/**/*','./getContent.js'], [
         'build',
-        () => {
-            browserSync.reload();
-        },
+        () => browserSync.reload(),
     ]);
+    
     //todo css reloading without reloading page
 });
 

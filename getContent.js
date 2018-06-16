@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const xpath = require('xpath');
 const moment = require('moment');
-const dom = require('xmldom').DOMParser;
+const DOMParser = require('xmldom').DOMParser;
 const markdown = require('markdown-it')({
     html: true, // Enable HTML tags in source
     xhtmlOut: true, // Use '/' to close single tags (<br />).
@@ -47,19 +47,52 @@ function baseName(str) {
     return ''; //todo better
 }*/
 
+
+
 module.exports = function() {
     const articlesFiles = glob.sync('./src/content/articles/**/*.md');
     const articles = articlesFiles
         .map((articlesFile) => {
+            //console.log(`Parsing ${articlesFile}`);
             const uri = baseName(articlesFile);
 
             const articleMarkdown = fs.readFileSync(articlesFile, 'utf8');
             const articleHtml = markdown.render(articleMarkdown);
-            const articleDom = new dom().parseFromString(articleHtml);
+            let problems = [];
+            const articleDom = new DOMParser({
+                locator:{},
+                errorHandler:{
+                    warning:(warning)=>problems.push(warning),
+                    error:(error)=>problems.push(error),
+                }
 
-            const title = xpath.select('h1', articleDom)[0].childNodes[0]
+            }).parseFromString(articleHtml);
+
+            if(problems.length){
+                console.warn("\x1b[41m");
+                console.warn(`There are ${problems.length} problems while parsing ${articlesFile}`);//todo show detail
+                console.warn("\x1b[43m","\x1b[30m");
+                for(const problem of problems){
+                    console.log(problem);
+                }
+                console.log("\x1b[47m");
+                console.log(articleHtml.split('\n').map((line,index)=>`[${index+1}] ${line}`).join('\n'));
+                console.log("\x1b[0m");
+            }
+            /*for(const place of xpath.select('//place', articleDom)){
+                place.setAttribute('a','a');
+                // /console.log('place',place);
+            }*/
+            //const articleHtml = articleHtmlRaw.toString();
+
+
+
+            const title = xpath.select('//h1', articleDom)[0].childNodes[0]
                 .nodeValue;
-            const abstract = xpath.select('p', articleDom)[0].toString();
+            const abstract = xpath.select('//p', articleDom)[0].toString();
+
+
+    
 
             const date = articleMarkdown
                 .split('<!--date:')[1]
@@ -73,7 +106,7 @@ module.exports = function() {
             const isHidden = articleMarkdown.indexOf('<!--hidden-->') !== -1;
             const isWritten = xpath.select('p', articleDom).length > 1;
 
-            const images = glob.sync(path.dirname(articlesFile) + '/*.jpg');
+            const images = glob.sync(path.dirname(articlesFile) + '/featured.jpg');
 
             return {
                 title,
@@ -106,6 +139,7 @@ module.exports = function() {
                 content: articleHtml,
                 isHidden,
                 isWritten,
+                isFinished: isWritten,
             };
         })
         .sort(

@@ -16,5 +16,21 @@ html(lang='en')
             .inner
               a.button(href='/')
                 button Home
+
+              img(src= article.featuredImages.front)
               :verbatim
                 !{article.content}
+
+                
+
+              if !article.isFinished
+
+                hr
+
+                p This article is not written yet. If you want to be notified when thare will be ready final version you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
+
+                form(action='https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&id=d6fc10835b', method='post', name='mc-embedded-subscribe-form', target='_blank')
+                      input(type='email', value='@', name='EMAIL')
+                      input(type='submit', value='Subscribe', name='subscribe')
+
+

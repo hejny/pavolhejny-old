@@ -18,5 +18,26 @@ main.article {
         //margin: 20px;
         //padding: 10px;
         //background-color: rgba($color: white, $alpha: 0.8);
+
+
+        code{
+            color: $color1;
+        }
+
+        person{
+            role{
+                margin-left: .3em;
+                //color: #ccc;
+                font-style: italic;
+                &::before{
+                    content: "(";
+                }
+                &::after{
+                    content: ")";
+                }
+            }
+            
+        }
+
     }
 }
