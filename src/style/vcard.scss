@@ -83,7 +83,10 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba($color: #000000, $alpha: 0.75);
+    //background-color: rgba($color: #000000, $alpha: 0.75);
+    background:url('/images/default-background.jpg');
+    background-size:cover;
+    background-position: 50% 30%;
 
     box-shadow: $color1 0 0 $highlight-normal;
 

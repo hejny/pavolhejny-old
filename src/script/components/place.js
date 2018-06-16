@@ -5,7 +5,7 @@ const places = [
     {
         name: 'TechHeaven',
         link: 'https://techheaven.org/',
-        icon: '/images/logos/techheaven-icon.svg'
+        //icon: '/images/logos/techheaven-icon.svg'
     },
     {
         name: 'DEPO2015',

@@ -3,7 +3,9 @@ main.article {
         border: 1px dotted blue;
     }
 
-    margin-top: 100px;
+    padding-top: 100px;
+
+    background-color: white;
 
     text-align: center;
     .inner {
@@ -14,14 +16,18 @@ main.article {
         display: inline-block;
         width: $timeline-width;
         max-width: 100%;
+        color: black;
 
         //margin: 20px;
         //padding: 10px;
         //background-color: rgba($color: white, $alpha: 0.8);
 
+        img{
+            max-width: 100%;
+        }
 
         code{
-            color: $color1;
+            color: #111;
         }
 
         person{
