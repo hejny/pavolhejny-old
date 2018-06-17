@@ -21,7 +21,7 @@ for(const placeElement of document.querySelectorAll('place')){
 
     if(place){
     placeElement.innerHTML=`
-    <a href="${place.link}">${place.icon?`<img src="${place.icon}" alt="${place.name} logo">`:''}${originalID}</a>
+    <a href="${place.link}">${(place.icon||null)?`<img src="${place.icon}" alt="${place.name} logo">`:''}${originalID}</a>
     `;
     }
 

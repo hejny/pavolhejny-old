@@ -3,7 +3,8 @@ main.article {
         border: 1px dotted blue;
     }
 
-    padding-top: 100px;
+    padding-top: 0px;
+    padding-bottom: 50px;
 
     background-color: white;
 
@@ -14,7 +15,7 @@ main.article {
         }
 
         display: inline-block;
-        width: $timeline-width;
+        width: $article-width;
         max-width: 100%;
         color: black;
 

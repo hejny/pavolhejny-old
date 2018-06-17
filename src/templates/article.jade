@@ -6,7 +6,7 @@ html(lang='en')
     include ./head
     body
 
-        //.layer.layer1#featured-image-mirror
+        .layer.layer1#featured-image-mirror
           div(style=`background:url('${article.featuredImages.back}');background-size:cover;`)
         .layer.layer2
 
@@ -14,7 +14,7 @@ html(lang='en')
 
           main.article
             .inner
-              a.button(href='/')
+              //a.button(href='/')
                 button Home
 
               img(src= article.featuredImages.front)
@@ -22,7 +22,8 @@ html(lang='en')
                 !{article.content}
 
                 
-              hr
+          footer
+            .inner
               if !article.isFinished
                 p This article is not written yet. If you want to be notified when thare will be ready final version you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
               else
