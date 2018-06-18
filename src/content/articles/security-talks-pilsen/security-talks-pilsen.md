@@ -13,7 +13,7 @@ There were 3 talks:
 
 <person>Vladimír Smitka</person> shows interesting security mistakes eg. vulnerabilities when using <code>target="\_blank"</code>. He continues with problems of uploading, keeping debugger, keeping backup files from Vim and .git directory accessible from the network and CSRF.
 
-It was very similar to my talk 2 months ago at ITNetwork meetup. I have written [article<flag-cs/>](https://www.itnetwork.cz/php/bezpecnost/jak-si-nechat-hacknout-webovou-aplikaci) about it.
+It was very similar to my talk 2 months ago at ITNetwork meetup. I have written [an article<flag-cs/>](https://www.itnetwork.cz/php/bezpecnost/jak-si-nechat-hacknout-webovou-aplikaci) about it.
 
 ## Cryptography
 
@@ -27,4 +27,4 @@ It was very similar to my talk 2 months ago at ITNetwork meetup. I have written 
 
 After that, there was a networking. I met there one of my friends from [Startup Weekend Pilsen](/startup-weekend-Pilsen-2018) <person>David Žahour</person> who is [creating hydrogen car](https://www.youtube.com/watch?v=LPE3o9neP0M) and a lot of other cool projects in hardware.
 
-I have stayed at beautifull coworking space <place>TechHeaven</place>. And next day <person>Jan <!--Steinbach--><role>main organizer of this event and CEO of <place>TechHeaven</place></role></person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!
+I have stayed at beautiful coworking space <place>TechHeaven</place>. And next day <person>Jan <!--Steinbach--><role>main organizer of this event and CEO of <place>TechHeaven</place></role></person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!

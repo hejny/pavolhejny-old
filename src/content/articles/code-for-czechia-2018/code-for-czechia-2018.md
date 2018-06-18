@@ -7,4 +7,4 @@
 
 <!--abstract-->
 
-We have created a paper and offline election calculator. It is the perfect tool to bring the debate about political topics to public places.
+We have created a paper and offline election calculator. It is the perfect tool to bring the debate about political topics in public places.
