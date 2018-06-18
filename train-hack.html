@@ -12,7 +12,7 @@ https://github.com/hejny/pavolhejny
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <!--link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.3/css/simple-line-icons.css">
     <link rel="shortcut icon" href="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=64&amp;r=pg&amp;d=mm ?&gt;">
     <!--script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=', crossorigin='anonymous')-->
@@ -54,42 +54,78 @@ https://github.com/hejny/pavolhejny
     <!--script(src='https://cdn.ampproject.org/v0.js', async='')-->
   </head>
   <body>
-    <div id="featured-image-mirror" class="layer layer1">
-      <div style="background:url('/images/default-background.jpg');background-size:cover;"></div>
-    </div>
+    <!--.layer.layer1#featured-image-mirror
+    div(style=`background:url('/images/default-background.jpg');background-size:cover;`)
+    //div(style=`background:url('${article.featuredImages.back}');background-size:cover;`)
+    -->
     <div class="layer layer2">
-      <div class="vcard">
-        <div class="inner"><a href="/" data-featured-image="/images/default-background.jpg" class="selectable avatar"><img src="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&amp;r=pg&amp;d=mm" alt="Pavol Hejný"></a>
-          <h1 class="name">Pavol Hejný</h1>
-          <h2 class="subname"><span class="meta">/^(</span><span class="text">web&nbsp;</span><span class="meta">)?(</span><span class="text">app&nbsp;</span><span class="meta">)?</span><span class="text">developer</span><span class="meta">$/</span></h2>
-          <div class="contacts"><a href="mailto:me@pavolhejny.com" target="_blank" title="Email"><i class="icon-envelope icons"></i></a><a href="https://github.com/hejny/" target="_blank" title="Github"><i class="icon-social-github icons"></i></a><a href="https://www.facebook.com/hejny" target="_blank" title="Facebook"><i class="icon-social-facebook icons"></i></a><a href="https://instagram.com/hejnypavol/" target="_blank" title="Instagram"><i class="icon-social-instagram icons"></i></a><a href="https://www.linkedin.com/in/hejny/" target="_blank" title="LinkedIn"><i class="icon-social-linkedin icons"></i></a>
-            <!--a(href='/media/data/pavol.hejny.vcf', target='_blank', title='VCard')
-            i.icon-credit-card.icons
-            
-            
-            -->
-          </div>
-        </div>
-        <!--.subname Web app developer-->
-        <!--    img(src='./images/logos/firefox.png', alt='🌍')-->
-        <!--.subname Game developer-->
-        <!--    img(src='./images/logos/games.png', alt='🎮')-->
-        <!--.subname Fractal artist-->
-        <!--    img(src='./images/logos/mandelbrot.png', alt='💗')-->
-        <!--.subname Crypto lover-->
-        <!--    img(src='./images/logos/bitcoin.png', alt='💛')-->
-        <!--    img(src='./images/logos/ethereum.png', alt='❤')  -->
-        <!--.subname(itemprop='jobTitle') Prague-->
-        <!--.subname(itemprop='jobTitle') Painting🖌🖍-->
-      </div>
+      <!--include ./vcard-small-->
       <main class="article">
-        <div class="inner"><a href="/" class="button">
-            <button>Home</button></a><h1>TrainHack</h1>
+        <div class="inner">
+          <!--a.button(href='/')
+          button Home
+          
+          
+          --><a href="/" class="sticker">
+            <div class="name"><i class="fas fa-home"></i></div>
+            <!--.name
+            .avatar
+                img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=45&r=pg&d=mm', alt='Pavol Hejný')
+            .label Pavol Hejný
+            
+            
+            --></a><img src="/content/articles/train-hack/featured.jpg">
+          <div class="top">
+            <div class="left">
+              <div class="name">written by <a href="/">Pavol Hejný</a></div>
+            </div>
+            <div class="right">
+              <div class="date">2017-11-24 – 2017-11-25</div>
+            </div>
+          </div>
+          <div class="text"><h1>TrainHack</h1>
 <!--date:2017-11-24--2017-11-25-->
-<p>Hackathon directly in the train during journey from Prague to Košice(Slovakia). We have programmed only during the ride.</p>
+<p>Hackathon directly in the train during the journey from Prague to Košice(Slovakia). We have programmed only during the ride.</p>
 
+
+            <hr>
+            <p>This article is not written yet. Subscribe to the newsletter and get a notification when it will be finished. Or/and you can <a href="https://fb.com/hejny">follow me on Facebook</a>.</p>
+            <form action="https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&amp;id=d6fc10835b" method="post" name="mc-embedded-subscribe-form" target="_blank">
+              <input id="newsletter" type="email" value="@" name="EMAIL">
+              <input type="submit" value="Subscribe" name="subscribe">
+            </form>
+          </div>
+          <div class="suggested"><a href="/towns">
+              <icon><i class="fas fa-arrow-left"></i></icon>
+              <div>Previous</div>
+              <div>Towns</div></a><a href="/">
+              <icon><i class="fas fa-home"></i></icon>
+              <div>Back </div>
+              <!--div= article.articleNext.title--></a><a href="/fake-hacks">
+              <icon><i class="fas fa-arrow-right"></i></icon>
+              <div>Next</div>
+              <div>FakeHacks</div></a>
+          </div>
+          <!--a.bottom(href='/')
+          .name
+            .avatar
+                img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=45&r=pg&d=mm', alt='Pavol Hejný')
+            .label Pavol Hejný
+          
+              
+          
+          -->
         </div>
       </main>
+      <!--footer
+      .inner
+        p Like this? If you want to be notified when thare will be other interesting events you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
+      
+      
+        form(action='https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&id=d6fc10835b', method='post', name='mc-embedded-subscribe-form', target='_blank')
+              input#newsletter(type='email', value='@', name='EMAIL')
+              input(type='submit', value='Subscribe', name='subscribe')
+      -->
     </div>
   </body>
 </html>

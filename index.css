@@ -1,7 +1,5 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #000;
-  color: white;
   text-align: center;
   padding: 0;
   margin: 0; }
@@ -16,29 +14,33 @@ a {
   a:hover {
     color: #ff8855; }
 
-.button {
-  display: inline-block;
-  box-shadow: #ff8855 0 0 5px;
-  border-radius: 3px;
-  cursor: pointer;
-  /*.fa {
-        margin-right: 4px;
-    }*/ }
-  .button:hover {
-    background-color: #ff8855;
-    box-shadow: #ff8855 0 0 15px; }
-  .button button {
+/*.button {
     display: inline-block;
-    border: none;
-    padding: 10px;
-    margin: 2px;
-    min-width: 100px;
-    font-size: 1.2rem;
+    box-shadow: $color1 0 0 $highlight-normal;
     border-radius: 3px;
-    background-color: rgba(255, 136, 85, 0.6);
-    color: white;
-    cursor: pointer; }
+    cursor: pointer;
 
+    &:hover {
+        background-color: $color1;
+        box-shadow: $color1 0 0 $highlight-selected;
+    }
+
+    button {
+        display: inline-block;
+        border: none;
+        //border: 1px solid black;
+        padding: 10px;
+        margin: 2px;
+        min-width: 100px;
+        font-size: 1.2rem;
+        border-radius: 3px;
+        //background-color: $color1;
+        background-color: rgba($color: $color1, $alpha: 0.6);
+        color: white;
+        cursor: pointer;
+    }
+
+}*/
 ul.clear {
   list-style: none;
   padding-left: 0; }
@@ -50,6 +52,44 @@ ul.clear {
   font-weight: normal; }
   .subname span.meta {
     color: #ff8855; }
+
+/*
+.loader {
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top: 3px solid $color1;
+    border-bottom: 3px solid $color1;
+    width: calc(1em - 3px);
+    height: calc(1em - 3px);
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+*/
+.fas {
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
+
+form {
+  display: block; }
+  form input {
+    padding: 10px;
+    margin: 0px;
+    font-size: 1.1rem;
+    border: none;
+    border: 1px solid #777;
+    box-shadow: #777 0 0 5px;
+    text-align: center;
+    background-color: white; }
+  form input[type='submit'] {
+    cursor: pointer; }
+    form input[type='submit']:hover {
+      color: white;
+      background-color: #ff8855;
+      border: 1px solid #ff8855;
+      box-shadow: #ff8855 0 0 15px; }
 
 .layer1,
 .layer2 {
@@ -70,7 +110,7 @@ ul.clear {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(2px) grayscale(20%) brightness(0.2);
+    filter: blur(2px) grayscale(20%) brightness(0.3);
     transition: filter, opacity 300ms linear; }
 
 .layer2 {
@@ -79,7 +119,8 @@ ul.clear {
   z-index: 20; }
 
 .vcard {
-  z-index: 100; }
+  z-index: 100;
+  color: white; }
   .vcard .inner {
     display: inline-block;
     width: 504px;
@@ -109,8 +150,6 @@ ul.clear {
       font-size: 1.25em;
       margin-top: 5px; }
     .vcard .inner .contacts {
-      background: url("./images/textures/norwegian_rose.png");
-      background-position: center;
       text-align: center; }
       .vcard .inner .contacts a {
         display: inline-block;
@@ -123,7 +162,8 @@ ul.clear {
 
 .timeline {
   z-index: 100;
-  text-align: center; }
+  text-align: center;
+  color: white; }
   .timeline .card .inner {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -207,6 +247,10 @@ ul.clear {
             padding-top: 10px; }
             .timeline .item .card .skeleton-outer .line .label.label-bellow .abstract {
               margin: 0; }
+              .timeline .item .card .skeleton-outer .line .label.label-bellow .abstract img {
+                height: 1em;
+                top: 8px;
+                margin-left: 10px; }
       .timeline .item .card.selected .skeleton-outer {
         opacity: 1;
         pointer-events: all; }
@@ -317,8 +361,206 @@ ul.clear {
         display: none; } }
 
 main.article {
+  padding-top: 0px;
+  min-height: 100vh;
+  background-color: #e6e6e6;
+  background: url("./images/textures/norwegian_rose.png");
+  background-position: center;
   text-align: center; }
   main.article .inner {
     display: inline-block;
-    width: 504px;
-    max-width: 100%; }
+    width: 704px;
+    max-width: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    overflow: hidden;
+    /*.bottom {
+            //display: none;
+            @if $debug {
+                border: 1px dotted orange;
+            }
+
+            display: block;
+            margin: 0;
+
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            //background-color: rgba($color: #000000, $alpha: 1);
+            background: url('/images/default-background.jpg');
+            background-size: cover;
+            background-position: 50% 25%;
+            color: white;
+
+            .name {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+
+                display: inline-block;
+
+                .label {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 1.6rem;
+                    vertical-align: middle;
+                }
+
+                .avatar {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    vertical-align: middle;
+                    //margin-top: 0.25em;
+                    //margin-bottom: 0.25em;
+
+                    img {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 0.5em;
+                        //max-width: 80%;
+
+                        border: 1px solid $color1; //todo to config
+                        border-radius: 1000px;
+
+                        box-shadow: $color1 0 0 $highlight-normal;
+                    }
+                }
+
+                &:hover {
+                    img {
+                        box-shadow: $color1 0 0 $highlight-selected;
+                    }
+                    color: $highlight-selected;
+                }
+            }
+        }*/ }
+    @media all and (max-width: 734px) {
+      main.article .inner {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        height: 100%; } }
+    main.article .inner .sticker {
+      display: block;
+      position: relative;
+      height: 0;
+      text-align: left; }
+      main.article .inner .sticker .name {
+        display: inline-block;
+        color: white;
+        background: url("/images/default-background-mini.jpg");
+        background-size: cover;
+        background-position: 50% 25%;
+        padding: 5px;
+        padding-top: 10px;
+        padding-left: 10px;
+        margin-top: -5px;
+        margin-left: -5px;
+        border-radius: 5px;
+        opacity: 0.8;
+        font-size: 1.3rem;
+        /*.label {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: $name-size;
+                    vertical-align: middle;
+                }
+    
+                .avatar {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    vertical-align: middle;
+                    //margin-top: 0.25em;
+                    //margin-bottom: 0.25em;
+    
+                    img {
+                        display: inline-block;
+                        width: $name-size;
+                        height: $name-size;
+                        //margin-right: 0.2em;
+                        //max-width: 80%;
+    
+                        //border: 1px solid $color1; //todo to config
+                        border-radius: 1000px;
+    
+                        //box-shadow: $color1 0 0 $highlight-normal;
+                    }
+                }*/
+        /*&:hover {
+                    img {
+                        box-shadow: $color1 0 0 $highlight-selected;
+                    }
+                    color: $highlight-selected;
+                }*/ }
+        main.article .inner .sticker .name:hover {
+          opacity: 1;
+          background-color: rgba(17, 17, 17, 0.7);
+          box-shadow: #ff8855 0 0 15px; }
+    main.article .inner .top {
+      color: #777;
+      padding-left: 5px;
+      padding-right: 5px; }
+      main.article .inner .top .left,
+      main.article .inner .top .right {
+        width: calc(50% - 5px);
+        display: inline-block; }
+      main.article .inner .top .left {
+        text-align: left; }
+      main.article .inner .top .right {
+        text-align: right; }
+    main.article .inner img {
+      max-width: 100%; }
+    main.article .inner .text {
+      padding: calc(5px + 5%);
+      padding-top: 30px;
+      padding-bottom: 50px;
+      font-size: 1.2rem; }
+      main.article .inner .text p {
+        text-align: justify; }
+      main.article .inner .text code {
+        color: #111; }
+      main.article .inner .text hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        border-top: 1px solid #777; }
+      main.article .inner .text a {
+        white-space: nowrap; }
+        main.article .inner .text a .fa-external-link-alt {
+          vertical-align: top;
+          margin: 0;
+          font-size: 0.5em; }
+      main.article .inner .text flag-cs {
+        display: inline-block;
+        margin-left: 3px; }
+      main.article .inner .text person role {
+        margin-left: 0.3em;
+        font-style: italic; }
+        main.article .inner .text person role::before {
+          content: '('; }
+        main.article .inner .text person role::after {
+          content: ')'; }
+    main.article .inner .suggested {
+      padding-bottom: 10px; }
+      main.article .inner .suggested a {
+        display: inline-block;
+        width: calc(33% - 5px);
+        vertical-align: top; }
