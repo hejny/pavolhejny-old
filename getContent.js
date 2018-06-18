@@ -160,9 +160,9 @@ module.exports = function() {
                 article1.dateTo.isBefore(article2.dateTo) ? 1 : -1,
         );
 
-    articles.forEach((article,articleIndex)=>{
-        article.articlePrevious = articles[articleIndex+1]||null;
-        article.articleNext = articles[articleIndex-1]||null;
+    articles.forEach((article, articleIndex) => {
+        article.articlePrevious = articles[articleIndex + 1] || null;
+        article.articleNext = articles[articleIndex - 1] || null;
     });
 
     const years = [];

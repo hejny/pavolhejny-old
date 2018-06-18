@@ -13,6 +13,14 @@ const people = [
         name: 'Pavel Koenig',
         link: 'https://www.linkedin.com/in/pavelkoenig/',
     },
+    {
+        name: 'Max Kozlov',
+        link: 'https://www.linkedin.com/in/themaxkozlov/',
+    },
+    {
+        name: 'Jan Steinbach',
+        link: 'https://www.linkedin.com/in/honzasteinbach/',
+    },
 ];
 
 export function processPeople() {
@@ -21,9 +29,13 @@ export function processPeople() {
         const person = findInLibrary(originalID, people);
 
         if (person) {
+            const [originalIDName, originalIDRole] = originalID.split('<role>');
+
             personElement.innerHTML = `
-        <a href="${person.link}"> ${originalID}</a>
-        `;
+                <a href="${person.link}"> ${originalIDName}</a>${
+                originalIDRole ? '<role>' + originalIDRole : ''
+            }
+            `;
         }
     }
 }

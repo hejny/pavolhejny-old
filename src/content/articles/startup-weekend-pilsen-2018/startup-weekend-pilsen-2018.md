@@ -6,8 +6,8 @@ Another Startup Weekend - this time I did not participate as a competitor, but a
 
 ---
 
-Long time I don`t think that I will participate in this event because it was only for students.
-When <person>Max</person> mentioned to me that he will be at next Startup Weekend in Pilsen I knew that I should be there too. I have written <person>Pavel Koenig<role>main organizer</role></person> and we have
+Long time I don't think that I will participate in this event because it was only for students.
+When <person>Max<!--Kozlov--></person> mentioned to me that he will be at next Startup Weekend in Pilsen I knew that I should be there too. I have written <person>Pavel Koenig<role>main organizer</role></person> and we have
 agreed that I will be there as org.
 
 <!--not-finished-->

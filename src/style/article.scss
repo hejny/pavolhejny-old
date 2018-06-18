@@ -187,6 +187,20 @@ main.article {
                 border-top: 1px solid #777;
             }
 
+            a {
+                white-space: nowrap;
+                .fa-external-link-alt {
+                    vertical-align: top;
+                    margin: 0;
+                    font-size: 0.5em;
+                }
+            }
+
+            flag-cs {
+                display: inline-block;
+                margin-left: 3px;
+            }
+
             person {
                 role {
                     margin-left: 0.3em;
@@ -202,17 +216,14 @@ main.article {
             }
         }
 
-
-        .suggested{
-
+        .suggested {
             @if $debug {
                 border: 1px dotted orange;
             }
 
+            padding-bottom: 10px;
 
-           padding-bottom: 10px;
-
-            a{
+            a {
                 display: inline-block;
                 width: calc(33% - 5px);
 
@@ -221,14 +232,9 @@ main.article {
                 @if $debug {
                     border: 1px dotted orange;
                 }
-               
             }
-
         }
 
-
-
-        
         /*.bottom {
             //display: none;
             @if $debug {
