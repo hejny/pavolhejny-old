@@ -55,7 +55,24 @@ html(lang='en')
                     input(type='submit', value='Subscribe', name='subscribe')
 
 
-              //a.bottom(href='/',data-featured-image='/images/default-background.jpg')
+
+              .suggested
+                if article.articlePrevious
+                  a(href='/'+article.articlePrevious.uri)
+                    icon <i class="fas fa-arrow-left"></i>
+                    div Previous
+                    div= article.articlePrevious.title
+                a(href='/')
+                  icon <i class="fas fa-home"></i>
+                  div Back 
+                  //div= article.articleNext.title
+                if article.articleNext
+                  a(href='/'+article.articleNext.uri)
+                    icon <i class="fas fa-arrow-right"></i>
+                    div Next
+                    div= article.articleNext.title
+
+              //a.bottom(href='/')
                 .name
                   .avatar
                       img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=45&r=pg&d=mm', alt='Pavol Hejný')

@@ -202,7 +202,34 @@ main.article {
             }
         }
 
-        .bottom {
+
+        .suggested{
+
+            @if $debug {
+                border: 1px dotted orange;
+            }
+
+
+            margin-bottom: 10px;
+
+            a{
+                display: inline-block;
+                width: calc(33% - 5px);
+
+                vertical-align: top;
+
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+               
+            }
+
+        }
+
+
+
+        
+        /*.bottom {
             //display: none;
             @if $debug {
                 border: 1px dotted orange;
@@ -268,6 +295,6 @@ main.article {
                     color: $highlight-selected;
                 }
             }
-        }
+        }*/
     }
 }
