@@ -60,7 +60,7 @@ main.article {
                 color: white;
 
                 //background-color: rgba($color: #111, $alpha: 0.3);
-                background: url('/images/default-background.jpg');
+                background: url('/images/default-background-mini.jpg');
                 background-size: cover;
                 background-position: 50% 25%;
 
@@ -163,7 +163,7 @@ main.article {
         }
 
         .text {
-            padding: calc(5px + 5vw);
+            padding: calc(5px + 5%);
             padding-top: 30px;
             padding-bottom: 50px;
 
@@ -210,7 +210,7 @@ main.article {
             }
 
 
-            margin-bottom: 10px;
+           padding-bottom: 10px;
 
             a{
                 display: inline-block;

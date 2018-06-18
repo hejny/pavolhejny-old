@@ -4,6 +4,9 @@ export function processLinks() {
         if (!element.classList.contains('pure')) {
             element.innerHTML +=
                 '<i class="fas fa-external-link-alt" aria-hidden="true"></i>';
+
+            element.setAttribute('rel','noopener noreferrer');
+            element.setAttribute('target','blank');
         }
     }
 }
