@@ -6,33 +6,70 @@ html(lang='en')
     include ./head
     body
 
-        .layer.layer1#featured-image-mirror
-          div(style=`background:url('${article.featuredImages.back}');background-size:cover;`)
+        //.layer.layer1#featured-image-mirror
+          div(style=`background:url('/images/default-background.jpg');background-size:cover;`)
+          //div(style=`background:url('${article.featuredImages.back}');background-size:cover;`)
         .layer.layer2
 
-          include ./vcard-small
+          //include ./vcard-small
 
           main.article
             .inner
               //a.button(href='/')
                 button Home
 
+
+              a.sticker(href='/')
+                .name <i class="fas fa-home"></i>
+                //.name
+                    .avatar
+                        img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=45&r=pg&d=mm', alt='Pavol Hejný')
+                    .label Pavol Hejný
+
+
               img(src= article.featuredImages.front)
-              :verbatim
-                !{article.content}
 
+              .top
+                .left
+                  .name written by <a href="/">Pavol Hejný</a>
+                .right
+                  .date= article.dateLabel
+
+
+          
+
+
+              
+              .text
+                :verbatim
+                  !{article.content}
+
+                hr
+                if !article.isFinished
+                  p This article is not written yet. If you want to be notified when thare will be ready final version you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
+                else
+                   p Like this? If you want to be notified when thare will be other interesting events you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
+
+                form(action='https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&id=d6fc10835b', method='post', name='mc-embedded-subscribe-form', target='_blank')
+                    input#newsletter(type='email', value='@', name='EMAIL')
+                    input(type='submit', value='Subscribe', name='subscribe')
+
+
+              //a.bottom(href='/',data-featured-image='/images/default-background.jpg')
+                .name
+                  .avatar
+                      img(src='https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=45&r=pg&d=mm', alt='Pavol Hejný')
+                  .label Pavol Hejný
+
+                    
                 
-          footer
+          //footer
             .inner
-              if !article.isFinished
-                p This article is not written yet. If you want to be notified when thare will be ready final version you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
-              else
-                p Like this? If you want to be notified when thare will be other interesting events you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
-
+              p Like this? If you want to be notified when thare will be other interesting events you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
 
 
               form(action='https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&id=d6fc10835b', method='post', name='mc-embedded-subscribe-form', target='_blank')
-                    input(type='email', value='@', name='EMAIL')
+                    input#newsletter(type='email', value='@', name='EMAIL')
                     input(type='submit', value='Subscribe', name='subscribe')
 
 

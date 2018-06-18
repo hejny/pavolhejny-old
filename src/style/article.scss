@@ -4,9 +4,13 @@ main.article {
     }
 
     padding-top: 0px;
-    padding-bottom: 50px;
+    //padding-bottom: 50px;
+    min-height: 100vh;
 
-    background-color: white;
+    background-color: darken(#ffffff, 10%);
+    background: url('./images/textures/norwegian_rose.png');
+    //background: url('./images/pattern.png');
+    background-position: center;
 
     text-align: center;
     .inner {
@@ -17,34 +21,253 @@ main.article {
         display: inline-block;
         width: $article-width;
         max-width: 100%;
+        //min-height: calc( 100vh - 200px );
+        //min-height: 100vh;
+        background-color: white;
+        box-shadow: rgba($color: #000000, $alpha: 0.5) 0 0 10px;
         color: black;
+
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+
+        @media all and (max-width: $article-width + 30px) {
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         //margin: 20px;
         //padding: 10px;
         //background-color: rgba($color: white, $alpha: 0.8);
 
-        img{
+        overflow: hidden;
+
+        .sticker {
+            display: block;
+            position: relative;
+            height: 0;
+
+            text-align: left;
+
+            .name {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+
+                display: inline-block;
+
+                color: white;
+
+                //background-color: rgba($color: #111, $alpha: 0.3);
+                background: url('/images/default-background.jpg');
+                background-size: cover;
+                background-position: 50% 25%;
+
+                $sticker-radius: 5px;
+                $sticker-padding: 5px;
+                $name-size: 1.3rem;
+
+                padding: $sticker-padding;
+                padding-top: $sticker-padding + $sticker-radius;
+                padding-left: $sticker-padding + $sticker-radius;
+                margin-top: -$sticker-radius;
+                margin-left: -$sticker-radius;
+                border-radius: $sticker-radius;
+
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                    //color: $color1;
+                    background-color: rgba($color: #111, $alpha: 0.7);
+                    box-shadow: $color1 0 0 $highlight-selected;
+                }
+
+                font-size: $name-size;
+
+                /*.label {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: $name-size;
+                    vertical-align: middle;
+                }
+    
+                .avatar {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    vertical-align: middle;
+                    //margin-top: 0.25em;
+                    //margin-bottom: 0.25em;
+    
+                    img {
+                        display: inline-block;
+                        width: $name-size;
+                        height: $name-size;
+                        //margin-right: 0.2em;
+                        //max-width: 80%;
+    
+                        //border: 1px solid $color1; //todo to config
+                        border-radius: 1000px;
+    
+                        //box-shadow: $color1 0 0 $highlight-normal;
+                    }
+                }*/
+
+                /*&:hover {
+                    img {
+                        box-shadow: $color1 0 0 $highlight-selected;
+                    }
+                    color: $highlight-selected;
+                }*/
+            }
+        }
+
+        .top {
+            //display: none;
+            @if $debug {
+                border: 1px dotted orange;
+            }
+            color: #777;
+            padding-left: 5px;
+            padding-right: 5px;
+
+            .left,
+            .right {
+                //margin: 5px;
+                width: calc(50% - 5px);
+                display: inline-block;
+            }
+
+            .left {
+                text-align: left;
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+            }
+            .right {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+                text-align: right;
+            }
+        }
+
+        img {
             max-width: 100%;
         }
 
-        code{
-            color: #111;
-        }
+        .text {
+            padding: calc(5px + 5vw);
+            padding-top: 30px;
+            padding-bottom: 50px;
 
-        person{
-            role{
-                margin-left: .3em;
-                //color: #ccc;
-                font-style: italic;
-                &::before{
-                    content: "(";
-                }
-                &::after{
-                    content: ")";
+            font-size: 1.2rem;
+
+            p {
+                text-align: justify;
+            }
+
+            code {
+                color: #111;
+            }
+
+            hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border: none;
+                border-top: 1px solid #777;
+            }
+
+            person {
+                role {
+                    margin-left: 0.3em;
+                    //color: #ccc;
+                    font-style: italic;
+                    &::before {
+                        content: '(';
+                    }
+                    &::after {
+                        content: ')';
+                    }
                 }
             }
-            
         }
 
+        .bottom {
+            //display: none;
+            @if $debug {
+                border: 1px dotted orange;
+            }
+
+            display: block;
+            margin: 0;
+
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            //background-color: rgba($color: #000000, $alpha: 1);
+            background: url('/images/default-background.jpg');
+            background-size: cover;
+            background-position: 50% 25%;
+            color: white;
+
+            .name {
+                @if $debug {
+                    border: 1px dotted orange;
+                }
+
+                display: inline-block;
+
+                .label {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 1.6rem;
+                    vertical-align: middle;
+                }
+
+                .avatar {
+                    @if $debug {
+                        border: 1px dotted orange;
+                    }
+                    display: inline-block;
+                    vertical-align: middle;
+                    //margin-top: 0.25em;
+                    //margin-bottom: 0.25em;
+
+                    img {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 0.5em;
+                        //max-width: 80%;
+
+                        border: 1px solid $color1; //todo to config
+                        border-radius: 1000px;
+
+                        box-shadow: $color1 0 0 $highlight-normal;
+                    }
+                }
+
+                &:hover {
+                    img {
+                        box-shadow: $color1 0 0 $highlight-selected;
+                    }
+                    color: $highlight-selected;
+                }
+            }
+        }
     }
 }

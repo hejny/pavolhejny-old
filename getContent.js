@@ -47,8 +47,6 @@ function baseName(str) {
     return ''; //todo better
 }*/
 
-
-
 module.exports = function() {
     const articlesFiles = glob.sync('./src/content/articles/**/*.md');
     const articles = articlesFiles
@@ -60,24 +58,32 @@ module.exports = function() {
             const articleHtml = markdown.render(articleMarkdown);
             let problems = [];
             const articleDom = new DOMParser({
-                locator:{},
-                errorHandler:{
-                    warning:(warning)=>problems.push(warning),
-                    error:(error)=>problems.push(error),
-                }
-
+                locator: {},
+                errorHandler: {
+                    warning: (warning) => problems.push(warning),
+                    error: (error) => problems.push(error),
+                },
             }).parseFromString(articleHtml);
 
-            if(problems.length){
-                console.warn("\x1b[41m");
-                console.warn(`There are ${problems.length} problems while parsing ${articlesFile}`);//todo show detail
-                console.warn("\x1b[43m","\x1b[30m");
-                for(const problem of problems){
+            if (problems.length) {
+                console.warn('\x1b[41m');
+                console.warn(
+                    `There are ${
+                        problems.length
+                    } problems while parsing ${articlesFile}`,
+                ); //todo show detail
+                console.warn('\x1b[43m', '\x1b[30m');
+                for (const problem of problems) {
                     console.log(problem);
                 }
-                console.log("\x1b[47m");
-                console.log(articleHtml.split('\n').map((line,index)=>`[${index+1}] ${line}`).join('\n'));
-                console.log("\x1b[0m");
+                console.log('\x1b[47m');
+                console.log(
+                    articleHtml
+                        .split('\n')
+                        .map((line, index) => `[${index + 1}] ${line}`)
+                        .join('\n'),
+                );
+                console.log('\x1b[0m');
             }
             /*for(const place of xpath.select('//place', articleDom)){
                 place.setAttribute('a','a');
@@ -85,14 +91,9 @@ module.exports = function() {
             }*/
             //const articleHtml = articleHtmlRaw.toString();
 
-
-
             const title = xpath.select('//h1', articleDom)[0].childNodes[0]
                 .nodeValue;
             const abstract = xpath.select('//p', articleDom)[0].toString();
-
-
-    
 
             const date = articleMarkdown
                 .split('<!--date:')[1]
@@ -103,16 +104,28 @@ module.exports = function() {
                 date[1] === 'now' ? undefined : date[1] || date[0],
             );
 
+            //const DATE_FORMAT = 'YYYY-MM-DD';
+            //const dateLabelFrom = dateFrom.format(DATE_FORMAT);
+            //const dateLabelTo = dateTo.format(DATE_FORMAT);
+            //const dateLabel = dateLabelFrom===dateLabelTo?dateLabelFrom:`${dateLabelFrom} – ${dateLabelTo}`;
+            const dateLabel = date.join(' – ');
+
             const isHidden = articleMarkdown.indexOf('<!--hidden-->') !== -1;
             const isWritten = xpath.select('p', articleDom).length > 1;
+            const isFinished =
+                isWritten &&
+                articleMarkdown.indexOf('<!--not-finished-->') === -1;
 
-            const images = glob.sync(path.dirname(articlesFile) + '/featured.jpg');
+            const images = glob.sync(
+                path.dirname(articlesFile) + '/featured.jpg',
+            );
 
             return {
                 title,
                 uri,
                 dateFrom,
                 dateTo,
+                dateLabel,
                 innerLabel:
                     dateFrom.year() === dateTo.year()
                         ? null
@@ -139,7 +152,7 @@ module.exports = function() {
                 content: articleHtml,
                 isHidden,
                 isWritten,
-                isFinished: isWritten,
+                isFinished,
             };
         })
         .sort(

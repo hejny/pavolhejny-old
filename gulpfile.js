@@ -6,9 +6,9 @@ const gulpClean = require('gulp-clean');
 const gulpSequence = require('gulp-sequence');
 const eventStream = require('event-stream');
 
-function requireUncached(module){
-    delete require.cache[require.resolve(module)]
-    return require(module)
+function requireUncached(module) {
+    delete require.cache[require.resolve(module)];
+    return require(module);
 }
 
 gulp.task('default', ['build']);
@@ -160,11 +160,11 @@ gulp.task('browser-sync', () => {
         },
         open: true,
     });
-    gulp.watch(['./src/**/*','./getContent.js'], [
-        'build',
-        () => browserSync.reload(),
-    ]);
-    
+    gulp.watch(
+        ['./src/**/*', './getContent.js'],
+        ['build', () => browserSync.reload()],
+    );
+
     //todo css reloading without reloading page
 });
 

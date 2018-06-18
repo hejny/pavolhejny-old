@@ -23,10 +23,10 @@ div.timeline
                                 :verbatim
                                     !{article.abstract}
 
-                             if !article.isWritten
+                             if !article.isFinished
                                 div.preparing
-                                    .loader
-                                    span Preparing
+                                    <i class="fas fa-pencil-alt"></i>
+                                    span This article is not finished yet.
                                 //a.button(href='/')
                                     button
                                         .loader

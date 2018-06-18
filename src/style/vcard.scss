@@ -88,14 +88,12 @@
     //background-size:cover;
     //background-position: 50% 30%;
 
-
     box-shadow: $color1 0 0 $highlight-normal;
 
     .inner {
         @if $debug {
             border: 1px dotted orange;
         }
-
 
         display: inline-block;
         max-width: 100%;

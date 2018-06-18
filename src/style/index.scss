@@ -83,7 +83,7 @@ ul.clear {
     }
 }
 
-
+/*
 .loader {
     border: 3px solid transparent;
     border-radius: 50%;
@@ -97,8 +97,12 @@ ul.clear {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+*/
 
-
+.fas {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
 
 @import 'background';
 @import 'vcard';
