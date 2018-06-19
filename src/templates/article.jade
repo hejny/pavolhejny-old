@@ -6,6 +6,10 @@ html(lang='en')
     head
       title= article.title + ' | Pavol Hejný'
       meta(name='description', content=article.abstractText )
+      meta(name='og:title', content= article.title)
+      meta(name='og:url', content= 'https://www.pavolhejny.com/'+article.uri)
+      meta(name='og:image', content= 'https://www.pavolhejny.com'+article.featuredImages.front)
+      meta(name='og:description', content= article.abstractText)
       include ./head
     body
 
