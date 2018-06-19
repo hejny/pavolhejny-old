@@ -17,7 +17,6 @@ It was very similar to my talk 2 months ago at ITNetwork meetup. I have written 
 
 [More<flag-cs/>](https://www.az-webovka.cz/techheaven-security-kryptografie-1-3/)
 
-
 ## Cryptography
 
 <person>Pavel Škoda</person> showed the history of cryptography and differences between symmetric vs. asymmetric ciphers.

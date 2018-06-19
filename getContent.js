@@ -150,7 +150,7 @@ module.exports = function() {
                     back: images[0].split('./src/').join('/'),
                 },
                 abstract,
-                abstractText: sanitizeHtml(abstract,{allowedTags:[]}),
+                abstractText: sanitizeHtml(abstract, { allowedTags: [] }),
                 content: articleHtml,
                 isHidden,
                 isWritten,
