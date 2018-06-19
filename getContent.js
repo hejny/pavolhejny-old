@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const xpath = require('xpath');
 const moment = require('moment');
+const sanitizeHtml = require('sanitize-html');
 const DOMParser = require('xmldom').DOMParser;
 const markdown = require('markdown-it')({
     html: true, // Enable HTML tags in source
@@ -149,6 +150,7 @@ module.exports = function() {
                     back: images[0].split('./src/').join('/'),
                 },
                 abstract,
+                abstractText: sanitizeHtml(abstract,{allowedTags:[]}),
                 content: articleHtml,
                 isHidden,
                 isWritten,

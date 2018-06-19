@@ -3,7 +3,10 @@ doctype html
   (cc) Pavol Hejný
   https://github.com/hejny/pavolhejny
 html(lang='en')
-    include ./head
+    head
+      title= article.title + ' | Pavol Hejný'
+      meta(name='description', content=article.abstractText )
+      include ./head
     body
 
         //.layer.layer1#featured-image-mirror

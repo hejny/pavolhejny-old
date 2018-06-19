@@ -3,7 +3,7 @@ import { findInLibrary } from '../findInLibrary';
 const people = [
     {
         name: 'David Žahour',
-        link: 'https://www.facebook.com/david.pqe?ref=br_rs',
+        link: 'https://www.facebook.com/isouesense/',
     },
     {
         name: 'Vladimír Smitka',
