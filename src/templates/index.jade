@@ -3,13 +3,16 @@ doctype html
   (cc) Pavol Hejný
   https://github.com/hejny/pavolhejny
 html(lang='en')
-    head
+    head(prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#')
       title Pavol Hejný
-      meta(name='description', content='WebApp developer🌍 • Game developer🎮 • Fractal💗 • Crypto💛')
-      meta(property='og:title', content='Pavol Hejný')
-      meta(property='og:url', content='https://www.pavolhejny.com/')
-      meta(property='og:image', content='https://www.pavolhejny.com/images/default-background.jpg')
-      meta(property='og:description', content='WebApp developer🌍 • Game developer🎮 • Fractal💗 • Crypto💛')
+      meta(property='og:description', content='WebApp developer🌍 • Game developer🎮 • Fractal💗 • Crypto💛')/
+      meta(property='og:type', content='profile')/
+      meta(property='profile:first_name', content='Pavol')/
+      meta(property='profile:last_name', content='Hejný')/
+      meta(property='profile:gender', content='male')/
+      meta(property='og:title', content='Pavol Hejný')/
+      meta(property='og:url', content='https://www.pavolhejny.com/')/
+      meta(property='og:image', content='https://www.pavolhejny.com/images/default-background.jpg')/
       script(type='application/ld+json').
         {
             "@context": "http://schema.org/",

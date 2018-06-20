@@ -170,7 +170,7 @@ main.article {
             font-size: 1.2rem;
 
             p {
-                text-align: justify;
+                text-align: left;
             }
 
             code {
@@ -179,8 +179,8 @@ main.article {
 
             hr {
                 display: block;
-                margin-top: 0.5em;
-                margin-bottom: 0.5em;
+                margin-top: 2em;
+                margin-bottom: 2em;
                 margin-left: auto;
                 margin-right: auto;
                 border: none;
@@ -216,21 +216,37 @@ main.article {
             }
         }
 
+        form{
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+
         .suggested {
+            
             @if $debug {
                 border: 1px dotted orange;
             }
 
-            padding-bottom: 10px;
+            border-top: 1px solid #ccc;
+            //padding-bottom: 10px;
 
             a {
                 display: inline-block;
-                width: calc(33% - 5px);
+                width: calc(33% - 80px);
+                height: 100%;
+                padding: 30px;
 
                 vertical-align: top;
 
                 @if $debug {
                     border: 1px dotted orange;
+                }
+
+                border: 1px dotted orange;
+                border-left: 1px solid #ccc;
+
+                &:first-child{
+                    border-left: none;
                 }
             }
         }

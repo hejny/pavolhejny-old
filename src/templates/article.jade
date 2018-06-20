@@ -3,13 +3,18 @@ doctype html
   (cc) Pavol Hejný
   https://github.com/hejny/pavolhejny
 html(lang='en')
-    head
+    head(prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#')
       title= article.title + ' | Pavol Hejný'
-      meta(property='description', content=article.abstractText )
-      meta(property='og:title', content= article.title)
-      meta(property='og:url', content= 'https://www.pavolhejny.com/'+article.uri)
-      meta(property='og:image', content= 'https://www.pavolhejny.com'+article.featuredImages.front)
-      meta(property='og:description', content= article.abstractText)
+      meta(property='og:type', content='article')/
+      meta(property='og:description', content=article.abstractText )/
+      //meta(property='article:published_time', content= article.abstractText)/
+      //meta(property='article:modified_time', content= article.abstractText)/
+      meta(property='article:author', content= ['Pavol Hejný'])/
+      meta(property='article:section', content= article.abstractText)/
+      //meta(property='article:tag', content= article.abstractText)/
+      meta(property='og:title', content= article.title)/
+      meta(property='og:url', content= 'https://www.pavolhejny.com/'+article.uri)/
+      meta(property='og:image', content= 'https://www.pavolhejny.com'+article.featuredImages.front)/
       include ./head
     body
 
