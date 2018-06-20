@@ -216,37 +216,45 @@ main.article {
             }
         }
 
-        form{
+        form {
             margin-top: 60px;
             margin-bottom: 30px;
         }
 
         .suggested {
-            
             @if $debug {
-                border: 1px dotted orange;
+                border: 1px dotted rgb(72, 255, 0);
             }
 
             border-top: 1px solid #ccc;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            //align-content: center;
+            //align-items: stretch;
+
             //padding-bottom: 10px;
 
             a {
-                display: inline-block;
-                width: calc(33% - 80px);
-                height: 100%;
+                display: block;
+                width: 33%;
+                //height: 100%;
                 padding: 30px;
-
-                vertical-align: top;
 
                 @if $debug {
                     border: 1px dotted orange;
                 }
 
-                border: 1px dotted orange;
                 border-left: 1px solid #ccc;
 
-                &:first-child{
+                &:first-child {
                     border-left: none;
+                }
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
                 }
             }
         }
