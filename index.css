@@ -531,13 +531,13 @@ main.article {
       padding-bottom: 50px;
       font-size: 1.2rem; }
       main.article .inner .text p {
-        text-align: justify; }
+        text-align: left; }
       main.article .inner .text code {
         color: #111; }
       main.article .inner .text hr {
         display: block;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 2em;
+        margin-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
         border: none;
@@ -558,9 +558,21 @@ main.article {
           content: '('; }
         main.article .inner .text person role::after {
           content: ')'; }
+    main.article .inner form {
+      margin-top: 60px;
+      margin-bottom: 30px; }
     main.article .inner .suggested {
-      padding-bottom: 10px; }
+      border-top: 1px solid #ccc;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center; }
       main.article .inner .suggested a {
-        display: inline-block;
-        width: calc(33% - 5px);
-        vertical-align: top; }
+        display: block;
+        width: 33%;
+        padding: 30px;
+        border-left: 1px solid #ccc; }
+        main.article .inner .suggested a:first-child {
+          border-left: none; }
+        main.article .inner .suggested a:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
