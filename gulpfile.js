@@ -184,3 +184,47 @@ gulp.task('deploy', (done) => {
         },
     );
 });
+
+///--------------------------------------------------------
+const readline = require('readline');
+const moment = require('moment');
+const fs = require('fs');
+
+gulp.task('article', function(callback) {
+    console.log('\x1Bc');
+
+    const readlineInterface = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    //todo as promise
+    readlineInterface.question(
+        'URI of article eg.: measurecamp-bratislava-2018? ',
+        (answer) => {
+            //console.log(`Thank you for your valuable feedback: ${answer}`);
+
+            const uri = answer;
+            const articleDir = `./src/content/articles/${uri}`;
+            const articleFile = `${articleDir}/${uri}.md`;
+            const date = moment().format('YYYY-MM-DD');
+            const articleContent = `# ${uri}
+
+<!--date:${date}--${date}-->
+<!--update:${date}-->
+
+...
+
+`;
+
+            if (!fs.existsSync(articleDir)) {
+                fs.mkdirSync(articleDir);
+                fs.writeFileSync(articleFile, articleContent);
+            }else{
+                throw new Error(`This article already exists.`);
+            }
+
+            readlineInterface.close();
+        },
+    );
+});

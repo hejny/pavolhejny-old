@@ -49,6 +49,7 @@
     "deploy": "gh-pages -d dist",
     "content": "gulp content",
     "prettier": "prettier --config .prettierrc --write \"src/**/*.{jade,scss,js,md}\" \"*.js\" ",
-    "prettier-watch": "onchange \"src/**/*\" -- npm run prettier"
+    "prettier-watch": "onchange \"src/**/*\" -- npm run prettier",
+    "article": "gulp article"
   }
 }
