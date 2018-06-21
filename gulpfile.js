@@ -184,3 +184,25 @@ gulp.task('deploy', (done) => {
         },
     );
 });
+
+
+///--------------------------------------------------------
+const readline = require('readline');
+
+gulp.task('article', function(callback) {
+    console.log('\x1Bc');
+    
+
+    const readlineInterface = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    readlineInterface.question('What do you think of Node.js? ', (answer) => {
+
+        console.log(`Thank you for your valuable feedback: ${answer}`);
+        readlineInterface.close();
+    });
+
+
+});
