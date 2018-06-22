@@ -4,7 +4,9 @@ const gulpSass = require('gulp-sass');
 const gulpJade = require('gulp-jade');
 const gulpClean = require('gulp-clean');
 const gulpSequence = require('gulp-sequence');
+const gulpFile = require('gulp-file');
 const eventStream = require('event-stream');
+const moment = require('moment');
 
 function requireUncached(module) {
     delete require.cache[require.resolve(module)];
@@ -36,11 +38,52 @@ gulp.task('build-cleanup', () => {
 });
 
 gulp.task('build-finish', () => {
-    require('fs').writeFileSync('./dist/CNAME', 'www.pavolhejny.com');
+
+    const files = [
+        {
+            name: 'CNAME',
+            content: `www.pavolhejny.com`
+        },        {
+            name: 'security.txt',
+            content: `Contact: me@pavolhejny.com`
+        },        {
+            name: 'robots.txt',
+            content: ['User-agent: *','Disallow:','Sitemap: https://www.pavolhejny.com/sitemap.xml'].join('\n')
+        }
+    ]
+
+
+    return eventStream.merge(
+        files.map((file)=>gulpFile(file.name,file.content, { src: true })
+        .pipe(gulp.dest('./dist/')))
+    );
 });
 
 gulp.task('build-html', () => {
     const content = requireUncached('./getContent')();
+
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+    <loc>https://www.pavolhejny.com/</loc>
+    <lastmod>${moment().toISOString()}</lastmod>
+    <priority>1</priority>
+</url>
+${content.articles.map((article)=>`
+<url>
+    <loc>https://www.pavolhejny.com/${article.uri}</loc>
+    <lastmod>${article.updatedISO}</lastmod>
+    <priority>0.5</priority>
+</url>
+`).join('\n\n')}
+</urlset>
+`;
+
+
     return eventStream.merge([
         gulp
             .src('./src/templates/index.jade')
@@ -53,6 +96,8 @@ gulp.task('build-html', () => {
             .on('error', swallowError)
             .pipe(gulpRename('404.html')) //todo better 404 page
             .pipe(gulp.dest('./dist/')),
+            gulpFile('sitemap.xml',sitemapXml, { src: true })
+            .pipe(gulp.dest('./dist/')),
         ...content.articles
             //.filter((article) => article.isWritten)
             .map((article) =>
@@ -62,7 +107,7 @@ gulp.task('build-html', () => {
                     .on('error', swallowError)
                     .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
                     .pipe(gulp.dest('./dist/')),
-            ),
+            )
     ]);
 });
 
@@ -187,7 +232,6 @@ gulp.task('deploy', (done) => {
 
 ///--------------------------------------------------------
 const readline = require('readline');
-const moment = require('moment');
 const fs = require('fs');
 
 gulp.task('article', function(callback) {
