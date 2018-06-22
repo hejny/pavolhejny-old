@@ -126,7 +126,7 @@ module.exports = function() {
                 uri,
                 dateFrom,
                 dateTo,
-                updatedISO: moment(date[0]).toISOString(),//todo take from updated
+                updatedISO: moment(date[0]).toISOString(), //todo take from updated
                 dateLabel,
                 innerLabel:
                     dateFrom.year() === dateTo.year()

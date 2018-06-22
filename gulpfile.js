@@ -38,24 +38,31 @@ gulp.task('build-cleanup', () => {
 });
 
 gulp.task('build-finish', () => {
-
     const files = [
         {
             name: 'CNAME',
-            content: `www.pavolhejny.com`
-        },        {
+            content: `www.pavolhejny.com`,
+        },
+        {
             name: 'security.txt',
-            content: `Contact: me@pavolhejny.com`
-        },        {
+            content: `Contact: me@pavolhejny.com`,
+        },
+        {
             name: 'robots.txt',
-            content: ['User-agent: *','Disallow:','Sitemap: https://www.pavolhejny.com/sitemap.xml'].join('\n')
-        }
-    ]
-
+            content: [
+                'User-agent: *',
+                'Disallow:',
+                'Sitemap: https://www.pavolhejny.com/sitemap.xml',
+            ].join('\n'),
+        },
+    ];
 
     return eventStream.merge(
-        files.map((file)=>gulpFile(file.name,file.content, { src: true })
-        .pipe(gulp.dest('./dist/')))
+        files.map((file) =>
+            gulpFile(file.name, file.content, { src: true }).pipe(
+                gulp.dest('./dist/'),
+            ),
+        ),
     );
 });
 
@@ -73,16 +80,19 @@ gulp.task('build-html', () => {
     <lastmod>${moment().toISOString()}</lastmod>
     <priority>1</priority>
 </url>
-${content.articles.map((article)=>`
+${content.articles
+        .map(
+            (article) => `
 <url>
     <loc>https://www.pavolhejny.com/${article.uri}</loc>
     <lastmod>${article.updatedISO}</lastmod>
     <priority>0.5</priority>
 </url>
-`).join('\n\n')}
+`,
+        )
+        .join('\n\n')}
 </urlset>
 `;
-
 
     return eventStream.merge([
         gulp
@@ -96,8 +106,9 @@ ${content.articles.map((article)=>`
             .on('error', swallowError)
             .pipe(gulpRename('404.html')) //todo better 404 page
             .pipe(gulp.dest('./dist/')),
-            gulpFile('sitemap.xml',sitemapXml, { src: true })
-            .pipe(gulp.dest('./dist/')),
+        gulpFile('sitemap.xml', sitemapXml, { src: true }).pipe(
+            gulp.dest('./dist/'),
+        ),
         ...content.articles
             //.filter((article) => article.isWritten)
             .map((article) =>
@@ -107,7 +118,7 @@ ${content.articles.map((article)=>`
                     .on('error', swallowError)
                     .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
                     .pipe(gulp.dest('./dist/')),
-            )
+            ),
     ]);
 });
 
@@ -264,7 +275,7 @@ gulp.task('article', function(callback) {
             if (!fs.existsSync(articleDir)) {
                 fs.mkdirSync(articleDir);
                 fs.writeFileSync(articleFile, articleContent);
-            }else{
+            } else {
                 throw new Error(`This article already exists.`);
             }
 
