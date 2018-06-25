@@ -120,6 +120,7 @@ module.exports = function() {
             const images = glob.sync(
                 path.dirname(articlesFile) + '/featured.jpg',
             );
+            images[0] = images[0]||'/images/default-featured.jpg';
 
             return {
                 title,
@@ -168,6 +169,21 @@ module.exports = function() {
         article.articleNext = articles[articleIndex - 1] || null;
     });
 
+
+
+    const presentationsFiles = glob.sync('./src/content/presentations/**/*.md');
+    const presentations = presentationsFiles
+        .map((presentationFile) => {
+
+            const uri = baseName(presentationFile);
+            const articleMarkdown = fs.readFileSync(presentationFile, 'utf8');
+
+            return {
+                uri,
+                content: articleMarkdown,
+            };
+        })
+
     const years = [];
     let currentYear = { label: null };
     for (const article of articles.filter((article) => !article.isHidden)) {
@@ -181,5 +197,5 @@ module.exports = function() {
         currentYear.articles.push(article);
     }
 
-    return { articles, years };
+    return { articles, years, presentations };
 };

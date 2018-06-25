@@ -116,7 +116,16 @@ ${content.articles
                     .src(['./src/templates/article.jade'])
                     .pipe(gulpJade({ pretty: true, locals: { article } }))
                     .on('error', swallowError)
-                    .pipe(gulpRename(article.uri + '.html')) //todo maybe remove .html
+                    .pipe(gulpRename(article.uri + '.html'))
+                    .pipe(gulp.dest('./dist/')),
+            ),
+        ...content.presentations
+            .map((presentation) =>
+                gulp
+                    .src(['./src/templates/presentation.jade'])
+                    .pipe(gulpJade({ pretty: true, locals: { presentation } }))
+                    .on('error', swallowError)
+                    .pipe(gulpRename(presentation.uri + '.html'))
                     .pipe(gulp.dest('./dist/')),
             ),
     ]);
