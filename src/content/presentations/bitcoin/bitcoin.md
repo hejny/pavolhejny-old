@@ -6,12 +6,13 @@ class: center, middle, inverse
 ---
 
 
+<img src="/content/presentations/bitcoin/bitcoin.png" style="width:200px;"/>
+
 # Bitcoin a kryptoměny
+
+https://www.pavolhejny.com/bitcoin
+
 Pavol Hejný
-<!-- *footer: Přednáškový sraz ITnetwork.cz 27.10.2017 -->
-
-![bg](C:\Users\hejny\Downloads\22405905_1454827337906347_5981054895495312769_n.jpg)
-
 
 ---
 
@@ -38,7 +39,6 @@ Pavol Hejný
 - Nemovitosti
 - Umění
 - Akcie
-
 
 ---
 
@@ -67,10 +67,10 @@ Pavol Hejný
 ---
 
 ### Mrtvé měny
-↑![](C:\Users\hejny\Downloads\190129.jpg)
-"Frontend bez backendu"
+![](/content/presentations/bitcoin/iraq-banknote.jpg)
 
 ---
+
 
 ## Uložiště hodnoty
 - Vzácné
@@ -92,12 +92,8 @@ Pavol Hejný
 # Mince z drahých kovů
 - Vzor a vroubky
 - Tolar (Jáchymov)
+- Bankovky
 - Liberty dolar 1998
-
----
-
-# Mince, bankovky
-
 
 ---
 
@@ -120,46 +116,53 @@ Pavol Hejný
 ---
 
 ## Stav 1
-Jindra 100
-David 100
-Honza 100
-Pavol 100
+
+- Jindra 100
+- David 100
+- Honza 100
+- Pavol 100
 
 ---
 
 ## Stav 2
-Jindra ~~100~~120
-David ~~100~~80
-Honza 100
-Pavol 100
+
+- Jindra ~~100~~ 120
+- David ~~100~~ 80
+- Honza 100
+- Pavol 100
 
 ---
 
 ## Stav 3 - nevalidní
-Jindra ~~100~~120
-David ~~100~~80
-Honza 100
-Pavol ~~100~~200
+
+- Jindra ~~100~~ 120
+- David ~~100~~ 80
+- Honza 100
+- Pavol ~~100~~ 200
 
 ---
 
 ## Stav 1
+
 (nic)
 
 ---
 
 ## Stav 2
-David →(20)→ Jindra
+
+- David →(20)→ Jindra
 
 ---
 
 ## Stav 3
-David →(20)→ Jindra
-David →(42)→ Honza
+
+- David →(20)→ Jindra
+- David →(42)→ Honza
 
 ---
 
 ## Transakce (centrální důvěryhodná autorita)
+
 - Od koho
 - Komu
 - Částka
@@ -167,6 +170,7 @@ David →(42)→ Honza
 ---
 
 ## Transakce (šek)
+
 - Od koho
 - Komu
 - Částka
@@ -181,6 +185,7 @@ David →(42)→ Honza
 ---
 
 ## Transakce (centrální nedůvěryhodná autorita)
+
 - Od koho
 - Komu
 - Částka
@@ -191,6 +196,7 @@ Musí však existovat důvěryhodný zdroj jmen a veřejných klíčů.
 ---
 
 ## Transakce (centrální nedůvěryhodná autorita)
+
 - Od koho (Veřejný klíč)
 - Komu (Veřejný klíč)
 - Částka
@@ -201,6 +207,7 @@ Nemusí existovat žádný zdroj jmen a veřejných klíčů.
 ---
 
 ## Transakce
+
  - Vstupy
  - Výstupy
  - Částka
@@ -210,6 +217,7 @@ Nemusí existovat žádný zdroj jmen a veřejných klíčů.
 ---
 
 ## Blok
+
  - Odkaz na předchozí blok
  - Čas
  - Transakce s nově vytěženými bitcoiny
@@ -225,8 +233,7 @@ Nemusí existovat žádný zdroj jmen a veřejných klíčů.
 
 ---
  
-## Těžba
-http://misc.pavolhejny.com/form/
+## "Těžba"
 
 - Běžné PC
 - Grafické karty
@@ -236,6 +243,7 @@ http://misc.pavolhejny.com/form/
 ---
 
 # "Peněženky"
+
 - Internetové peněženky (a jejich mobilní aplikace)
 - Původní bitcoin klient
 - Papírové peněženky nebo bitcoinové karty s NFC čipem
@@ -244,6 +252,7 @@ http://misc.pavolhejny.com/form/
 ---
 
 # Kde získat/koupit BTC
+
 - "Těžba"
 - Přijímat platby v BTC
     - Právně?
@@ -262,12 +271,15 @@ https://coinmarketcap.com
 ---
 
 # Další kryptoměny
+
 https://coinmarketcap.com
 
 ## Bitcoin cash
+
 - 1.8.2017 odtržení od Bitcoinu.
  
 ## Litecoin
+
 - Jiný hashovací algoritmus **scrypt**
 - 4x rychlejší těžba bloků
 - 4x více "mincí"
@@ -275,9 +287,11 @@ https://coinmarketcap.com
 ---
 
 ## Monero
+
 - Plně anonymní kryptoměna
 
 ## Namecoin
+
 - Decentralizované DNS
 
 ---
