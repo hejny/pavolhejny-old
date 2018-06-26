@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      
+      body {
+        font-family: 'Droid Serif';
+        
+      }
+      .remark-slides-area{
+        /*background-color: black;*/
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      img{
+        max-width: 100%;
+      }
+      ul,li{
+        text-align: left;
+        font-size: 1.2em;
+      }
+      del{
+        color: #888;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #ccc;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+      
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+
+
+<img src="/content/presentations/bitcoin/bitcoin.png" style="width:200px;"/>
+
+# Bitcoin a kryptoměny
+
+https://www.pavolhejny.com/bitcoin
+
+Pavol Hejný
+
+---
+
+# Historie
+
+- Barter
+- Drahé kovy
+- Bankovnictví
+- 1998 Liberty dolar
+- 2009 Bitcoin
+
+---
+
+# Platební systém 
+- Bankovky, mince
+- PayPal, GoPay
+- Platební karty
+
+# vs. Uložiště hodnoty
+- Měny
+- Drahé kovy
+
+# vs. Hodnota
+- Nemovitosti
+- Umění
+- Akcie
+
+---
+
+### *Jízdenka* (hodnota)
+↑↓
+### ČD kredit (platební systém)
+↑↓
+### Účet v bance
+↑↓
+### Hotovost
+↑↓
+### Drahé kovy (uložiště hodnoty)
+
+---
+
+### *Jízdenka* (hodnota)
+↑↓
+### ČD kredit (platební systém)
+↑↓
+### Účet v bance
+↑↓
+### *Hotovost*
+↑↓
+### ~~Drahé kovy~~
+
+---
+
+### Mrtvé měny
+![](/content/presentations/bitcoin/iraq-banknote.jpg)
+
+---
+
+
+## Uložiště hodnoty
+- Vzácné
+- Trvanlivé
+
+## Platební systém
+- Lehká manipulace
+
+---
+
+## Drahé kovy
+- Omezaená zásoba
+- Obtížná a velmi neekoligická těžba
+- ?Manipulace
+- ?Ověřitelnost
+
+---
+
+# Mince z drahých kovů
+- Vzor a vroubky
+- Tolar (Jáchymov)
+- Bankovky
+- Liberty dolar 1998
+
+---
+
+# Kryptoměny, Bitcoin, Blockchain
+- Satoshi Nakamoto 2009
+
+---
+
+# Klíčové vlastnosti
+
+
+- Měna i internetový platební systém
+- Decentralizovaná
+- Omezený počet "mincí", které jsou dělitelné.
+- Zabezpečená silnou kryptografií
+- PseudoAnonymní (adresy ne pravá identita)
+- "Těžitelná" podobně jako zlato
+- Není možné ji padělat.
+
+---
+
+## Stav 1
+
+- Jindra 100
+- David 100
+- Honza 100
+- Pavol 100
+
+---
+
+## Stav 2
+
+- Jindra ~~100~~ 120
+- David ~~100~~ 80
+- Honza 100
+- Pavol 100
+
+---
+
+## Stav 3 - nevalidní
+
+- Jindra ~~100~~ 120
+- David ~~100~~ 80
+- Honza 100
+- Pavol ~~100~~ 200
+
+---
+
+## Stav 1
+
+(nic)
+
+---
+
+## Stav 2
+
+- David →(20)→ Jindra
+
+---
+
+## Stav 3
+
+- David →(20)→ Jindra
+- David →(42)→ Honza
+
+---
+
+## Transakce (centrální důvěryhodná autorita)
+
+- Od koho
+- Komu
+- Částka
+
+---
+
+## Transakce (šek)
+
+- Od koho
+- Komu
+- Částka
+- Podpis
+
+---
+
+## Asymetrická kryptografie 
+- Veřejný klíč
+- Privátní klíč
+
+---
+
+## Transakce (centrální nedůvěryhodná autorita)
+
+- Od koho
+- Komu
+- Částka
+- Digitální podpis
+
+Musí však existovat důvěryhodný zdroj jmen a veřejných klíčů. 
+
+---
+
+## Transakce (centrální nedůvěryhodná autorita)
+
+- Od koho (Veřejný klíč)
+- Komu (Veřejný klíč)
+- Částka
+- Digitální podpis
+
+Nemusí existovat žádný zdroj jmen a veřejných klíčů. 
+
+---
+
+## Transakce
+
+ - Vstupy
+ - Výstupy
+ - Částka
+ - Poplatek
+ - Digitální podpis privátním klíčem odesílatele
+
+---
+
+## Blok
+
+ - Odkaz na předchozí blok
+ - Čas
+ - Transakce s nově vytěženými bitcoiny
+ - Transakce(pl.) 
+ - Nonce
+ - Max 1MB
+
+
+---
+
+[Blok 0] <- [Blok 2] <- [Blok 3] <- [Blok 4]
+
+
+---
+ 
+## "Těžba"
+
+- Běžné PC
+- Grafické karty
+- FPGA čipy
+- ASIC čipy
+
+---
+
+# "Peněženky"
+
+- Internetové peněženky (a jejich mobilní aplikace)
+- Původní bitcoin klient
+- Papírové peněženky nebo bitcoinové karty s NFC čipem
+- Hardwarový trezor
+
+---
+
+# Kde získat/koupit BTC
+
+- "Těžba"
+- Přijímat platby v BTC
+    - Právně?
+    - Paralelní polis
+- Bitcoinový bankomat
+- Směnárna
+- Burza
+- LocalBitcoins.com
+
+---
+
+# Investování / spekulace
+
+https://coinmarketcap.com
+
+---
+
+# Další kryptoměny
+
+https://coinmarketcap.com
+
+## Bitcoin cash
+
+- 1.8.2017 odtržení od Bitcoinu.
+ 
+## Litecoin
+
+- Jiný hashovací algoritmus **scrypt**
+- 4x rychlejší těžba bloků
+- 4x více "mincí"
+
+---
+
+## Monero
+
+- Plně anonymní kryptoměna
+
+## Namecoin
+
+- Decentralizované DNS
+
+---
+
+## Ethereum
+- Decentralizovaný výpočetní stroj
+- Smart contracts
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>var slideshow = remark.create();</script>
+  </body>
+</html>
