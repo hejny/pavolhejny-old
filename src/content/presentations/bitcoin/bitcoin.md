@@ -1,14 +1,17 @@
 
-# Jak funguje Bitcoin?
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+
+
+# Bitcoin a kryptoměny
 Pavol Hejný
 <!-- *footer: Přednáškový sraz ITnetwork.cz 27.10.2017 -->
 
 ![bg](C:\Users\hejny\Downloads\22405905_1454827337906347_5981054895495312769_n.jpg)
 
----
-
-
-![](C:\Users\hejny\Downloads\22835404_10210762625607848_75719831_n.jpg)
 
 ---
 
@@ -218,6 +221,7 @@ Nemusí existovat žádný zdroj jmen a veřejných klíčů.
 ---
 
 [Blok 0] <- [Blok 2] <- [Blok 3] <- [Blok 4]
+
 
 ---
  
