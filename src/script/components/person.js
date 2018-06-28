@@ -34,11 +34,11 @@ const PEOPLE = [
     },
     {
         name: 'Veronika Zelinková',
-        link: 'http://www.vzelinkova.xyz/',
+        link: 'https://www.instagram.com/verdicekcodes/',
     },
     {
         name: 'Eva Kuttichová',
-        link: 'https://dribbble.com/evakuttichova',
+        link: 'https://www.instagram.com/evakuttichova/',
     },
     {
         name: 'Xxxxxx',
