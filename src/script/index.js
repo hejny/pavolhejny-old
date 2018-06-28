@@ -4,22 +4,22 @@ import { processPeople } from './components/person';
 import { processFlags } from './components/flags';
 import { processLinks } from './components/links';
 
-window.onload = () => {
-    console.log('loaded');
+//window.onload = () => {
+console.log('loaded');
 
-    processPlaces();
-    processPeople();
-    processFlags();
-    processLinks();
+processPlaces();
+processPeople();
+processFlags();
+processLinks();
 
-    const featureImageMirror = document.getElementById('featured-image-mirror');
-    const selectableElements = document.getElementsByClassName('selectable');
-    for (const element of selectableElements) {
-        element.addEventListener('mouseenter', () => {
-            for (const element of selectableElements) {
-                element.classList.remove('selected');
-            }
-            element.classList.add('selected');
-        });
-    }
-};
+const featureImageMirror = document.getElementById('featured-image-mirror');
+const selectableElements = document.getElementsByClassName('selectable');
+for (const element of selectableElements) {
+    element.addEventListener('mouseenter', () => {
+        for (const element of selectableElements) {
+            element.classList.remove('selected');
+        }
+        element.classList.add('selected');
+    });
+}
+//};

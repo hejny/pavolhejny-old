@@ -119,15 +119,14 @@ ${content.articles
                     .pipe(gulpRename(article.uri + '.html'))
                     .pipe(gulp.dest('./dist/')),
             ),
-        ...content.presentations
-            .map((presentation) =>
-                gulp
-                    .src(['./src/templates/presentation.jade'])
-                    .pipe(gulpJade({ pretty: true, locals: { presentation } }))
-                    .on('error', swallowError)
-                    .pipe(gulpRename(presentation.uri + '.html'))
-                    .pipe(gulp.dest('./dist/')),
-            ),
+        ...content.presentations.map((presentation) =>
+            gulp
+                .src(['./src/templates/presentation.jade'])
+                .pipe(gulpJade({ pretty: true, locals: { presentation } }))
+                .on('error', swallowError)
+                .pipe(gulpRename(presentation.uri + '.html'))
+                .pipe(gulp.dest('./dist/')),
+        ),
     ]);
 });
 
