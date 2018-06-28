@@ -14,7 +14,7 @@ export function findInLibrary(name, library) {
     for (const item of library) {
         const nameLibrarySanitized = sanitizeName(item.name);
 
-        console.log(nameSanitized, nameLibrarySanitized);
+        //console.log(nameSanitized, nameLibrarySanitized);
         if (nameSanitized === nameLibrarySanitized) {
             return item;
         }
