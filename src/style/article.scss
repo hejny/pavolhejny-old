@@ -137,25 +137,20 @@ main.article {
             padding-left: 5px;
             padding-right: 5px;
 
-            .left,
-            .right {
-                //margin: 5px;
-                width: calc(50% - 5px);
-                display: inline-block;
-            }
+            text-align: left;
 
-            .left {
-                text-align: left;
-                @if $debug {
-                    border: 1px dotted orange;
-                }
+         
+            //margin: 5px;
+            //width: calc(50% - 5px);
+            width: 100%;
+            padding-left: 10px;
+            display: inline-block;
+
+            *{
+                display: inline;
             }
-            .right {
-                @if $debug {
-                    border: 1px dotted orange;
-                }
-                text-align: right;
-            }
+            
+
         }
 
         img {

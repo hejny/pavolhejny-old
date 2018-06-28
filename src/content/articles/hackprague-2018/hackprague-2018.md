@@ -1,7 +1,7 @@
 # HackPrague 2018
 
-<!--date:2018-06-25--2018-06-25-->
-<!--update:2018-06-25-->
+<!--date:2018-06-23--2018-06-24-->
+<!--update:2018-06-29-->
 
 I was looking forward to this event long time because HackPrague 2017 was my first hackathon.
 

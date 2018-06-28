@@ -1,6 +1,7 @@
 # Security talks Pilsen
 
 <!--date:2018-06-12-->
+<!--update:2018-06-29-->
 
 When I was at the [Startup Weekend Pilsen](/startup-weekend-pilsen-2018) I didn't know that I will be back in Pilsen in a month at the security/crypto event organized by <place>TechHeaven</place>. The whole event was held in beautiful place <place>DEPO2015</place>.
 

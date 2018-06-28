@@ -105,6 +105,13 @@ module.exports = function() {
                 date[1] === 'now' ? undefined : date[1] || date[0],
             );
 
+            const update = articleMarkdown
+            .split('<!--update:')[1]
+            .split('-->')[0];
+            const updatedISO = moment(update).toISOString();
+            const updateLabel = update;
+
+
             //const DATE_FORMAT = 'YYYY-MM-DD';
             //const dateLabelFrom = dateFrom.format(DATE_FORMAT);
             //const dateLabelTo = dateTo.format(DATE_FORMAT);
@@ -117,13 +124,16 @@ module.exports = function() {
                 isWritten &&
                 articleMarkdown.indexOf('<!--not-finished-->') === -1;
 
+            function processUrl(dirUrl){
+                return dirUrl.split('./src/').join('/');
+            }
 
             const images = glob.sync(
                 path.dirname(articlesFile) + '/*.{jpg,png}',
-            );
+            ).map(processUrl);
             const featuredImages = glob.sync(
                 path.dirname(articlesFile) + '/featured.{jpg,png}',
-            );
+            ).map(processUrl);
             featuredImages[0] = featuredImages[0] || '/images/default-featured.jpg';
 
             return {
@@ -131,7 +141,8 @@ module.exports = function() {
                 uri,
                 dateFrom,
                 dateTo,
-                updatedISO: moment(date[0]).toISOString(), //todo take from updated
+                updatedISO,
+                updateLabel,
                 dateLabel,
                 innerLabel:
                     dateFrom.year() === dateTo.year()
@@ -152,8 +163,8 @@ module.exports = function() {
                     .join('/'),
             },*/
                 featuredImages: {
-                    front: featuredImages[0].split('./src/').join('/'),
-                    back: featuredImages[0].split('./src/').join('/'),
+                    front: featuredImages[0],
+                    back: featuredImages[0],
                 },
                 images,
                 abstract,
