@@ -2,8 +2,12 @@ import { findInLibrary } from '../findInLibrary';
 
 const PEOPLE = [
     {
-        name: 'David Žahour',
-        link: 'https://www.facebook.com/isouesense/',
+        name: 'Xxxxxx',
+        link: 'xxx',
+    },
+    {
+        name: 'Pavol Hejný',
+        link: 'https://www.pavolhejny.com/',
     },
     {
         name: 'Vladimír Smitka',
@@ -20,6 +24,38 @@ const PEOPLE = [
     {
         name: 'Jan Steinbach',
         link: 'https://www.linkedin.com/in/honzasteinbach/',
+    },
+    {
+        name: 'Michal Vašíček',
+        link: 'https://www.linkedin.com/in/vasicekmichal/',
+    },
+    {
+        name: 'Jakub Rychlý',
+        link: 'https://www.linkedin.com/in/jakubrychly/',
+    },
+    {
+        name: 'Veronika Zelinková',
+        link: 'http://www.vzelinkova.xyz/',
+    },
+    {
+        name: 'Eva Kuttichová',
+        link: 'https://dribbble.com/evakuttichova',
+    },
+    {
+        name: 'Xxxxxx',
+        link: 'xxx',
+    },
+    {
+        name: 'Xxxxxx',
+        link: 'xxx',
+    },
+    {
+        name: 'Xxxxxx',
+        link: 'xxx',
+    },
+    {
+        name: 'Xxxxxx',
+        link: 'xxx',
     },
 ];
 
