@@ -514,15 +514,13 @@ main.article {
     main.article .inner .top {
       color: #777;
       padding-left: 5px;
-      padding-right: 5px; }
-      main.article .inner .top .left,
-      main.article .inner .top .right {
-        width: calc(50% - 5px);
-        display: inline-block; }
-      main.article .inner .top .left {
-        text-align: left; }
-      main.article .inner .top .right {
-        text-align: right; }
+      padding-right: 5px;
+      text-align: left;
+      width: 100%;
+      padding-left: 10px;
+      display: inline-block; }
+      main.article .inner .top * {
+        display: inline; }
     main.article .inner img {
       max-width: 100%; }
     main.article .inner .text {
