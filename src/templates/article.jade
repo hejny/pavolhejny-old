@@ -14,7 +14,9 @@ html(lang='en')
       //meta(property='article:tag', content= article.abstractText)/
       meta(property='og:title', content= article.title)/
       meta(property='og:url', content= 'https://www.pavolhejny.com/'+article.uri)/
-      meta(property='og:image', content= 'https://www.pavolhejny.com'+article.featuredImages.front)/
+      each image in article.images
+        meta(property='og:image', content= 'https://www.pavolhejny.com'+image)/
+
       include ./head
     body
 

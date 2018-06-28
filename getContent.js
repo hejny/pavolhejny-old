@@ -117,10 +117,14 @@ module.exports = function() {
                 isWritten &&
                 articleMarkdown.indexOf('<!--not-finished-->') === -1;
 
+
             const images = glob.sync(
-                path.dirname(articlesFile) + '/featured.jpg',
+                path.dirname(articlesFile) + '/*.{jpg,png}',
             );
-            images[0] = images[0] || '/images/default-featured.jpg';
+            const featuredImages = glob.sync(
+                path.dirname(articlesFile) + '/featured.{jpg,png}',
+            );
+            featuredImages[0] = featuredImages[0] || '/images/default-featured.jpg';
 
             return {
                 title,
@@ -148,9 +152,10 @@ module.exports = function() {
                     .join('/'),
             },*/
                 featuredImages: {
-                    front: images[0].split('./src/').join('/'),
-                    back: images[0].split('./src/').join('/'),
+                    front: featuredImages[0].split('./src/').join('/'),
+                    back: featuredImages[0].split('./src/').join('/'),
                 },
+                images,
                 abstract,
                 abstractText: sanitizeHtml(abstract, { allowedTags: [] }),
                 content: articleHtml,
