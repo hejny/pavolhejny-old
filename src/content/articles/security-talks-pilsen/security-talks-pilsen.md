@@ -33,4 +33,4 @@ It was very similar to my talk 2 months ago at ITNetwork meetup. I have written 
 
 After that, there was a networking. I met there one of my friends from [Startup Weekend Pilsen](/startup-weekend-pilsen-2018) <person>David Žahour</person> who is [creating hydrogen car<flag-cs/>](https://www.youtube.com/watch?v=LPE3o9neP0M) and a lot of other cool projects in hardware with his group [iSOUEsense - IoT](https://www.facebook.com/isouesense/).
 
-I have stayed at beautiful coworking space <place>TechHeaven</place>. And next day <person>Jan <!--Steinbach--><role>main organizer of this event and CEO of <place>TechHeaven</place></role></person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!
+I have stayed at beautiful coworking space <place>TechHeaven</place>. And next day <person source="Jan Steinbach">Honza<role>main organizer of this event and CEO of <place>TechHeaven</place></role></person> and me planned next events and hackathons. So I am looking forward to next cool events in Pilsen!

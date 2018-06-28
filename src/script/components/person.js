@@ -61,8 +61,11 @@
     
     export function processPeople() {
         for (const personElement of document.querySelectorAll('person')) {
+
+            const id = personElement.getAttribute('source')||personElement.innerHTML;
             const originalID = personElement.innerHTML;
-            const person = findInLibrary(originalID, PEOPLE);
+            console.log(id);
+            const person = findInLibrary(id, PEOPLE);
     
             if (person) {
                 const [originalIDName, originalIDRole] = originalID.split('<role>');
