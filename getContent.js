@@ -106,11 +106,10 @@ module.exports = function() {
             );
 
             const update = articleMarkdown
-            .split('<!--update:')[1]
-            .split('-->')[0];
+                .split('<!--update:')[1]
+                .split('-->')[0];
             const updatedISO = moment(update).toISOString();
             const updateLabel = update;
-
 
             //const DATE_FORMAT = 'YYYY-MM-DD';
             //const dateLabelFrom = dateFrom.format(DATE_FORMAT);
@@ -124,17 +123,18 @@ module.exports = function() {
                 isWritten &&
                 articleMarkdown.indexOf('<!--not-finished-->') === -1;
 
-            function processUrl(dirUrl){
+            function processUrl(dirUrl) {
                 return dirUrl.split('./src/').join('/');
             }
 
-            const images = glob.sync(
-                path.dirname(articlesFile) + '/*.{jpg,png}',
-            ).map(processUrl);
-            const featuredImages = glob.sync(
-                path.dirname(articlesFile) + '/featured.{jpg,png}',
-            ).map(processUrl);
-            featuredImages[0] = featuredImages[0] || '/images/default-featured.jpg';
+            const images = glob
+                .sync(path.dirname(articlesFile) + '/*.{jpg,png}')
+                .map(processUrl);
+            const featuredImages = glob
+                .sync(path.dirname(articlesFile) + '/featured.{jpg,png}')
+                .map(processUrl);
+            featuredImages[0] =
+                featuredImages[0] || '/images/default-featured.jpg';
 
             return {
                 title,

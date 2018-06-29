@@ -2,16 +2,15 @@ name: inverse
 layout: true
 class: center, middle, inverse
 
-
 ---
 
 # How to build a HUGE app with ES6?
+
 ## (basics)
 
 https://www.pavolhejny.com/es6
 
 [Pavol Hejný](https://www.pavolhejny.com/)
-
 
 <footer>2018-06-29 ITNetwork </footer>
 
@@ -31,7 +30,6 @@ var a = 2;
 var a = 3;
 ```
 
-
 ---
 
 # Object mutations
@@ -39,8 +37,8 @@ var a = 3;
 ```javascript
 const b = {
     a: 1,
-    b: 2
-}
+    b: 2,
+};
 b.a = 3;
 ```
 
@@ -49,8 +47,8 @@ b.a = 3;
 # String templates
 
 ```javascript
-const name = "Pavol Hejný";
-const mail = "me@pavolhejny.com";
+const name = 'Pavol Hejný';
+const mail = 'me@pavolhejny.com';
 const text = `
 My name is ${name}.
 And my mail is ${mail}.
@@ -62,16 +60,15 @@ And my mail is ${mail}.
 # Arrow functions
 
 ```javascript
-
-function ahoj(a=0, b=0){
+function ahoj(a = 0, b = 0) {
     return a + b;
 }
 
-const ahoj = (a=0, b=0)=>{
+const ahoj = (a = 0, b = 0) => {
     return a + b;
-}
+};
 
-doSomeStuff(()=>{
+doSomeStuff(() => {
     //...
 });
 ```
@@ -81,38 +78,35 @@ doSomeStuff(()=>{
 # Sync stuff
 
 ```javascript
-function main(){
-    
-    const input = 2*3*5*7*11*13;
+function main() {
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
 
-    try{
-
+    try {
         const primes = factorize(input);
         element.innerHTML = `${input} = ${primes.join(' * ')}`;
-
-    }catch(error){
-        logError(error)
+    } catch (error) {
+        logError(error);
     }
 }
 ```
-
 
 ---
 
 # Async stuff (old and stupid)
 
 ```javascript
-function main(){
-
+function main() {
     element.innerHTML = 'Computing..';
 
-    const input = 2*3*5*7*11*13;
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
     factorize(
         input,
-        (error)=>{logError(error)},
-        (primes)=>{
+        (error) => {
+            logError(error);
+        },
+        (primes) => {
             element.innerHTML = `${input} = ${primes.join(' * ')}`;
-        }
+        },
     );
 }
 ```
@@ -122,36 +116,33 @@ function main(){
 # Async stuff with Promise
 
 ```javascript
-function main(){
-
+function main() {
     element.innerHTML = 'Computing..';
 
-    const input = 2*3*5*7*11*13;
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
     factorize(input)
-        .then((primes)=>{
+        .then((primes) => {
             element.innerHTML = `${input} = ${primes.join(' * ')}`;
         })
-        .catch((error)=>{logError(error)});
+        .catch((error) => {
+            logError(error);
+        });
 }
 ```
-
 
 ---
 
 # Async stuff with Promise and async/await
 
 ```javascript
-async function main(){
+async function main() {
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
 
-    const input = 2*3*5*7*11*13;
-
-    try{
-
+    try {
         const primes = await factorize(input);
         element.innerHTML = `${input} = ${primes.join(' * ')}`;
-        
-    }catch(error){
-        logError(error)
+    } catch (error) {
+        logError(error);
     }
 }
 ```
@@ -161,36 +152,32 @@ async function main(){
 # Lot of async stuff with Promise and async/await
 
 ```javascript
-async function main(){
-    try{
-
+async function main() {
+    try {
         const controller = await getController();
         const modelObj = await getModel(controller);
         const modelShapes = await convertToShapes(model3DObj);
-
-
-    }catch(error){
-        logError(error)
+    } catch (error) {
+        logError(error);
     }
 }
 ```
-
 
 ---
 
 # Lot of async stuff with Promise
 
 ```javascript
-function main(){
-
+function main() {
     getController()
-    .then(getModel)
-    .then(convertToShapes)
-    .then((modelShapes)=>{
-        //...
-    })
-    .catch((error)=>{logError(error)});
-
+        .then(getModel)
+        .then(convertToShapes)
+        .then((modelShapes) => {
+            //...
+        })
+        .catch((error) => {
+            logError(error);
+        });
 }
 ```
 
@@ -199,30 +186,30 @@ function main(){
 # Lot of async stuff with callback hell
 
 ```javascript
-function main(){
+function main() {
     getController(
-        (error)=>{logError(error)},
-        (controller)=>{
-           
+        (error) => {
+            logError(error);
+        },
+        (controller) => {
             getModel(
                 controller,
-                (error)=>{logError(error)},
-                (modelObj)=>{
-                
+                (error) => {
+                    logError(error);
+                },
+                (modelObj) => {
                     convertToShapes(
                         modelObj,
-                        (error)=>{logError(error)},
-                        (modelShapes)=>{
-                        
+                        (error) => {
+                            logError(error);
+                        },
+                        (modelShapes) => {
                             //...
-                        
-                        }
+                        },
                     );
-                
-                }
+                },
             );
-
-        }
+        },
     );
 }
 ```
@@ -238,6 +225,7 @@ function main(){
     main();
 </script>
 ```
+
 ---
 
 # Modules Export/Import
@@ -245,13 +233,13 @@ function main(){
 ```javascript
 import { factorize } from './math/factorize.js';
 
-export default async function main(){
-    const input = 2*3*5*7*11*13;
-    try{
+export default async function main() {
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
+    try {
         const primes = await factorize(input);
         element.innerHTML = `${input} = ${primes.join(' * ')}`;
-    }catch(error){
-        logError(error)
+    } catch (error) {
+        logError(error);
     }
 }
 ```
@@ -272,6 +260,5 @@ export default async function main(){
 # Bundlers / Transpilers / Boilerplate&nbsp;generators
 
 ---
-
 
 # To be continued...
