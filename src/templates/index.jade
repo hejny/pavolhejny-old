@@ -37,6 +37,10 @@ html(lang='en')
           include ./vcard
           include ./timeline
 
+          //ul.presentations
+            each presentation in content.presentations
+                li.presentation= presentation.uri
+
                  
           //footer
             .inner
