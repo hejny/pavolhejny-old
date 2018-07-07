@@ -174,11 +174,9 @@ class: center, middle, inverse
 
 Nastavení:
 
-- Sukromí příspěvků
+- Soukromí příspěvků
 - Možnosti označování
 - Práva aplikací
-
----
 
 A další nastavení:
 
@@ -189,6 +187,9 @@ A další nastavení:
 layout: true
 name: inverse
 class: center, middle, inverse
+
+---
+
 
 # Zneužití ( / využití)
 
