@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      
+      body {
+        font-family: 'Droid Serif';
+        
+      }
+      .remark-slides-area{
+        /*background-color: black;*/
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+        text-align: left;
+      }
+      img{
+        max-width: 100%;
+      }
+      ul,li{
+        text-align: left;
+        font-size: 1.2em;
+      }
+      del{
+        color: #888;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #ccc;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+      
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      
+      footer{
+        font-size: 1rem;
+        position: fixed;
+        bottom: 1em;
+        color: #777;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <textarea id="source">layout: true
+name: inverse
+class: center, middle, inverse
+
+---
+
+# Jak si chránit své osobní údaje?
+
+https://www.pavolhejny.com/jak-si-chranit-sve-osobni-udaje
+
+[Pavol Hejný](https://www.pavolhejny.com/)
+
+<footer>2018-07-08 LŠ Pythagoras </footer>
+
+---
+
+# Cambridge Analytica, GDPR
+
+Jak nastavit FB, Správná hesla, Private browsing?!, Google a sledování?, Ashley Madison
+
+---
+
+> Winston otočil knoflíkem
+a hlas se trochu ztišil, ale slovům bylo stále ještě rozumět.Přístroj (ve skutečnosti
+televizní obrazovka) se dal ztlumit, ale nebylo možné ho  plně vypnout. 
+
+George Orwell, 1984
+
+---
+
+
+> Schopnost počítačů nás sledovat se každých 18 měsíců zdvojnásobuje.
+
+Phil Zimmermann
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+## Co o nás oni (soused, zaměstanvatel, Google, Facebook, vláda, NSA) vědí?
+
+---
+
+# ...
+
+---
+
+# Všechno!
+
+---
+
+# Vůbec nic!
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+# Co jsou osobní údaje?
+
+---
+
+- Soubory
+- Seznory ( poloha, kamera, mikrofon )
+- Chování na interneru
+- Sociální sítě
+- *Finance*
+- *Zdravotní údaje*
+
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+# Soubory
+
+---
+
+- Dokumenty
+- Fotky / Videa
+
+---
+
+- Dokumenty - **PC**, **Google dokumenty**,...
+- Fotky / Videa
+
+---
+
+- Dokumenty - **PC**, **Google dokumenty**,...
+- Fotky / Videa - **Mobil**, **PC**, **Google Photos**,...
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+---
+
+# PC
+
+- Dobré heslo
+- Viry
+
+---
+
+# Cloud
+
+- Spolehlivý poskytovatel
+- Dobré heslo
+- Zabezpečený mail
+
+---
+
+# Mobil
+
+- Heslo, otisk prstu
+- Práva aplikací
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+# Seznory 
+
+---
+
+- Kamera
+- Mikrofon
+- Poloha
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+# Chování na interneru
+
+---
+
+---
+
+a anonymní okna
+
+---
+
+a anonymní okna ₊ přihlášení
+
+---
+
+a anonymní okna ₊ přihlášení na YouTube
+
+---
+
+a anonymní okna ₊ přihlášení na Facebook, Instagram
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+# Sociální sítě ( Facebook )
+
+---
+
+Nastavení:
+
+- Soukromí příspěvků
+- Možnosti označování
+- Práva aplikací
+
+A další nastavení:
+
+- Automatické identifikace obličeje na fotkách
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+---
+
+
+# Zneužití ( / využití)
+
+- Reklama
+- Naštvaný kolega
+- Státní nátlak
+
+
+---
+
+layout: true
+name: inverse
+class: center, middle, inverse
+
+---
+
+> 15) Dejte si do pořádku vlastní život: Totalitní moc funguje tak, že proti vám zneužije to, co o vás ví. **Chovejte se na internetu opatrně, nebo ho prostě používejte méně. Vyčistěte si počítač a myslete na to, že vaše emaily si může přečíst i někdo jiný. Dejte si pozor, aby vás nikdo neměl čím vydírat.**
+
+Timothy Snyder, Tyranie: 20 lekcí z 20. století
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>var slideshow = remark.create();</script>
+  </body>
+</html>
