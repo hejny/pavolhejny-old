@@ -11,7 +11,8 @@
 .layer1 {
     z-index: 10;
 
-    //background: url('./images/textures/norwegian_rose.png');
+    //background: url('./images/textures/norwegian_rose.black.png');
+    //background-color: rgb(67, 68, 150);
     //background-position: center;
     //filter: invert(1) grayscale(20%) brightness(1);
 
@@ -24,7 +25,8 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        filter: blur(2px) grayscale(20%) brightness(0.3);
+        //filter: blur(2px) grayscale(20%) brightness(0.3);
+        filter: contrast(40%) grayscale(20%) brightness(30%) ;
 
         transition: filter, opacity 300ms linear;
     }
