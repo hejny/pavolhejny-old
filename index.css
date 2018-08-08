@@ -110,7 +110,7 @@ form {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(2px) grayscale(20%) brightness(0.3);
+    filter: contrast(40%) grayscale(20%) brightness(30%);
     transition: filter, opacity 300ms linear; }
 
 .layer2 {
