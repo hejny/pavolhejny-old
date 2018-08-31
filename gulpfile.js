@@ -144,6 +144,7 @@ gulp.task('copy-images', () => {
         gulp.src('src/**/*.jpg', { base: 'src' }).pipe(gulp.dest('./dist')),
         gulp.src('src/**/*.png', { base: 'src' }).pipe(gulp.dest('./dist')),
         gulp.src('src/**/*.svg', { base: 'src' }).pipe(gulp.dest('./dist')),
+        gulp.src('src/**/*.gif', { base: 'src' }).pipe(gulp.dest('./dist')),
     ]);
 });
 
