@@ -161,323 +161,190 @@ class: center, middle, inverse
 
 ---
 
-<img src="/content/presentations/bitcoin/bitcoin.png" style="width:200px;"/>
+#Ezoterické programovací jazyky
 
-# Bitcoin a kryptoměny
+https://www.pavolhejny.com/ezotericke-programovaci-jazyky
 
-https://www.pavolhejny.com/bitcoin
+[Pavol Hejný](https://www.pavolhejny.com/)
 
-Pavol Hejný
-
----
-
-# Historie
-
--   Barter
--   Drahé kovy
--   Bankovnictví
--   1998 Liberty dolar
--   2009 Bitcoin
+<footer>2018-08-31 ITNetwork </footer>
 
 ---
 
-# Platební systém
 
--   Bankovky, mince
--   PayPal, GoPay
--   Platební karty
+![](/content/presentations/ezotericke-programovaci-jazyky/turing-maschine.png)
 
-# vs. Uložiště hodnoty
-
--   Měny
--   Drahé kovy
-
-# vs. Hodnota
-
--   Nemovitosti
--   Umění
--   Akcie
 
 ---
 
-### _Jízdenka_ (hodnota)
 
-↑↓
+![](/content/presentations/ezotericke-programovaci-jazyky/eniac-computer.jpg)
 
-### ČD kredit (platební systém)
-
-↑↓
-
-### Účet v bance
-
-↑↓
-
-### Hotovost
-
-↑↓
-
-### Drahé kovy (uložiště hodnoty)
 
 ---
 
-### _Jízdenka_ (hodnota)
+# C
 
-↑↓
+```c
+#include <stdio.h>
 
-### ČD kredit (platební systém)
-
-↑↓
-
-### Účet v bance
-
-↑↓
-
-### _Hotovost_
-
-↑↓
-
-### ~~Drahé kovy~~
+int main() {
+    int x;
+    for ( x = 0; x < 10; x = x + 1 ) {
+        printf( "ITNetwork\n" );
+    }
+}
+```
 
 ---
 
-### Mrtvé měny
+# Java
 
-![](/content/presentations/bitcoin/iraq-banknote.jpg)
+```java
+public class App {
+   public static void main() {
+      for(int x = 0; x < 10; x++) {
+         System.out.print( "ITNetwork\n" );
 
----
-
-## Uložiště hodnoty
-
--   Vzácné
--   Trvanlivé
-
-## Platební systém
-
--   Lehká manipulace
+      }
+   }
+}
+```
 
 ---
 
-## Drahé kovy
+# Brainfuck
 
--   Omezaená zásoba
--   Obtížná a velmi neekoligická těžba
--   ?Manipulace
--   ?Ověřitelnost
+```brainfuck
+++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<++++++++++++++
++.>.+++.------.--------.>+.>.
+```
 
----
-
-# Mince z drahých kovů
-
--   Vzor a vroubky
--   Tolar (Jáchymov)
--   Bankovky
--   Liberty dolar 1998
 
 ---
 
-# Kryptoměny, Bitcoin, Blockchain
+# Taxi
 
--   Satoshi Nakamoto 2009
-
----
-
-# Klíčové vlastnosti
-
--   Měna i internetový platební systém
--   Decentralizovaná
--   Omezený počet "mincí", které jsou dělitelné.
--   Zabezpečená silnou kryptografií
--   PseudoAnonymní (adresy ne pravá identita)
--   "Těžitelná" podobně jako zlato
--   Není možné ji padělat.
+```taxi
+Go to the Post Office: west 1st left, 1st right, 1st left. Pick up a passenger
+going to Multiplication Station. Pick up another passenger going to Multiplication
+Station. Go to Multiplication Station: south 1st left, 3rd left. Pick up a
+passenger going to the Post Office. Go to the Post Office: south 1st left, 3rd
+right. Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+```
 
 ---
 
-## Stav 1
+# Piet
 
--   Jindra 100
--   David 100
--   Honza 100
--   Pavol 100
+![](/content/presentations/ezotericke-programovaci-jazyky/piet-language.gif)
 
 ---
 
-## Stav 2
+# Minecraft computer
 
--   Jindra ~~100~~ 120
--   David ~~100~~ 80
--   Honza 100
--   Pavol 100
+![](/content/presentations/ezotericke-programovaci-jazyky/minecraft-computer.jpg)
 
 ---
 
-## Stav 3 - nevalidní
+# Domino computer
 
--   Jindra ~~100~~ 120
--   David ~~100~~ 80
--   Honza 100
--   Pavol ~~100~~ 200
+![](/content/presentations/ezotericke-programovaci-jazyky/domino-computer.jpg)
 
 ---
 
-## Stav 1
-
-(nic)
-
----
-
-## Stav 2
-
--   David →(20)→ Jindra
+# PostCSS Czech Stylesheets
+## https://github.com/tenhobi/postcss-czech-stylesheets
 
 ---
 
-## Stav 3
+```css
+.error-msg {
+    display: block;
+    border-left: 3px solid red;
+    font-size: 15px;
+    line-height: 20px;
+    background: transparent;
+    color: red !important;
+}
+```
+---
 
--   David →(20)→ Jindra
--   David →(42)→ Honza
+```css
+.error-msg {
+    zobrazení: blok;
+    border-left: 3px solid red;
+    font-size: 15px;
+    line-height: 20px;
+    background: transparent;
+    color: red !important;
+}
+```
 
 ---
 
-## Transakce (centrální důvěryhodná autorita)
-
--   Od koho
--   Komu
--   Částka
-
----
-
-## Transakce (šek)
-
--   Od koho
--   Komu
--   Částka
--   Podpis
+```css
+.error-msg {
+    zobrazení: blok;
+    levý-rámeček: 3px pevné červené;
+    font-size: 15px;
+    line-height: 20px;
+    background: transparent;
+    color: red !important;
+}
+```
 
 ---
 
-## Asymetrická kryptografie
-
--   Veřejný klíč
--   Privátní klíč
-
----
-
-## Transakce (centrální nedůvěryhodná autorita)
-
--   Od koho
--   Komu
--   Částka
--   Digitální podpis
-
-Musí však existovat důvěryhodný zdroj jmen a veřejných klíčů.
+```css
+.error-msg {
+    zobrazení: blok;
+    levý-rámeček: 3px pevné červené;
+    velikost-písma: 15px;
+    line-height: 20px;
+    background: transparent;
+    color: red !important;
+}
+```
 
 ---
 
-## Transakce (centrální nedůvěryhodná autorita)
-
--   Od koho (Veřejný klíč)
--   Komu (Veřejný klíč)
--   Částka
--   Digitální podpis
-
-Nemusí existovat žádný zdroj jmen a veřejných klíčů.
-
----
-
-## Transakce
-
--   Vstupy
--   Výstupy
--   Částka
--   Poplatek
--   Digitální podpis privátním klíčem odesílatele
+```css
+.error-msg {
+    zobrazení: blok;
+    levý-rámeček: 3px pevné červené;
+    velikost-písma: 15px;
+    výška-řádku: 20px;
+    background: transparent;
+    color: red !important;
+}
+```
 
 ---
 
-## Blok
-
--   Odkaz na předchozí blok
--   Čas
--   Transakce s nově vytěženými bitcoiny
--   Transakce(pl.)
--   Nonce
--   Max 1MB
-
----
-
-[Blok 0] <- [Blok 2] <- [Blok 3] <- [Blok 4]
+```css
+.error-msg {
+    zobrazení: blok;
+    levý-rámeček: 3px pevné červené;
+    velikost-písma: 15px;
+    výška-řádku: 20px;
+    pozadí: průhledné;
+    color: red !important;
+}
+```
 
 ---
 
-## "Těžba"
-
--   Běžné PC
--   Grafické karty
--   FPGA čipy
--   ASIC čipy
-
----
-
-# "Peněženky"
-
--   Internetové peněženky (a jejich mobilní aplikace)
--   Původní bitcoin klient
--   Papírové peněženky nebo bitcoinové karty s NFC čipem
--   Hardwarový trezor
-
----
-
-# Kde získat/koupit BTC
-
--   "Těžba"
--   Přijímat platby v BTC
-    -   Právně?
-    -   Paralelní polis
--   Bitcoinový bankomat
--   Směnárna
--   Burza
--   LocalBitcoins.com
-
----
-
-# Investování / spekulace
-
-https://coinmarketcap.com
-
----
-
-# Další kryptoměny
-
-https://coinmarketcap.com
-
-## Bitcoin cash
-
--   1.8.2017 odtržení od Bitcoinu.
-
-## Litecoin
-
--   Jiný hashovací algoritmus **scrypt**
--   4x rychlejší těžba bloků
--   4x více "mincí"
-
----
-
-## Monero
-
--   Plně anonymní kryptoměna
-
-## Namecoin
-
--   Decentralizované DNS
-
----
-
-## Ethereum
-
--   Decentralizovaný výpočetní stroj
--   Smart contracts
-
+```css
+.error-msg {
+    zobrazení: blok;
+    levý-rámeček: 3px pevné červené;
+    velikost-písma: 15px;
+    výška-řádku: 20px;
+    pozadí: průhledné;
+    barva: červená !kurva;
+}
+```
 
 
     </textarea>
