@@ -100,18 +100,30 @@ form {
   bottom: 0; }
 
 .layer1 {
-  z-index: 10; }
-  .layer1 div {
+  z-index: 10;
+  background-color: black; }
+  .layer1 div.pattern {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: url("/images/patterns/patt-10.png");
     background-position: center;
-    background-size: cover;
+    background-repeat: repeat; }
+  .layer1 div.image {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("/images/featured.jpg");
+    background-position: center;
     background-repeat: no-repeat;
-    filter: contrast(40%) grayscale(20%) brightness(30%);
-    transition: filter, opacity 300ms linear; }
+    background-size: cover;
+    filter: blur(2px) grayscale(20%) brightness(0.3); }
 
 .layer2 {
   position: absolute;
