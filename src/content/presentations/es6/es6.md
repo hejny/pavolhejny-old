@@ -1,16 +1,10 @@
-name: inverse
-layout: true
-class: center, middle, inverse
-
----
-
 # How to build a HUGE app with ES6?
 
 ## (basics)
+## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/es6
 
-[Pavol Hejný](https://www.pavolhejny.com/)
 
 <footer>2018-06-29 ITNetwork </footer>
 

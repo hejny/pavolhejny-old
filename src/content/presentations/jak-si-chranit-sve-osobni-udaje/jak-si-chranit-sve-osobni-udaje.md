@@ -1,14 +1,8 @@
-layout: true
-name: inverse
-class: center, middle, inverse
-
----
-
 # Jak si chránit své osobní údaje?
+## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/jak-si-chranit-sve-osobni-udaje
 
-[Pavol Hejný](https://www.pavolhejny.com/)
 
 <footer>2018-07-08 LŠ Pythagoras </footer>
 
@@ -36,8 +30,6 @@ Phil Zimmermann
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
 
 ## Co o nás oni (soused, zaměstanvatel, Google, Facebook, vláda, NSA) vědí?
 
@@ -56,8 +48,7 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 # Co jsou osobní údaje?
 
@@ -74,8 +65,7 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 # Soubory
 
@@ -97,8 +87,7 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 ---
 
@@ -125,8 +114,6 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
 
 # Seznory 
 
@@ -139,8 +126,7 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 # Chování na interneru
 
@@ -165,8 +151,7 @@ a anonymní okna ₊ přihlášení na Facebook, Instagram
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 # Sociální sítě ( Facebook )
 
@@ -185,8 +170,7 @@ A další nastavení:
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
+
 
 ---
 
@@ -201,8 +185,6 @@ class: center, middle, inverse
 ---
 
 layout: true
-name: inverse
-class: center, middle, inverse
 
 ---
 

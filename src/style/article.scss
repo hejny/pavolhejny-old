@@ -60,9 +60,11 @@ main.article {
                 color: white;
 
                 //background-color: rgba($color: #111, $alpha: 0.3);
-                background: url('/images/default-background-mini.jpg');
-                background-size: cover;
-                background-position: 50% 25%;
+                //background: url('/images/default-background-mini.jpg');
+                background-image: linear-gradient(to bottom, #921 , #123);
+
+                //background-size: cover;
+                //background-position: 50% 25%;
 
                 $sticker-radius: 5px;
                 $sticker-padding: 5px;

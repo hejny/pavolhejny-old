@@ -1,16 +1,11 @@
-name: inverse
-layout: true
-class: center, middle, inverse
-
----
-
 <img src="/content/presentations/bitcoin/bitcoin.png" style="width:200px;"/>
 
 # Bitcoin a kryptoměny
+## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/bitcoin
 
-Pavol Hejný
+
 
 ---
 

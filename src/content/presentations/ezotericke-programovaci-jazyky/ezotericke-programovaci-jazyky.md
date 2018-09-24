@@ -1,14 +1,9 @@
-name: inverse
-layout: true
-class: center, middle, inverse
-
----
-
-#Ezoterické programovací jazyky
+# Ezoterické programovací jazyky
+## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/ezotericke-programovaci-jazyky
 
-[Pavol Hejný](https://www.pavolhejny.com/)
+
 
 <footer>2018-08-31 ITNetwork </footer>
 
