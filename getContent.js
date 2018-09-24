@@ -190,8 +190,23 @@ module.exports = function() {
         const uri = baseName(presentationFile);
         const articleMarkdown = fs.readFileSync(presentationFile, 'utf8');
 
+        const articleHtml = markdown.render(articleMarkdown);
+        let problems = [];
+        const articleDom = new DOMParser({
+            locator: {},
+            errorHandler: {
+                warning: (warning) => problems.push(warning),
+                error: (error) => problems.push(error),
+            },
+        }).parseFromString(articleHtml);
+        const title = xpath.select('//h1', articleDom)[0].childNodes[0]
+
+    
+        .nodeValue;
+
         return {
             uri,
+            title,
             content: articleMarkdown,
         };
     });
