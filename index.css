@@ -111,6 +111,7 @@ form {
     bottom: 0;
     background: url("/images/patterns/patt-10.png");
     background-position: center;
+    background-size: 77px;
     background-repeat: repeat; }
   .layer1 div.image {
     z-index: 5;
@@ -119,11 +120,10 @@ form {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("/images/featured.jpg");
+    background-image: linear-gradient(to bottom, #921, #123);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(2px) grayscale(20%) brightness(0.3); }
+    background-size: cover; }
 
 .layer2 {
   position: absolute;
@@ -470,9 +470,7 @@ main.article {
       main.article .inner .sticker .name {
         display: inline-block;
         color: white;
-        background: url("/images/default-background-mini.jpg");
-        background-size: cover;
-        background-position: 50% 25%;
+        background-image: linear-gradient(to bottom, #921, #123);
         padding: 5px;
         padding-top: 10px;
         padding-left: 10px;
