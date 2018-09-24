@@ -49,10 +49,10 @@
         bottom: 0;
 
         //background:url('/content/articles/train-hack/featured.jpg');
-        background:url('/images/featured.jpg');
+        //background:url('/images/featured.jpg');
 
         //background:url('/images/DSC_1899..jpg');
-        
+        background-image: linear-gradient(to bottom, #921 , #123);
        
 
 
@@ -60,7 +60,7 @@
         //background-size: 10px;
         background-repeat: no-repeat;
         background-size: cover;
-        filter: blur(2px) grayscale(20%) brightness(0.3);
+        //filter: blur(2px) grayscale(20%) brightness(0.3);
         //filter: contrast(40%) grayscale(20%) brightness(30%) ;
 
     }

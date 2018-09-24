@@ -1,9 +1,3 @@
-name: inverse
-layout: true
-class: center, middle, inverse
-
----
-
 # Virtuální realita na webu
 ## [Pavol Hejný](https://www.pavolhejny.com/)
 
@@ -26,14 +20,6 @@ Kde se dá 3D na webu dneska využívá
 Napadá mě hned několik příkladů:
 
 ---
-# Sférické 36O° foto/video
-
-![](/content/presentations/virtualni-realita-na-webu/spherical-photo.jpg)
-
-???
-Sférické fotografie na Facebooku a YouTube.
-
----
 # Mapy
 
 ![](/content/presentations/virtualni-realita-na-webu/map.jpg)
@@ -41,6 +27,13 @@ Sférické fotografie na Facebooku a YouTube.
 ???
 eshopy které Umožňují zobrazit produkt jako 3D objekt
 
+---
+# Sférické 36O° foto/video
+
+![](/content/presentations/virtualni-realita-na-webu/spherical-photo.jpg)
+
+???
+Sférické fotografie na Facebooku a YouTube.
 
 ---
 # First person Scéna a Hry
@@ -123,6 +116,8 @@ Navíc existuje knihovna A-frame vyvíjená Mozillou postavená nad Three.js, kt
 Pokud chcete vytvořit něco velmi jednoduchého a chcete jen kódovat bez nutnosti programovat, použijte práve ji.
 
 ---
+
+# A-Frame
 
 ![](/content/presentations/virtualni-realita-na-webu/a-frame-sample-scene.png)
 
