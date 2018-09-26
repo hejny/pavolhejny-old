@@ -68,6 +68,37 @@ html
         background-repeat: repeat;
       }
 
+
+      .remark-slide-content-with-codesample .left, .remark-slide-content-with-codesample .right{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+
+        margin: 0 ;
+
+
+
+        width: 50%;
+        height: 100%;
+
+        overflow-y: scroll;
+        border: none;
+      }
+      
+      .remark-slide-content-with-codesample .left{
+        left: 0;
+      }
+
+      .remark-slide-content-with-codesample .right{
+        left: 50%;
+      }
+
+      .remark-slide-content-with-codesample .hide-topbar{
+        margin-top: -50px;
+        height: calc( 100% + 50px );
+      }
+
+
       .remark-slide{
           background-image: linear-gradient(to bottom, #921 , #123);
       }
@@ -244,37 +275,42 @@ html
 
       for(const slide of document.querySelectorAll('.remark-slide-content')){
 
+        
 
+        //-----------------------------------------
         const images = slide.querySelectorAll('img');
         if(images.length===1){
           const image = images[0];
-
           image.onload = ()=>{
             if(image.width>400/*slide.getBoundingClientRect().width*0.5*/){
 
                 image.style.display='none';
-                
                 
                 slide.style.background = `url(${image.src})`;
                 slide.style.backgroundSize = 'cover';
                 slide.style.backgroundPosition = 'center center';
                 slide.classList.add('remark-slide-content-with-image');
 
-
                 for(const heading of slide.querySelectorAll('h1')){
                   wrapElement(heading);
                 }
-
-
-
-
-
-
             }
           }
-
-
         }
+        //-----------------------------------------
+
+        //-----------------------------------------
+        if(/\<\!\-\-codesample\-\-\>/.test(slide.innerHTML)){
+          slide.classList.add('remark-slide-content-with-codesample');
+
+
+          //const iframe = slide.querySelectorAll('iframe')[0];
+          //console.log(iframe);
+        }
+        //-----------------------------------------
+
+
+        
       }
 
 

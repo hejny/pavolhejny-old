@@ -202,121 +202,13 @@ V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud ne
 <!--codesample-->
 
 
-```javascript
-console.clear();
-
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
+<iframe class="left" src="https://jsfiddle.net/bm5u7rhg/77/embedded/js,html,css,result/dark/"></iframe>
+<iframe class="right hide-topbar" src="https://jsfiddle.net/bm5u7rhg/77/embedded/result/dark/"></iframe>
 
 
 
 
-class Vector2{
-	constructor(x,y){
-  	this.x = x;
-    this.y = y;
-  }
-  
-  addInPlace(vector){
-  	this.x += vector.x;
-  	this.y += vector.y;
-  }
-  
-  project(){
-  	return(new Vector2(
-    	(this.x+1)/2*500,
-      (this.y+1)/2*500
-    ));
-  
-  }
-  
-  round(){
-  	return(new Vector2(
-    	Math.round(this.x),
-      Math.round(this.y)
-    ));
-  
-  }
-  
-  
-    toArray(){
-  	return([this.x,this.y]);
-  
-  }
-}
-
-
-
-class Pointer{
-
-	constructor(position,movement){
-  	this.position = position;
-  	this.movement = movement;
-  }
-
-	update(ctx){
-  	this.position.addInPlace(this.movement);
-    
-    
-    const pixelData = ctx.getImageData(...this.position.round().toArray(), 1, 1).data;
-		const lightness = (pixelData[0]/255);
-    
-    if(lightness<.1){
-    		this.movement = new Vector2(0,0);
-    
-    }
-  }
-
-	draw(ctx){
-  	//ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
-    
-		ctx.fillStyle="black";
-		ctx.fillRect( ...this.position.toArray(), 1, 1 );
-  }
-
-}
-
-
-const pointers = [];
-
-for(let i=0;i<100;i++){
-	pointers.push(new Pointer(
-  	new Vector2(
-    	(Math.random())*500,
-      (Math.random())*500   
-    ),new Vector2(
-    	Math.sign(Math.random()-.5)/2,
-      Math.sign(Math.random()-.5)/3
-    )
-  
-  ));
-}
-
-
-ctx.fillStyle="white";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-function renderLoop() {
-
-	for(const pointer of pointers){
-    pointer.draw(ctx);
-    pointer.update(ctx);
-  }
-
-  requestAnimationFrame(renderLoop);
-}
-renderLoop();
-
-
-```
-
-
-<iframe src="https://jsfiddle.net/bm5u7rhg/77/embedded/js,html,css,result/dark/"/>
-
-
-
-
---
+---
 
 
 Kam dál, dává VR smysl
