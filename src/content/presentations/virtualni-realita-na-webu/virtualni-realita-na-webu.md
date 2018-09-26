@@ -202,8 +202,8 @@ V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud ne
 <!--codesample-->
 
 
-<iframe class="left" src="https://jsfiddle.net/bm5u7rhg/77/embedded/js,html,css,result/dark/"></iframe>
-<iframe class="right hide-topbar" src="https://jsfiddle.net/bm5u7rhg/77/embedded/result/dark/"></iframe>
+<iframe class="left" src="https://jsfiddle.net/phejny/pLun483x/1/embedded/js,html,css,result/dark/"></iframe>
+<iframe class="right hide-topbar" src="https://jsfiddle.net/phejny/pLun483x/1/embedded/result/dark/"></iframe>
 
 
 
