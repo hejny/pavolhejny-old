@@ -277,7 +277,8 @@ html
 
         
 
-        //-----------------------------------------
+        //-----------------------------------------Background image
+        {
         const images = slide.querySelectorAll('img');
         if(images.length===1){
           const image = images[0];
@@ -297,18 +298,38 @@ html
             }
           }
         }
-        //-----------------------------------------
-
-        //-----------------------------------------
-        if(/\<\!\-\-codesample\-\-\>/.test(slide.innerHTML)){
-          slide.classList.add('remark-slide-content-with-codesample');
-
-
-          //const iframe = slide.querySelectorAll('iframe')[0];
-          //console.log(iframe);
         }
         //-----------------------------------------
 
+        //-----------------------------------------Codesample
+        {
+        const CODESAMPLE_REGEX = /<p>codesample:([a-zA-Z0-9]+\/[0-9]+)<\/p>/;
+        if(CODESAMPLE_REGEX.test(slide.innerHTML)){
+          const [full, jsfiddleUriPart] = slide.innerHTML.match(CODESAMPLE_REGEX);
+          console.log(`Slide is codesample from "${jsfiddleUriPart}".`);
+          slide.innerHTML = `
+            <iframe class="left" src="https://jsfiddle.net/phejny/${jsfiddleUriPart}/embedded/js,html,css,result/dark/"></iframe>
+            <iframe class="right hide-topbar" src="https://jsfiddle.net/phejny/${jsfiddleUriPart}/embedded/result/dark/"></iframe>
+          `;
+          slide.classList.add('remark-slide-content-with-codesample');
+        }
+        }
+        //-----------------------------------------
+
+
+        //-----------------------------------------Sample background
+        {
+        const SAMPLE_BACKGROUND_REGEX = /<p>sample-background:(.+)<\/p>/;
+        if(SAMPLE_BACKGROUND_REGEX.test(slide.innerHTML)){
+          const [full, url] = slide.innerHTML.match(SAMPLE_BACKGROUND_REGEX);
+          console.log(`Slide is sample in background from "${url}".`);
+          slide.innerHTML = `
+            <iframe src="https://${url}"></iframe>
+          `;
+          slide.classList.add('remark-slide-content-with-sample-background');
+        }
+        }
+        //-----------------------------------------
 
         
       }

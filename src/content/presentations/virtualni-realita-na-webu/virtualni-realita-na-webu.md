@@ -198,15 +198,24 @@ V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud ne
 
 
 ---
+# Simple box
+codesample:4j8w5g3q/1
+---
+# Many boxes
+codesample:4j8w5g3q/4
+---
+# Boxes and rotation
+codesample:4j8w5g3q/7
+---
+# Sky of spheres
+codesample:4j8w5g3q/12
+---
+# VR camera
+codesample:4j8w5g3q/14
+---
 
-<!--codesample-->
-
-
-<iframe class="left" src="https://jsfiddle.net/phejny/pLun483x/1/embedded/js,html,css,result/dark/"></iframe>
-<iframe class="right hide-topbar" src="https://jsfiddle.net/phejny/pLun483x/1/embedded/result/dark/"></iframe>
-
-
-
+#Fyzika
+sample-background:webappgames.github.io/3d-project/
 
 ---
 
