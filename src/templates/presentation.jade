@@ -46,17 +46,27 @@ html
           margin-left: -100px;
           margin-right: -100px;
           margin-top: 260px;
-          padding: 30px;
+          padding: 0;
           border-radius: 5px;
           background-image: linear-gradient(to left, #921 , #123);
           box-shadow: black 0 0 20px;
           display: inline-block;
-          padding-left: 50px;
-          padding-right: 50px;
+          
           /*background-image: linear-gradient(to left, #921 , #123);
           background:url('/images/patterns/patt-10.png');*/
       }
 
+      .remark-slide-content-with-image h1 .inner{ 
+
+        padding: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
+        background:url('/images/patterns/patt-10.png');
+        background-position: center;
+        background-size: 100px;
+        background-repeat: repeat;
+      }
 
       .remark-slide{
           background-image: linear-gradient(to bottom, #921 , #123);
@@ -249,13 +259,27 @@ html
                 slide.style.backgroundSize = 'cover';
                 slide.style.backgroundPosition = 'center center';
                 slide.classList.add('remark-slide-content-with-image');
-                
+
+
+                for(const heading of slide.querySelectorAll('h1')){
+                  wrapElement(heading);
+                }
+
+
+
+
+
 
             }
           }
 
 
         }
+      }
+
+
+      function wrapElement(element){
+        element.innerHTML = `<div class="inner">${element.innerHTML}</div>`;
       }
 
 

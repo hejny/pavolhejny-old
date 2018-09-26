@@ -12,12 +12,38 @@ https://www.pavolhejny.com/virtualni-realita-na-webu
 
 
 ???
-Dobrý den jmenuji se Pavel Hejný jsem vývojář webových aplikací. Vyvíjím elektronické učebnice matematiky rád, miluji nové technologie a proto se účastním konferencí meetupů a hackathonů, kde rád vyvíjím a povídám o nejnovějších možnostech webu. Také jsem člen české Mozilla komunity se kterou chodíme po technologických konferencích a ukazujeme, co všechno dnes na webu jde včetně VR na webu a proto bych vám tom dnes rád řekl.
+Ahoj jmenuji se Pavel Hejný jsem vývojář webových aplikací. Vyvíjím elektronické učebnice matematiky. Miluji nové technologie a proto se účastním konferencí meetupů konferencí a hackathonů.
+
+Před dvěma týdny jsem byl na hackathonu veřejné správy. Myslel jsem, že budu pracovat čistě s daty, ale kromě velkého množství skvělých datových sad jsme měli k dispozici HTC Vive a Oculus Rift. 
+
+Vedle mě stál kamarád se kterým jsme členem české Mozilla komunity a rychle nás napal nápad.
+Co kdybychom všechna ta data zobrazovali na mapě v
+
+---
+
+IMG hackathon
+
+???
+
+
+
+
+
+
+
+
+ kde rád vyvíjím a povídám o nejnovějších možnostech webu. Také jsem člen české Mozilla komunity se kterou chodíme po technologických konferencích a ukazujeme, co všechno dnes na webu jde včetně VR na webu a proto bych vám tom dnes rád řekl.
 
 Než přejdu k virtuální realitě, začnu s 3D technologiemi na webu. Když jsem byl na prvním 1. Jobs Dev konferenci, mluvil jsem na téma na 3D na webu. 
 
 Kde se dá 3D na webu dneska využívá
 Napadá mě hned několik příkladů:
+
+
+---
+
+IMG night sky
+
 
 ---
 # Mapy
@@ -25,7 +51,7 @@ Napadá mě hned několik příkladů:
 ![](/content/presentations/virtualni-realita-na-webu/map.jpg)
 
 ???
-eshopy které Umožňují zobrazit produkt jako 3D objekt
+Docela běžně se na webu setkáváme s 3D v mapách.
 
 ---
 # Sférické 36O° foto/video
@@ -41,7 +67,10 @@ Sférické fotografie na Facebooku a YouTube.
 ![](/content/presentations/virtualni-realita-na-webu/babylon-js-game.jpg)
 
 ???
-a poslední asi nejpokročilejší příklad First person scény na webu
+Věc která na webu zatím není úplně běžná jsou First person scény na webu
+
+
+možná rozvést a collapse game
 
 
 ---
@@ -52,7 +81,7 @@ a poslední asi nejpokročilejší příklad First person scény na webu
 
 - WebGL
 - ES6, HTML5
-- Pointer Lock API,...
+- Browser APIs (Pointer Lock API, Fullscreen API...)
 
 
 ???
@@ -71,6 +100,8 @@ Existuje mnoho APIs, která umožňují webovým aplikacím funkce, které byli 
 # Technologie
 
 ## Knihovny
+
+existuje jich velké množství
 
 - Three.js
 - Babylon.js (TS)
@@ -121,18 +152,6 @@ Pokud chcete vytvořit něco velmi jednoduchého a chcete jen kódovat bez nutno
 
 ![](/content/presentations/virtualni-realita-na-webu/a-frame-sample-scene.png)
 
----
-
-# Ovládání
-
-- Kurzor
-- Dotyk
-- Klávesnice
-
-???
-
-Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesnicí. A obvykle buď zobrazují předmět, který před sebou otáčíme nebo scénu ve které jsme my postavou a pohybujeme se v ní. Případně zjednodušený případ kdy se pouze otáčíme kolem sférické fotografie či videa.
-
 
 ---
 
@@ -143,24 +162,21 @@ Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesn
 
 ???
 
+
+Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesnicí. A obvykle buď zobrazují předmět, který před sebou otáčíme nebo scénu ve které jsme my postavou a pohybujeme se v ní. Případně zjednodušený případ kdy se pouze otáčíme kolem sférické fotografie či videa.
+
+
 Virtuální realita se liší pomocí dvou věcí:
 Pomocí toho, jak se ovládá a toho, že se renderuje místo do jedné plochy do obou očí.
 
-
----
-
-# Vizuální
-- Rozdělení oči
-- Oddělení od okolí
-
-???
 
 Brýle virtuální reality například HTC Vive nebo Oculus Rift nejsou vlastně ničím jiným než obyčejnou obrazovkou, která je rozdělena na dvě části - dvě oči. A zároveň dokonale odděluje obraz od okolí. Další věcí kterou dělají je velmi přesné snímání pohybu a orientace natočení.
 
 ---
 
-# Obraz (Technologie)
-- [WebVR API](https://webvr.info/)
+# [WebVR API](https://webvr.info/)
+
+IMG for split screen
 
 ???
 Pro přenesení obrazu do helmy se používá WebVR API.
@@ -171,10 +187,170 @@ Pro přenesení obrazu do helmy se používá WebVR API.
 - Gamepad API
 - DeviceOrientation API
 
+Nice to have bottom right images
+
+
 ???
 Druhá velmi důležitá věc pro virtuální realitu velmi přesně synchronizovaný pohyb s obrazem. Jak pohyb helmy, tak pohyb ovladačů v ruce.
 
 V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud nepoužíváte HTC vive nebo Oculus Rift ale mobil např. s Cardboard, k zaznamenání přesného pohybu využíváte gyroskop v mobilu. Ten se dá z javascriptu snímat pomocí DeviceOrientation API.
+
+
+
+---
+
+<!--codesample-->
+
+
+```javascript
+console.clear();
+
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+
+
+
+class Vector2{
+	constructor(x,y){
+  	this.x = x;
+    this.y = y;
+  }
+  
+  addInPlace(vector){
+  	this.x += vector.x;
+  	this.y += vector.y;
+  }
+  
+  project(){
+  	return(new Vector2(
+    	(this.x+1)/2*500,
+      (this.y+1)/2*500
+    ));
+  
+  }
+  
+  round(){
+  	return(new Vector2(
+    	Math.round(this.x),
+      Math.round(this.y)
+    ));
+  
+  }
+  
+  
+    toArray(){
+  	return([this.x,this.y]);
+  
+  }
+}
+
+
+
+class Pointer{
+
+	constructor(position,movement){
+  	this.position = position;
+  	this.movement = movement;
+  }
+
+	update(ctx){
+  	this.position.addInPlace(this.movement);
+    
+    
+    const pixelData = ctx.getImageData(...this.position.round().toArray(), 1, 1).data;
+		const lightness = (pixelData[0]/255);
+    
+    if(lightness<.1){
+    		this.movement = new Vector2(0,0);
+    
+    }
+  }
+
+	draw(ctx){
+  	//ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+    
+		ctx.fillStyle="black";
+		ctx.fillRect( ...this.position.toArray(), 1, 1 );
+  }
+
+}
+
+
+const pointers = [];
+
+for(let i=0;i<100;i++){
+	pointers.push(new Pointer(
+  	new Vector2(
+    	(Math.random())*500,
+      (Math.random())*500   
+    ),new Vector2(
+    	Math.sign(Math.random()-.5)/2,
+      Math.sign(Math.random()-.5)/3
+    )
+  
+  ));
+}
+
+
+ctx.fillStyle="white";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+function renderLoop() {
+
+	for(const pointer of pointers){
+    pointer.draw(ctx);
+    pointer.update(ctx);
+  }
+
+  requestAnimationFrame(renderLoop);
+}
+renderLoop();
+
+
+```
+
+
+<iframe src="https://jsfiddle.net/bm5u7rhg/77/embedded/js,html,css,result/dark/"/>
+
+
+
+
+--
+
+
+Kam dál, dává VR smysl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
