@@ -273,11 +273,11 @@ html
 
     script.
 
-      for(const slide of document.querySelectorAll('.remark-slide-content')){
+      for(const slideContainer of document.querySelectorAll('.remark-slide-container')){
 
-        
+        const slide = slideContainer.querySelector('.remark-slide-content');//todo rename to slideContent
 
-        //-----------------------------------------Background image
+        //-----------------------------------------Background image //todo maybe to render f
         {
         const images = slide.querySelectorAll('img');
         if(images.length===1){
@@ -301,42 +301,75 @@ html
         }
         //-----------------------------------------
 
-        //-----------------------------------------Codesample
-        {
+
+        //todo also working on forst slude
+        addClassNameListener(slideContainer, ()=>{
+            if(slideContainer.classList.contains('remark-visible')){
+              render(slide);
+            }else{
+              unrender(slide);
+            }
+        }, false);
+        
+      }
+
+      function render(slide){
+        slide.setAttribute('data-original-inner-html',slide.innerHTML);
+        renderCodesample(slide);
+        renderSampleBackground(slide);
+        //todo put loader
+      }
+
+      function unrender(slide){
+          slide.innerHTML = slide.getAttribute('data-original-inner-html');
+      }
+
+      function renderCodesample(slide) {
         const CODESAMPLE_REGEX = /<p>codesample:([a-zA-Z0-9]+\/[0-9]+)<\/p>/;
         if(CODESAMPLE_REGEX.test(slide.innerHTML)){
           const [full, jsfiddleUriPart] = slide.innerHTML.match(CODESAMPLE_REGEX);
-          console.log(`Slide is codesample from "${jsfiddleUriPart}".`);
+          console.log(`Slide is a codesample from "${jsfiddleUriPart}".`);
           slide.innerHTML = `
             <iframe class="left" src="https://jsfiddle.net/phejny/${jsfiddleUriPart}/embedded/js,html,css,result/dark/"></iframe>
             <iframe class="right hide-topbar" src="https://jsfiddle.net/phejny/${jsfiddleUriPart}/embedded/result/dark/"></iframe>
           `;
           slide.classList.add('remark-slide-content-with-codesample');
+        }else{
+          console.log(`Slide is not a codesample.`);
         }
-        }
-        //-----------------------------------------
+      }
 
 
-        //-----------------------------------------Sample background
-        {
+      function renderSampleBackground(slide){
         const SAMPLE_BACKGROUND_REGEX = /<p>sample-background:(.+)<\/p>/;
         if(SAMPLE_BACKGROUND_REGEX.test(slide.innerHTML)){
           const [full, url] = slide.innerHTML.match(SAMPLE_BACKGROUND_REGEX);
-          console.log(`Slide is sample in background from "${url}".`);
+          console.log(`Slide is a sample in background from "${url}".`);
           slide.innerHTML = `
             <iframe src="https://${url}"></iframe>
           `;
           slide.classList.add('remark-slide-content-with-sample-background');
+        }else{
+          console.log(`Slide is not a sample in background.`);
         }
-        }
-        //-----------------------------------------
-
-        
       }
 
 
       function wrapElement(element){
         element.innerHTML = `<div class="inner">${element.innerHTML}</div>`;
+      }
+
+      function addClassNameListener(elem, callback) {
+          //var elem = document.getElementById(elemId);
+          var lastClassName = elem.className;
+          window.setInterval( function() {   
+            var className = elem.className;
+              //console.log(className,lastClassName);
+              if (className !== lastClassName) {
+                  callback();   
+                  lastClassName = className;
+              }
+          },10);
       }
 
 
