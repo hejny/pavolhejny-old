@@ -21,7 +21,8 @@ Co kdybychom všechna ta data zobrazovali na mapě v
 
 ---
 
-IMG hackathon
+![](/content/presentations/virtualni-realita-na-webu/hackuj-stat-clanek.png)
+
 
 ???
 
@@ -39,10 +40,6 @@ Než přejdu k virtuální realitě, začnu s 3D technologiemi na webu. Když js
 Kde se dá 3D na webu dneska využívá
 Napadá mě hned několik příkladů:
 
-
----
-
-IMG night sky
 
 
 ---
@@ -81,7 +78,8 @@ možná rozvést a collapse game
 
 - WebGL
 - ES6, HTML5
-- Browser APIs (Pointer Lock API, Fullscreen API...)
+- Browser APIs
+  - (Pointer Lock API, Fullscreen API...)
 
 
 ???
@@ -120,38 +118,13 @@ Obě se následně dají použít i pro virtuální realitu na webu.
 
 # A-Frame
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, WebVR! • A-Frame</title>
-    <meta name="description" content="Hello, WebVR! • A-Frame">
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene background="color: #ECECEC">
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-    </a-scene>
-  </body>
-</html>
-```
+codesample:html:phejny/n2Le0za8/
 
 ???
 
 Navíc existuje knihovna A-frame vyvíjená Mozillou postavená nad Three.js, která je designovaná přímo pro virtuální realitu a lze v ní psát scény velmi jednoduše v xml podobně, jak se zapisuje svg v rámci html.
 
 Pokud chcete vytvořit něco velmi jednoduchého a chcete jen kódovat bez nutnosti programovat, použijte práve ji.
-
----
-
-# A-Frame
-
-![](/content/presentations/virtualni-realita-na-webu/a-frame-sample-scene.png)
-
 
 ---
 
@@ -174,20 +147,10 @@ Brýle virtuální reality například HTC Vive nebo Oculus Rift nejsou vlastně
 
 ---
 
-# [WebVR API](https://webvr.info/)
-
-IMG for split screen
-
-???
-Pro přenesení obrazu do helmy se používá WebVR API.
-
----
-
-# Ovládání
+# WebVR
+- [WebVR API](https://webvr.info/)
 - Gamepad API
 - DeviceOrientation API
-
-Nice to have bottom right images
 
 
 ???
@@ -199,19 +162,19 @@ V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud ne
 
 ---
 # Simple box
-codesample:4j8w5g3q/1
+codesample:js:phejny/4j8w5g3q/1
 ---
 # Many boxes
-codesample:4j8w5g3q/4
+codesample:js:phejny/4j8w5g3q/4
 ---
 # Boxes and rotation
-codesample:4j8w5g3q/7
+codesample:js:phejny/4j8w5g3q/7
 ---
 # Sky of spheres
-codesample:4j8w5g3q/12
+codesample:js:phejny/4j8w5g3q/12
 ---
 # VR camera
-codesample:4j8w5g3q/14
+codesample:js:phejny/4j8w5g3q/14
 ---
 
 #Fyzika
@@ -220,99 +183,25 @@ sample-background:webappgames.github.io/3d-project/
 ---
 
 
-# Kam dál, dává VR smysl
+# Dává VR smysl?
 
+Vůbec?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Na webu?
 
 ---
 
-# Fyzika
+## Díky za pozornost!
 
-![](physics-engine.jpg)
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/virtualni-realita-na-webu)
 
----
+https://www.pavolhejny.com/virtualni-realita-na-webu
 
-<blockquote class="twitter-tweet" data-lang="cs"><p lang="cs" dir="ltr">Přijďte na můj workshop &quot;Vytvořte si vlastní webovou hru&quot; a naprogramujte si vlastní způsob jak zdemolovat budovu. ve 14:00 v E105<a href="https://twitter.com/hashtag/openalt?src=hash&amp;ref_src=twsrc%5Etfw">#openalt</a> <a href="https://t.co/NipViK7I2p">pic.twitter.com/NipViK7I2p</a></p>&mdash; Pavol Hejný (@pavolhejny) <a href="https://twitter.com/pavolhejny/status/926779485093027840?ref_src=twsrc%5Etfw">4. listopadu 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://webappgames.github.io/collapse-game/ *←Mobil*
 
-
-???
-Existuje několik fyzikálních enginů na webu například Cannon.js nebo Oimo.js, které mají přímé napojení na Three.js a Babylon.js. Hodí se hlavně pro vytváření her a ve virtuální realitě a fyzika ve virtuální realitě vypadá velmi dobře.
-
----
-
-# Zvuk
-
-???
-Asi vynechám
-
----
-
-# Podpora prohlížečů
-
-???
-Asi vynechám
-
----
-
-# Ukázka
+https://webappgames.github.io/3d-project/ *←PC*
 
 
-- https://webappgames.github.io/3d-project/
 
-- https://webappgames.github.io/collapse-game/
-
-???
-Todo
-
-
----
-
-# Budoucnost
-
-IMG?
-
-???
-Jaká je budoucnost virtuální reality na webu
-
-
----
-
-# Moje projekty
-
-![](/content/presentations/virtualni-realita-na-webu/img)
-
-???
-Todo
 
 
