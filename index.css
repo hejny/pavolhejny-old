@@ -376,7 +376,9 @@ main.article {
   padding-top: 0px;
   min-height: 100vh;
   background-color: #e6e6e6;
-  background: url("./images/textures/norwegian_rose.png");
+  background: url("/images/patterns/patt-10.png");
+  background-position: center;
+  background-size: 77px;
   background-position: center;
   text-align: center; }
   main.article .inner {

@@ -45,17 +45,69 @@
           margin-left: -100px;
           margin-right: -100px;
           margin-top: 260px;
-          padding: 30px;
+          padding: 0;
           border-radius: 5px;
           background-image: linear-gradient(to left, #921 , #123);
           box-shadow: black 0 0 20px;
           display: inline-block;
-          padding-left: 50px;
-          padding-right: 50px;
+          
           /*background-image: linear-gradient(to left, #921 , #123);
           background:url('/images/patterns/patt-10.png');*/
       }
       
+      .remark-slide-content-with-image h1 .inner{ 
+      
+        padding: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
+        background:url('/images/patterns/patt-10.png');
+        background-position: center;
+        background-size: 100px;
+        background-repeat: repeat;
+      }
+      
+      
+      .remark-slide-content-with-codesample .left, .remark-slide-content-with-codesample .right{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+      
+        margin: 0 ;
+      
+      
+      
+        width: 50%;
+        height: 100%;
+      
+        overflow-y: scroll;
+        border: none;
+      }
+      
+      .remark-slide-content-with-codesample .left{
+        left: 0;
+      }
+      
+      .remark-slide-content-with-codesample .right{
+        left: 50%;
+      }
+      
+      .remark-slide-content-with-codesample .hide-topbar{
+        margin-top: -50px;
+        height: calc( 100% + 50px );
+      }
+      
+      iframe{
+        border:none;
+      }
+      
+      .remark-slide-content-with-sample-background iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
       
       .remark-slide{
           background-image: linear-gradient(to bottom, #921 , #123);
@@ -125,6 +177,10 @@
         font-weight: normal;
         text-align: left;
         font-size: 1.5em;
+      }
+      
+      ul ul{
+        font-size: 1rem;
       }
       del{
         color: #888;
@@ -234,12 +290,35 @@ https://www.pavolhejny.com/virtualni-realita-na-webu
 
 
 ???
-Dobrý den jmenuji se Pavel Hejný jsem vývojář webových aplikací. Vyvíjím elektronické učebnice matematiky rád, miluji nové technologie a proto se účastním konferencí meetupů a hackathonů, kde rád vyvíjím a povídám o nejnovějších možnostech webu. Také jsem člen české Mozilla komunity se kterou chodíme po technologických konferencích a ukazujeme, co všechno dnes na webu jde včetně VR na webu a proto bych vám tom dnes rád řekl.
+Ahoj jmenuji se Pavel Hejný jsem vývojář webových aplikací. Vyvíjím elektronické učebnice matematiky. Miluji nové technologie a proto se účastním konferencí meetupů konferencí a hackathonů.
+
+Před dvěma týdny jsem byl na hackathonu veřejné správy. Myslel jsem, že budu pracovat čistě s daty, ale kromě velkého množství skvělých datových sad jsme měli k dispozici HTC Vive a Oculus Rift. 
+
+Vedle mě stál kamarád se kterým jsme členem české Mozilla komunity a rychle nás napal nápad.
+Co kdybychom všechna ta data zobrazovali na mapě v
+
+---
+
+![](/content/presentations/virtualni-realita-na-webu/hackuj-stat-clanek.png)
+
+
+???
+
+
+
+
+
+
+
+
+ kde rád vyvíjím a povídám o nejnovějších možnostech webu. Také jsem člen české Mozilla komunity se kterou chodíme po technologických konferencích a ukazujeme, co všechno dnes na webu jde včetně VR na webu a proto bych vám tom dnes rád řekl.
 
 Než přejdu k virtuální realitě, začnu s 3D technologiemi na webu. Když jsem byl na prvním 1. Jobs Dev konferenci, mluvil jsem na téma na 3D na webu. 
 
 Kde se dá 3D na webu dneska využívá
 Napadá mě hned několik příkladů:
+
+
 
 ---
 # Mapy
@@ -247,7 +326,7 @@ Napadá mě hned několik příkladů:
 ![](/content/presentations/virtualni-realita-na-webu/map.jpg)
 
 ???
-eshopy které Umožňují zobrazit produkt jako 3D objekt
+Docela běžně se na webu setkáváme s 3D v mapách.
 
 ---
 # Sférické 36O° foto/video
@@ -263,7 +342,10 @@ Sférické fotografie na Facebooku a YouTube.
 ![](/content/presentations/virtualni-realita-na-webu/babylon-js-game.jpg)
 
 ???
-a poslední asi nejpokročilejší příklad First person scény na webu
+Věc která na webu zatím není úplně běžná jsou First person scény na webu
+
+
+možná rozvést a collapse game
 
 
 ---
@@ -274,7 +356,8 @@ a poslední asi nejpokročilejší příklad First person scény na webu
 
 - WebGL
 - ES6, HTML5
-- Pointer Lock API,...
+- Browser APIs
+  - (Pointer Lock API, Fullscreen API...)
 
 
 ???
@@ -294,6 +377,8 @@ Existuje mnoho APIs, která umožňují webovým aplikacím funkce, které byli 
 
 ## Knihovny
 
+existuje jich velké množství
+
 - Three.js
 - Babylon.js (TS)
 
@@ -311,50 +396,13 @@ Obě se následně dají použít i pro virtuální realitu na webu.
 
 # A-Frame
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, WebVR! • A-Frame</title>
-    <meta name="description" content="Hello, WebVR! • A-Frame">
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene background="color: #ECECEC">
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-    </a-scene>
-  </body>
-</html>
-```
+codesample:html:phejny/n2Le0za8/
 
 ???
 
 Navíc existuje knihovna A-frame vyvíjená Mozillou postavená nad Three.js, která je designovaná přímo pro virtuální realitu a lze v ní psát scény velmi jednoduše v xml podobně, jak se zapisuje svg v rámci html.
 
 Pokud chcete vytvořit něco velmi jednoduchého a chcete jen kódovat bez nutnosti programovat, použijte práve ji.
-
----
-
-# A-Frame
-
-![](/content/presentations/virtualni-realita-na-webu/a-frame-sample-scene.png)
-
----
-
-# Ovládání
-
-- Kurzor
-- Dotyk
-- Klávesnice
-
-???
-
-Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesnicí. A obvykle buď zobrazují předmět, který před sebou otáčíme nebo scénu ve které jsme my postavou a pohybujeme se v ní. Případně zjednodušený případ kdy se pouze otáčíme kolem sférické fotografie či videa.
-
 
 ---
 
@@ -365,33 +413,23 @@ Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesn
 
 ???
 
+
+Běžné 3D scény se ovládají pomocí tří věcí kurzoru, dotyku a klávesnicí. A obvykle buď zobrazují předmět, který před sebou otáčíme nebo scénu ve které jsme my postavou a pohybujeme se v ní. Případně zjednodušený případ kdy se pouze otáčíme kolem sférické fotografie či videa.
+
+
 Virtuální realita se liší pomocí dvou věcí:
 Pomocí toho, jak se ovládá a toho, že se renderuje místo do jedné plochy do obou očí.
 
-
----
-
-# Vizuální
-- Rozdělení oči
-- Oddělení od okolí
-
-???
 
 Brýle virtuální reality například HTC Vive nebo Oculus Rift nejsou vlastně ničím jiným než obyčejnou obrazovkou, která je rozdělena na dvě části - dvě oči. A zároveň dokonale odděluje obraz od okolí. Další věcí kterou dělají je velmi přesné snímání pohybu a orientace natočení.
 
 ---
 
-# Obraz (Technologie)
+# WebVR
 - [WebVR API](https://webvr.info/)
-
-???
-Pro přenesení obrazu do helmy se používá WebVR API.
-
----
-
-# Ovládání
 - Gamepad API
 - DeviceOrientation API
+
 
 ???
 Druhá velmi důležitá věc pro virtuální realitu velmi přesně synchronizovaný pohyb s obrazem. Jak pohyb helmy, tak pohyb ovladačů v ruce.
@@ -399,66 +437,50 @@ Druhá velmi důležitá věc pro virtuální realitu velmi přesně synchronizo
 V helmách se k přenesení pohybu a natočení používá Gamepad API. Pokud nepoužíváte HTC vive nebo Oculus Rift ale mobil např. s Cardboard, k zaznamenání přesného pohybu využíváte gyroskop v mobilu. Ten se dá z javascriptu snímat pomocí DeviceOrientation API.
 
 
----
-
-# Fyzika
-
-![](physics-engine.jpg)
 
 ---
-
-<blockquote class="twitter-tweet" data-lang="cs"><p lang="cs" dir="ltr">Přijďte na můj workshop &quot;Vytvořte si vlastní webovou hru&quot; a naprogramujte si vlastní způsob jak zdemolovat budovu. ve 14:00 v E105<a href="https://twitter.com/hashtag/openalt?src=hash&amp;ref_src=twsrc%5Etfw">#openalt</a> <a href="https://t.co/NipViK7I2p">pic.twitter.com/NipViK7I2p</a></p>&mdash; Pavol Hejný (@pavolhejny) <a href="https://twitter.com/pavolhejny/status/926779485093027840?ref_src=twsrc%5Etfw">4. listopadu 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-???
-Existuje několik fyzikálních enginů na webu například Cannon.js nebo Oimo.js, které mají přímé napojení na Three.js a Babylon.js. Hodí se hlavně pro vytváření her a ve virtuální realitě a fyzika ve virtuální realitě vypadá velmi dobře.
-
+# Simple box
+codesample:js:phejny/4j8w5g3q/1
+---
+# Many boxes
+codesample:js:phejny/4j8w5g3q/4
+---
+# Boxes and rotation
+codesample:js:phejny/4j8w5g3q/7
+---
+# Sky of spheres
+codesample:js:phejny/4j8w5g3q/12
+---
+# VR camera
+codesample:js:phejny/4j8w5g3q/14
 ---
 
-# Zvuk
-
-???
-Asi vynechám
-
----
-
-# Podpora prohlížečů
-
-???
-Asi vynechám
+#Fyzika
+sample-background:webappgames.github.io/3d-project/
 
 ---
 
-# Ukázka
 
+# Dává VR smysl?
 
-- https://webappgames.github.io/3d-project/
+Vůbec?
 
-- https://webappgames.github.io/collapse-game/
-
-???
-Todo
-
+Na webu?
 
 ---
 
-# Budoucnost
+## Díky za pozornost!
 
-IMG?
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/virtualni-realita-na-webu)
 
-???
-Jaká je budoucnost virtuální reality na webu
+https://www.pavolhejny.com/virtualni-realita-na-webu
+
+https://webappgames.github.io/collapse-game/ *←Mobil*
+
+https://webappgames.github.io/3d-project/ *←PC*
 
 
----
 
-# Moje projekty
-
-![](/content/presentations/virtualni-realita-na-webu/img)
-
-???
-Todo
 
 
 
@@ -473,30 +495,112 @@ Todo
       
     </script>
     <script>
-      for(const slide of document.querySelectorAll('.remark-slide-content')){
+      for(const slideContainer of document.querySelectorAll('.remark-slide-container')){
       
+        const slide = slideContainer.querySelector('.remark-slide-content');//todo rename to slideContent
       
+        //-----------------------------------------Background image //todo maybe to render f
+        {
         const images = slide.querySelectorAll('img');
         if(images.length===1){
           const image = images[0];
-      
           image.onload = ()=>{
             if(image.width>400/*slide.getBoundingClientRect().width*0.5*/){
       
                 image.style.display='none';
                 
-                
                 slide.style.background = `url(${image.src})`;
                 slide.style.backgroundSize = 'cover';
                 slide.style.backgroundPosition = 'center center';
                 slide.classList.add('remark-slide-content-with-image');
-                
       
+                for(const heading of slide.querySelectorAll('h1')){
+                  wrapElement(heading);
+                }
             }
           }
-      
-      
         }
+        }
+        //-----------------------------------------
+      
+      
+        //todo also working on forst slude
+        addClassNameListener(slideContainer, ()=>{
+            if(slideContainer.classList.contains('remark-visible')){
+              render(slide);
+            }else{
+              unrender(slide);
+            }
+        }, false);
+        
+      }
+      
+      function render(slide){
+        console.groupCollapsed('Slide');
+        console.log(slide);
+        console.log(slide.innerHTML);
+        slide.setAttribute('data-original-inner-html',slide.innerHTML);
+        renderCodesample(slide);
+        renderSampleBackground(slide);
+        console.log(slide.innerHTML);
+        //todo put loader
+        console.groupEnd();
+      }
+      
+      function unrender(slide){
+        if(slide.hasAttribute('data-original-inner-html')){
+          slide.innerHTML = slide.getAttribute('data-original-inner-html');
+        }
+      }
+      
+      function renderCodesample(slide) {
+        const CODESAMPLE_REGEX = /<p>codesample:([a-z]+):([a-zA-Z0-9\/]+)<\/p>/;
+        if(CODESAMPLE_REGEX.test(slide.innerHTML)){
+          const [full, type, jsfiddleUriPart] = slide.innerHTML.match(CODESAMPLE_REGEX);
+          console.log(`Slide is a codesample from "${jsfiddleUriPart}".`);
+          slide.innerHTML = `
+            <h1>🚀</h1>
+            <iframe class="left" src="https://jsfiddle.net/${jsfiddleUriPart}/embedded/${type}/dark/"></iframe>
+            <iframe class="right hide-topbar" src="https://jsfiddle.net/${jsfiddleUriPart}/embedded/result/dark/"></iframe>
+          `;
+          slide.classList.add('remark-slide-content-with-codesample');
+        }else{
+          console.log(`[x] Slide is not a codesample.`,CODESAMPLE_REGEX);
+        }
+      }
+      
+      
+      function renderSampleBackground(slide){
+        const SAMPLE_BACKGROUND_REGEX = /<p>sample-background:(.+)<\/p>/;
+        if(SAMPLE_BACKGROUND_REGEX.test(slide.innerHTML)){
+          const [full, url] = slide.innerHTML.match(SAMPLE_BACKGROUND_REGEX);
+          console.log(`Slide is a sample in background from "${url}".`);
+          slide.innerHTML = `
+            <h1>🚀</h1>
+            <iframe src="https://${url}"></iframe>
+          `;
+          slide.classList.add('remark-slide-content-with-sample-background');
+        }else{
+          console.log(`[x] Slide is not a sample in background.`,SAMPLE_BACKGROUND_REGEX);
+        }
+      }
+      
+      
+      function wrapElement(element){
+        element.innerHTML = `<div class="inner">${element.innerHTML}</div>`;
+      }
+      
+      function addClassNameListener(elem, callback) {
+          let lastClassName = elem.className;
+          const check = ()=>{   
+            const className = elem.className;
+              if (className !== lastClassName) {
+                  callback();   
+                  lastClassName = className;
+              }
+              requestAnimationFrame(check);
+          };
+          check();
       }
     </script>
   </body>
