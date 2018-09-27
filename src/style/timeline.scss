@@ -6,6 +6,12 @@
     text-align: center;
     color: white;
 
+    h2{
+        color:$color1;
+        //text-shadow: 0 0;
+        font-family: 'Pacifico', cursive;
+    }
+
     .card {
         .inner {
             @include disable-select;
