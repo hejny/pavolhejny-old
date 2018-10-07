@@ -110,7 +110,7 @@ form {
     right: 0;
     bottom: 0;
     background: url("/images/patterns/patt-10.png");
-    background-position: center;
+    background-position: bottom;
     background-size: 77px;
     background-repeat: repeat; }
   .layer1 div.image {
@@ -120,7 +120,7 @@ form {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to bottom, #921, #123);
+    background-image: linear-gradient(to bottom, #751, #123);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
@@ -176,6 +176,9 @@ form {
   z-index: 100;
   text-align: center;
   color: white; }
+  .timeline h2 {
+    color: #ff8855;
+    font-family: 'Pacifico', cursive; }
   .timeline .card .inner {
     -webkit-user-select: none;
     -moz-user-select: none;

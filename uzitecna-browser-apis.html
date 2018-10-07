@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>How to build a HUGE app with ES6?</title>
+    <title>Užitečná Browser APIs</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=64&amp;r=pg&amp;d=mm ?&gt;">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Pacifico|Open+Sans|Slabo+27px|Oswald|Archivo+Narrow|Pathway+Gothic+One|Signika">
@@ -276,264 +276,403 @@
     </style>
   </head>
   <body>
-    <textarea id="source"># How to build a HUGE app with ES6?
-
-## (basics)
+    <textarea id="source"># Užitečná Browser APIs
 ## [Pavol Hejný](https://www.pavolhejny.com/)
 
-https://www.pavolhejny.com/es6
 
 
-<footer>2018-06-29 ITNetwork </footer>
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/uzitecna-browser-apis)
 
----
+https://www.pavolhejny.com/uzitecna-browser-apis
 
-# Const vs. let ( vs. var )
 
-```javascript
-const a = 1;
-let b = 2;
-b = 3;
-```
-
-```javascript
-var a = 1;
-var a = 2;
-var a = 3;
-```
+<footer>2018-10-07 | LinuxDays </footer>
 
 ---
 
-# Object mutations
+# Storages
+![](https://static1.squarespace.com/static/54d696e5e4b05ca7b54cff5c/t/578e12d44402437e78868035/1468928739804/Cloud+Storage?format=1024w)
+
+
+---
+
+# LocalStorage
+*Web Storage API*
 
 ```javascript
-const b = {
-    a: 1,
-    b: 2,
+localStorage.setItem('event', 'LinuxDays');
+const cat = localStorage.setItem('LinuxDays');
+localStorage.removeItem('LinuxDays');
+```
+
+---
+
+# SessionStorage
+*Web Storage API*
+
+```javascript
+sessionStorage.setItem('event', 'LinuxDays');
+const cat = sessionStorage.setItem('LinuxDays');
+sessionStorage.removeItem('LinuxDays');
+```
+
+---
+
+# IndexedDB
+
+``` javascript
+const request = indexedDB.open("events");
+
+request.onsuccess = function() {
+    const db = request.result;
+
+    const conferencesStore = db.createObjectStore("conferences");
+    conferencesStore.createIndex("by_name", "name", {unique: true});
+    conferencesStore.createIndex("by_rating", "rating");
+
+    conferencesStore.put({name: "Linux Days", rating: 10});
 };
-b.a = 3;
 ```
 
 ---
 
-# String templates
+# Dexie.js
+
 
 ```javascript
-const name = 'Pavol Hejný';
-const mail = 'me@pavolhejny.com';
-const text = `
-My name is ${name}.
-And my mail is ${mail}.
-`;
+const db = new Dexie('Database');
+
+db.version(1).stores({
+    conferences: `++id, name, rating`
+});
 ```
 
----
-
-# Arrow functions
 
 ```javascript
-function ahoj(a = 0, b = 0) {
-    return a + b;
-}
+await db.conferences
+		.where('rating')
+		.above(8)
+		.toArray();
 
-const ahoj = (a = 0, b = 0) => {
-    return a + b;
-};
-
-doSomeStuff(() => {
-    //...
+await db.conferences.add({
+    name: 'LinuxDays 2018',
+    rating: 10,
+    icon: await getBlob('tux.png')
 });
 ```
 
 ---
 
-# Sync stuff
+# Frameworks
+
+- Dexie.js
+- ZangoDB
+- PouchDB (similar to CouchDB)
+- jsStore
+
+---
+
+# Drop, FileReader
+
+```html
+ <div id="dropZone">Drag&Drop some files.</div>
+```
 
 ```javascript
-function main() {
-    const input = 2 * 3 * 5 * 7 * 11 * 13;
+const dropZone = document.getElementById('dropZone');
 
-    try {
-        const primes = factorize(input);
-        element.innerHTML = `${input} = ${primes.join(' * ')}`;
-    } catch (error) {
-        logError(error);
-    }
-}
+dropZone.addEventListener('drop', (event)=>{
+    event.stopPropagation();
+    event.preventDefault();
+    //event.dataTransfer.files
+});
 ```
 
 ---
 
-# Async stuff (old and stupid)
+# Drop, FileReader
 
 ```javascript
-function main() {
-    element.innerHTML = 'Computing..';
+const dropZone = document.getElementById('dropZone');
 
-    const input = 2 * 3 * 5 * 7 * 11 * 13;
-    factorize(
-        input,
-        (error) => {
-            logError(error);
-        },
-        (primes) => {
-            element.innerHTML = `${input} = ${primes.join(' * ')}`;
-        },
-    );
-}
-```
-
----
-
-# Async stuff with Promise
-
-```javascript
-function main() {
-    element.innerHTML = 'Computing..';
-
-    const input = 2 * 3 * 5 * 7 * 11 * 13;
-    factorize(input)
-        .then((primes) => {
-            element.innerHTML = `${input} = ${primes.join(' * ')}`;
-        })
-        .catch((error) => {
-            logError(error);
-        });
-}
-```
-
----
-
-# Async stuff with Promise and async/await
-
-```javascript
-async function main() {
-    const input = 2 * 3 * 5 * 7 * 11 * 13;
-
-    try {
-        const primes = await factorize(input);
-        element.innerHTML = `${input} = ${primes.join(' * ')}`;
-    } catch (error) {
-        logError(error);
-    }
-}
-```
-
----
-
-# Lot of async stuff with Promise and async/await
-
-```javascript
-async function main() {
-    try {
-        const controller = await getController();
-        const modelObj = await getModel(controller);
-        const modelShapes = await convertToShapes(model3DObj);
-    } catch (error) {
-        logError(error);
-    }
-}
-```
-
----
-
-# Lot of async stuff with Promise
-
-```javascript
-function main() {
-    getController()
-        .then(getModel)
-        .then(convertToShapes)
-        .then((modelShapes) => {
+dropZone.addEventListener('drop', (event)=>{
+    event.stopPropagation();
+    event.preventDefault();
+    for (const file of event.dataTransfer.files) {
+        if (file.type.match(/image.*/)) {
             //...
-        })
-        .catch((error) => {
-            logError(error);
-        });
-}
-```
-
----
-
-# Lot of async stuff with callback hell
-
-```javascript
-function main() {
-    getController(
-        (error) => {
-            logError(error);
-        },
-        (controller) => {
-            getModel(
-                controller,
-                (error) => {
-                    logError(error);
-                },
-                (modelObj) => {
-                    convertToShapes(
-                        modelObj,
-                        (error) => {
-                            logError(error);
-                        },
-                        (modelShapes) => {
-                            //...
-                        },
-                    );
-                },
-            );
-        },
-    );
-}
-```
-
----
-
-# Multiple .js file project
-
-```html
-<script src="./math/factorize.js"></script>
-<script src="./main.js"></script>
-<script>
-    main();
-</script>
-```
-
----
-
-# Modules Export/Import
-
-```javascript
-import { factorize } from './math/factorize.js';
-
-export default async function main() {
-    const input = 2 * 3 * 5 * 7 * 11 * 13;
-    try {
-        const primes = await factorize(input);
-        element.innerHTML = `${input} = ${primes.join(' * ')}`;
-    } catch (error) {
-        logError(error);
+        }
     }
+});
+```
+
+---
+
+# Drop, FileReader
+
+```javascript
+const dropZone = document.getElementById('dropZone');
+
+dropZone.addEventListener('drop', (event)=>{
+    event.stopPropagation();
+    event.preventDefault();
+    for (const file of event.dataTransfer.files) {
+        if (file.type.match(/image.*/)) {
+
+            const reader = new FileReader();
+
+            reader.onload = (event)=>{
+    
+                const img = document.createElement('IMG');
+                img.src= event.target.result;
+                document.body.appendChild(img);
+            }
+
+            reader.readAsDataURL(file); 
+        }
+    }
+});
+```
+
+---
+
+
+# WebWorkers
+
+```javascript
+const worker = new Worker('/dist/worker.js');
+
+worker.postMessage({...});
+
+worker.onmessage = (event)=>{
+  //event.data
+}
+```
+
+## worker.js
+
+```javascript
+onmessage = (event)=>{
+    //event.data
+    postMessage({...});
 }
 ```
 
 ---
 
-# Modules Export/Import
+## index.js
 
-```html
-<script type="module">
-    import main from './main.js';
-    main();
-</script>
+```javascript
+worker.terminate();
+```
+
+## worker.js
+
+```javascrpit
+importScripts('foo.js');
+```
+
+```javascript
+close();
 ```
 
 ---
 
-# Bundlers / Transpilers / Boilerplate&nbsp;generators
+# Real-time apps
+## (Push technologies)
+
+- Heartbeat
+- Long polling 
+- **WebSockets**
 
 ---
 
-# To be continued...
+# WebSockets
+
+```javascript
+
+const socket = new WebSocket('wss://www.linuxdays.cz/');
+
+socket.addEventListener('open', ()=>{
+    socket.send('Hello from OpenAlt!');
+});
+
+socket.addEventListener('message', (event)=>{
+    //event.data
+});
+
+socket.addEventListener('close', ()=>{
+});
+```
+---
+
+# Socket.io
+
+
+```javascript
+const socket = io().listen(/*...*/);
+
+socket.on('message', function(message){
+    //...
+});
+
+function sendMessage(message){
+    socket.emit('message',message);
+});
+```
+
+---
+
+# Canvas
+
+```html
+ <canvas id="canvas" width="256" height="42"></canvas>
+```
+
+* https://github.com/hejny/sample-js-game/
+
+---
+
+```javascript
+const scene = window.document.getElementById('scene');
+const ctx = scene.getContext('2d');
+
+ctx.beginPath();
+ctx.arc(33, 33, 60, 0, Math.PI * 2, true);
+ctx.closePath();
+ctx.fillStyle = '#906090';
+ctx.fill();
+```
+
+---
+
+```javascript
+class Ball{
+
+    constructor(x,y){
+        this.x=x;
+        this.y=y;
+    }
+
+    render(ctx){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 60, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fillStyle = '#906090';
+        ctx.fill();
+    }
+
+}
+
+const scene = window.document.getElementById('scene');
+const ctx = scene.getContext('2d');
+
+const ball = new Ball(33,33);
+ball.render(ctx);
+```
+
+---
+
+```javascript
+//...
+
+const scene = document.getElementById('scene');
+const ctx = scene.getContext('2d');
+
+const ball = new Ball(33,33);
+
+function loop() {
+    ball.x++;
+    ball.render();
+    requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+```
+
+---
+
+```javascript
+//...
+
+const scene = document.getElementById('scene');
+const ctx = scene.getContext('2d');
+
+const ball = new Ball(33,33);
+
+let timeLast = null;
+function loop(time) {
+    if (timeLast) ball.x += (time - timeLast) / 1000;
+    timeLast = time;
+    ball.render();
+    requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+```
+
+---
+
+# WebGl, WebVR
+
+```javascript
+const scene = document.getElementById('scene');
+const ctx = scene.getContext('webgl');
+```
+
+---
+
+# BABYLON.js
+codesample:js:phejny/1bqwgsfo
+
+---
+
+# A-Frame
+
+codesample:html:phejny/n2Le0za8/
+
+---
+
+# Frameworks
+
+- Babylon.js
+- Three.js
+- A-Frame
+
+---
+
+#WebVR
+
+- Helmet *( WebVR )*
+- Controllers *( GamepadAPI )*
+
+---
+
+# Pointer lock API
+
+```javascript
+const scene = document.getElementById('scene');
+
+document.addEventListener('pointerlockchange',()=>{
+    if(document.pointerLockElement === scene) {
+        //locked
+    } else {
+        //unlocked
+    }
+});
+
+scene.requestPointerLock();
+```
+
+---
+
+## Díky za pozornost!
+
+![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.pavolhejny.com/uzitecna-browser-apis)
+
+https://www.pavolhejny.com/uzitecna-browser-apis
+
+https://github.com/hejny/sample-js-game/ *← 2D canvas*
+
+https://hejny.github.io/sample-js-game/
 
 
 
