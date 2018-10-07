@@ -301,8 +301,8 @@ https://www.pavolhejny.com/uzitecna-browser-apis
 
 ```javascript
 localStorage.setItem('event', 'LinuxDays');
-const cat = localStorage.setItem('LinuxDays');
-localStorage.removeItem('LinuxDays');
+const cat = localStorage.getItem('event');
+localStorage.removeItem('event');
 ```
 
 ---
@@ -312,8 +312,8 @@ localStorage.removeItem('LinuxDays');
 
 ```javascript
 sessionStorage.setItem('event', 'LinuxDays');
-const cat = sessionStorage.setItem('LinuxDays');
-sessionStorage.removeItem('LinuxDays');
+const cat = sessionStorage.getItem('event');
+sessionStorage.removeItem('event');
 ```
 
 ---
@@ -323,7 +323,7 @@ sessionStorage.removeItem('LinuxDays');
 ``` javascript
 const request = indexedDB.open("events");
 
-request.onsuccess = function() {
+request.onsuccess = ()=>{
     const db = request.result;
 
     const conferencesStore = db.createObjectStore("conferences");
@@ -331,6 +331,7 @@ request.onsuccess = function() {
     conferencesStore.createIndex("by_rating", "rating");
 
     conferencesStore.put({name: "Linux Days", rating: 10});
+    conferencesStore.put({name: "OpenAlt", rating: 10});
 };
 ```
 
@@ -347,13 +348,7 @@ db.version(1).stores({
 });
 ```
 
-
 ```javascript
-await db.conferences
-		.where('rating')
-		.above(8)
-		.toArray();
-
 await db.conferences.add({
     name: 'LinuxDays 2018',
     rating: 10,
@@ -361,13 +356,20 @@ await db.conferences.add({
 });
 ```
 
+
+```javascript
+await db.conferences
+		.where('rating')
+		.above(8)
+		.toArray();
+```
 ---
 
 # Frameworks
 
 - Dexie.js
 - ZangoDB
-- PouchDB (similar to CouchDB)
+- PouchDB *(similar to CouchDB)*
 - jsStore
 
 ---
@@ -393,12 +395,11 @@ dropZone.addEventListener('drop', (event)=>{
 # Drop, FileReader
 
 ```javascript
-const dropZone = document.getElementById('dropZone');
-
+//...
 dropZone.addEventListener('drop', (event)=>{
     event.stopPropagation();
     event.preventDefault();
-    for (const file of event.dataTransfer.files) {
+    for (const file of Array.from(event.dataTransfer.files)) {
         if (file.type.match(/image.*/)) {
             //...
         }
@@ -411,12 +412,11 @@ dropZone.addEventListener('drop', (event)=>{
 # Drop, FileReader
 
 ```javascript
-const dropZone = document.getElementById('dropZone');
-
+//...
 dropZone.addEventListener('drop', (event)=>{
     event.stopPropagation();
     event.preventDefault();
-    for (const file of event.dataTransfer.files) {
+    for (const file of Array.from(event.dataTransfer.files)) {
         if (file.type.match(/image.*/)) {
 
             const reader = new FileReader();
@@ -440,7 +440,7 @@ dropZone.addEventListener('drop', (event)=>{
 # WebWorkers
 
 ```javascript
-const worker = new Worker('/dist/worker.js');
+const worker = new Worker('/worker.js');
 
 worker.postMessage({...});
 
@@ -479,7 +479,7 @@ close();
 ---
 
 # Real-time apps
-## (Push technologies)
+*(Push technologies)*
 
 - Heartbeat
 - Long polling 
