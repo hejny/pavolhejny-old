@@ -71,8 +71,8 @@ div.timeline
 
     
     
-    h2 Upcoming Events
-    ul.clear.events
+    //h2 Upcoming Events
+    //ul.clear.events
         .line.timeline-line
         each year, yearIndex in content.years
             +year(year.label,yearIndex%2)
@@ -81,7 +81,7 @@ div.timeline
 
 
 
-    h2 Past Events
+    //h2 Past Events
     ul.clear.events
         .line.timeline-line
         each year, yearIndex in content.years
