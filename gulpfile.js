@@ -131,12 +131,12 @@ ${content.articles
 });
 
 gulp.task('build-css', () => {
-    return gulp
-        .src('./src/style/index.scss')
+    return eventStream.merge(['index','presentation'].map((name)=>gulp
+        .src(`./src/style/${name}.scss`)
         .pipe(gulpSass())
         .on('error', swallowError)
-        .pipe(gulpRename('./index.css'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulpRename(`./${name}.css`))
+        .pipe(gulp.dest('./dist'))));
 });
 
 gulp.task('copy-images', () => {
