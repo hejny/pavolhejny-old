@@ -23,7 +23,7 @@ https://www.pavolhejny.com/uzitecna-browser-apis
 
 ```javascript
 localStorage.setItem('event', 'LinuxDays');
-const cat = localStorage.getItem('event');
+const item = localStorage.getItem('event');
 localStorage.removeItem('event');
 ```
 
@@ -34,7 +34,7 @@ localStorage.removeItem('event');
 
 ```javascript
 sessionStorage.setItem('event', 'LinuxDays');
-const cat = sessionStorage.getItem('event');
+const item = sessionStorage.getItem('event');
 sessionStorage.removeItem('event');
 ```
 
@@ -248,7 +248,7 @@ function sendMessage(message){
 # Canvas
 
 ```html
- <canvas id="canvas" width="256" height="42"></canvas>
+ <canvas id="scene" width="256" height="42"></canvas>
 ```
 
 * https://github.com/hejny/sample-js-game/
