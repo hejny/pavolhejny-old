@@ -4,7 +4,19 @@
     }
 
     z-index: 100;
-    //color: white;
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom:0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    background: linear-gradient(90deg, transparent, black);
+
+
 
     .inner {
         @if $debug {
@@ -12,10 +24,26 @@
         }
 
         display: inline-block;
-        width: $timeline-width;
+        width: 400px;
         max-width: 100%;
 
+        //box-shadow: black 0 0 3px;
+        //background: #fff;
+        padding: 15px;
+        margin: 15px;
+
+        //text-shadow: black 0 0 3px;
+        background: linear-gradient(90deg, rgb(179, 231, 255), rgb(254, 255, 186));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+
+
         .avatar {
+            
+
+        
             img {
                 display: inline-block;
                 width: 125px;
@@ -29,7 +57,7 @@
                 box-shadow: $color1 0 0 $highlight-normal;
                 //border: 2px solid black;
                 margin: auto;
-                margin-top: 17vh;
+                margin-top: -70px;
                 margin-bottom: 12px;
 
                 &:hover {
@@ -42,16 +70,13 @@
             //border: 1px dashed red;
             display: block;
             text-decoration: none;
-            font-size: 2.48rem;
+            font-size: 3rem;
             margin-top: 10px;
             margin-bottom: 8px;
+
+            
         }
 
-        h2.subname {
-            display: block;
-            font-size: 1.25em;
-            margin-top: 5px;
-        }
 
         .contacts {
             //background: url('./images/textures/norwegian_rose.png');

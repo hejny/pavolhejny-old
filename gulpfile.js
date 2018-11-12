@@ -80,12 +80,11 @@ gulp.task('build-html', () => {
     <lastmod>${moment().toISOString()}</lastmod>
     <priority>1</priority>
 </url>
-${content.articles
+${content.presentations
         .map(
-            (article) => `
+            (presentation) => `
 <url>
-    <loc>https://www.pavolhejny.com/${article.uri}</loc>
-    <lastmod>${article.updatedISO}</lastmod>
+    <loc>https://www.pavolhejny.com/${presentation.uri}</loc>
     <priority>0.5</priority>
 </url>
 `,
@@ -109,16 +108,6 @@ ${content.articles
         gulpFile('sitemap.xml', sitemapXml, { src: true }).pipe(
             gulp.dest('./dist/'),
         ),
-        ...content.articles
-            //.filter((article) => article.isWritten)
-            .map((article) =>
-                gulp
-                    .src(['./src/templates/article.jade'])
-                    .pipe(gulpJade({ pretty: true, locals: { article } }))
-                    .on('error', swallowError)
-                    .pipe(gulpRename(article.uri + '.html'))
-                    .pipe(gulp.dest('./dist/')),
-            ),
         ...content.presentations.map((presentation) =>
             gulp
                 .src(['./src/templates/presentation.jade'])
@@ -204,8 +193,8 @@ gulp.task('build-js', () => {
 
 gulp.task('content', function(callback) {
     console.log('\x1Bc');
-    const { articles } = requireUncached('./getContent')();
-    console.log(articles.reverse());
+    const { presentations } = requireUncached('./getContent')();
+    console.log(presentations.reverse());
 });
 
 ///--------------------------------------------------------
@@ -246,49 +235,6 @@ gulp.task('deploy', (done) => {
         () => {
             console.log(arguments);
             done();
-        },
-    );
-});
-
-///--------------------------------------------------------
-const readline = require('readline');
-const fs = require('fs');
-
-gulp.task('article', function(callback) {
-    console.log('\x1Bc');
-
-    const readlineInterface = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-
-    //todo as promise
-    readlineInterface.question(
-        'URI of article eg.: measurecamp-bratislava-2018? ',
-        (answer) => {
-            //console.log(`Thank you for your valuable feedback: ${answer}`);
-
-            const uri = answer;
-            const articleDir = `./src/content/articles/${uri}`;
-            const articleFile = `${articleDir}/${uri}.md`;
-            const date = moment().format('YYYY-MM-DD');
-            const articleContent = `# ${uri}
-
-<!--date:${date}--${date}-->
-<!--update:${date}-->
-
-...
-
-`;
-
-            if (!fs.existsSync(articleDir)) {
-                fs.mkdirSync(articleDir);
-                fs.writeFileSync(articleFile, articleContent);
-            } else {
-                throw new Error(`This article already exists.`);
-            }
-
-            readlineInterface.close();
         },
     );
 });

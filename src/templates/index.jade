@@ -5,52 +5,9 @@ doctype html
 html(lang='en')
     head(prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#')
       title Pavol Hejný
-      meta(property='og:description', content='WebApp developer🌍 • Game developer🎮 • Fractal💗 • Crypto💛')/
-      meta(property='og:type', content='profile')/
-      meta(property='profile:first_name', content='Pavol')/
-      meta(property='profile:last_name', content='Hejný')/
-      meta(property='profile:gender', content='male')/
-      meta(property='og:title', content='Pavol Hejný')/
-      meta(property='og:url', content='https://www.pavolhejny.com/')/
-      meta(property='og:image', content='https://www.pavolhejny.com/images/default-background.jpg')/
-      script(type='application/ld+json').
-        {
-            "@context": "http://schema.org/",
-            "@type": "Person",
-            "name": "Pavol Hejný",
-            "image": "https://1.gravatar.com/avatar/3d98c15957c5f5dd227e53dbc7cbb60d?s=300&r=pg&d=mm",
-            "jobTitle": "Web app developer",
-            "telephone": "+420 774 080 996",
-            "url": "https://www.pavolhejny.com",
-            "sameAs": [
-            "https://github.com/hejny/",
-            "http://www.facebook.com/hejny",
-            "http://instagram.com/pavolhejny",
-            "http://www.linkedin.com/in/hejny"
-            ]
-        }
+      link(rel='stylesheet', href='/index.css')/
       include ./head
+
     body
-        //.layer.layer1
-          div.pattern
-          div.image
         .layer.layer2
           include ./vcard
-          include ./timeline
-
-          //ul.presentations
-            each presentation in content.presentations
-                li.presentation= presentation.uri
-
-                 
-          //footer
-            .inner
-            
-              p Like this? If you want to be notified when thare will be other interesting events you can subscribe on newsletter of you can follow me on <a href="https://fb.com/hejny" target="_blank">Facebook</a>.
-
-
-
-              form(action='https://pavolhejny.us18.list-manage.com/subscribe/post?u=d71ea5d2703abed51cb32d0c7&id=d6fc10835b', method='post', name='mc-embedded-subscribe-form', target='_blank')
-                    input(type='email', value='@', name='EMAIL')
-                    input(type='submit', value='Subscribe', name='subscribe')
-        script(src='./index.js')
