@@ -33,7 +33,7 @@
         margin: 15px;
 
         //text-shadow: black 0 0 3px;
-        background: linear-gradient(90deg, rgb(179, 231, 255), rgb(254, 255, 186));
+        background: linear-gradient(90deg, white, rgb(255, 224, 165));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -87,14 +87,37 @@
 
             a {
                 display: inline-block;
-                font-size: 33px;
+                font-size: 27px;
                 text-decoration: none;
-                margin: 10px;
+                margin: 5px;
 
                 /*&:hover{
             color: #3d64ff;
           }*/
             }
+        }
+
+        .about{
+            text-align: left;
+            font-size: 1.2rem;
+
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .vcard {
+
+        display: block;  
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.548), black);
+    
+    
+    
+        .inner {
+            margin: 0;
+            margin-top:30px;
+            width: calc(100% - 25px);
         }
     }
 }
