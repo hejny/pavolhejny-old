@@ -16,9 +16,12 @@ body {
   background-color: black; }
 
 h1 {
-  margin-top: 100px; }
+  margin-top: 100px;
+  /*Align content to middle*/ }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: normal;
   text-shadow: black 0px 0px 5px;
   margin-bottom: 0; }
@@ -47,7 +50,8 @@ a {
   background-size: 100px;
   background-repeat: repeat; }
 
-.remark-slide-content-with-codesample .left, .remark-slide-content-with-codesample .right {
+.remark-slide-content-with-codesample .left,
+.remark-slide-content-with-codesample .right {
   display: inline-block;
   position: absolute;
   top: 0;
@@ -65,7 +69,7 @@ a {
 
 .remark-slide-content-with-codesample .hide-topbar {
   margin-top: -50px;
-  height: calc( 100% + 50px); }
+  height: calc(100% + 50px); }
 
 iframe {
   border: none; }
@@ -110,7 +114,8 @@ li p {
 .large {
   font-size: 2em; }
 
-a, a > code {
+a,
+a > code {
   color: #f92672;
   text-decoration: none; }
 
@@ -136,7 +141,8 @@ img {
   max-width: 100%;
   /*box-shadow: #555 0 0 15px;*/ }
 
-ul, li {
+ul,
+li {
   list-style-type: square;
   font-weight: normal;
   text-align: left;
@@ -148,7 +154,8 @@ ul ul {
 del {
   color: #888; }
 
-.remark-code, .remark-inline-code {
+.remark-code,
+.remark-inline-code {
   font-family: 'Ubuntu Mono'; }
 
 .remark-code-line-highlighted {
@@ -177,7 +184,8 @@ del {
   color: #ccc;
   text-shadow: 0 0 20px #333; }
 
-.inverse h1, .inverse h2 {
+.inverse h1,
+.inverse h2 {
   color: #f3f3f3;
   line-height: 0.8em; }
 
@@ -195,7 +203,8 @@ del {
 #slide-how .slides h3 {
   margin-top: 0.2em; }
 
-#slide-how .slides .first, #slide-how .slides .second {
+#slide-how .slides .first,
+#slide-how .slides .second {
   padding: 1px 20px;
   height: 90px;
   width: 120px;
@@ -222,7 +231,8 @@ del {
   height: 92%;
   float: left; }
 
-.left-column h2:last-of-type, .left-column h3:last-child {
+.left-column h2:last-of-type,
+.left-column h3:last-child {
   color: #000; }
 
 .right-column {
