@@ -6,13 +6,13 @@
     z-index: 100;
     position: absolute;
     top:0;
-    left: 0;
+    left: 50vw;
     bottom:0;
     right: 0;
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 
     background: linear-gradient(90deg, transparent, black);
 
@@ -42,7 +42,7 @@
 
         .avatar {
             
-
+            display: none;
         
             img {
                 display: inline-block;
@@ -50,19 +50,16 @@
                 height: 125px;
                 max-width: 80%;
 
-                border: 1px solid $color1; //todo to config
                 border-radius: 1000px;
 
+                box-shadow: rgba(255, 255, 255, 0.363) 0 0 3px;
                 padding: 3px;
-                box-shadow: $color1 0 0 $highlight-normal;
+
                 //border: 2px solid black;
                 margin: auto;
-                margin-top: -70px;
+
                 margin-bottom: 12px;
 
-                &:hover {
-                    box-shadow: $color1 0 0 $highlight-selected;
-                }
             }
         }
 
@@ -89,7 +86,7 @@
                 display: inline-block;
                 font-size: 27px;
                 text-decoration: none;
-                margin: 5px;
+                margin: 8px;
 
                 /*&:hover{
             color: #3d64ff;
@@ -98,7 +95,7 @@
         }
 
         .about{
-            text-align: left;
+            text-align: justify;
             font-size: 1.2rem;
 
         }
@@ -106,18 +103,42 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+
+
     .vcard {
+        
 
         display: block;  
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.548), black);
-    
+        left: 0;
+
+        padding: 10vw;
     
     
         .inner {
             margin: 0;
             margin-top:30px;
+            
             width: calc(100% - 25px);
+
+            .avatar {
+                display:block;
+            }
+
+            .about{
+                text-align: left;
+            }
         }
     }
 }
+
+@media only screen and (min-width: 1300px) {
+    h1.name {
+        font-size: 3.9rem!important;//todo remove important
+    }
+    .about{
+        font-size: 1.4rem!important;
+    }
+}
+
