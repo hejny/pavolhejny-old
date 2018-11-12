@@ -120,12 +120,16 @@ ${content.presentations
 });
 
 gulp.task('build-css', () => {
-    return eventStream.merge(['index','presentation'].map((name)=>gulp
-        .src(`./src/style/${name}.scss`)
-        .pipe(gulpSass())
-        .on('error', swallowError)
-        .pipe(gulpRename(`./${name}.css`))
-        .pipe(gulp.dest('./dist'))));
+    return eventStream.merge(
+        ['index', 'presentation'].map((name) =>
+            gulp
+                .src(`./src/style/${name}.scss`)
+                .pipe(gulpSass())
+                .on('error', swallowError)
+                .pipe(gulpRename(`./${name}.css`))
+                .pipe(gulp.dest('./dist')),
+        ),
+    );
 });
 
 gulp.task('copy-images', () => {

@@ -40,7 +40,6 @@ function baseName(str) {
 }
 
 module.exports = function() {
-
     const presentationsFiles = glob.sync('./src/content/presentations/**/*.md');
     const presentations = presentationsFiles.map((presentationFile) => {
         const uri = baseName(presentationFile);
@@ -56,10 +55,8 @@ module.exports = function() {
             },
         }).parseFromString(articleHtml);
         const title = xpath.select('//h1', articleDom)[0].childNodes[0]
+            .nodeValue;
 
-    
-        .nodeValue;
-        
         return {
             uri,
             title,
@@ -67,5 +64,5 @@ module.exports = function() {
         };
     });
 
-    return {presentations };
+    return { presentations };
 };

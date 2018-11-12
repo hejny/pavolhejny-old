@@ -1,10 +1,10 @@
 # How to build a HUGE app with ES6?
 
 ## (basics)
+
 ## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/es6
-
 
 <footer>2018-06-29 ITNetwork </footer>
 

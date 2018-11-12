@@ -1,23 +1,18 @@
 # Ezoterické programovací jazyky
+
 ## [Pavol Hejný](https://www.pavolhejny.com/)
 
 https://www.pavolhejny.com/ezotericke-programovaci-jazyky
-
-
 
 <footer>2018-08-31 ITNetwork </footer>
 
 ---
 
-
 ![](/content/presentations/ezotericke-programovaci-jazyky/turing-maschine.png)
-
 
 ---
 
-
 ![](/content/presentations/ezotericke-programovaci-jazyky/eniac-computer.jpg)
-
 
 ---
 
@@ -58,7 +53,6 @@ public class App {
 +.>.+++.------.--------.>+.>.
 ```
 
-
 ---
 
 # Taxi
@@ -92,6 +86,7 @@ right. Go to the Taxi Garage: north 1st right, 1st left, 1st right.
 ---
 
 # PostCSS Czech Stylesheets
+
 ## https://github.com/tenhobi/postcss-czech-stylesheets
 
 ---
@@ -106,6 +101,7 @@ right. Go to the Taxi Garage: north 1st right, 1st left, 1st right.
     color: red !important;
 }
 ```
+
 ---
 
 ```css

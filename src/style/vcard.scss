@@ -5,9 +5,9 @@
 
     z-index: 100;
     position: absolute;
-    top:0;
+    top: 0;
     left: 50vw;
-    bottom:0;
+    bottom: 0;
     right: 0;
 
     display: flex;
@@ -15,8 +15,6 @@
     justify-content: center;
 
     background: linear-gradient(90deg, transparent, black);
-
-
 
     .inner {
         @if $debug {
@@ -37,13 +35,10 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        
-
 
         .avatar {
-            
             display: none;
-        
+
             img {
                 display: inline-block;
                 width: 125px;
@@ -59,7 +54,6 @@
                 margin: auto;
 
                 margin-bottom: 12px;
-
             }
         }
 
@@ -70,10 +64,7 @@
             font-size: 3rem;
             margin-top: 10px;
             margin-bottom: 8px;
-
-            
         }
-
 
         .contacts {
             //background: url('./images/textures/norwegian_rose.png');
@@ -94,39 +85,32 @@
             }
         }
 
-        .about{
+        .about {
             text-align: justify;
             font-size: 1.2rem;
-
         }
     }
 }
 
-
 @media only screen and (max-width: 1000px) {
-
-
     .vcard {
-        
-
-        display: block;  
+        display: block;
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.548), black);
         left: 0;
 
         padding: 10vw;
-    
-    
+
         .inner {
             margin: 0;
-            margin-top:30px;
-            
+            margin-top: 30px;
+
             width: calc(100% - 25px);
 
             .avatar {
-                display:block;
+                display: block;
             }
 
-            .about{
+            .about {
                 text-align: left;
             }
         }
@@ -135,10 +119,9 @@
 
 @media only screen and (min-width: 1300px) {
     h1.name {
-        font-size: 3.9rem!important;//todo remove important
+        font-size: 3.9rem !important; //todo remove important
     }
-    .about{
-        font-size: 1.4rem!important;
+    .about {
+        font-size: 1.4rem !important;
     }
 }
-
