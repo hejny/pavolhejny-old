@@ -1,5 +1,11 @@
+$bg-color1: #334477;
+$bg-color2: rgb(0, 0, 0);
+
+$text-color1: rgb(255, 205, 111);
+$text-color2: white;
+
 body {
-    font-family: 'Signika', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 
     /*
     font-family: 'Signika', sans-serif;
@@ -12,6 +18,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     
     */
+
+
 }
 .remark-slides-area {
     background-color: black;
@@ -23,12 +31,17 @@ h1,
 h2,
 h3 {
     font-weight: normal;
-    text-shadow: black 0px 0px 5px;
+    //text-shadow: black 0px 0px 5px;
     margin-bottom: 0;
 }
 
+h1,
+h2,
+h3,
 a {
-    color: #ffffcc !important;
+    background: linear-gradient(to left, $text-color1, $text-color2);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .remark-slide-content-with-image h1 {
@@ -37,12 +50,12 @@ a {
     margin-top: 260px;
     padding: 0;
     border-radius: 5px;
-    background-image: linear-gradient(to left, #751, #123);
-    box-shadow: black 0 0 20px;
     display: inline-block;
 
-    /*background-image: linear-gradient(to left, #921 , #123);
-      background:url('/images/patterns/patt-10.png');*/
+    background-clip: inherit;
+    -webkit-text-fill-color: inherit;
+    background-image: linear-gradient(to left, $bg-color1, $bg-color2);
+    box-shadow: #272822 0 0 5px;
 }
 
 .remark-slide-content-with-image h1 .inner {
@@ -50,10 +63,12 @@ a {
     padding-left: 50px;
     padding-right: 50px;
 
-    background: url('/images/patterns/patt-10.png');
-    background-position: center;
-    background-size: 100px;
-    background-repeat: repeat;
+    
+
+    background: linear-gradient(to left, $text-color1, $text-color2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .remark-slide-content-with-codesample .left,
@@ -97,7 +112,7 @@ iframe {
 }
 
 .remark-slide {
-    background-image: linear-gradient(to bottom, #751, #123);
+    background-image: linear-gradient(to bottom, $bg-color1, $bg-color2);
 }
 
 .remark-slide-scaler {
@@ -134,8 +149,10 @@ li p {
 }
 a,
 a > code {
-    color: rgb(249, 38, 114);
+    border-bottom: 2px solid rgb(48, 56, 128);
     text-decoration: none;
+    //color: rgb(48, 56, 128);
+    //text-decoration: underline;
 }
 code {
     background: #e7e8e2;
@@ -203,7 +220,7 @@ del {
 .inverse {
     background: #272822;
     color: #ccc;
-    text-shadow: 0 0 20px #333;
+    //text-shadow: 0 0 20px #333;
 }
 .inverse h1,
 .inverse h2 {
