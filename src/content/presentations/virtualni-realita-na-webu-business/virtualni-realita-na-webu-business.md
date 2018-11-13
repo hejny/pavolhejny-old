@@ -10,10 +10,10 @@ https://www.pavolhejny.com/virtualni-realita-na-webu-business
 
 # Topics
 
-1) Web
-2) 2D, 3D
-3) VR
-4) Games
+- Web
+    JS,2D, 3D, WebVR, AR
+
+- 
 
 ---
 
@@ -42,22 +42,27 @@ https://www.pavolhejny.com/virtualni-realita-na-webu-business
 
 ---
 
-# Web 
+# Web
+![](https://proxy.duckduckgo.com/iur/?f=1&image_host=http%3A%2F%2Fhqwalls.com%2Fwp-content%2Fuploads%2F2012%2F11%2FSpiderwebs-wallpapers-9.jpg&u=http://www.hqwalls.com/wp-content/uploads/2012/11/Spiderwebs-wallpapers-9.jpg)
 
-Web 1.0
+---
+
+## Web 1.0
 “readable”
 
 - HTML, CSS
 
+---
 
 
-Web 2.0
+## Web 2.0
 “writable”
 
 - PHP, Python, Java,...
 
+---
 
-Web 3.0
+## Web 3.0
 “executable”
 
 - JS
@@ -97,13 +102,42 @@ Web 3.0
 
 # Modules
 
+```html
+<script type="module">
+    import main from './main.js';
+    main();
+</script>
+```
 
+```javascript
+import { factorize } from './math/factorize.js';
+
+export default async function main() {
+    const input = 2 * 3 * 5 * 7 * 11 * 13;
+    try {
+        const primes = await factorize(input);
+        console.log(`${input} = ${primes.join(' * ')}`);
+    } catch (error) {
+        logError(error);
+    }
+}
+```
 
 ---
 
-# Promise
+# Promises
 
-
+```javascript
+async function main() {
+    try {
+        const controller = await getController();
+        const modelObj = await getModel(controller);
+        const modelShapes = await convertToShapes(model3DObj);
+    } catch (error) {
+        logError(error);
+    }
+}
+```
 
 
 
@@ -159,6 +193,8 @@ Web 3.0
 
 
 ![](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fiddle.jshell.net/phejny/4j8w5g3q/15/show/)
+
+https://fiddle.jshell.net/phejny/4j8w5g3q/15/show/
 
 
 
