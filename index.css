@@ -39,31 +39,34 @@ a {
   margin-right: 0.5em; }
 
 form {
-  display: block; }
+  display: block;
+  -webkit-text-fill-color: white;
+  margin-top: 15px;
+  margin-bottom: 15px; }
   form input {
     padding: 10px;
     margin: 0px;
     font-size: 1.1rem;
     border: none;
-    border: 1px solid #777;
-    box-shadow: #777 0 0 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    background-color: white; }
+    background-color: rgba(37, 8, 8, 0.322);
+    color: white;
+    width: calc( 100% - 180px); }
+    form input:hover, form input:focus {
+      background-color: rgba(37, 8, 8, 0.651); }
   form input[type='submit'] {
-    cursor: pointer; }
-    form input[type='submit']:hover {
-      color: white;
-      background-color: #334477;
-      border: 1px solid #334477;
-      box-shadow: #334477 0 0 15px; }
+    float: right;
+    cursor: pointer;
+    width: 150px; }
 
 .vcard {
   z-index: 100;
   position: absolute;
   top: 0;
   left: 50vw;
-  bottom: 0;
   right: 0;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

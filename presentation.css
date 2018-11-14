@@ -1,5 +1,5 @@
 body {
-  font-family: 'Signika', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   /*
     font-family: 'Signika', sans-serif;
     font-family: 'Archivo Narrow', sans-serif;
@@ -23,11 +23,15 @@ h1,
 h2,
 h3 {
   font-weight: normal;
-  text-shadow: black 0px 0px 5px;
   margin-bottom: 0; }
 
+h1,
+h2,
+h3,
 a {
-  color: #ffffcc !important; }
+  background: linear-gradient(to left, #ffbc6f, #f7ff8e);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .remark-slide-content-with-image h1 {
   margin-left: -100px;
@@ -35,20 +39,20 @@ a {
   margin-top: 260px;
   padding: 0;
   border-radius: 5px;
-  background-image: linear-gradient(to left, #751, #123);
-  box-shadow: black 0 0 20px;
   display: inline-block;
-  /*background-image: linear-gradient(to left, #921 , #123);
-      background:url('/images/patterns/patt-10.png');*/ }
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+  background-image: linear-gradient(to left, #334477, black);
+  box-shadow: #272822 0 0 5px; }
 
 .remark-slide-content-with-image h1 .inner {
   padding: 30px;
   padding-left: 50px;
   padding-right: 50px;
-  background: url("/images/patterns/patt-10.png");
-  background-position: center;
-  background-size: 100px;
-  background-repeat: repeat; }
+  background: linear-gradient(to left, #ffbc6f, #f7ff8e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .remark-slide-content-with-codesample .left,
 .remark-slide-content-with-codesample .right {
@@ -82,7 +86,7 @@ iframe {
   height: 100%; }
 
 .remark-slide {
-  background-image: linear-gradient(to bottom, #751, #123); }
+  background-image: linear-gradient(to bottom, #334477, black); }
 
 .remark-slide-scaler {
   box-shadow: none; }
@@ -116,7 +120,7 @@ li p {
 
 a,
 a > code {
-  color: #f92672;
+  border-bottom: 2px solid #303880;
   text-decoration: none; }
 
 code {
@@ -181,8 +185,7 @@ del {
 
 .inverse {
   background: #272822;
-  color: #ccc;
-  text-shadow: 0 0 20px #333; }
+  color: #ccc; }
 
 .inverse h1,
 .inverse h2 {
