@@ -45,9 +45,19 @@ a {
     margin-right: 0.5em;
 }
 
+
+
 form {
+
+    //border: 1px solid $color1;
     display: block;
     //background-color: aqua;
+
+    -webkit-text-fill-color: white;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
 
     input {
         padding: 10px;
@@ -55,24 +65,24 @@ form {
         font-size: 1.1rem;
         border: none;
 
-        border: 1px solid #777;
-        box-shadow: #777 0 0 $highlight-normal;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        //border: 1px solid #777;
+        //box-shadow: #777 0 0 $highlight-normal;
 
         text-align: center;
-        background-color: white;
+        background-color: rgba(37, 8, 8, 0.322);
+        color: white;
+
+        width: calc( 100% - 180px);
+
+        &:hover, &:focus {
+            background-color: rgba(37, 8, 8, 0.651);
+        }
     }
     input[type='submit'] {
+        float:right;
         cursor: pointer;
-        //color: white;
-
-        //border: 1px solid $color1;
-
-        &:hover {
-            color: white;
-            background-color: $color1;
-            border: 1px solid $color1;
-            box-shadow: $color1 0 0 $highlight-selected;
-        }
+        width: 150px;
     }
 }
 
