@@ -42,7 +42,7 @@ a {
   display: inline-block;
   background-clip: inherit;
   -webkit-text-fill-color: inherit;
-  background-image: linear-gradient(to left, #334477, black);
+  background-image: linear-gradient(to left, #111, #111);
   box-shadow: #272822 0 0 5px; }
 
 .remark-slide-content-with-image h1 .inner {
@@ -86,7 +86,7 @@ iframe {
   height: 100%; }
 
 .remark-slide {
-  background-image: linear-gradient(to bottom, #334477, black); }
+  background-image: linear-gradient(to bottom, #111, #111); }
 
 .remark-slide-scaler {
   box-shadow: none; }
