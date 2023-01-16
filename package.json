@@ -15,5 +15,9 @@
         "prettier-watch": "onchange \"**/*\" -- npm run prettier"
     },
     "license": "SEE LICENSE IN LICENSE",
-    "description": "This is personal website of Pavol Hejný."
+    "description": "This is personal website of Pavol Hejný.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hejny/pavolhejny-old"
+    }
 }
