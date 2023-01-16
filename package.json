@@ -13,5 +13,6 @@
         "start": "npm run prettier-watch",
         "prettier": "prettier --config .prettierrc --write \"**/*.{html,js,css}\" ",
         "prettier-watch": "onchange \"**/*\" -- npm run prettier"
-    }
+    },
+    "license": "SEE LICENSE IN LICENSE"
 }
