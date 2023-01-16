@@ -14,5 +14,6 @@
         "prettier": "prettier --config .prettierrc --write \"**/*.{html,js,css}\" ",
         "prettier-watch": "onchange \"**/*\" -- npm run prettier"
     },
-    "license": "SEE LICENSE IN LICENSE"
+    "license": "SEE LICENSE IN LICENSE",
+    "description": "This is personal website of Pavol Hejný."
 }
