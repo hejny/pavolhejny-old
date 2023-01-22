@@ -6,7 +6,7 @@
         "node": "6.10.2"
     },
     "devDependencies": {
-        "onchange": "4.0.0",
+        "onchange": "7.1.0",
         "prettier": "1.13.5"
     },
     "scripts": {
