@@ -19,5 +19,15 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/hejny/pavolhejny-old"
-    }
+    },
+    "funding": [
+        {
+            "type": "individual",
+            "url": "https://buymeacoffee.com/hejny"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/hejny/pavolhejny-old/blob/main/README.md#%EF%B8%8F-contributing"
+        }
+    ]
 }
