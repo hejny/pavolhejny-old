@@ -14,7 +14,7 @@
         "prettier": "prettier --config .prettierrc --write \"**/*.{html,js,css}\" ",
         "prettier-watch": "onchange \"**/*\" -- npm run prettier"
     },
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "Apache-2.0",
     "description": "This is personal website of Pavol Hejný.",
     "repository": {
         "type": "git",
