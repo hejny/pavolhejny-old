@@ -18,7 +18,7 @@
     "description": "This is personal website of Pavol Hejný.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hejny/pavolhejny-old"
+        "url": "git+https://github.com/hejny/pavolhejny-old.git"
     },
     "funding": [
         {
